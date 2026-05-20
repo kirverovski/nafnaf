@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Дополнительные услуги | Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">NAF_NAFIKI <span>SOCHI</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="animators.html">Аниматоры</a>
+            <a href="shows.html">Шоу‑программы</a>
+            <a href="masters.html">Мастер‑классы</a>
+            <a href="quests.html">Квесты</a>
+            <a href="decor.html">Шары и фотозоны</a>
+            <a href="services.html" class="active">Доп. услуги</a>
+        </nav>
+
+        <button class="btn-primary" id="openModal">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero small-hero">
+    <div class="container">
+        <h1>Дополнительные услуги</h1>
+        <p>Полный комплект для идеального праздника — оформление, фото, сладости и многое другое.</p>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <h2>Что можно добавить к празднику</h2>
+
+        <div class="grid">
+
+            <!-- ОФОРМЛЕНИЕ ШАРАМИ -->
+            <div class="card service-card clickable-card"
+                 data-title="Оформление шарами"
+                 data-description="Гирлянды, арки, цифры, фотозоны — оформление под любой стиль и бюджет."
+                 data-price="от 3000"
+                 data-image="images/service-balloons.jpg">
+                <img src="images/service-balloons.jpg" class="card-img" alt="">
+                <h3>Оформление шарами</h3>
+                <p>Гирлянды, арки, цифры, фотозоны — под любой стиль и бюджет.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- ФОТОГРАФ -->
+            <div class="card service-card clickable-card"
+                 data-title="Фотограф"
+                 data-description="Профессиональная съёмка праздника, обработка, ретушь и готовые фото в срок."
+                 data-price="от 2500"
+                 data-image="images/service-photo.jpg">
+                <img src="images/service-photo.jpg" class="card-img" alt="">
+                <h3>Фотограф</h3>
+                <p>Профессиональная съёмка праздника, обработка и готовые фото.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- ВИДЕОГРАФ -->
+            <div class="card service-card clickable-card"
+                 data-title="Видеограф"
+                 data-description="Красивый видеоролик с праздника, монтаж, цветокоррекция и музыка."
+                 data-price="от 3500"
+                 data-image="images/service-video.jpg">
+                <img src="images/service-video.jpg" class="card-img" alt="">
+                <h3>Видеограф</h3>
+                <p>Красивый видеоролик с праздника, монтаж и цветокоррекция.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- СЛАДКИЙ СТОЛ -->
+            <div class="card service-card clickable-card"
+                 data-title="Сладкий стол"
+                 data-description="Капкейки, кейк‑попсы, печенье, напитки — оформление в стиле праздника."
+                 data-price="от 3000"
+                 data-image="images/service-candybar.jpg">
+                <img src="images/service-candybar.jpg" class="card-img" alt="">
+                <h3>Сладкий стол</h3>
+                <p>Капкейки, кейк‑попсы, печенье, напитки — оформление в стиле праздника.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- ТОРТ -->
+            <div class="card service-card clickable-card"
+                 data-title="Торт на заказ"
+                 data-description="Индивидуальный дизайн, натуральные ингредиенты, доставка и оформление."
+                 data-price="от 2500"
+                 data-image="images/service-cake.jpg">
+                <img src="images/service-cake.jpg" class="card-img" alt="">
+                <h3>Торт на заказ</h3>
+                <p>Индивидуальный дизайн, натуральные ингредиенты, доставка.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- АРЕНДА ОБОРУДОВАНИЯ -->
+            <div class="card service-card clickable-card"
+                 data-title="Аренда оборудования"
+                 data-description="Колонки, дым‑машина, проектор, свет — всё для яркого праздника."
+                 data-price="от 1500"
+                 data-image="images/service-equipment.jpg">
+                <img src="images/service-equipment.jpg" class="card-img" alt="">
+                <h3>Аренда оборудования</h3>
+                <p>Колонки, дым‑машина, проектор, свет — всё для яркого праздника.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Описание услуги -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content fullscreen">
+        <span class="close close-service" id="closeService">×</span>
+
+        <img id="serviceImage" class="service-img" alt="">
+        <h2 id="serviceTitle"></h2>
+        <p id="serviceDescription"></p>
+        <p class="price">Цена: <span id="servicePrice"></span> ₽</p>
+
+        <button class="btn-primary" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Заказ -->
+<div class="modal" id="orderModal">
+    <div class="modal-content">
+        <span class="close" id="closeOrder">×</span>
+
+        <h2>Заказать программу</h2>
+
+        <form id="orderForm">
+            <input type="text" id="orderProgram" name="program" readonly>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <button class="btn-primary">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Форма заявки -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">×</span>
+        <h2>Оставить заявку</h2>
+
+        <form id="contactForm">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите имя" required>
+
+            <label>Телефон</label>
+            <input type="text" name="phone" placeholder="+7 ..." required>
+
+            <input type="hidden" name="page" value="Доп. услуги">
+
+            <button class="btn-primary" type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h2>Спасибо!</h2>
+        <p>Мы обязательно вам позвоним в самое ближайшее время.</p>
+        <button class="btn-primary" id="closeSuccess">Закрыть</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

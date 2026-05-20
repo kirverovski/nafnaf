@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header shadow-on-scroll">
+    <div class="container header-inner">
+        <div class="logo">NAF_NAFIKI <span>SOCHI</span></div>
+
+        <nav class="nav">
+            <a href="index.html" class="active>"Главная</a>
+            <a href="animators.html">Аниматоры</a>
+            <a href="shows.html">Шоу‑программы</a>
+            <a href="masters.html">Мастер‑классы</a>
+            <a href="quests.html">Квесты</a>
+            <a href="decor.html">Шары и фотозоны</a>
+            <a href="services.html">Доп. услуги</a>
+        </nav>
+
+        <button class="btn-primary glow openModalBtn">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero fade-in">
+    <div class="container">
+        <h1>Организация детских праздников в Сочи</h1>
+        <p>Аниматоры, шоу‑программы, мастер‑классы и дополнительные услуги.</p>
+        <button class="btn-primary glow openModalBtn">Оставить заявку</button>
+    </div>
+</section>
+
+<section class="categories fade-in">
+    <div class="container">
+        <h2>Наши услуги</h2>
+
+        <div class="grid service-grid">
+
+            <!-- АНИМАТОРЫ -->
+            <a href="animators.html" class="service-tile pop">
+                <div class="tile-img">
+                    <img src="images/cat-animators.jpg" alt="">
+                </div>
+                <div class="tile-overlay">
+                    <h3>Аниматоры</h3>
+                    <p>Любимые герои, игры, конкурсы</p>
+                </div>
+            </a>
+
+            <!-- ШОУ -->
+            <a href="shows.html" class="service-tile pop">
+                <div class="tile-img">
+                    <img src="images/cat-shows.jpg" alt="">
+                </div>
+                <div class="tile-overlay">
+                    <h3>Шоу‑программы</h3>
+                    <p>Мыльное, бумажное, научное шоу</p>
+                </div>
+            </a>
+
+            <!-- МАСТЕР-КЛАССЫ -->
+            <a href="masters.html" class="service-tile pop">
+                <div class="tile-img">
+                    <img src="images/cat-masters.jpg" alt="">
+                </div>
+                <div class="tile-overlay">
+                    <h3>Мастер‑классы</h3>
+                    <p>Слаймы, творчество, рисование</p>
+                </div>
+            </a>
+
+            <!-- ДОП. УСЛУГИ -->
+            <a href="services.html" class="service-tile pop">
+                <div class="tile-img">
+                    <img src="images/cat-services.jpg" alt="">
+                </div>
+                <div class="tile-overlay">
+                    <h3>Доп. услуги</h3>
+                    <p>Оформление, сладкий стол, фотограф</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Заявка -->
+<div class="modal" id="modal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeModal">×</span>
+
+        <h2 class="form-title">Оставить заявку</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <form id="contactForm">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите имя" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+
+            <input type="hidden" name="page" value="Главная страница">
+
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeSuccess">×</span>
+
+        <h2 class="form-title">Спасибо!</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <button class="btn-primary glow form-btn" id="closeSuccessBtn">Закрыть</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

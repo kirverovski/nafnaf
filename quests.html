@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квесты | Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">NAF_NAFIKI <span>SOCHI</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="animators.html">Аниматоры</a>
+            <a href="shows.html">Шоу‑программы</a>
+            <a href="masters.html">Мастер‑классы</a>
+            <a href="quests.html" class="active">Квесты</a>
+            <a href="decor.html">Шары и фотозоны</a>
+            <a href="services.html">Доп. услуги</a>
+        </nav>
+
+        <button class="btn-primary" id="openModal">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero small-hero">
+    <div class="container">
+        <h1>Квесты для детей</h1>
+        <p>Интерактивные приключения, загадки, миссии и командные испытания.</p>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <h2>Популярные квесты</h2>
+
+        <div class="grid">
+
+            <!-- КВЕСТ 1 -->
+            <div class="card service-card clickable-card"
+                 data-title="Квест «Тайна Золотого Ключа»"
+                 data-description="Приключенческий квест с загадками, поисками и командной работой."
+                 data-price="7000"
+                 data-images="images/quest-key.jpg,images/quest-key-2.jpg,images/quest-key-3.jpg">
+                <img src="images/quest-key.jpg" class="card-img" alt="">
+                <h3>Тайна Золотого Ключа</h3>
+                <p>Приключения, загадки и командная работа.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- КВЕСТ 2 -->
+            <div class="card service-card clickable-card"
+                 data-title="Квест «Шпионская Миссия»"
+                 data-description="Детям предстоит раскрыть заговор и выполнить секретное задание."
+                 data-price="8000"
+                 data-images="images/quest-spy.jpg,images/quest-spy-2.jpg">
+                <img src="images/quest-spy.jpg" class="card-img" alt="">
+                <h3>Шпионская Миссия</h3>
+                <p>Коды, задания и секретные операции.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Описание услуги -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content fullscreen">
+        <span class="close close-service" id="closeService">×</span>
+
+        <!-- СЛАЙДЕР -->
+        <div class="slider" id="serviceSlider">
+            <button class="slider-btn left" id="slidePrev">‹</button>
+            <img id="serviceImage" class="service-img" alt="">
+            <button class="slider-btn right" id="slideNext">›</button>
+        </div>
+
+        <h2 id="serviceTitle"></h2>
+        <p id="serviceDescription"></p>
+        <p class="price">Цена: <span id="servicePrice"></span> ₽</p>
+
+        <button class="btn-primary" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Заказ программы -->
+<div class="modal" id="orderModal">
+    <div class="modal-content form-big">
+        <span class="close close-service" id="closeOrder">×</span>
+
+        <h2 class="form-title">Заказать программу</h2>
+        <p class="form-subtitle">Мы уточним детали и подберём лучший вариант</p>
+
+        <form id="orderForm">
+            <label>Выбранная программа</label>
+            <input type="text" id="orderProgram" name="program" readonly>
+
+            <label>Ваше имя</label>
+            <input type="text" name="name" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" required>
+
+            <button class="btn-primary form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Форма заявки -->
+<div class="modal" id="modal">
+    <div class="modal-content form-big">
+        <span class="close close-service" id="closeModal">×</span>
+
+        <h2 class="form-title">Оставить заявку</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <form id="contactForm">
+            <label>Ваше имя</label>
+            <input type="text" name="name" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" required>
+
+            <input type="hidden" name="page" value="Квесты">
+
+            <button class="btn-primary form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h2>Спасибо!</h2>
+        <p>Мы обязательно вам позвоним в самое ближайшее время.</p>
+        <button class="btn-primary" id="closeSuccess">Закрыть</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceImage = document.getElementById("serviceImage");
+    const slidePrev = document.getElementById("slidePrev");
+    const slideNext = document.getElementById("slideNext");
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    if (!serviceImage  !slidePrev  !slideNext || !serviceCards.length) return;
+
+    let slideImages = [];
+    let currentSlide = 0;
+
+    function updateSlide() {
+        if (!slideImages.length) return;
+        serviceImage.src = slideImages[currentSlide].trim();
+    }
+
+    function initSliderFromCard(card) {
+        const imagesAttr = card.dataset.images;
+        if (!imagesAttr) return;
+        slideImages = imagesAttr.split(",");
+        currentSlide = 0;
+        updateSlide();
+    }
+
+    serviceCards.forEach(card => {
+        const btnMore = card.querySelector(".openService");
+        const btnOrder = card.querySelector(".openOrder");
+
+        if (btnMore) {
+            btnMore.addEventListener("click", () => {
+                initSliderFromCard(card);
+            });
+        }
+
+        card.addEventListener("click", (e) => {
+            if (e.target.classList.contains("openService") ||
+                e.target.classList.contains("openOrder")) return;
+            initSliderFromCard(card);
+        });
+    });
+
+    slidePrev.addEventListener("click", () => {
+        if (!slideImages.length) return;
+        currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+        updateSlide();
+    });
+
+    slideNext.addEventListener("click", () => {
+        if (!slideImages.length) return;
+        currentSlide = (currentSlide + 1) % slideImages.length;
+        updateSlide();
+    });
+});
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>

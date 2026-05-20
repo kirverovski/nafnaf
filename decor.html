@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Шары и фотозоны | Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">NAF_NAFIKI <span>SOCHI</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="animators.html">Аниматоры</a>
+            <a href="shows.html">Шоу‑программы</a>
+            <a href="masters.html">Мастер‑классы</a>
+            <a href="quests.html">Квесты</a>
+            <a href="decor.html" class="active">Шары и фотозоны</a>
+            <a href="services.html">Доп. услуги</a>
+        </nav>
+
+        <!-- ВАЖНО: именно id="openModal" -->
+        <button class="btn-primary" id="openModal">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero small-hero">
+    <div class="container">
+        <h1>Шары и фотозоны</h1>
+        <p>Красивое оформление, стильные зоны и праздничная атмосфера.</p>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <h2>Наши фотозоны</h2>
+
+        <div class="grid">
+
+            <!-- ФОТОЗОНА 1 -->
+            <div class="card service-card clickable-card"
+                 data-title="Фотозона «Звёздный Блеск»"
+                 data-description="Стильная фотозона с шарами и подсветкой."
+                 data-price="5000"
+                 data-image="images/decor-stars.jpg">
+                <img src="images/decor-stars.jpg" class="card-img" alt="">
+                <h3>Звёздный Блеск</h3>
+                <p>Шары, свет и стиль.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <!-- ФОТОЗОНА 2 -->
+            <div class="card service-card clickable-card"
+                 data-title="Фотозона «Розовое Облако»"
+                 data-description="Нежная фотозона с пастельными шарами."
+                 data-price="6000"
+                 data-image="images/decor-pink.jpg">
+                <img src="images/decor-pink.jpg" class="card-img" alt="">
+                <h3>Розовое Облако</h3>
+                <p>Нежность и стиль.</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary openOrder">Заказать</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Описание услуги -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content fullscreen">
+        <span class="close close-service" id="closeService">×</span>
+
+        <img id="serviceImage" class="service-img" alt="">
+        <h2 id="serviceTitle"></h2>
+        <p id="serviceDescription"></p>
+        <p class="price">Цена: <span id="servicePrice"></span> ₽</p>
+
+        <button class="btn-primary" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Заказ программы -->
+<div class="modal" id="orderModal">
+    <div class="modal-content form-big">
+        <span class="close close-service" id="closeOrder">×</span>
+
+        <h2 class="form-title">Заказать программу</h2>
+        <p class="form-subtitle">Мы уточним детали и подберём лучший вариант</p>
+
+        <form id="orderForm">
+            <label>Выбранная программа</label>
+            <input type="text" id="orderProgram" name="program" readonly>
+
+            <label>Ваше имя</label>
+            <input type="text" name="name" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" required>
+
+            <button class="btn-primary form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Форма заявки -->
+<div class="modal" id="modal">
+    <div class="modal-content form-big">
+        <span class="close close-service" id="closeModal">×</span>
+
+        <h2 class="form-title">Оставить заявку</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <form id="contactForm">
+            <label>Ваше имя</label>
+            <input type="text" name="name" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" required>
+
+            <input type="hidden" name="page" value="Фотозоны">
+
+            <button class="btn-primary form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h2>Спасибо!</h2>
+        <p>Мы обязательно вам позвоним в самое ближайшее время.</p>
+        <button class="btn-primary" id="closeSuccess">Закрыть</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
