@@ -41,6 +41,84 @@ body {
     font-weight: 600;
 }
 
+/* === КРАСИВОЕ АДАПТИВНОЕ МЕНЮ В ШАПКЕ === */
+
+/* Убираем горизонтальный скролл */
+body {
+    overflow-x: hidden;
+}
+
+/* Контейнер шапки */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* кнопка остаётся справа */
+    gap: 20px;
+}
+
+/* Контейнер меню */
+.header .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100%;
+}
+
+/* Кнопки меню */
+.header .nav a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #333;          /* основной цвет кнопок */
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Наведение */
+.header .nav a:hover {
+    background: #ff4b6a;
+    color: #fff;
+}
+
+/* Активная вкладка */
+.header .nav a.active {
+    background: #ff4b6a;
+    color: #fff;
+}
+
+/* Кнопка "Заказать праздник" — выделенная */
+#openModal {
+    background: #ff4b6a !important;
+    color: #fff !important;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 8px;
+    transition: 0.25s ease;
+    white-space: nowrap;
+}
+
+#openModal:hover {
+    background: #ff2f52 !important;
+    transform: translateY(-2px);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #openModal {
+        order: 10; /* кнопка уходит вниз на мобильных */
+    }
+}
+
 /* === КНОПКИ === */
 .btn-primary {
     background: #ff4b6a;
@@ -224,6 +302,25 @@ body {
     margin-bottom: 20px;
 }
 
+/* === ФОРМАТ 16:9 ДЛЯ ИЗОБРАЖЕНИЯ В МОДАЛКЕ === */
+.modal-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    background: #000;
+}
+
+.modal-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* === ТЕКСТ В МОДАЛКЕ === */
 #serviceTitle {
     font-size: 28px;
@@ -339,4 +436,36 @@ body {
 .service-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+}
+
+/* Контейнер миниатюр */
+.thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Миниатюры */
+.thumbs img.thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+/* Наведение */
+.thumbs img.thumb:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}					
+
+/* Активная миниатюра */
+.thumbs img.thumb.active {
+    opacity: 1;
+    border: 2px solid #ff4081;
 }

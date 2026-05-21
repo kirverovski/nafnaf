@@ -1,3 +1,7 @@
+/* ============================
+   ГЛАВНАЯ МОДАЛКА
+============================ */
+
 const modal = document.getElementById("modal");
 const open1 = document.getElementById("openModal");
 const close = document.getElementById("closeModal");
@@ -5,9 +9,9 @@ const close = document.getElementById("closeModal");
 if (open1) open1.onclick = () => modal.style.display = "flex";
 if (close) close.onclick = () => modal.style.display = "none";
 
-window.onclick = e => {
+window.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
-};
+});
 
 
 /* ============================
@@ -16,16 +20,14 @@ window.onclick = e => {
 
 const successModal = document.getElementById("successModal");
 const closeSuccess = document.getElementById("closeSuccess");
+const closeSuccessBtn = document.getElementById("closeSuccessBtn");
 
 if (closeSuccess) {
     closeSuccess.onclick = () => successModal.style.display = "none";
 }
-
-window.onclick = (e) => {
-    if (e.target === successModal) {
-        successModal.style.display = "none";
-    }
-};
+if (closeSuccessBtn) {
+    closeSuccessBtn.onclick = () => successModal.style.display = "none";
+}
 
 
 /* ============================
@@ -73,34 +75,98 @@ serviceCards.forEach(card => {
     const btnMore = card.querySelector(".openService");
     const btnOrder = card.querySelector(".openOrder");
 
-    // Открыть описание
-    btnMore.onclick = (e) => {
-        e.stopPropagation();
+    // Открыть описание по кнопке "Подробнее"
+    if (btnMore) {
+        btnMore.onclick = (e) => {
+            e.stopPropagation();
 
-        serviceImage.src = card.dataset.image;
-        serviceTitle.textContent = card.dataset.title;
+            // === ГАЛЕРЕЯ (БЕЗОПАСНАЯ ВЕРСИЯ) ===
+            const images = card.dataset.images
+                ? card.dataset.images
+                    .split(",")
+                    .map(i => i.trim())
+                    .filter(i => i.length > 0)
+                : [card.querySelector("img").src];
 
-        // ВАЖНО: показываем ПОЛНОЕ описание
-        serviceDescription.innerHTML = card.dataset.full;
+            let currentIndex = 0;
 
-        servicePrice.textContent = card.dataset.price;
+            serviceImage.src = images[currentIndex];
 
-        serviceModal.style.display = "flex";
-    };
+            const thumbs = document.getElementById("thumbs");
+            thumbs.innerHTML = "";
+
+            images.forEach((img, index) => {
+                const thumb = document.createElement("img");
+                thumb.src = img;
+                thumb.classList.add("thumb");
+
+                if (index === 0) thumb.classList.add("active");
+
+                thumb.onclick = () => {
+                    currentIndex = index;
+                    serviceImage.src = images[currentIndex];
+
+                    document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+                    thumb.classList.add("active");
+                };
+
+                thumbs.appendChild(thumb);
+            });
+
+            // === ТЕКСТОВЫЕ ДАННЫЕ ===
+            serviceTitle.textContent = card.dataset.title;
+            serviceDescription.innerHTML = card.dataset.full;
+            servicePrice.textContent = card.dataset.price;
+
+            serviceModal.style.display = "flex";
+        };
+    }
 
     // Открыть заказ
-    btnOrder.onclick = (e) => {
-        e.stopPropagation();
-        document.getElementById("orderProgram").value = card.dataset.title;
-        orderModal.style.display = "flex";
-    };
+    if (btnOrder) {
+        btnOrder.onclick = (e) => {
+            e.stopPropagation();
+            document.getElementById("orderProgram").value = card.dataset.title;
+            orderModal.style.display = "flex";
+        };
+    }
 
     // Клик по карточке = открыть описание
     card.onclick = (e) => {
         if (e.target.classList.contains("openService") ||
             e.target.classList.contains("openOrder")) return;
 
-        serviceImage.src = card.dataset.image;
+        // === ГАЛЕРЕЯ (БЕЗОПАСНАЯ ВЕРСИЯ) ===
+        const images = card.dataset.images
+            ? card.dataset.images.split(",").map(i => i.trim())
+            : [card.querySelector("img").src];
+
+        let currentIndex = 0;
+
+        serviceImage.src = images[currentIndex];
+
+        const thumbs = document.getElementById("thumbs");
+        thumbs.innerHTML = "";
+
+        images.forEach((img, index) => {
+            const thumb = document.createElement("img");
+            thumb.src = img;
+            thumb.classList.add("thumb");
+
+            if (index === 0) thumb.classList.add("active");
+
+            thumb.onclick = () => {
+                currentIndex = index;
+                serviceImage.src = images[currentIndex];
+
+                document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+                thumb.classList.add("active");
+            };
+
+            thumbs.appendChild(thumb);
+        });
+
+        // === ТЕКСТОВЫЕ ДАННЫЕ ===
         serviceTitle.textContent = card.dataset.title;
         serviceDescription.innerHTML = card.dataset.full;
         servicePrice.textContent = card.dataset.price;
@@ -109,7 +175,6 @@ serviceCards.forEach(card => {
     };
 });
 
-// Закрытие модалки
 if (closeService) {
     closeService.onclick = () => serviceModal.style.display = "none";
 }
@@ -119,6 +184,7 @@ window.addEventListener("click", (e) => {
         serviceModal.style.display = "none";
     }
 });
+
 
 /* ============================
    ОТКРЫТИЕ ФОРМЫ ИЗ ОПИСАНИЯ
@@ -165,21 +231,15 @@ if (orderForm) {
             successModal.style.display = "flex";
         }
     });
-};
+}
 
-// Открытие модалки по клику на любую кнопку с классом openModalBtn
+
+/* ============================
+   ОТКРЫТИЕ МОДАЛКИ ПО КНОПКАМ .openModalBtn
+============================ */
+
 document.querySelectorAll(".openModalBtn").forEach(btn => {
     btn.addEventListener("click", () => {
-        document.getElementById("modal").style.display = "flex";
+        if (modal) modal.style.display = "flex";
     });
 });
-
-// Закрытие модалки
-document.getElementById("closeModal").onclick = () => {
-    document.getElementById("modal").style.display = "none";
-};
-
-// Закрытие модалки "Спасибо"
-document.getElementById("closeSuccessBtn").onclick = () => {
-    document.getElementById("successModal").style.display = "none";
-};

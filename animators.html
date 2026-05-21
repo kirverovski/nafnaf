@@ -109,21 +109,29 @@
 
 <!-- МОДАЛКА: Описание услуги -->
 <div class="modal" id="serviceModal">
-    <div class="modal-content fullscreen">
+    <div class="modal-content fullscreen zoom-in">
         <span class="close close-service" id="closeService">×</span>
 
-        <img id="serviceImage" class="service-img" alt="">
-        <h2 id="serviceTitle"></h2>
-        <p id="serviceDescription"></p>
-        <p class="price">Цена: <span id="servicePrice"></span> ₽</p>
+        <!-- Контейнер 16:9 -->
+        <div class="modal-image-wrapper">
+            <img id="serviceImage" class="service-img" alt="">
+        </div>
 
-        <button class="btn-primary" id="orderFromService">Заказать</button>
+        <!-- Миниатюры -->
+        <div id="thumbs" class="thumbs"></div>
+
+        <h2 id="serviceTitle"></h2>
+        <div id="serviceDescription"></div>
+
+        <p class="price">Цена: <span id="servicePrice"></span></p>
+
+        <button class="btn-primary glow" id="orderFromService">Заказать</button>
     </div>
 </div>
 
-<!-- МОДАЛКА: Заказ программы -->
+<!-- МОДАЛКА: Заказ -->
 <div class="modal" id="orderModal">
-    <div class="modal-content form-big">
+    <div class="modal-content form-big zoom-in">
         <span class="close close-service" id="closeOrder">×</span>
 
         <h2 class="form-title">Заказать программу</h2>
@@ -139,14 +147,14 @@
             <label>Телефон</label>
             <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
 
-            <button class="btn-primary form-btn">Отправить заявку</button>
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
         </form>
     </div>
 </div>
 
-<!-- МОДАЛКА: Форма заявки -->
+<!-- МОДАЛКА: Заявка -->
 <div class="modal" id="modal">
-    <div class="modal-content form-big">
+    <div class="modal-content form-big zoom-in">
         <span class="close close-service" id="closeModal">×</span>
 
         <h2 class="form-title">Оставить заявку</h2>
@@ -159,22 +167,24 @@
             <label>Телефон</label>
             <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
 
-            <input type="hidden" name="page" value="Аниматоры">
+            <input type="hidden" name="page" value="Шоу‑программы">
 
-            <button class="btn-primary form-btn">Отправить заявку</button>
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
         </form>
     </div>
 </div>
 
 <!-- МОДАЛКА: Спасибо -->
 <div class="modal" id="successModal">
-    <div class="modal-content">
-        <h2>Спасибо!</h2>
-        <p>Мы обязательно вам позвоним в самое ближайшее время.</p>
-        <button class="btn-primary" id="closeSuccess">Закрыть</button>
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeSuccess">×</span>
+
+        <h2 class="form-title">Спасибо!</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <button class="btn-primary glow form-btn" id="closeSuccessBtn">Закрыть</button>
     </div>
 </div>
-
 <script src="js/script.js"></script>
 </body>
 </html>
