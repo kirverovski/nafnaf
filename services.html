@@ -28,60 +28,98 @@
     </div>
 </header>
 
-<section class="hero small-hero">
+<section class="hero small-hero reveal">
     <div class="container">
-        <h1>Дополнительные услуги</h1>
-        <p>Полный комплект для идеального праздника — оформление, фото, сладости и многое другое.</p>
+        <h1 class="reveal">Дополнительные услуги</h1>
+        <p class="fade-in">Полный комплект для идеального праздника — оформление, фото, сладости и многое другое.</p>
     </div>
 </section>
 
 <section class="categories">
     <div class="container">
-        <h2>Что можно добавить к празднику</h2>
+        <h2 class="reveal">Что можно добавить к празднику</h2>
 
         <div class="grid">
 
-            <!-- ОФОРМЛЕНИЕ ШАРАМИ -->
-            <div class="card service-card clickable-card"
-                 data-title="Оформление шарами"
-                 data-description="Гирлянды, арки, цифры, фотозоны — оформление под любой стиль и бюджет."
-                 data-price="от 3000"
-                 data-image="images/service-balloons.jpg">
-                <img src="images/service-balloons.jpg" class="card-img" alt="">
-                <h3>Оформление шарами</h3>
-                <p>Гирлянды, арки, цифры, фотозоны — под любой стиль и бюджет.</p>
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Сладкая вата"
+                 data-description="Воздушная сладкая вата — классика любого праздника!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Сладкая вата готовится прямо на глазах у детей — это всегда вызывает восторг! Можно выбрать обычную или цветную вату.</p>
 
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary openOrder">Заказать</button>
-                </div>
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li><b>Обычная вата:</b> 5 500 ₽</li>
+                     <li><b>Цветная вата:</b> 6 500 ₽</li>
+                     <li>Аппарат + оператор</li>
+                     <li>Неограниченное количество сахарной ваты</li>
+                     <li>Палочки для подачи</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>40–60 минут работы аппарата</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>5 500 – 6 500 ₽</b> в зависимости от вида</p>
+                 "
+                 data-price="5 500 – 6 500 ₽"
+                 data-images="images/cotton-candy.jpg">
+
+                 <img src="images/cotton-candy.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Сладкая вата</h3>
+                 <p class="fade-in">Обычная или цветная — всегда праздник!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
             </div>
 
-            <!-- ФОТОГРАФ -->
-            <div class="card service-card clickable-card"
-                 data-title="Фотограф"
-                 data-description="Профессиональная съёмка праздника, обработка, ретушь и готовые фото в срок."
-                 data-price="от 2500"
-                 data-image="images/service-photo.jpg">
-                <img src="images/service-photo.jpg" class="card-img" alt="">
-                <h3>Фотограф</h3>
-                <p>Профессиональная съёмка праздника, обработка и готовые фото.</p>
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Попкорн"
+                 data-description="Сладкий или солёный попкорн — любимое лакомство детей и взрослых!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Аппарат для приготовления свежего ароматного попкорна прямо на вашем празднике! Дети наблюдают за процессом и получают тёплое хрустящее угощение.</p>
 
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary openOrder">Заказать</button>
-                </div>
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li><b>Солёный попкорн:</b> 6 500 ₽</li>
+                     <li><b>Сладкий попкорн:</b> 7 500 ₽</li>
+                     <li>Аппарат + оператор</li>
+                     <li>Неограниченное количество попкорна</li>
+                 <li>Пакетик для подачи</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час работы аппарата</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>6 500 – 7 500 ₽</b> в зависимости от вкуса</p>
+                 "
+                 data-price="6 500 – 7 500 ₽"
+                 data-images="images/popcorn.jpg">
+            
+                 <img src="images/popcorn.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Попкорн</h3>
+                 <p class="fade-in">Сладкий или солёный — свежий и ароматный!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
             </div>
 
             <!-- ВИДЕОГРАФ -->
-            <div class="card service-card clickable-card"
+            <div class="card service-card clickable-card reveal stagger"
                  data-title="Видеограф"
                  data-description="Красивый видеоролик с праздника, монтаж, цветокоррекция и музыка."
                  data-price="от 3500"
                  data-image="images/service-video.jpg">
                 <img src="images/service-video.jpg" class="card-img" alt="">
-                <h3>Видеограф</h3>
-                <p>Красивый видеоролик с праздника, монтаж и цветокоррекция.</p>
+                <h3 class="reveal">Видеограф</h3>
+                <p class="fade-in">Красивый видеоролик с праздника, монтаж и цветокоррекция.</p>
 
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
@@ -89,15 +127,186 @@
                 </div>
             </div>
 
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Диджей"
+                 data-description="Профессиональный DJ с аппаратурой и подборкой треков!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Диджей создаёт атмосферу праздника: современная музыка, детские хиты, танцевальные треки и интерактивы. Подходит для любых мероприятий.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Профессиональная аппаратура</li>
+                     <li>Подборка треков под возраст</li>
+                     <li>Интерактивы и танцевальные паузы</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>4 500 ₽ / час</b></p>
+                 "
+                 data-price="4 500 ₽"
+                 data-images="images/dj.jpg">
+
+                 <img src="images/dj.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Диджей</h3>
+                 <p class="fade-in">Музыка, драйв и атмосфера!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Дополнительные элементы для программ"
+                 data-description="Усиление любой анимации или шоу: аквагрим, пузыри, параллон, спецэффекты!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Вы можете усилить любую анимационную или шоу‑программу дополнительными эффектами и мини‑блоками. Это делает праздник ярче, динамичнее и насыщеннее.</p>
+
+                 <h3>Доступные элементы</h3>
+                 <ul>
+                     <li><b>Элементы аквагрима:</b> 2 500 ₽ (в часе анимации)</li>
+                     <li><b>Элементы мыльных пузырей:</b> 2 500 ₽ (20 минут)</li>
+                     <li><b>Генератор мыльных пузырей:</b> 2 500 ₽ (20 минут)</li>
+                     <li><b>Элементы параллонового шоу:</b> 2 600 ₽</li>
+                     <li><b>Боевой лазер в программу:</b> 2 000 ₽</li>
+                     <li><b>Дым‑пушка в программу:</b> 2 000 ₽</li>
+                 </ul>
+
+                 <h3>Как это работает</h3>
+                 <p>Любой элемент добавляется в основную программу и проводится аниматором или техническим специалистом. Можно комбинировать несколько эффектов.</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>2 000 – 2 600 ₽</b> в зависимости от выбранного элемента</p>
+                 "
+                 data-price="2 000 – 2 600 ₽"
+                 data-images="images/addons.jpg">
+
+                 <img src="images/addons.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Доп. элементы для программ</h3>
+                 <p class="fade-in">Аквагрим, пузыри, параллон, спецэффекты!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                data-title="Аквагрим"
+                 data-description="Профессиональный аквагрим — яркие образы и безопасные краски!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Аквагрим — это яркие и безопасные рисунки на лице и руках. Художник создаёт образы животных, супергероев, принцесс и многое другое.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Профессиональные гипоаллергенные краски</li>
+                     <li>Быстрые и сложные рисунки</li>
+                     <li>Художник‑аквагример</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>5 100 ₽ / час</b></p>
+                 "
+                 data-price="5 100 ₽"
+                 data-images="images/aquagrim.jpg">
+
+                 <img src="images/aquagrim.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Аквагрим</h3>
+                 <p class="fade-in">Яркие и безопасные рисунки!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Караоке‑вечеринка"
+                 data-description="Диджей, профессиональное оборудование и экран с текстом песен!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Профессиональный диджей</li>
+                     <li>Музыкальная аппаратура</li>
+                     <li>Микрофоны</li>
+                     <li>Экран для вывода текста песен</li>
+                     <li>Большая библиотека треков</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>7 000 ₽ / час</b></p>
+                 "
+                 data-price="7 000 ₽"
+                 data-images="images/karaoke.jpg">
+
+                 <img src="images/karaoke.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Караоке‑вечеринка</h3>
+                 <p class="fade-in">Диджей, экран и любимые песни!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+        
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Бьюти‑бар"
+                 data-description="Профессиональный детский бьюти‑бар: блёстки, прически, образы!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Бьюти‑бар — это стильная зона красоты, где дети могут выбрать блёстки, прически, лёгкий макияж и создать праздничный образ. Идеально для девочек и тематических вечеринок.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Глиттер‑макияж</li>
+                     <li>Лёгкие прически и украшения</li>
+                     <li>Блёстки для волос</li>
+                     <li>Профессиональные материалы</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>7 000 ₽ / час</b></p>
+                 "
+                 data-price="7 000 ₽"
+                 data-images="images/beauty-bar.jpg">
+
+                 <img src="images/beauty-bar.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Бьюти‑бар</h3>
+                 <p class="fade-in">Глиттер, прически и праздничные образы!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
             <!-- СЛАДКИЙ СТОЛ -->
-            <div class="card service-card clickable-card"
+            <div class="card service-card clickable-card reveal stagger"
                  data-title="Сладкий стол"
                  data-description="Капкейки, кейк‑попсы, печенье, напитки — оформление в стиле праздника."
                  data-price="от 3000"
                  data-image="images/service-candybar.jpg">
                 <img src="images/service-candybar.jpg" class="card-img" alt="">
-                <h3>Сладкий стол</h3>
-                <p>Капкейки, кейк‑попсы, печенье, напитки — оформление в стиле праздника.</p>
+                <h3 class="reveal">Сладкий стол</h3>
+                <p class="fade-in">Капкейки, кейк‑попсы, печенье, напитки — оформление в стиле праздника.</p>
 
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
@@ -106,14 +315,14 @@
             </div>
 
             <!-- ТОРТ -->
-            <div class="card service-card clickable-card"
+            <div class="card service-card clickable-card reveal stagger"
                  data-title="Торт на заказ"
                  data-description="Индивидуальный дизайн, натуральные ингредиенты, доставка и оформление."
                  data-price="от 2500"
                  data-image="images/service-cake.jpg">
                 <img src="images/service-cake.jpg" class="card-img" alt="">
-                <h3>Торт на заказ</h3>
-                <p>Индивидуальный дизайн, натуральные ингредиенты, доставка.</p>
+                <h3 class="reveal">Торт на заказ</h3>
+                <p class="fade-in">Индивидуальный дизайн, натуральные ингредиенты, доставка.</p>
 
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
@@ -122,14 +331,14 @@
             </div>
 
             <!-- АРЕНДА ОБОРУДОВАНИЯ -->
-            <div class="card service-card clickable-card"
+            <div class="card service-card clickable-card reveal stagger"
                  data-title="Аренда оборудования"
                  data-description="Колонки, дым‑машина, проектор, свет — всё для яркого праздника."
                  data-price="от 1500"
                  data-image="images/service-equipment.jpg">
                 <img src="images/service-equipment.jpg" class="card-img" alt="">
-                <h3>Аренда оборудования</h3>
-                <p>Колонки, дым‑машина, проектор, свет — всё для яркого праздника.</p>
+                <h3 class="reveal">Аренда оборудования</h3>
+                <p class="fade-in">Колонки, дым‑машина, проектор, свет — всё для яркого праздника.</p>
 
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>

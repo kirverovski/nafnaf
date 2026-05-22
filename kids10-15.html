@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Шары и фотозоны | Праздники в Сочи</title>
+    <title>Праздники для взрослых | Праздники в Сочи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,63 +20,43 @@
             <a href="shows.html">Шоу‑программы</a>
             <a href="masters.html">Мастер‑классы</a>
             <a href="quests.html">Квесты</a>
-            <a href="decor.html" class="active">Шары и фотозоны</a>
+            <a href="decor.html">Шары и фотозоны</a>
             <a href="services.html">Доп. услуги</a>
         </nav>
 
-        <!-- ВАЖНО: именно id="openModal" -->
         <button class="btn-primary" id="openModal">Заказать праздник</button>
     </div>
 </header>
 
 <section class="hero small-hero reveal">
     <div class="container">
-        <h1 class="reveal">Шары и фотозоны</h1>
-        <p class="fade-in">Красивое оформление, стильные зоны и праздничная атмосфера.</p>
+        <h1 class="reveal">Праздники для детей от 10 до 15 лет</h1>
+        <p class="fade-in">Современные подростковые форматы: челленджи, мафия, караоке, интерактивы и драйвовые программы.</p>
     </div>
 </section>
 
 <section class="categories">
     <div class="container">
-        <h2 class="reveal">Наши фотозоны</h2>
+        <h2 class="reveal">Популярные программы</h2>
 
+        <!-- ВАЖНО: используем .grid — как в quests.html -->
         <div class="grid">
 
-            <!-- ФОТОЗОНА 1 -->
-            <div class="card service-card clickable-card reveal stagger"
-                 data-title="Фотозона «Звёздный Блеск»"
-                 data-description="Стильная фотозона с шарами и подсветкой."
-                 data-price="5000"
-                 data-image="images/decor-stars.jpg">
-                <img src="images/decor-stars.jpg" class="card-img" alt="">
-                <h3 class="reveal">Звёздный Блеск</h3>
-                <p class="fade-in">Шары, свет и стиль.</p>
+            <!-- ===================================================== -->
+            <!-- ВСТАВЛЯЙ КАРТОЧКИ СЮДА                                -->
+            <!-- Например: Мафия, Караоке, Челлендж-вечеринка, Квесты  -->
+            <!-- Просто копируй карточки из других страниц             -->
+            <!-- ===================================================== -->
 
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary openOrder">Заказать</button>
-                </div>
-            </div>
-
-            <!-- ФОТОЗОНА 2 -->
-            <div class="card service-card clickable-card reveal stagger"
-                 data-title="Фотозона «Розовое Облако»"
-                 data-description="Нежная фотозона с пастельными шарами."
-                 data-price="6000"
-                 data-image="images/decor-pink.jpg">
-                <img src="images/decor-pink.jpg" class="card-img" alt="">
-                <h3 class="reveal">Розовое Облако</h3>
-                <p class="fade-in">Нежность и стиль.</p>
-
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary openOrder">Заказать</button>
-                </div>
-            </div>
+            <!-- ПРИМЕР КОММЕНТАРИЯ:
+            Вставь сюда карточку из shows.html:
+            <div class="card service-card ...">...</div>
+            -->
 
         </div>
     </div>
 </section>
+
 
 <!-- МОДАЛКА: Описание услуги -->
 <div class="modal" id="serviceModal">
@@ -111,6 +91,9 @@
         <form id="orderForm">
             <label>Выбранная программа</label>
             <input type="text" id="orderProgram" name="program" readonly>
+
+            <label>Количество участников программы</label>
+            <input type="text" text="text" placeholder="Например: 10" required>
 
             <label>Ваше имя</label>
             <input type="text" name="name" placeholder="Введите имя" required>
@@ -158,5 +141,6 @@
 </div>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>

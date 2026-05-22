@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Праздники для взрослых | Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <img src="images/logo-small.png" alt="Логотип" class="logo-img">
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="animators.html">Аниматоры</a>
+            <a href="shows.html">Шоу‑программы</a>
+            <a href="masters.html">Мастер‑классы</a>
+            <a href="quests.html">Квесты</a>
+            <a href="decor.html">Шары и фотозоны</a>
+            <a href="services.html">Доп. услуги</a>
+        </nav>
+
+        <button class="btn-primary" id="openModal">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero small-hero reveal">
+    <div class="container">
+        <h1 class="reveal">Праздники для взрослых</h1>
+        <p class="fade-in">Современные программы, шоу, ведущие, диджеи и атмосферные развлечения.</p>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <h2 class="reveal">Популярные программы</h2>
+
+        <!-- ВАЖНО: используем .grid — как в quests.html -->
+        <div class="grid">
+
+            <!-- КАРТОЧКА 1 — ПЕННАЯ ВЕЧЕРИНКА -->
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Пенная вечеринка"
+                 data-description="Тонны пушистой пены, водные баттлы и гигантские игрушки!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Пенная вечеринка — это яркое, динамичное и освежающее шоу, идеально подходящее для взрослых мероприятий, корпоративов и летних вечеринок.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                    <li>Пенная пушка высокой мощности</li>
+                    <li>Тонны гипоаллергенной пены</li>
+                    <li>Водные баттлы</li>
+                    <li>Гигантские надувные игрушки</li>
+                    <li>Музыкальное сопровождение</li>
+                 </ul>
+
+                 <h3>Стоимость</h3>
+                 <p><b>9 000 ₽</b> — без ведущего</p>
+                 <p><b>11 000 ₽</b> — с ведущим</p>
+                 "
+                 data-price="9 000 ₽ / 11 000 ₽"
+                 data-images="images/show-foam.jpg">
+
+                <img src="images/show-foam.jpg" class="card-img" alt="">
+                <h3 class="reveal">Пенная вечеринка</h3>
+                <p class="fade-in">Тонны пены, драйв и летняя атмосфера!</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary glow openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Интеллектуально‑психологическая игра «Мафия»"
+                 data-description="Легендарная детективная игра с интригой, ролями и атмосферой расследования!"
+                 data-full="<h3>О программе</h3><p>Город засыпает… просыпается Мафия! Это легендарная игра, которая развивает логику, интуицию, актерское мастерство и умение работать в команде. Идеальный формат для дня рождения, подростковой вечеринки или школьного тимбилдинга!</p><h3>Как проходит игра</h3><ul><li><b>Знакомство и погружение:</b> ведущий создаёт атмосферу детектива и помогает каждому войти в роль.</li><li><b>Объяснение правил:</b> геймлейстер объясняет правила понятно и увлекательно — подходит и новичкам, и опытным игрокам.</li><li><b>Раздача карт:</b> каждый получает свою тайную роль — мирный житель, мафия, шериф, доктор и другие.</li><li><b>Игровой процесс:</b> днём город обсуждает подозреваемых, ночью мафия выходит на охоту. Ведущий держит интригу до финала.</li><li><b>Никто не скучает после выбывания:</b> выбывшие игроки могут стать помощниками ведущего или наблюдателями.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li>
+                 <li><b>Ведущий:</b> харизматичный геймлейстер.</li><li><b>Возраст:</b> от 7 лет и старше.</li><li><b>Реквизит:</b> дизайнерские карты и маски для ночного этапа.</li></ul><h3>Стоимость</h3><p><b>5 000 ₽</b> — фиксированная цена за программу</p>"
+                 data-price="5 000 ₽">
+
+                <img src="images/show-mafia.jpg" class="card-img" alt="">
+                <h3 class="reveal">Игра «Мафия»</h3>
+                <p class="fade-in">Интрига, роли, расследования и настоящая детективная атмосфера!</p>
+
+                <div class="service-card-buttons">
+                    <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-primary glow openOrder">Заказать</button>
+                </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Караоке‑вечеринка"
+                 data-description="Диджей, профессиональное оборудование и экран с текстом песен!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Профессиональный диджей</li>
+                     <li>Музыкальная аппаратура</li>
+                     <li>Микрофоны</li>
+                     <li>Экран для вывода текста песен</li>
+                     <li>Большая библиотека треков</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>7 000 ₽ / час</b></p>
+                 "
+                 data-price="7 000 ₽"
+                 data-images="images/karaoke.jpg">
+
+                 <img src="images/karaoke.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Караоке‑вечеринка</h3>
+                 <p class="fade-in">Диджей, экран и любимые песни!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
+            <div class="card service-card clickable-card pop reveal stagger"
+                 data-title="Диджей"
+                 data-description="Профессиональный DJ с аппаратурой и подборкой треков!"
+                 data-full="
+                 <h3>О программе</h3>
+                 <p>Диджей создаёт атмосферу праздника: современная музыка, детские хиты, танцевальные треки и интерактивы. Подходит для любых мероприятий.</p>
+
+                 <h3>Что входит</h3>
+                 <ul>
+                     <li>Профессиональная аппаратура</li>
+                     <li>Подборка треков под возраст</li>
+                     <li>Интерактивы и танцевальные паузы</li>
+                 </ul>
+
+                 <h3>Длительность</h3>
+                 <p>1 час</p>
+
+                 <h3>Стоимость</h3>
+                 <p><b>4 500 ₽ / час</b></p>
+                 "
+                 data-price="4 500 ₽"
+                 data-images="images/dj.jpg">
+
+                 <img src="images/dj.jpg" class="card-img" alt="">
+                 <h3 class="reveal">Диджей</h3>
+                 <p class="fade-in">Музыка, драйв и атмосфера!</p>
+
+                 <div class="service-card-buttons">
+                     <button class="btn-outline openService">Подробнее</button>
+                     <button class="btn-primary glow openOrder">Заказать</button>
+                 </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Описание услуги -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content fullscreen zoom-in">
+        <span class="close close-service" id="closeService">×</span>
+
+        <!-- Контейнер 16:9 -->
+        <div class="modal-image-wrapper">
+            <img id="serviceImage" class="service-img" alt="">
+        </div>
+
+        <!-- Миниатюры -->
+        <div id="thumbs" class="thumbs"></div>
+
+        <h2 id="serviceTitle"></h2>
+        <div id="serviceDescription"></div>
+
+        <p class="price">Цена: <span id="servicePrice"></span></p>
+
+        <button class="btn-primary glow" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Заказ -->
+<div class="modal" id="orderModal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeOrder">×</span>
+
+        <h2 class="form-title">Заказать программу</h2>
+        <p class="form-subtitle">Мы уточним детали и подберём лучший вариант</p>
+
+        <form id="orderForm">
+            <label>Выбранная программа</label>
+            <input type="text" id="orderProgram" name="program" readonly>
+
+            <label>Количество участников программы</label>
+            <input type="text" text="text" placeholder="Например: 10" required>
+
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите имя" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Заявка -->
+<div class="modal" id="modal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeModal">×</span>
+
+        <h2 class="form-title">Оставить заявку</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <form id="contactForm">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите имя" required>
+
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+
+            <input type="hidden" name="page" value="Шоу‑программы">
+
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeSuccess">×</span>
+
+        <h2 class="form-title">Спасибо!</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+
+        <button class="btn-primary glow form-btn" id="closeSuccessBtn">Закрыть</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
