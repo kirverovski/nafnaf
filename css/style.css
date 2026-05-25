@@ -1056,3 +1056,100 @@ body {
     gap: 20px;
     justify-content: center;
 }
+
+/* === НОВЫЕ КАРТОЧКИ С ТЕКСТОМ И КНОПКОЙ НА ИЗОБРАЖЕНИИ === */
+.anim-card {
+    position: relative;
+    display: block;
+    height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.anim-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+/* Фото */
+.anim-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Затемнение */
+.anim-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+/* Контент поверх фото */
+.anim-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* ← центр по вертикали */
+    align-items: center;       /* ← центр по горизонтали */
+    text-align: center;        /* ← выравнивание текста */
+
+    padding: 20px;
+    gap: 12px;
+
+    background: rgba(0,0,0,0.45); /* ← равномерное затемнение */
+    color: #fff;
+}
+
+.anim-card-overlay h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.anim-card-overlay p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* === КНОПКА APPLE GLASS НА КАРТОЧКЕ === */
+.glass-btn {
+    position: relative;
+    overflow: hidden;
+
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.25),
+        0 6px 20px rgba(0, 0, 0, 0.25);
+
+    color: #fff;
+    cursor: pointer;
+    transition: 0.35s ease;
+    width: fit-content;
+}
+
+.glass-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.35),
+        0 10px 28px rgba(0, 0, 0, 0.35);
+}

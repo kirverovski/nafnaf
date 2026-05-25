@@ -1,0 +1,14 @@
+{
+  "name": "Аниматоры Сочи",
+  "short_name": "Аниматоры",
+  "icons": [
+    {
+      "src": "site-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
