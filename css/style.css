@@ -724,8 +724,8 @@ body {
     /* Логотип */
     header img,
     .logo img {
-        max-width: 140px;
-        height: auto;
+        max-width: 400px;
+        height: 200px;
         display: block;
         margin: 0 auto 6px;
     }
@@ -996,7 +996,7 @@ body {
     border-radius: 32px;
     text-align: center;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
@@ -1131,7 +1131,7 @@ body {
     font-weight: 700;
     border-radius: 22px;
 
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
@@ -1190,4 +1190,150 @@ body {
         margin-right: 0 !important;
         align-self: center !important;
     }
+}
+
+/* === КОНТРАСТНОЕ AMBER GLASS ДЛЯ КНОПКИ "ЗАКАЗАТЬ ПРАЗДНИК" === */
+#openModal {
+    background: rgba(255, 140, 0, 0.35) !important; /* янтарное стекло */
+    border: 1px solid rgba(255, 200, 120, 0.55) !important; /* золотистая рамка */
+
+    /* НОВЫЙ ТЕКСТ — максимально читаемый, тёплый */
+    color: #4a2a00 !important;
+
+    box-shadow:
+        inset 0 0 18px rgba(255, 200, 120, 0.35),
+        0 8px 28px rgba(0, 0, 0, 0.35),
+        0 0 14px rgba(255, 200, 120, 0.55) !important;
+}
+
+/* ЕЩЁ БОЛЕЕ НАСЫЩЕННЫЙ ХОВЕР */
+#openModal:hover {
+    background: rgba(255, 140, 0, 0.80) !important; /* почти неоновый amber */
+    box-shadow:
+        inset 0 0 30px rgba(255, 200, 120, 0.65),
+        0 14px 40px rgba(0, 0, 0, 0.50),
+        0 0 24px rgba(255, 200, 120, 0.95) !important;
+}
+
+
+
+/* === ТЁПЛОЕ GOLDEN GLASS ДЛЯ КНОПОК НАВИГАЦИИ === */
+.header .nav a {
+    background: rgba(255, 220, 160, 0.28) !important; /* тёплое золотистое стекло */
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+
+    /* читаемый графитовый текст */
+    color: #3a2f1f !important;
+
+    box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.18),
+        0 6px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ЕЩЁ БОЛЕЕ НАСЫЩЕННЫЙ ХОВЕР ДЛЯ НАВИГАЦИИ */
+.header .nav a:hover {
+    background: rgba(255, 220, 160, 0.65) !important; /* заметно ярче */
+    color: #2a2216 !important;
+}
+
+/* АКТИВНАЯ ВКЛАДКА — МАКСИМАЛЬНО ВЫДЕЛЕНА */
+.header .nav a.active {
+    background: rgba(255, 220, 160, 0.90) !important; /* почти плотный золотистый */
+    border-color: rgba(255, 255, 255, 0.85) !important;
+    color: #1a140d !important; /* самый контрастный текст */
+}
+
+/* === Плавающая кнопка === */
+.contact-float-btn {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255, 140, 0, 0.75);
+    border: 1px solid rgba(255, 200, 120, 0.7);
+    color: #3a1f00;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    transition: 0.25s;
+    z-index: 9999;
+}
+
+.contact-float-btn:hover {
+    background: rgba(255, 140, 0, 0.95);
+}
+
+/* === Модальное окно === */
+.contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.contact-modal {
+    background: rgba(255, 220, 160, 0.35);
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 16px;
+    padding: 22px;
+    width: 300px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+.contact-modal h3 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    color: #f4dfa7;
+}
+
+/* Иконки */
+.contact-icons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+    background: rgba(255, 220, 160, 0.45);
+    border: 1px solid rgba(255,255,255,0.55);
+    color: #3a2f1f;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    line-height: 58px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin: 6px;
+}
+
+.contact-icon:hover {
+    background: rgba(255, 220, 160, 0.75);
+}
+
+/*логотипы мессенджеров*/
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.float-icon {
+    width: 90%;
+    height: 70%;
+    object-fit: contain;
+    pointer-events: none; /* чтобы клик проходил по кнопке */
+    margin-top: 7px;
 }

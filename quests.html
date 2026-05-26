@@ -12,6 +12,52 @@
     <link rel="apple-touch-icon" sizes="180x180" href="site-icon.png">
     <link rel="manifest" href="site.webmanifest">
 </head>
+
+<!-- Плавающая кнопка -->
+<button class="contact-float-btn">
+    <img src="logotip/contact-button.png" alt="Связаться" class="float-icon">
+</button>
+
+<!-- Модальное окно связи -->
+<div class="contact-modal-overlay">
+    <div class="contact-modal">
+        <h3>Свяжитесь с нами удобным вам способом</h3>
+
+        <div class="contact-icons">
+
+            <!-- Telegram -->
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+               class="contact-icon tg" target="_blank">
+                <img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img">
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+               class="contact-icon wa" target="_blank">
+                <img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img">
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/naf_nafiki.sochi?igsh=ZzZyNGlvZHIyeDZq&utm_source=ig_contact_invite" 
+               class="contact-icon insta" target="_blank">
+                <img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img">
+            </a>
+
+            <!-- MAX -->
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M" 
+               class="contact-icon max" target="_blank">
+                <img src="logotip/max-logo.png" alt="MAX" class="icon-img">
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+79654745262" class="contact-icon call">
+                <img src="logotip/phone-icon.png" alt="Call" class="icon-img">
+            </a>
+
+        </div>
+    </div>
+</div>
+
 <body>
 
 <header class="header">
@@ -367,5 +413,25 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const floatBtn = document.querySelector('.contact-float-btn');
+    const modal = document.querySelector('.contact-modal-overlay');
+
+    if (!floatBtn || !modal) return; // защита от ошибок
+
+    floatBtn.onclick = () => {
+        modal.style.display = 'flex';
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    };
+
+});
+</script>
+
 </body>
 </html>
