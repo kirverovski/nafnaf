@@ -1045,10 +1045,14 @@ body {
 }
 
 .after-hero-bg {
-    background: linear-gradient(to bottom, #a9c4ff 0%, #c9dcff 40%, #a9c4ff 100%);
+    background: linear-gradient(
+        to bottom,
+        #f9efd6 0%,   /* светлее */
+        #f5e3bd 40%, /* мягкий тёплый оттенок */
+        #f9efd6 100% /* светлый золотистый */
+    );
     padding: 80px 0;
 }
-
 .category-buttons {
     margin-top: 40px;
     display: flex;
@@ -1215,8 +1219,6 @@ body {
         0 0 24px rgba(255, 200, 120, 0.95) !important;
 }
 
-
-
 /* === ТЁПЛОЕ GOLDEN GLASS ДЛЯ КНОПОК НАВИГАЦИИ === */
 .header .nav a {
     background: rgba(255, 220, 160, 0.28) !important; /* тёплое золотистое стекло */
@@ -1336,4 +1338,46 @@ body {
     object-fit: contain;
     pointer-events: none; /* чтобы клик проходил по кнопке */
     margin-top: 7px;
+}
+
+/* === УНИКАЛЬНЫЕ ФОНЫ ДЛЯ КАЖДОЙ СТРАНИЦЫ === */
+
+.hero-animators {
+    background-image: url("../images/hero-animators.jpg") !important;
+}
+
+.hero-decor {
+    background-image: url("../images/hero-decor.jpg") !important;
+}
+
+.hero-masters {
+    background-image: url("../images/hero-masters.jpg") !important;
+}
+
+.hero-quests {
+    background-image: url("../images/hero-quests.jpg") !important;
+}
+
+.hero-services {
+    background-image: url("../images/hero-services.jpg") !important;
+}
+
+.hero-shows {
+    background-image: url("../images/hero-shows.jpg") !important;
+}
+
+.hero-adults {
+    background-image: url("../images/hero-adults.jpg") !important;
+}
+
+.hero-kids1 {
+    background-image: url("../images/hero-kids1.jpg") !important;
+}
+
+.hero-kids2 {
+    background-image: url("../images/hero-kids2.jpg") !important;
+}
+
+.hero-kids3 {
+    background-image: url("../images/hero-kids3.jpg") !important;
 }
