@@ -1381,3 +1381,63 @@ body {
 .hero-kids3 {
     background-image: url("../images/hero-kids3.jpg") !important;
 }
+
+.contact-helper-area {
+    width: 100%;
+    height: auto; /* Автоматическая высота */
+    min-height: 110px; /* Минимальная высота, как у тебя */
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    resize: none;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #fafafa;
+    margin-bottom: 10px;
+
+    box-sizing: border-box;
+
+    /* Убираем вертикальный скролл */
+    overflow-y: hidden;
+}
+
+.copy-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.copy-btn:hover {
+    background: #ff5a4a;
+}
+
+.copy-confirm {
+    display: none;
+    text-align: center;
+    color: #28a745;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+/* Заголовок модального окна */
+.contact-modal h3 {
+    font-size: 20px;      /* Было меньше — теперь крупнее */
+    font-weight: 600;     /* Чуть жирнее, но не слишком */
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* Текст "Чтобы мы быстрее..." */
+.contact-helper-text {
+    font-weight: 600;     /* Делаем жирным */
+    font-size: 15px;      /* Чуть крупнее */
+    margin-bottom: 8px;
+    text-align: left;
+    color: #F4DFA7
+}

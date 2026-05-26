@@ -21,24 +21,43 @@
 <!-- Модальное окно связи -->
 <div class="contact-modal-overlay">
     <div class="contact-modal">
+
+        <!-- Заголовок -->
         <h3>Свяжитесь с нами удобным вам способом</h3>
 
+        <!-- Твой текущий текст (он остаётся) -->
+        <p class="contact-helper-text">
+            Чтобы мы быстрее смогли вам помочь — начните диалог с:
+        </p>
+
+        <!-- Новый текстовый блок -->
+        <textarea id="contactText" class="contact-helper-area" readonly>
+Здравствуйте! Ознакомившись с информацией на вашем сайте, хочу уточнить некоторые детали по услугам. Меня интересует:
+        </textarea>
+
+        <!-- Кнопка копирования -->
+        <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
+
+        <!-- Подтверждение копирования -->
+        <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
+
+        <!-- Иконки контактов -->
         <div class="contact-icons">
 
             <!-- Telegram -->
-            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
                class="contact-icon tg" target="_blank">
                 <img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img">
             </a>
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
                class="contact-icon wa" target="_blank">
                 <img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img">
             </a>
 
             <!-- Instagram -->
-            <a href="https://www.instagram.com/naf_nafiki.sochi?igsh=ZzZyNGlvZHIyeDZq&utm_source=ig_contact_invite" 
+            <a href="https://www.instagram.com/naf_nafiki.sochi" 
                class="contact-icon insta" target="_blank">
                 <img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img">
             </a>
@@ -49,8 +68,9 @@
                 <img src="logotip/max-logo.png" alt="MAX" class="icon-img">
             </a>
 
-            <!-- Phone -->
-            <a href="tel:+79654745262" class="contact-icon call">
+            <!-- SMS -->
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
+               class="contact-icon call">
                 <img src="logotip/phone-icon.png" alt="Call" class="icon-img">
             </a>
 
@@ -502,6 +522,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+<script>
+function copyContactText() {
+    const text = document.getElementById("contactText").value;
+    const btn = document.querySelector(".copy-btn");
+
+    // Копирование без выделения
+    navigator.clipboard.writeText(text).then(() => {
+
+        // Визуальное подтверждение
+        btn.textContent = "Скопировано!";
+        btn.style.background = "#28a745";  // зелёный
+        btn.style.transform = "scale(1.03)";
+
+        // Вибрация на телефонах
+        if (navigator.vibrate) navigator.vibrate(50);
+
+        // Возврат кнопки в исходное состояние
+        setTimeout(() => {
+            btn.textContent = "Скопировать текст";
+            btn.style.background = "#ff6f61"; // твой основной цвет
+            btn.style.transform = "scale(1)";
+        }, 1200);
+    });
+}
+</script>
+
 
 </body>
 </html>
