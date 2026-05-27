@@ -432,14 +432,21 @@ body {
     font-weight: bold;
     margin-bottom: 25px;
 }
-
-/* === БОЛЬШИЕ КРАСИВЫЕ МОДАЛКИ (ЗАЯВКА, ЗАКАЗ, СПАСИБО) === */
+/* === БОЛЬШИЕ КРАСИВЫЕ МОДАЛКИ === */
 .modal-content.form-big {
     width: 90%;
     max-width: 550px;
     padding: 40px 35px;
     border-radius: 18px;
     animation: fadeIn .25s ease;
+
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+
+    border: 4px solid #f4dfa7;
+    box-shadow: 0 0 35px rgba(244, 223, 167, 0.45);
 }
 
 .form-title {
@@ -456,26 +463,114 @@ body {
     text-align: center;
 }
 
-/* === КРАСИВЫЕ ПОЛЯ ВВОДА === */
-.input,
+/* === ПОЛЯ ВВОДА === */
 .modal-content.form-big input[type="text"],
 .modal-content.form-big input[type="tel"],
-.modal-content.form-big input[type="number"] {
+.modal-content.form-big input[type="number"],
+.modal-content.form-big input[type="date"],
+.modal-content.form-big input[type="time"] {
     width: 100%;
     padding: 14px 16px;
     font-size: 17px;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin-bottom: 18px;
-    transition: border .2s;
+    background: white;
+    transition: border .2s, box-shadow .2s;
+    appearance: none;
 }
 
-.input:focus,
 .modal-content.form-big input:focus {
-    border-color: #ff4b6a;
+    border-color: #f4dfa7;
+    box-shadow: 0 0 8px rgba(244, 223, 167, 0.6);
     outline: none;
 }
 
+/* === SELECT === */
+.modal-select {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    background: white;
+    transition: border .2s, box-shadow .2s;
+}
+
+.modal-select:focus {
+    border-color: #f4dfa7;
+    box-shadow: 0 0 8px rgba(244, 223, 167, 0.6);
+    outline: none;
+}
+
+/* === TEXTAREA === */
+.modal-textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 14px 16px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    resize: none;
+    background: white;
+    box-sizing: border-box;
+    transition: border .2s, box-shadow .2s;
+}
+
+.modal-textarea:focus {
+    border-color: #f4dfa7;
+    box-shadow: 0 0 8px rgba(244, 223, 167, 0.6);
+    outline: none;
+}
+
+/* === ПОЛЕ "ДРУГОЕ" === */
+.modal-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    background: white;
+    transition: border .2s, box-shadow .2s;
+}
+
+.modal-input:focus {
+    border-color: #f4dfa7;
+    box-shadow: 0 0 8px rgba(244, 223, 167, 0.6);
+    outline: none;
+}
+
+/* === ДВЕ КОЛОНКИ (РАЗДЕЛЕНЫ) === */
+.form-row.separated {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row.separated > div {
+    flex: 0 0 48%;
+}
+
+/* === ИКОНКИ ДАТЫ И ВРЕМЕНИ === */
+.date-input,
+.time-input {
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 45px !important;
+}
+
+.date-input {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23f4dfa7" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10h5v5H7z"/><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>');
+}
+
+.time-input {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23f4dfa7" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm1 11.59V7h-2v6h.01L13 15l1.41-1.41z"/></svg>');
+}
+
+/* === КНОПКА === */
 .form-btn {
     width: 100%;
     padding: 14px;
@@ -1382,6 +1477,7 @@ body {
     background-image: url("../images/hero-kids3.jpg") !important;
 }
 
+/*дизайн модалки плавающей кнопки*/
 .contact-helper-area {
     width: 100%;
     height: auto; /* Автоматическая высота */
@@ -1441,3 +1537,28 @@ body {
     text-align: left;
     color: #F4DFA7
 }
+
+/* === ГАРАНТИРОВАННО СТАВИМ ДАТУ И ВРЕМЯ В ОДНУ СТРОКУ === */
+.date-time-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px !important;
+    width: 100%;
+    flex-wrap: nowrap !important; /* запрещаем перенос */
+}
+
+.date-time-row .date-col,
+.date-time-row .time-col {
+    flex: 0 0 48% !important; /* одинаковая ширина */
+    max-width: 48% !important;
+}
+
+/* чтобы поля не растягивались */
+.date-time-row input[type="date"],
+.date-time-row input[type="time"] {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+            
