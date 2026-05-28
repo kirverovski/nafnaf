@@ -405,14 +405,15 @@ body {
     overflow: hidden;
     margin: 0 auto 20px;
     border-radius: 12px;
-    background: #000;
+    background: #fff;
 }
 
 .modal-image-wrapper img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center;
+    max-height: 80vh;
 }
 
 /* === ТЕКСТ В МОДАЛКЕ === */
@@ -1521,7 +1522,7 @@ body {
     font-size: 14px;
     margin-bottom: 10px;
 }
-/* Заголовок модального окна */
+/* Заголовок модального окна с логотипами*/
 .contact-modal h3 {
     font-size: 20px;      /* Было меньше — теперь крупнее */
     font-weight: 600;     /* Чуть жирнее, но не слишком */
