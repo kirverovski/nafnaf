@@ -416,6 +416,21 @@ body {
     max-height: 80vh;
 }
 
+@media (max-width: 768px) {
+    .modal-image-wrapper {
+        aspect-ratio: auto;   /* отключаем 16:9 */
+        height: auto;         /* контейнер растягивается под картинку */
+        overflow: visible;    /* ничего не обрезаем */
+    }
+
+    .modal-image-wrapper img {
+        width: 100%;
+        height: auto;         /* сохраняем пропорции */
+        object-fit: contain;  /* картинка полностью видна */
+        max-height: none;
+    }
+}
+
 /* === ТЕКСТ В МОДАЛКЕ === */
 #serviceTitle {
     font-size: 28px;
