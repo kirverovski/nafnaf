@@ -1914,3 +1914,148 @@ body {
         transform: translateY(0);
     }
 }
+
+/* === ГАМБУРГЕР (МОБИЛЬНОЕ МЕНЮ) === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Активное состояние (крестик) */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА === */
+.hamburger-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .hamburger-wrapper {
+        top: 16px;
+        right: 16px;
+    }
+}
+
+/* === ТЕКСТ "МЕНЮ" ДЛЯ ГАМБУРГЕРА === */
+.hamburger-label {
+    display: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 8px;
+}
+
+/* Показать текст только на мобильных */
+@media (max-width: 768px) {
+    .hamburger-label {
+        display: inline-block;
+    }
+}
+
+/* Скрыть текст при открытом меню */
+.hamburger-label.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Анимация появления */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 768px) {
+    /* Показать гамбургер */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Мобильное меню — фиксированное справа (боковое) */
+    .header .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    .header .nav a {
+        width: 100%;
+        margin: 0 0 12px 0;
+        padding: 16px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        background: #f4f4f4;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.2s ease;
+    }
+
+    .header .nav a:hover {
+        background: #e0e0e0;
+    }
+
+    .header .nav a.active {
+        background: #ff4b6a;
+        color: #fff;
+    }
+
+    .header .nav a:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Показать меню при активном гамбургере */
+    .header .nav.mobile-menu-open {
+        right: 0;
+    }
+}

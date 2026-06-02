@@ -283,3 +283,50 @@ scrollToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+/* ============================
+   ГАМБУРГЕР МЕНЮ
+============================ */
+
+const hamburger = document.querySelector('.hamburger');
+const hamburgerLabel = document.querySelector('.hamburger-label');
+const nav = document.querySelector('.nav');
+
+if (hamburger && nav) {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('mobile-menu-open');
+        
+        // Переключить видимость текста "Меню"
+        if (hamburgerLabel) {
+            hamburgerLabel.classList.toggle('hidden');
+        }
+    });
+
+    // Закрыть меню при клике на ссылку
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('mobile-menu-open');
+            
+            // Показать текст "Меню" при закрытии
+            if (hamburgerLabel) {
+                hamburgerLabel.classList.remove('hidden');
+            }
+        });
+    });
+
+    // Закрыть меню при клике вне области
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('mobile-menu-open');
+            
+            // Показать текст "Меню" при закрытии
+            if (hamburgerLabel) {
+                hamburgerLabel.classList.remove('hidden');
+            }
+        }
+    });
+}
