@@ -214,7 +214,7 @@ body {
     text-align: center;
 
     /* Фоновое изображение */
-    background-image: url("../images/hero.jpg");
+    background-image: url("../images/hero.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -703,7 +703,7 @@ body {
     padding: 60px 0;
     text-align: center;
 
-    background-image: url("../images/hero.jpg");
+    background-image: url("../images/hero.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1164,6 +1164,7 @@ body {
     );
     padding: 80px 0;
 }
+
 .category-buttons {
     margin-top: 40px;
     display: flex;
@@ -1454,43 +1455,43 @@ body {
 /* === УНИКАЛЬНЫЕ ФОНЫ ДЛЯ КАЖДОЙ СТРАНИЦЫ === */
 
 .hero-animators {
-    background-image: url("../images/hero-animators.jpg") !important;
+    background-image: url("../images/hero-animators.webp") !important;
 }
 
 .hero-decor {
-    background-image: url("../images/hero-decor.jpg") !important;
+    background-image: url("../images/hero-decor.webp") !important;
 }
 
 .hero-masters {
-    background-image: url("../images/hero-masters.jpg") !important;
+    background-image: url("../images/hero-masters.webp") !important;
 }
 
 .hero-quests {
-    background-image: url("../images/hero-quests.jpg") !important;
+    background-image: url("../images/hero-quests.webp") !important;
 }
 
 .hero-services {
-    background-image: url("../images/hero-services.jpg") !important;
+    background-image: url("../images/hero-services.webp") !important;
 }
 
 .hero-shows {
-    background-image: url("../images/hero-shows.jpg") !important;
+    background-image: url("../images/hero-shows.webp") !important;
 }
 
 .hero-adults {
-    background-image: url("../images/hero-adults.jpg") !important;
+    background-image: url("../images/hero-adults.webp") !important;
 }
 
 .hero-kids1 {
-    background-image: url("../images/hero-kids1.jpg") !important;
+    background-image: url("../images/hero-kids1.webp") !important;
 }
 
 .hero-kids2 {
-    background-image: url("../images/hero-kids2.jpg") !important;
+    background-image: url("../images/hero-kids2.webp") !important;
 }
 
 .hero-kids3 {
-    background-image: url("../images/hero-kids3.jpg") !important;
+    background-image: url("../images/hero-kids3.webp") !important;
 }
 
 /*дизайн модалки плавающей кнопки*/
@@ -1852,6 +1853,61 @@ body {
     from {
         opacity: 0;
         transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === ПОХОЖАЯ КНОПКА ВВЕРХ (APPLE GLASS, ТЁМНО-СЕРЫЙ) === */
+.scroll-to-top {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.4),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 28px;
+    line-height: 46px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 9998;
+    display: none;
+    opacity: 0.9;
+}
+
+.scroll-to-top::before {
+    content: "↑";
+}
+
+.scroll-to-top:hover {
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow:
+        inset 0 0 18px rgba(0, 0, 0, 0.5),
+        0 10px 28px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.scroll-to-top.visible {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;

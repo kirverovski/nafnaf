@@ -259,3 +259,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elements.forEach(el => observer.observe(el));
 });
+
+// === ПОХОЖАЯ КНОПКА ВВЕРХ ===
+const scrollToTopBtn = document.createElement('button');
+scrollToTopBtn.className = 'scroll-to-top';
+document.body.appendChild(scrollToTopBtn);
+
+let isScrolled = false;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+        isScrolled = true;
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+        isScrolled = false;
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

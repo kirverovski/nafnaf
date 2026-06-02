@@ -173,9 +173,9 @@
                  <p><b>16 000 ₽</b> — 1,5 часа</p>
                  "
                  data-price="11 000 ₽/16 000₽"
-                 data-images="images/fort-boyard1.jpg,images/fort-boyard2.jpg,images/fort-boyard3.jpg,images/fort-boyard4.jpg">
+                 data-images="images/fort-boyard1.webp,images/fort-boyard2.webp,images/fort-boyard3.webp,images/fort-boyard4.webp">
 
-                <img src="images/fort-boyard1.jpg" class="card-img" alt="">
+                <img src="images/fort-boyard1.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Форт Боярд»</h3>
                 <p class="fade-in">Испытания, загадки, золото и атмосфера легендарного Форта!</p>
 
@@ -216,9 +216,9 @@
                  <p><b>+300 ₽</b> — за каждого следующего участника</p>
                  "
                  data-price="10 000 ₽"
-                 data-images="images/squid-game1.jpg,images/squid-game2.jpg,images/squid-game3.jpg,images/squid-game4.jpg">
+                 data-images="images/squid-game1.webp,images/squid-game2.webp,images/squid-game3.webp,images/squid-game4.webp">
 
-                <img src="images/squid-game1.jpg" class="card-img" alt="">
+                <img src="images/squid-game1.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Игра в кальмара»</h3>
                 <p class="fade-in">Азартные испытания, яркие эмоции и полный антураж Игры!</p>
 
@@ -260,9 +260,9 @@
                  <p><b>10 000 ₽</b> — фиксированная цена за программу</p>
                  "
                  data-price="10 000 ₽"
-                 data-images="images/spy-quest1.jpg">
+                 data-images="images/spy-quest1.webp">
 
-                <img src="images/spy-quest1.jpg" class="card-img" alt="">
+                <img src="images/spy-quest1.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Шпионский квест: Миссия выполнима</h3>
                 <p class="fade-in">Расшифровки, ловушки, взлом сейфа и спасение мира!</p>
 
@@ -304,9 +304,9 @@
                  <p><b>10 000 ₽</b> — фиксированная цена за программу</p>
                  "
                  data-price="10 000 ₽"
-                 data-images="images/harry-potter1.jpg">
+                 data-images="images/harry-potter1.webp">
 
-                <img src="images/harry-potter1.jpg" class="card-img" alt="">
+                <img src="images/harry-potter1.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Магический квест «Гарри Поттер: Тайна Крестражей»</h3>            
                 <p class="fade-in">Мантии, палочки, карта Мародеров и охота на крестражи!</p>
 
@@ -400,7 +400,7 @@
 
         <!-- Контейнер 16:9 -->
         <div class="modal-image-wrapper">
-            <img id="serviceImage" class="service-img" alt="">
+            <img id="serviceImage" class="service-img" alt="" loading="lazy">
         </div>
 
         <!-- Миниатюры -->
@@ -567,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideNext = document.getElementById("slideNext");
     const serviceCards = document.querySelectorAll(".service-card");
 
-    if (!serviceImage  !slidePrev  !slideNext || !serviceCards.length) return;
+    if (!serviceImage || !slidePrev || !slideNext || !serviceCards.length) return;
 
     let slideImages = [];
     let currentSlide = 0;
@@ -677,6 +677,9 @@ function toggleSeoText() {
     }
 }
 </script>
+
+<!-- Кнопка "Вверх" -->
+<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
 
 </body>
 </html>
