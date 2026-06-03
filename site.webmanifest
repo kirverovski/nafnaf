@@ -1,7 +1,17 @@
 {
-  "name": "Аниматоры Сочи",
-  "short_name": "Аниматоры",
+  "name": "Организайия праздников в Сочи",
+  "short_name": "NafNafiki Праздники",
   "icons": [
+    {
+      "src": "site-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "site-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
     {
       "src": "site-icon.png",
       "sizes": "1024x1024",
