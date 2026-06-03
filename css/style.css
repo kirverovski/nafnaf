@@ -12,24 +12,6 @@ body {
     margin: auto;
 }
 
-/* === ШАПКА === */
-.header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-}
-
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-weight: 800;
-    font-size: 22px;
-}
-
 .logo span {
     color: #ff4b6a;
 }
@@ -54,12 +36,6 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-}
-
-/* Логотип — фиксированная зона */
-.logo {
-    flex: 0 0 auto;
-    white-space: nowrap;
 }
 
 /* Кнопка справа — фиксированная зона */
@@ -206,55 +182,6 @@ body {
     background: #ff4b6a;
     color: #fff;
 }
-/* === HERO С ФОНОВЫМ ИЗОБРАЖЕНИЕМ === */
-.hero {
-    width: 100%;
-    height: 480px;
-    padding: 60px 0;
-    text-align: center;
-
-    /* Фоновое изображение */
-    background-image: url("../images/hero.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* затемнение */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-}
-
-/* контент поверх фона */
-.hero .container {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-}
-
-/* Заголовок */
-.hero h1 {
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-/* Подзаголовок */
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #fff;
-}
 
 /* === СЕКЦИИ === */
 .categories {
@@ -346,15 +273,6 @@ body {
     border-radius: 16px;
     max-height: 90vh;
     overflow-y: auto;
-}
-
-/* === form-big НЕ ДОЛЖЕН ПЕРЕБИВАТЬ fullscreen === */
-.modal-content.form-big {
-    width: 90%;
-    max-width: 550px;
-    padding: 40px 35px;
-    border-radius: 18px;
-    animation: fadeIn .25s ease;
 }
 
 /* === КРАСИВЫЕ ПОЛЯ ВВОДА === */
@@ -1357,27 +1275,37 @@ body {
     color: #1a140d !important; /* самый контрастный текст */
 }
 
-/* === Плавающая кнопка === */
+/* === Плавающая кнопка (теперь как кнопка "наверх") === */
 .contact-float-btn {
     position: fixed;
     bottom: 22px;
     right: 22px;
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background: rgba(255, 140, 0, 0.75);
-    border: 1px solid rgba(255, 200, 120, 0.7);
-    color: #3a1f00;
-    font-size: 26px;
+    background: rgba(45, 45, 45, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.4),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 28px;
+    line-height: 46px;
+    text-align: center;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-    backdrop-filter: blur(8px);
-    transition: 0.25s;
-    z-index: 9999;
+    transition: 0.3s ease;
+    z-index: 9998;
+    display: block;
 }
 
 .contact-float-btn:hover {
-    background: rgba(255, 140, 0, 0.95);
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow:
+        inset 0 0 18px rgba(0, 0, 0, 0.5),
+        0 10px 28px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px) scale(1.05);
 }
 
 /* === Модальное окно === */
@@ -1401,12 +1329,6 @@ body {
     box-shadow: 0 8px 28px rgba(0,0,0,0.35);
     backdrop-filter: blur(12px);
     text-align: center;
-}
-
-.contact-modal h3 {
-    margin: 0 0 16px;
-    font-size: 16px;
-    color: #f4dfa7;
 }
 
 /* Иконки */
@@ -1445,7 +1367,7 @@ body {
 }
 
 .float-icon {
-    width: 90%;
+    width: 100%;
     height: 70%;
     object-fit: contain;
     pointer-events: none; /* чтобы клик проходил по кнопке */
@@ -1884,7 +1806,7 @@ body {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.65);
+    background: rgba(30, 30, 30, 0.35);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.2);
