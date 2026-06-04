@@ -1,9 +1,0 @@
-# GitHub Pages configuration
-# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
-
-# Enable custom MIME types for YML files
-# GitHub Pages uses Jekyll which will process this file
-
-# Disable Jekyll processing to use raw files as-is
-# Это позволит отдавать .yml файлы с правильным Content-Type
-safe: true
