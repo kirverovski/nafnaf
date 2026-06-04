@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-06-03 12:00:00">
+    <shop>
+        <name>NAF NAFIKI</name>
+        <company>NAF NAFIKI</company>
+        <url>https://nafnafiki.ru</url>
+        <email>info@nafnafiki.ru</email>
+        <phone>+7 (965) 474-52-62</phone>
+        
+        <categories>
+            <category id="1">Праздничные услуги</category>
+            <category id="2">Аниматоры</category>
+            <category id="3">Шоу‑программы</category>
+            <category id="4">Мастер-классы</category>
+            <category id="5">Квесты</category>
+            <category id="6">Декор и фотозоны</category>
+            
+        </categories>
+        
+        <offers>
+            <!-- СЛАДКАЯ ВАТА -->
+            <offer id="101">
+                <name>Сладкая вата</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>5500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/cotton-candy.webp</picture>
+                <description>
+                    Воздушная сладкая вата — классика любого праздника! Готовится прямо на глазах у детей — это всегда вызывает восторг! Можно выбрать обычную или цветную вату.
+                </description>
+                <shortDescription>
+                    Воздушная сладкая вата для праздников
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#cotton-candy</url>
+            </offer>
+            
+            <!-- ПОПКОРН -->
+            <offer id="102">
+                <name>Попкорн</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>6500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/popcorn.webp</picture>
+                <description>
+                    Сладкий или солёный попкорн — любимое лакомство детей и взрослых! Аппарат для приготовления свежего ароматного попкорна прямо на вашем празднике!
+                </description>
+                <shortDescription>
+                    Свежий попкорн на празднике
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#popcorn</url>
+            </offer>
+            
+            <!-- ВИДЕОГРАФ -->
+            <offer id="103">
+                <name>Видеограф</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>3500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-video.webp</picture>
+                <description>
+                    Красивый видеоролик с праздника, профессиональный монтаж, цветокоррекция и музыка. Запечатлите лучшие моменты навсегда!
+                </description>
+                <shortDescription>
+                    Профессиональная видеосъёмка праздника
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#videographer</url>
+            </offer>
+            
+            <!-- ДИДЖЕЙ -->
+            <offer id="104">
+                <name>Диджей</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/dj.webp</picture>
+                <description>
+                    Профессиональный DJ с аппаратурой и подборкой треков! Создаёт атмосферу праздника: современная музыка, детские хиты, танцевальные треки и интерактивы.
+                </description>
+                <shortDescription>
+                    Профессиональный DJ для праздника
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#dj</url>
+            </offer>
+            
+            <!-- ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ДЛЯ ПРОГРАММ -->
+            <offer id="105">
+                <name>Дополнительные элементы для программ</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>2000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/addons.webp</picture>
+                <description>
+                    Усиление любой анимации или шоу: аквагрим, пузыри, параллон, спецэффекты! Аквагрим, мыльные пузыри, параллоновое шоу, боевой лазер, дым-пушка.
+                </description>
+                <shortDescription>
+                    Дополнительные эффекты для программ
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#program-addons</url>
+            </offer>
+            
+            <!-- АКВАГРИМ -->
+            <offer id="106">
+                <name>Аквагрим</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>5100</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/aquagrim.webp</picture>
+                <description>
+                    Профессиональный аквагрим — яркие образы и безопасные краски! Художник создаёт образы животных, супергероев, принцесс и многое другое.
+                </description>
+                <shortDescription>
+                    Яркий и безопасный аквагрим
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#aquagrim</url>
+            </offer>
+            
+            <!-- КАРАОКЕ-ВЕЧЕРИНКА -->
+            <offer id="107">
+                <name>Караоке-вечеринка</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>7000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/karaoke.webp</picture>
+                <description>
+                    Диджей, профессиональное оборудование и экран с текстом песен! Яркий музыкальный формат, где дети и взрослые могут петь любимые хиты.
+                </description>
+                <shortDescription>
+                    Музыкальная вечеринка с экраном
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#karaoke</url>
+            </offer>
+            
+            <!-- БЬЮТИ-БАР -->
+            <offer id="108">
+                <name>Бьюти-бар</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>7000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/beauty-bar.webp</picture>
+                <description>
+                    Профессиональный детский бьюти-бар: блёстки, прически, образы! Стильная зона красоты для создания праздничных образов.
+                </description>
+                <shortDescription>
+                    Стильная зона красоты для детей
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#beauty-bar</url>
+            </offer>
+            
+            <!-- СЛАДКИЙ СТОЛ -->
+            <offer id="109">
+                <name>Сладкий стол</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>3000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-candybar.webp</picture>
+                <description>
+                    Капкейки, кейк-попсы, печенье, напитки — оформление в стиле праздника! Стильные, вкусные и полностью оформленные зоны с десертами.
+                </description>
+                <shortDescription>
+                    Оформленная зона с десертами
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#candy-bar</url>
+            </offer>
+            
+            <!-- ТОРТ НА ЗАКАЗ -->
+            <offer id="110">
+                <name>Торт на заказ</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>2500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-cake.webp</picture>
+                <description>
+                    Индивидуальный дизайн, натуральные ингредиенты, доставка и оформление! Красивые и вкусные торты под тематику праздника.
+                </description>
+                <shortDescription>
+                    Индивидуальный дизайн торта
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#custom-cake</url>
+            </offer>
+            
+            <!-- АРЕНДА ОБОРУДОВАНИЯ -->
+            <offer id="111">
+                <name>Аренда оборудования</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>1500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-equipment.webp</picture>
+                <description>
+                    Колонки, дым-машина, проектор, свет — всё для яркого праздника! Оборудование для проведения праздников любого масштаба.
+                </description>
+                <shortDescription>
+                    Оборудование для праздника
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#equipment-rent</url>
+            </offer>
+            
+            <!-- ДОСТУПНОСТЬ: ТОВАР В НАЛИЧИИ (пример) -->
+            <offer id="112" available="true">
+                <name>Фотограф</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-photo.webp</picture>
+                <description>
+                    Профессиональный фотограф для праздника — запечатлейте лучшие моменты! Качественные фото в высоком разрешении.
+                </description>
+                <shortDescription>
+                    Профессиональная фотосъёмка
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#photographer</url>
+            </offer>
+            
+            <!-- ДОСТУПНОСТЬ: ТОВАР НЕ В НАЛИЧИИ (пример) -->
+            <offer id="113" available="false">
+                <name>Индивидуальная программа</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>15000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/service-individual.webp</picture>
+                <description>
+                    Полностью индивидуальная программа под ваш запрос — от идеи до реализации. Составляем программу с нуля.
+                </description>
+                <shortDescription>
+                    Полностью индивидуальная программа
+                </shortDescription>
+                <url>https://nafnafiki.ru/services.html#individual-program</url>
+            </offer>
+
+            <!-- ПИРАТЫ -->
+            <offer id="201">
+                <name>«Пираты»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-pirates.webp</picture>
+                <description>
+                    Пиратская программа: поиск сокровищ, квесты, испытания, морские легенды и весёлые приключения.
+                </description>
+                <shortDescription>
+                    Морские приключения и квесты
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#pirates</url>
+            </offer>
+            
+            <!-- БЕЗУМНЫЙ ХИМИК -->
+            <offer id="202">
+                <name>Аниматор «Безумный химик»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-chemist.webp</picture>
+                <description>
+                    Зрелищная научная программа: безопасные эксперименты, дым, пена, химические реакции и интерактивы.
+                </description>
+                <shortDescription>
+                    Научное шоу с экспериментами
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#chemist</url>
+            </offer>
+            
+            <!-- КЛОУНЫ -->
+            <offer id="203">
+                <name>«Клоуны»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-clowns.webp</picture>
+                <description>
+                    Классическая клоунская программа: шутки, игры, мини‑фокусы, интерактивы и веселье для детей всех возрастов.
+                </description>
+                <shortDescription>
+                    Весёлая и яркая программа
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#clowns</url>
+            </offer>
+            
+            <!-- ЁЖИК И БЕЛОЧКА -->
+            <offer id="204">
+                <name>«Ёжик и Белочка»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-hedgehog-squirrel.webp</picture>
+                <description>
+                    Добрые лесные персонажи с играми, танцами, загадками и интерактивами для малышей.
+                </description>
+                <shortDescription>
+                    Добрые лесные персонажи для малышей
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#hedgehog-squirrel</url>
+            </offer>
+            
+            <!-- ЛЬВЯТА -->
+            <offer id="205">
+                <name>«Львята»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-lions.webp</picture>
+                <description>
+                    Весёлые львята с активными играми, танцами, мини‑квестами и яркими номерами.
+                </description>
+                <shortDescription>
+                    Весёлые львята с активными играми
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#lions</url>
+            </offer>
+            
+            <!-- ГЕЙМЕРЫ -->
+            <offer id="206">
+                <name>«Геймеры»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-gamers.webp</picture>
+                <description>
+                    Современная игровая программа с челленджами, соревнованиями, VR‑элементами и тематическими заданиями.
+                </description>
+                <shortDescription>
+                    Современная игровая программа
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#gamers</url>
+            </offer>
+            
+            <!-- СОНИК -->
+            <offer id="207">
+                <name>«Соник»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-sonic.webp</picture>
+                <description>
+                    Динамичная программа с Соником: скорость, челленджи, соревнования и яркие игровые задания.
+                </description>
+                <shortDescription>
+                    Динамичная программа с Соником
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#sonic</url>
+            </offer>
+            
+            <!-- ГАРРИ ПОТТЕР И ГЕРМИОНА -->
+            <offer id="208">
+                <name>«Гарри Поттер и Гермиона»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-harry-hermione.webp</picture>
+                <description>
+                    Волшебная программа с заклинаниями, магическими испытаниями, квестами и атмосферой Хогвартса.
+                </description>
+                <shortDescription>
+                    Волшебная программа с магией
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#harry-hermione</url>
+            </offer>
+            
+            <!-- МИНЬОНЫ -->
+            <offer id="209">
+                <name>«Миньоны»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-minions.webp</picture>
+                <description>
+                    Весёлая программа с Миньонами: танцы, игры, конкурсы и фирменный миньонский юмор.
+                </description>
+                <shortDescription>
+                    Весёлая программа с Миньонами
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#minions</url>
+            </offer>
+            
+            <!-- ЛЕДИ БАГ И СУПЕР-КОТ -->
+            <offer id="210">
+                <name>«Леди Баг и Супер‑Кот»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-ladybug-catnoir.webp</picture>
+                <description>
+                    Динамичная супергеройская программа: спасение города, задания, ловкость и командные испытания.
+                </description>
+                <shortDescription>
+                    Динамичная супергеройская программа
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#ladybug-catnoir</url>
+            </offer>
+            
+            <!-- ЩЕНЯЧИЙ ПАТРУЛЬ -->
+            <offer id="211">
+                <name>«Щенячий Патруль»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-pawpatrol.webp</picture>
+                <description>
+                    Любимые герои: Маршалл, Чейз и другие. Игры, задания, спасательные миссии и командные приключения.
+                </description>
+                <shortDescription>
+                    Любимые герои: Маршалл, Чейз и другие
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#pawpatrol</url>
+            </offer>
+            
+            <!-- БАРБИ И КЕН -->
+            <offer id="212">
+                <name>«Барби и Кен»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-barbie-ken.webp</picture>
+                <description>
+                    Стильная розовая вечеринка с Барби и Кеном: танцы, игры, фотосессии и яркие активности.
+                </description>
+                <shortDescription>
+                    Стильная розовая вечеринка с Барби и Кеном
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#barbie-ken</url>
+            </offer>
+            
+            <!-- СУПЕРГЕРОИ -->
+            <offer id="213">
+                <name>«Супергерои»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-superheroes.webp</picture>
+                <description>
+                    Человек‑Паук, Бэтмен, Дэдпул и другие супергерои. Миссии, испытания, ловкость, спасательные задания и супергеройский драйв.
+                </description>
+                <shortDescription>
+                    Супергерои: Человек‑Паук, Бэтмен, Дэдпул
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#superheroes</url>
+            </offer>
+            
+            <!-- МИККИ И МИННИ МАУС -->
+            <offer id="214">
+                <name>«Микки и Минни Маус»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-mickey-minnie.webp</picture>
+                <description>
+                    Весёлая программа с Микки и Минни Маус: танцы, игры, интерактивы, фотосессии и атмосфера классического Диснея.
+                </description>
+                <shortDescription>
+                    Классическая диснеевская программа
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#mickey-minnie</url>
+            </offer>
+            
+            <!-- СОВРЕМЕННЫЕ ВЕДУЩИЕ -->
+            <offer id="215">
+                <name>«Современные ведущие»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-modern-hosts.webp</picture>
+                <description>
+                    Стильные ведущие с модными интерактивами, челленджами, танцевальными баттлами и атмосферой настоящего шоу.
+                </description>
+                <shortDescription>
+                    Стильные ведущие для подростков и взрослых
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#modern-hosts</url>
+            </offer>
+            
+            <!-- РАДУЖНЫЕ ДРУЗЬЯ -->
+            <offer id="216">
+                <name>«Радужные друзья»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-rainbow-friends.webp</picture>
+                <description>
+                    Яркая программа с Радужными друзьями: задания, квесты, интерактивы и атмосфера популярной игровой вселенной.
+                </description>
+                <shortDescription>
+                    Яркие персонажи из популярной игры
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#rainbow-friends</url>
+            </offer>
+            
+            <!-- ХАГИ ВАГИ И КИСИ МИСИ -->
+            <offer id="217">
+                <name>Аниматоры «Хаги Ваги и Киси Миси»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-huggy-kissy.webp</picture>
+                <description>
+                    Хаги Ваги и Киси Миси — яркая игровая программа с заданиями, интерактивами, танцами и атмосферой популярной игровой вселенной.
+                </description>
+                <shortDescription>
+                    Яркие игровые персонажи
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#huggy-kissy</url>
+            </offer>
+            
+            <!-- КОРЖИК И КАРАМЕЛЬКА -->
+            <offer id="218">
+                <name>Аниматоры «Коржик и Карамелька»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-korz-karamel.webp</picture>
+                <description>
+                    Коржик и Карамелька — весёлая программа с играми, танцами, заданиями и атмосферой любимого детского мультфильма.
+                </description>
+                <shortDescription>
+                    Любимые герои для малышей
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#korz-karamel</url>
+            </offer>
+            
+            <!-- МИМИМИШКИ: ТУЧКА, КЕША, ЛИСИЧКА -->
+            <offer id="219">
+                <name>Аниматоры «Ми‑ми‑мишки»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>4500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/anim-mimimishki.webp</picture>
+                <description>
+                    Тучка, Кеша и Лисичка — добрая программа с играми, танцами, заданиями и атмосферой любимого мультсериала.
+                </description>
+                <shortDescription>
+                    Тучка, Кеша и Лисичка
+                </shortDescription>
+                <url>https://nafnafiki.ru/animators.html#mimimishki</url>
+            </offer>
+
+            <!-- ШОУ МЫЛЬНЫХ ПУЗЫРЕЙ -->
+            <offer id="301">
+                <name>Волшебное «Шоу мыльных пузырей»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>6000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-bubbles.webp</picture>
+                <description>
+                    «Шоу мыльных пузырей» — это завораживающий интерактивный перформанс, где обычные пузыри превращаются в фантастические трюки, светящиеся сферы и даже огненные инсталляции. Программа вызывает восторг у детей и удивляет взрослых!
+                </description>
+                <shortDescription>
+                    Фантастические мыльные трюки и огненные пузыри
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#bubbles</url>
+            </offer>
+            
+            <!-- ПЕННАЯ ВЕЧЕРИНКА -->
+            <offer id="302">
+                <name>Мега‑праздник «Пенная вечеринка»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>9000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-foam.webp</picture>
+                <description>
+                    Приготовьтесь к самому освежающему, эмоциональному и масштабному шоу этого лета! «Пенная вечеринка» — это настоящие сугробы из белоснежной, воздушной пены прямо на вашем празднике.
+                </description>
+                <shortDescription>
+                    Тонны пушистой пены и водные баттлы
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#foam</url>
+            </offer>
+            
+            <!-- ИГРА МАФИЯ -->
+            <offer id="303">
+                <name>Интеллектуально‑психологическая игра «Мафия»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>5000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-mafia.webp</picture>
+                <description>
+                    Город засыпает… просыпается Мафия! Это легендарная игра, которая развивает логику, интуицию, актерское мастерство и умение работать в команде.
+                </description>
+                <shortDescription>
+                    Интрига, роли, расследования и детективная атмосфера
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#mafia</url>
+            </offer>
+            
+            <!-- КРИО-ШОУ -->
+            <offer id="304">
+                <name>Фантастическое «Крио‑шоу»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>7000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-cryo.webp</picture>
+                <description>
+                    «Крио‑шоу» — это фантастическая научная программа с жидким азотом температурой −196°C. Детей ждут зрелищные эксперименты, ледяные спецэффекты и безопасные взрывы.
+                </description>
+                <shortDescription>
+                    Эксперименты с жидким азотом и ледяная магия
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#cryo</url>
+            </offer>
+            
+            <!-- БУМАЖНОЕ ШОУ -->
+            <offer id="305">
+                <name>Бумажное шоу</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>3000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-paper.webp</picture>
+                <description>
+                    Настоящий бумажный ураган с музыкой, драйвом и яркими эмоциями.
+                </description>
+                <shortDescription>
+                    Настоящий бумажный ураган с музыкой и драйвом
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#paper</url>
+            </offer>
+            
+            <!-- СУПЕРГЕРОЙСКАЯ МИССИЯ С ХАЛКОМ -->
+            <offer id="306">
+                <name>Супергеройская миссия с Халком</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-hulk.webp</picture>
+                <description>
+                    Супергеройская миссия — это мощное, динамичное и зрелищное шоу с участием гигантского Халка. Дети проходят испытания, выполняют секретные задания и становятся настоящей командой супергероев!
+                </description>
+                <shortDescription>
+                    Гигантский Халк, дымная пушка и боевой лазер
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#hulk</url>
+            </offer>
+            
+            <!-- СЕРЕБРЯНОЕ ШОУ -->
+            <offer id="307">
+                <name>Мега‑праздник «Серебряное шоу»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>11000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-silver.webp</picture>
+                <description>
+                    «Серебряное шоу» — это самый блестящий и эмоциональный финал праздника! Гигантские сугробы мягкой, безопасной и ослепительно сверкающей фольги превращают площадку в настоящий серебряный океан.
+                </description>
+                <shortDescription>
+                    Гигантские сугробы блестящего серебра
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#silver</url>
+            </offer>
+            
+            <!-- ПОРОЛОНОВОЕ ШОУ -->
+            <offer id="308">
+                <name>Яркое интерактивное «Поролоновое шоу»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>11000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-foamblocks.webp</picture>
+                <description>
+                    «Поролоновое шоу» — это мир мягкого драйва, огромных разноцветных кубиков и бесконечного веселья! Дети строят башни, проходят полосы препятствий, прыгают в мягкие сугробы и устраивают поролоновые баттлы.
+                </description>
+                <shortDescription>
+                    Гигантские кубики, мягкие баттлы и мега‑строительство
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#foamblocks</url>
+            </offer>
+            
+            <!-- НЕОНОВОЕ ШОУ -->
+            <offer id="309">
+                <name>Космическое «Неоновое шоу»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>17000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-neon.webp</picture>
+                <description>
+                    «Неоновое шоу» — это космическая атмосфера, ультрафиолетовые лучи, светящаяся бумага и яркий неоновый драйв. Дети погружаются в параллельную реальность, где всё вокруг светится и оживает в темноте!
+                </description>
+                <shortDescription>
+                    Светящиеся волны, ультрафиолет и космический драйв
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#neon</url>
+            </offer>
+            
+            <!-- НЕОНОВОЕ ШОУ + ПУЗЫРИ -->
+            <offer id="310">
+                <name>Космическое «Неоновое шоу» + Неоновые Мыльные Пузыри</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>25000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-neon-bubbles.webp</picture>
+                <description>
+                    Обновлённое «Неоновое шоу» — это космическая атмосфера, ультрафиолетовые лучи, светящаяся бумага и неоновые мыльные пузыри, которые светятся в темноте.
+                </description>
+                <shortDescription>
+                    Космические светящиеся пузыри и ультрафиолетовый драйв
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#neon-bubbles</url>
+            </offer>
+            
+            <!-- RICH GIRL -->
+            <offer id="311">
+                <name>Rich Girl: В гостях у Инстасамки</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-richgirl.webp</picture>
+                <description>
+                    «Rich Girl: В гостях у Инстасамки» — это стильная, громкая и ультрамодная вечеринка по мотивам жизни главной иконы соцсетей. Подростков ждут танцы, блогинг, денежные дожди и море роскошного юмора.
+                </description>
+                <shortDescription>
+                    Хайповое шоу с бабломётом, трендами и роскошным юмором
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#richgirl</url>
+            </offer>
+            
+            <!-- ТРАНСФОРМЕРЫ: БАМБЛЕБИ -->
+            <offer id="312">
+                <name>Трансформеры: Миссия Бамблби</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>11000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-bumblebee.webp</picture>
+                <description>
+                    «Трансформеры: Миссия Бамблби» — это технологичное, динамичное и зрелищное шоу, где дети становятся защитниками Земли. Их ждёт личная встреча с легендарным автоботом Бамблби, спецэффекты, дымная пушка, лазер и настоящая космическая атмосфера!
+                </description>
+                <shortDescription>
+                    Гигантский Бамблби, дымная пушка и боевой лазер
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#bumblebee</url>
+            </offer>
+            
+            <!-- В ГОСТЯХ У ВЛАДА А4 -->
+            <offer id="313">
+                <name>Мега‑челлендж шоу «В гостях у Влада А4»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>11000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-a4.webp</picture>
+                <description>
+                    «В гостях у Влада А4» — это самое популярное и хайповое шоу по мотивам легендарного YouTube‑канала. Детей ждут культовые челленджи, денежные дожди, колесо фортуны, фирменные игры и личная встреча с ростовым Владом А4!
+                </description>
+                <shortDescription>
+                    Челленджи, бабломёт, колесо фортуны и блогерский драйв
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#vlad-a4</url>
+            </offer>
+            
+            <!-- ШКОЛА МИНИ-ФОКУСОВ -->
+            <offer id="314">
+                <name>Интерактивная программа «Школа мини‑фокусов»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>5500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-magic.webp</picture>
+                <description>
+                    «Школа мини‑фокусов» — это интерактивная магическая программа, где дети превращаются в настоящих иллюзионистов. Это не скучное выступление, а динамичное шоу, в котором каждый ребёнок участвует в трюках, а именинник становится главным волшебником вечера!
+                </description>
+                <shortDescription>
+                    Весёлые фокусы, магия света и обучение именинника
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#magic</url>
+            </offer>
+            
+            <!-- КАРАОКЕ-ВЕЧЕРИНКА -->
+            <offer id="315">
+                <name>Караоке‑вечеринка</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>7000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/karaoke.webp</picture>
+                <description>
+                    Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.
+                </description>
+                <shortDescription>
+                    Диджей, экран и любимые песни
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#karaoke</url>
+            </offer>
+            
+            <!-- ЧЕЛЛЕНДЖ ВЕЧЕРИНКА -->
+            <offer id="316">
+                <name>Мега‑хит праздников: «Челлендж Вечеринка»</name>
+                <vendor>NAF NAFIKI</vendor>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/show-challenge.webp</picture>
+                <description>
+                    «Челлендж Вечеринка» — это ультрасовременное шоу по мотивам самых популярных YouTube и TikTok челленджей. Никаких скучных конкурсов — только драйв, смех, испытания на смелость, вкус, реакцию и удачу.
+                </description>
+                <shortDescription>
+                    Топ‑челленджи, водный баттл и полный блогерский драйв
+                </shortDescription>
+                <url>https://nafnafiki.ru/shows.html#challenge</url>
+            </offer>
+
+            <!-- МАСТЕР-КЛАССЫ -->
+            <offer id="401" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Мастер-класс «Слайм-Лаборатория»</model>
+                <name>Мастер-класс «Слайм-Лаборатория»</name>
+                <price>9000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-slime.webp</picture>
+                <description>
+                    Яркое научное приключение для детей! Под руководством профессионального ведущего каждый ребёнок создаст свой уникальный слайм-антистресс, участвует в весёлых играх и экспериментах. Безопасные гипоаллергенные материалы, яркие ароматы и неограниченное творчество.
+                </description>
+                <shortDescription>
+                    Научное приключение: создание слаймов и проведение весёлых экспериментов!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#slime-lab</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">4+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="402" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Мастер-класс по росписи одежды акрилом</model>
+                <name>Мастер-класс по росписи одежды акрилом</name>
+                <price>12000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-clothes.webp</picture>
+                <description>
+                    Погружение в мир fashion-творчества! На мастер-классе каждый участник создаст уникальный дизайн на хлопковой футболке, кепке или шопере. Профессиональные акриловые краски, кисти, трафареты и фартуки в комплекте. Готовая вещь заберёте домой!
+                </description>
+                <shortDescription>
+                    Fashion-творчество: создайте уникальную футболку в стиле дизайнера!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#clothing-painting</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">6+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="403" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Интерактивный мастер-класс «Красочный гипс»</model>
+                <name>Интерактивный мастер-класс «Красочный гипс»</name>
+                <price>8000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-gypsum.webp</picture>
+                <description>
+                    Праздник красок и творчества! Дети создают гипсовые фигурки (динозавры, мультгерои, замки, машинки), раскрашивают их, добавляют блёстки, стразы и покрывают лаком. Готовые изделия упаковываются в крафтовую упаковку и забираются домой.
+                </description>
+                <shortDescription>
+                    Яркое творчество: создание гипсовых фигурок с декором и блёстками!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#colorful-gypsum</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">4+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="404" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Мастер-класс «Создание брелоков»</model>
+                <name>Мастер-класс «Создание брелоков»</name>
+                <price>9000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-clay.webp</picture>
+                <description>
+                    Дизайнерские брелоки из полимерной глины! Ребята лепят основу, используют каттеры, стеки, текстурные листы, устанавливают фурнитуру и создают стильные аксессуары. Материал премиального качества, много цветов, прочные кольца и цепочки.
+                </description>
+                <shortDescription>
+                    Стильные брелоки из полимерной глины ручной работы!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#keychains</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">6+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="405" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Мастер-класс «Легкость акварели»</model>
+                <name>Мастер-класс «Легкость акварели: основы скетчинга»</name>
+                <price>7000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-watercolor.webp</picture>
+                <description>
+                    Воздушный акварельный скетчинг! Ребята осваивают технику «по-мокрому», создают мягкие переходы, игру света и тени. Рисуем десерты, улочки, ботанические зарисовки или животных — всё зависит от настроения группы. Легкие мазки и невероятная красота результатов!
+                </description>
+                <shortDescription>
+                    Осваиваем воздушный акварельный скетчинг в творческой атмосфере!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#watercolor</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">4+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="406" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Юный скульптор: магия глины</model>
+                <name>Интерактивный воркшоп «Юный скульптор: магия глины»</name>
+                <price>9000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-softclay.webp</picture>
+                <description>
+                    Радость создания чуда! Лёгкая самозастывающая глина — волшебный материал, который приятно мять и лепить. Дети создают сказочных персонажей, забавных зверушек, мини-шкатулки или декоративные панно. Готовую поделку забирают домой сразу, а через сутки она становится прочной игрушкой.
+                </description>
+                <shortDescription>
+                    Волшебные фигурки из лёгкой самозастывающей глины!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#soft-clay</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">4+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="407" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Анимационный мастер-класс «Шоу шаров-колбасок»</model>
+                <name>Анимационный мастер-класс «Шоу шаров-колбасок»</name>
+                <price>9000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-balloons.webp</picture>
+                <description>
+                    Весёлый твистинг с конкурсами! Дети учатся надувать шары, завязывать их без нитки, создают собачек-такс, пиратские сабли, мечи, цветы, шлемы и гигантские цветы. Весёлые игры, эстафеты и мини-конкурсы с созданными фигурками — смех и драйв гарантированы!
+                </description>
+                <shortDescription>
+                    Весёлый твистинг с конкурсами и яркими воздушными фигурками!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#balloon-show</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">4+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="408" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Мастер-класс «Граффити-шоу»</model>
+                <name>Мастер-класс «Граффити-шоу»</name>
+                <price>20000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://nafnafiki.ru/images/mc-graffiti.webp</picture>
+                <description>
+                    Яркое стрит-арт приключение! Аэрозольные краски, огромный баннер и личные картины каждого участника. Безопасные фартуки, перчатки и маски, профессиональные инструкторы. Дети создают свою картину, учатся технике аэрозоля и создают огромный командный баннер — крутая фотозона и памятный арт-объект!
+                </description>
+                <shortDescription>
+                    Стрит-арт картины и огромный командный баннер!
+                </shortDescription>
+                <url>https://nafnafiki.ru/masters.html#graffiti</url>
+                <param name="Продолжительность">40–60 минут</param>
+                <param name="Возраст">6+</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <!-- КВЕСТЫ -->
+            <offer id="501" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Приключенческий квест «Форт Боярд»</model>
+                <name>Приключенческий квест «Форт Боярд»</name>
+                <price>11000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/fort-boyard1.webp</picture>
+                <description>
+                    Регбиграсс: легендарное приключение с испытаниями на силу, ловкость, смекалку и командный дух! Дети проходят задания, собирают ключи, разгадывают тайну Старца Фура и ищут золото. Привозим масштабный и антуражный реквизит, два профессиональных актёра-инструктора.
+                </description>
+                <shortDescription>
+                    Испытания, загадки, золото и атмосфера легендарного Форта!
+                </shortDescription>
+                <url>https://nafnafiki.ru/quests.html#fort-boyard</url>
+                <param name="Продолжительность">1 час / 1,5 часа</param>
+                <param name="Возраст">для детей и подростков</param>
+                <param name="Количество участников">любое количество</param>
+            </offer>
+            
+            <offer id="502" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Приключенческий квест «Игра в кальмара»</model>
+                <name>Приключенческий квест «Игра в кальмара»</name>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/squid-game1.webp</picture>
+                <description>
+                    Азартный и безопасный квест по мотивам популярного сериала! Безопасные версии испытаний: «Тише едешь — дальше будешь», «Печенье Дальгона», «Перетягивание каната», «Чет / Нечет», «Стеклянный мост» и финал «Резиночка». Все участники играют до конца — никто не выбывает!
+                </description>
+                <shortDescription>
+                    Азартные испытания, яркие эмоции и полный антураж Игры!
+                </shortDescription>
+                <url>https://nafnafiki.ru/quests.html#squid-game</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">для детей и подростков</param>
+                <param name="Количество участников">до 10 человек</param>
+            </offer>
+            
+            <offer id="503" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Шпионский квест: Миссия выполнима</model>
+                <name>Шпионский квест: Миссия выполнима</name>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/spy-quest1.webp</picture>
+                <description>
+                    Динамичный детективный экшен! Дети становятся суперагентами, расшифровывают коды, ищут улики, обходят ловушки и взламывают настоящий сейф. Электронные девайсы, кодовые замки, сейф, макет бомбы, карты — всё в комплекте. Два профессиональных актёра в образах спецагентов.
+                </description>
+                <shortDescription>
+                    Расшифровки, ловушки, взлом сейфа и спасение мира!
+                </shortDescription>
+                <url>https://nafnafiki.ru/quests.html#spy-quest</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">для младших школьников и подростков</param>
+                <param name="Количество участников">любое количество</param>
+            </offer>
+            
+            <offer id="504" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Магический квест «Гарри Поттер: Тайна Крестражей»</model>
+                <name>Магический квест «Гарри Поттер: Тайна Крестражей»</name>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://nafnafiki.ru/images/harry-potter1.webp</picture>
+                <description>
+                    Полное погружение в атмосферу Хогвартса! Дети надевают мантии, берут волшебные палочки и отправляются на поиски крестражей. Уроки зельеварения, карта Мародеров, загадка Черной Метки, крестраж в огне и поиск сундука с сокровищами. Аутентичные костюмы волшебников и магический реквизит.
+                </description>
+                <shortDescription>
+                    Мантии, палочки, карта Мародеров и охота на крестражи!
+                </shortDescription>
+                <url>https://nafnafiki.ru/quests.html#harry-potter</url>
+                <param name="Продолжительность">1 час</param>
+                <param name="Возраст">для младших школьников и подростков</param>
+                <param name="Количество участников">любое количество</param>
+            </offer>
+            
+            <!-- ДЕКОР И ФОТОЗОНЫ -->
+            <offer id="601" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Фотозоны</model>
+                <name>Фотозоны</name>
+                <price>15000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/decor-stars.webp</picture>
+                <description>
+                    Стильные фотозоны с шарами, тумбами, баннерами и подсветкой. От минималистичных композиций до масштабных премиальных зон с неоном и декоративными элементами. Повторяем любой стиль по фото или разрабатываем по вашему описанию. Точную стоимость озвучиваем перед изготовлением.
+                </description>
+                <shortDescription>
+                    Шары, стиль и атмосфера для идеальных фото!
+                </shortDescription>
+                <url>https://nafnafiki.ru/decor.html#photo-zones</url>
+                <param name="Тип">фотозоны</param>
+                <param name="Возможность индивидуального дизайна">да</param>
+            </offer>
+            
+            <offer id="602" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Гелиевые шары</model>
+                <name>Гелиевые шары</name>
+                <price>150</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/balloons1.webp</picture>
+                <description>
+                    Стильное оформление шарами для любых мероприятий: дни рождения, свадьбы, корпоративы, выпускные. Гирлянды, арки, цифры, настенные композиции, напольные конструкции, премиальные balloon-декоры и индивидуальные проекты. Сделаем надписи, рисунки или логотипы на шарах.
+                </description>
+                <shortDescription>
+                    Гирлянды, фонтаны, цифры и декор из шаров!
+                </shortDescription>
+                <url>https://nafnafiki.ru/decor.html#helium-balloons</url>
+                <param name="Тип">оформление шарами</param>
+                <param name="Возможность индивидуального дизайна">да</param>
+            </offer>
+            
+            <offer id="603" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Оформление входных групп</model>
+                <name>Оформление входных групп</name>
+                <price>1500</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/entrance1.webp</picture>
+                <description>
+                    Арки, гирлянды, баннеры и оформление входа под любой праздник. Для частных мероприятий, кафе, ресторанов, отелей, салонов и корпоративных событий. Премиальные композиции, световые акценты и декоративные элементы. Повторяем по фото или разрабатываем с нуля.
+                </description>
+                <shortDescription>
+                    Арки и оформление входа для любого мероприятия!
+                </shortDescription>
+                <url>https://nafnafiki.ru/decor.html#entrance-groups</url>
+                <param name="Тип">оформление входа</param>
+                <param name="Минимальная цена за метр">1500 ₽</param>
+            </offer>
+            
+            <offer id="604" type="vendor.model">
+                <vendor>NAF NAFIKI</vendor>
+                <model>Оформление и декор мероприятий</model>
+                <name>Оформление и декор мероприятий</name>
+                <price>10000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://nafnafiki.ru/images/decor-hall1.webp</picture>
+                <description>
+                    Профессионально оформляем мероприятия любого формата: детские и взрослые праздники, свадьбы, корпоративы, выпускные. Работаем с шарами, тканями, баннерами, тумбами, декоративными элементами, светом, неоном, живыми и искусственными цветами. От минималистичного до премиального оформления.
+                </description>
+                <shortDescription>
+                    Залы, столы, входные группы — оформление под ключ!
+                </shortDescription>
+                <url>https://nafnafiki.ru/decor.html#event-decoration</url>
+                <param name="Тип">оформление помещений</param>
+                <param name="Возможность индивидуального дизайна">да</param>
+            </offer>
+            
+        </offers>
+    </shop>
+</yml_catalog>
