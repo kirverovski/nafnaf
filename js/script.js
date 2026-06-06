@@ -284,21 +284,49 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// ✅ ДОБАВЛЕНО: Отслеживание кликов по кнопкам контактов
+// ✅ ОТСЛЕЖИВАНИЕ КЛИКОВ ПО КНОПКАМ КОНТАКТОВ (УЛУЧШЕННОЕ)
 const contactIcons = document.querySelectorAll("a.contact-icon");
 contactIcons.forEach(link => {
     link.addEventListener("click", function () {
         const href = this.getAttribute("href") || "";
-        const contactType = this.classList[0] || "unknown";
+        const classList = this.classList;
+
+        // 🔍 Более надёжное определение типа (приоритет по href, затем по классам)
+        let contactType;
+        if (href.startsWith("tel:")) contactType = "tel";
+        else if (href.startsWith("sms:")) contactType = "sms";
+        else if (classList.contains("tg")) contactType = "tg";
+        else if (classList.contains("wa")) contactType = "wa";
+        else if (classList.contains("insta")) contactType = "insta";
+        else if (classList.contains("max")) contactType = "max";
+        else contactType = "unknown";
+
         const contactLabel = this.querySelector("img")?.getAttribute("alt") || "Unknown";
         const timestamp = new Date().toISOString();
         const timestampUnix = Date.now();
 
         if (window.ym) {
+            // 📌 1. Общая цель — все клики
             ym(109547647, "reachGoal", "CONTACT_CLICK", {
                 contactType,
                 contactHref: href,
                 contactLabel,
+                clickTimeISO: timestamp,
+                clickTimeUnix: timestampUnix
+            });
+
+            // 🎯 2. Отдельные цели по типу (для детального отчёта)
+            const goalMap = {
+                tel: "CONTACT_TEL",
+                sms: "CONTACT_SMS",
+                tg: "CONTACT_TELEGRAM",
+                wa: "CONTACT_WHATSAPP",
+                insta: "CONTACT_INSTAGRAM",
+                max: "CONTACT_MAX"
+            };
+
+            const specificGoal = goalMap[contactType] || "CONTACT_UNKNOWN";
+            ym(109547647, "reachGoal", specificGoal, {
                 clickTimeISO: timestamp,
                 clickTimeUnix: timestampUnix
             });
