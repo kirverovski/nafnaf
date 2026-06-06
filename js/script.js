@@ -284,6 +284,28 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
+// ✅ ДОБАВЛЕНО: Отслеживание кликов по кнопкам контактов
+const contactIcons = document.querySelectorAll("a.contact-icon");
+contactIcons.forEach(link => {
+    link.addEventListener("click", function () {
+        const href = this.getAttribute("href") || "";
+        const contactType = this.classList[0] || "unknown";
+        const contactLabel = this.querySelector("img")?.getAttribute("alt") || "Unknown";
+        const timestamp = new Date().toISOString();
+        const timestampUnix = Date.now();
+
+        if (window.ym) {
+            ym(109547647, "reachGoal", "CONTACT_CLICK", {
+                contactType,
+                contactHref: href,
+                contactLabel,
+                clickTimeISO: timestamp,
+                clickTimeUnix: timestampUnix
+            });
+        }
+    });
+});
+
 /* ============================
    ГАМБУРГЕР МЕНЮ
 ============================ */
@@ -330,3 +352,4 @@ if (hamburger && nav) {
         }
     });
 }
+
