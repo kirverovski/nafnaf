@@ -284,14 +284,14 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// ✅ ОТСЛЕЖИВАНИЕ КЛИКОВ ПО КНОПКАМ КОНТАКТОВ (УЛУЧШЕННОЕ)
+// ✅ ОТСЛЕЖИВАНИЕ КЛИКОВ ПО КНОПКАМ КОНТАКТОВ (ИСПРАВЛЕННОЕ)
 const contactIcons = document.querySelectorAll("a.contact-icon");
 contactIcons.forEach(link => {
     link.addEventListener("click", function () {
         const href = this.getAttribute("href") || "";
         const classList = this.classList;
 
-        // 🔍 Более надёжное определение типа (приоритет по href, затем по классам)
+        // 🔍 Определение типа кнопки (приоритет по href, затем по классам)
         let contactType;
         if (href.startsWith("tel:")) contactType = "tel";
         else if (href.startsWith("sms:")) contactType = "sms";
@@ -305,8 +305,19 @@ contactIcons.forEach(link => {
         const timestamp = new Date().toISOString();
         const timestampUnix = Date.now();
 
+        // 🛑 1. Сначала определяем конкретные цели (до использования)
+        const goalMap = {
+            tel: "CONTACT_TEL",
+            sms: "CONTACT_SMS",
+            tg: "CONTACT_TELEGRAM",
+            wa: "CONTACT_WHATSAPP",
+            insta: "CONTACT_INSTAGRAM",
+            max: "CONTACT_MAX"
+        };
+        const specificGoal = goalMap[contactType] || "CONTACT_UNKNOWN";
+
         if (window.ym) {
-            // 📌 1. Общая цель — все клики
+            // 📌 2. Общая цель — все клики
             ym(109547647, "reachGoal", "CONTACT_CLICK", {
                 contactType,
                 contactHref: href,
@@ -315,21 +326,21 @@ contactIcons.forEach(link => {
                 clickTimeUnix: timestampUnix
             });
 
-            // 🎯 2. Отдельные цели по типу (для детального отчёта)
-            const goalMap = {
-                tel: "CONTACT_TEL",
-                sms: "CONTACT_SMS",
-                tg: "CONTACT_TELEGRAM",
-                wa: "CONTACT_WHATSAPP",
-                insta: "CONTACT_INSTAGRAM",
-                max: "CONTACT_MAX"
-            };
-
-            const specificGoal = goalMap[contactType] || "CONTACT_UNKNOWN";
+            // ✅ 3. Отправка конкретной цели (теперь specificGoal определён)
             ym(109547647, "reachGoal", specificGoal, {
                 clickTimeISO: timestamp,
                 clickTimeUnix: timestampUnix
             });
+
+            // 🔹 4. Отправка в Logly (опционально — если подключили)
+            window._logly = window._logly || [];
+            window._logly.push(['trackEvent', 'CONTACT_CLICK', {
+                type: contactType,
+                href: href,
+                label: contactLabel,
+                time: timestamp,
+                unix: timestampUnix
+            }]);
         }
     });
 });
