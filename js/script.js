@@ -255,7 +255,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.classList.add("visible");
             }
         });
-    }, { threshold: 0.2 });
+    }, { 
+        threshold: 0.05,        // ← сработает при 10% видимости (было 0.2)
+        rootMargin: "50px 0px 50px 0px"  // ← анимация начнется за 50px до входа в экран
+    });
 
     elements.forEach(el => observer.observe(el));
 });
