@@ -1850,15 +1850,15 @@ body {
 .apple-glass-btn {
     position: relative;
     overflow: hidden; /* ← ВАЖНО: скрывает всё выходящее за пределы кнопки */
-    width: 56px;
-    height: 56px;
+    width: 80px;
+    height: 80px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(41, 40, 40, 0.22);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(36, 35, 35, 0.35);
     box-shadow:
-        inset 0 0 12px rgba(255, 255, 255, 0.25),
+        inset 0 0 32px rgba(53, 52, 52, 0.25),
         0 6px 20px rgba(0, 0, 0, 0.35);
     display: flex;
     align-items: center;
