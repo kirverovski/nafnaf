@@ -790,7 +790,7 @@ body {
         text-align: center;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-color: #f9efd6;
     }
 
