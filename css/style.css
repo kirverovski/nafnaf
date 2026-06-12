@@ -941,7 +941,7 @@ body {
 
 /* === ФИРМЕННЫЙ ФОН ШАПКИ === */
 .header {
-    background-image: url("../images/header-banner.png");
+    background-image: url("../images/header-banner.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1067,12 +1067,22 @@ body {
 }
 
 .after-hero-bg {
-    background: linear-gradient(
-        to bottom,
-        #f9efd6 0%,   /* светлее */
-        #f5e3bd 40%, /* мягкий тёплый оттенок */
-        #f9efd6 100% /* светлый золотистый */
-    );
+    /* === УБЕДИТЕСЬ, ЧТО ЭТОТ БЛОК — БЛОКВЫЙ, СТАТИЧНЫЙ === */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    /* Остальные свойства (без !important — они не конфликтуют) */
+    width: 100%;
+    background-image: url("../images/after-hero-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     padding: 80px 0;
 }
 
@@ -1948,9 +1958,7 @@ body {
 
 /* === МОБИЛЬНАЯ АДАПТАЦИЯ — ИСПОЛЬЗУЕМ ТОТ ЖЕ JS (без изменений в CSS) === */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
+    /* УБРАНО: .hamburger, .hamburger-icon, .cross-icon НЕ СКРЫВАЮТСЯ — они нужны для работы гамбургера */
 
     /* Мобильное меню — фиксированное справа (боковое) */
     .header .nav {
@@ -1998,5 +2006,31 @@ body {
     /* Показать меню при активном гамбургере */
     .header .nav.mobile-menu-open {
         right: 0;
+    }
+}
+/* === ЯВНО СКРЫВАЕМ ГАМБУРГЕР И ВСЁ С НИМ НА ДЕСКТОПЕ === */
+@media (min-width: 769px) {
+    .hamburger-wrapper {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
+
+    /* Это гарантирует, что сам гамбургер-кнопка не появится даже через наследование */
+    .hamburger {
+        display: none !important;
+    }
+
+    /* Иконки гамбургера и крестика тоже */
+    .hamburger-icon,
+    .cross-icon {
+        display: none !important;
+    }
+
+    /* Убедитесь, что .apple-glass-btn тоже скрыт (если он используется только внутри .hamburger) */
+    .apple-glass-btn {
+        display: none !important;
     }
 }
