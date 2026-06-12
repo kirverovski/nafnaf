@@ -630,14 +630,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
-/* затемнение */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+    /* Новые свойства для затемнения только на изображении */
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.35); /* регулируйте прозрачность */
 }
 
 /* контент поверх фона */
@@ -789,9 +785,13 @@ body {
 
     .hero {
         height: auto;
-        padding: 70px 0 90px;
+        min-height: auto;
+        padding: 80px 0 100px;
         text-align: center;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #f9efd6;
     }
 
     .hero h1 {
@@ -938,13 +938,6 @@ body {
 .stagger:nth-child(3) { transition-delay: 0.3s; }
 .stagger:nth-child(4) { transition-delay: 0.4s; }
 .stagger:nth-child(5) { transition-delay: 0.5s; }
-
-/* Параллакс для hero */
-.hero {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
 
 /* === ФИРМЕННЫЙ ФОН ШАПКИ === */
 .header {
@@ -1853,41 +1846,88 @@ body {
     }
 }
 
-/* === ГАМБУРГЕР (МОБИЛЬНОЕ МЕНЮ) === */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: none;
-    border: none;
+/* === APPLE GLASS ГАМБУРГЕР === */
+.apple-glass-btn {
+    position: relative;
+    overflow: hidden; /* ← ВАЖНО: скрывает всё выходящее за пределы кнопки */
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.25),
+        0 6px 20px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     padding: 0;
 }
 
-.hamburger span {
-    width: 100%;
-    height: 3px;
-    background: #333;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+.apple-glass-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 0 18px rgba(255, 255, 255, 0.35),
+        0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* Активное состояние (крестик) */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+/* === ОБЩИЕ НАСТРОЙКИ ДЛЯ ИКОНОК === */
+.hamburger-icon,
+.cross-icon {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    pointer-events: none;
 }
 
-.hamburger.active span:nth-child(2) {
+/* === АНИМАЦИЯ ГАМБУРГЕРА === */
+.hamburger-icon {
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* === КРЕСТИК СКРЫТ ПО УМОЛЧАНИЮ === */
+.cross-icon {
+    z-index: 3;
     opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
 }
 
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+/* === ПЕРЕКЛЮЧЕНИЕ НА КРЕСТИК (активное состояние) === */
+.hamburger.active .hamburger-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    transition: opacity 0.8s ease 0.1s, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА === */
+.hamburger.active .cross-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.6s ease 0.1s, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* === ПЕРЕКЛЮЧЕНИЕ ОБРАТНО (неактивное состояние) === */
+.hamburger:not(.active) .hamburger-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.3s ease 0s, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+
+.hamburger:not(.active) .cross-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+}
+
+/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА (сохраняем) === */
 .hamburger-wrapper {
     display: flex;
     flex-direction: column;
@@ -1905,46 +1945,9 @@ body {
     }
 }
 
-/* === ТЕКСТ "МЕНЮ" ДЛЯ ГАМБУРГЕРА === */
-.hamburger-label {
-    display: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    white-space: nowrap;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    margin-top: 8px;
-}
 
-/* Показать текст только на мобильных */
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ — ИСПОЛЬЗУЕМ ТОТ ЖЕ JS (без изменений в CSS) === */
 @media (max-width: 768px) {
-    .hamburger-label {
-        display: inline-block;
-    }
-}
-
-/* Скрыть текст при открытом меню */
-.hamburger-label.hidden {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-}
-
-/* Анимация появления */
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
-@media (max-width: 768px) {
-    /* Показать гамбургер */
     .hamburger {
         display: flex;
     }
