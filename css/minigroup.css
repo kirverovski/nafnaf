@@ -107,7 +107,7 @@
 /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
 @media (max-width: 768px) {
     .mini-blocks-section {
-        padding: 30px 15px;
+        padding: 30px 2px;
     }
     
     .mini-blocks-grid {
