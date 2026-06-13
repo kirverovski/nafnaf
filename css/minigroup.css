@@ -15,14 +15,14 @@
 }
 
 .mini-blocks-header h2 {
-    font-size: 21px;
+    font-size: 26px;
     font-weight: 600;
     color: #333333;
     margin: 0 0 7px;
 }
 
 .mini-blocks-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     color: #666666;
     margin: 0;
     line-height: 1.5;
@@ -107,7 +107,7 @@
 /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
 @media (max-width: 768px) {
     .mini-blocks-section {
-        padding: 30px 2px;
+        padding: 30px 5px;
     }
     
     .mini-blocks-grid {
@@ -137,5 +137,18 @@
     
     .mini-block-text .small-note {
         font-size: 8px;
+    }
+
+    .mini-blocks-header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mini-blocks-header h2 {
+        font-size: 24px;  /* уменьшенный заголовок */
+    }
+    
+    .mini-blocks-subtitle {
+        font-size: 14px;  /* уменьшенный подзаголовок */
     }
 }
