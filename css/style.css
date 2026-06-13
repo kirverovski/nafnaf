@@ -1,4 +1,4 @@
-/* === ГЛОБАЛЬНЫЙ СБРОС === */\n* {\n    box-sizing: border-box;\n}\n\n/* === БАЗОВЫЕ СТИЛИ === */"}
+/* === БАЗОВЫЕ СТИЛИ === */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -630,10 +630,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    /* Новые свойства для затемнения только на изображении */
-    background-blend-mode: multiply;
-    background-color: rgba(0,0,0,0.35); /* регулируйте прозрачность */
+/* затемнение */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
 }
 
 /* контент поверх фона */
@@ -785,13 +789,9 @@ body {
 
     .hero {
         height: auto;
-        min-height: auto;
-        padding: 80px 0 100px;
+        padding: 70px 0 90px;
         text-align: center;
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: #f9efd6;
     }
 
     .hero h1 {
@@ -939,9 +939,16 @@ body {
 .stagger:nth-child(4) { transition-delay: 0.4s; }
 .stagger:nth-child(5) { transition-delay: 0.5s; }
 
+/* Параллакс для hero */
+.hero {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 /* === ФИРМЕННЫЙ ФОН ШАПКИ === */
-    .header {
-    background-image: url("../images/header-banner.webp");
+.header {
+    background-image: url("../images/header-banner.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1067,22 +1074,12 @@ body {
 }
 
 .after-hero-bg {
-    /* === УБЕДИТЕСЬ, ЧТО ЭТОТ БЛОК — БЛОКВЫЙ, СТАТИЧНЫЙ === */
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-
-    /* Остальные свойства (без !important — они не конфликтуют) */
-    width: 100%;
-    background-image: url("../images/after-hero-bg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    background: linear-gradient(
+        to bottom,
+        #f9efd6 0%,   /* светлее */
+        #f5e3bd 40%, /* мягкий тёплый оттенок */
+        #f9efd6 100% /* светлый золотистый */
+    );
     padding: 80px 0;
 }
 
@@ -1885,59 +1882,51 @@ body {
         0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* === ОБЩИЕ НАСТРОЙКИ ДЛЯ ИКОНОК === */
-.hamburger-icon,
-.cross-icon {
-    width: 90%;
-    height: 90%;
+
+/* === ГАМБУРГЕР (МОБИЛЬНОЕ МЕНЮ) === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger img {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* === АНИМАЦИЯ ГАМБУРГЕРА === */
 .hamburger-icon {
-    z-index: 2;
     opacity: 1;
-    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(1);
 }
 
-/* === КРЕСТИК СКРЫТ ПО УМОЛЧАНИЮ === */
 .cross-icon {
-    z-index: 3;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: scale(0.5);
 }
 
-/* === ПЕРЕКЛЮЧЕНИЕ НА КРЕСТИК (активное состояние) === */
+/* Активное состояние (крестик) */
 .hamburger.active .hamburger-icon {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3);
-    transition: opacity 0.8s ease 0.1s, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(0.5);
 }
 
 .hamburger.active .cross-icon {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: opacity 0.6s ease 0.1s, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(1);
 }
 
-/* === ПЕРЕКЛЮЧЕНИЕ ОБРАТНО (неактивное состояние) === */
-.hamburger:not(.active) .hamburger-icon {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: opacity 0.3s ease 0s, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
-}
-
-.hamburger:not(.active) .cross-icon {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.6);
-}
-
-/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА (сохраняем) === */
+/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА === */
 .hamburger-wrapper {
     display: flex;
     flex-direction: column;
@@ -1955,10 +1944,49 @@ body {
     }
 }
 
+/* === ТЕКСТ "МЕНЮ" ДЛЯ ГАМБУРГЕРА === */
+.hamburger-label {
+    display: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 8px;
+}
 
-/* === МОБИЛЬНАЯ АДАПТАЦИЯ — ИСПОЛЬЗУЕМ ТОТ ЖЕ JS (без изменений в CSS) === */
+/* Показать текст только на мобильных */
 @media (max-width: 768px) {
-    /* УБРАНО: .hamburger, .hamburger-icon, .cross-icon НЕ СКРЫВАЮТСЯ — они нужны для работы гамбургера */
+    .hamburger-label {
+        display: inline-block;
+    }
+}
+
+/* Скрыть текст при открытом меню */
+.hamburger-label.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Анимация появления */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 768px) {
+    /* Показать гамбургер */
+    .hamburger {
+        display: flex;
+    }
 
     /* Мобильное меню — фиксированное справа (боковое) */
     .header .nav {
@@ -2006,31 +2034,5 @@ body {
     /* Показать меню при активном гамбургере */
     .header .nav.mobile-menu-open {
         right: 0;
-    }
-}
-/* === ЯВНО СКРЫВАЕМ ГАМБУРГЕР И ВСЁ С НИМ НА ДЕСКТОПЕ === */
-@media (min-width: 769px) {
-    .hamburger-wrapper {
-        display: none !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        position: absolute !important;
-        left: -9999px !important;
-    }
-
-    /* Это гарантирует, что сам гамбургер-кнопка не появится даже через наследование */
-    .hamburger {
-        display: none !important;
-    }
-
-    /* Иконки гамбургера и крестика тоже */
-    .hamburger-icon,
-    .cross-icon {
-        display: none !important;
-    }
-
-    /* Убедитесь, что .apple-glass-btn тоже скрыт (если он используется только внутри .hamburger) */
-    .apple-glass-btn {
-        display: none !important;
     }
 }
