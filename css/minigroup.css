@@ -8,8 +8,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .mini-blocks-header {
@@ -60,7 +58,7 @@
 
 .mini-block-text {
     text-align: left;
-    font-size: 11px;
+    font-size: 14px;
     color: #333333;
     line-height: 1.4;
     flex: 1;
@@ -110,10 +108,6 @@
 @media (max-width: 768px) {
     .mini-blocks-section {
         padding: 30px 15px;
-    }
-    
-    .mini-blocks-container {
-        max-width: 100%;
     }
     
     .mini-blocks-grid {

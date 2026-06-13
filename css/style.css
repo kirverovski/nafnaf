@@ -1,4 +1,4 @@
-/* === БАЗОВЫЕ СТИЛИ === */
+/* === ГЛОБАЛЬНЫЙ СБРОС === */\n* {\n    box-sizing: border-box;\n}\n\n/* === БАЗОВЫЕ СТИЛИ === */"}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
