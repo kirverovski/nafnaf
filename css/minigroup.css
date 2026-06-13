@@ -1,0 +1,146 @@
+/* === БЛОК С МИНИ-БЛОКАМИ === */
+.mini-blocks-section {
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+.mini-blocks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mini-blocks-header {
+    text-align: center;
+}
+
+.mini-blocks-header h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 7px;
+}
+
+.mini-blocks-subtitle {
+    font-size: 12px;
+    color: #666666;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.mini-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.mini-block {
+    padding: 8px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.mini-block-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.mini-block-text {
+    text-align: left;
+    font-size: 11px;
+    color: #333333;
+    line-height: 1.4;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mini-block-text p {
+    margin: 0 0 8px;
+    font-weight: 500;
+}
+
+.mini-block-text .small-note {
+    font-size: 10px !important;
+    color: #888888;
+    margin-top: 5px;
+    font-weight: normal;
+    display: block;
+}
+
+/* === Цвета для разных блоков === */
+.mini-block:nth-child(1) { background: #e3f2fd; }
+.mini-block:nth-child(2) { background: #e8f5e9; }
+.mini-block:nth-child(3) { background: #fff3e0; }
+.mini-block:nth-child(4) { background: #f3e5f5; }
+.mini-block:nth-child(5) { background: #fce4ec; }
+.mini-block:nth-child(6) { background: #e0f2f1; }
+.mini-block:nth-child(7) { background: #fff8e1; }
+.mini-block:nth-child(8) { background: #ede7f6; }
+.mini-block:nth-child(9) { background: #fff3e0; }
+.mini-block:nth-child(10) { background: #e8f5e9; }
+
+/* === АНИМАЦИЯ ПРИ ПРОКРУТКЕ (опционально) === */
+.mini-block-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mini-block-slide.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 768px) {
+    .mini-blocks-section {
+        padding: 30px 15px;
+    }
+    
+    .mini-blocks-container {
+        max-width: 100%;
+    }
+    
+    .mini-blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .mini-block {
+        height: 100px;
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .mini-block-img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .mini-block-text {
+        font-size: 8px;
+    }
+    
+    .mini-block-text p {
+        margin: 0 0 5px;
+    }
+    
+    .mini-block-text .small-note {
+        font-size: 8px;
+    }
+}

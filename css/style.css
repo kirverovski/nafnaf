@@ -940,7 +940,7 @@ body {
 .stagger:nth-child(5) { transition-delay: 0.5s; }
 
 /* === ФИРМЕННЫЙ ФОН ШАПКИ === */
-.header {
+    .header {
     background-image: url("../images/header-banner.webp");
     background-size: cover;
     background-position: center;
