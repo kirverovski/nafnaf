@@ -223,3 +223,255 @@
         height: 40px;
     }
 }
+
+/* Стили для модалки в стиле Получить расчет */
+#modal {
+    align-items: center;
+    padding-top: 0;
+}
+
+#modal .modal-content {
+    background: linear-gradient(135deg, #b16ff8 0%, #fc25ea 100%);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 70px 25px 30px 25px;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 85vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Для WebKit-браузеров (Chrome, Edge, Safari) */
+#modal .modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modal .modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#modal .modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.6); /* золотистый */
+    border-radius: 10px;
+}
+
+#modal .modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 215, 0, 0.9);
+}
+
+/* Для Firefox */
+#modal .modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(247, 212, 15) rgba(0, 0, 0, 0.1);
+}
+
+/* Круглый крестик ближе к правому верхнему углу модалки */
+#modal .close-btn-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10001;
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#modal .close-btn-overlay:hover {
+    background: #ffd700;
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 75, 106, 0.4);
+}
+
+#modal .close-btn-overlay:active {
+    transform: scale(0.95);
+}
+
+#modal .form-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#modal .form-subtitle {
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#modal .form-group {
+    margin-bottom: 15px;
+}
+
+#modal input,
+#modal textarea,
+#modal select {
+    width: calc(100% - 16px);
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: #000;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+#modal input:focus,
+#modal textarea:focus,
+#modal select:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+#modal select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="12" width="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+#modal input::placeholder,
+#modal textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+#modal .form-btn {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 300px;
+    min-height: 80px;
+    background: #ffd700;
+    border: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 18px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex; /* для центрирования */
+    align-items: center; /* центрирование по вертикали */
+    justify-content: center; /* центрирование по горизонтали */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+#modal .form-btn:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Стили для date-time-row и form-row в модалке */
+#modal .date-time-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+#modal .date-time-row .date-col,
+#modal .date-time-row .time-col {
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+
+#modal .date-time-row input[type="date"],
+#modal .date-time-row input[type="time"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#modal .form-row.separated {
+    display: flex;
+    gap: 20px;
+}
+
+#modal .form-row.separated > div {
+    flex: 0 0 48%;
+}
+
+#modal .modal-textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+#modal .date-input,
+#modal .time-input {
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 45px;
+}
+
+#modal .date-input {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10h5v5H7z"/><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>');
+}
+
+#modal .time-input {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm1 11.59V7h-2v6h.01L13 15l1.41-1.41z"/></svg>');
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    #modal {
+        align-items: center;
+    }
+    
+    #modal .modal-content {
+        width: 90%;
+        padding: 65px 20px 25px 20px;
+    }
+    
+    #modal .close-btn-overlay {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        line-height: 32px;
+    }
+    
+    #modal .date-time-row {
+        flex-direction: column;
+    }
+    
+    #modal .date-time-row .date-col,
+    #modal .date-time-row .time-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    #modal .form-row.separated {
+        flex-direction: column;
+    }
+    
+    #modal .form-row.separated > div {
+        flex: 0 0 100%;
+    }
+}
