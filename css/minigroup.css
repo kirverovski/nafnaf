@@ -1,6 +1,6 @@
 /* === БЛОК С МИНИ-БЛОКАМИ === */
 .mini-blocks-section {
-    padding: 40px 20px;
+    padding: 40px 20px 10px;
     background: #f9f9f9;
 }
 
@@ -107,7 +107,7 @@
 /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
 @media (max-width: 768px) {
     .mini-blocks-section {
-        padding: 30px 5px;
+        padding: 40px 20px 10px;
     }
     
     .mini-blocks-grid {
@@ -150,5 +150,195 @@
     
     .mini-blocks-subtitle {
         font-size: 14px;  /* уменьшенный подзаголовок */
+    }
+}
+
+/* === Блок с ценой и кнопкой === */
+.pricing-section {
+    padding: 20px 20px;        /* ⬅️ УМЕНЬШЕН верхний отступ (было 20px → 10px) */
+    background: #f9f9f9;
+}
+
+.pricing-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  /* ⬅️ ЦЕНТРИРУЕТ текст+кнопку */
+    gap: 25px;
+    max-width: 600px;         /* ⬅️ Ограничиваем ширину для красоты */
+    margin: 0 auto;           /* ⬅️ Центрируем по центру экрана */
+    padding: 0 20px;          /* отступы от краёв экрана */
+}
+
+.pricing-text {
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    text-align: left;
+}
+
+.pricing-text strong {
+    font-size: 28px;
+    color: #333;
+    font-weight: 900;
+    font-family: "Arial Black", "Arial Bold", "Helvetica Neue Bold", sans-serif;
+}
+
+/* Apple Glass кнопка — овальная и подстраивается под текст */
+.calc-btn {
+    padding: 14px 30px;
+    height: auto;
+    border: 3px solid #ffd700;
+    background: rgba(253, 249, 2, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease, color 0.3s ease;
+    box-shadow: none !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    
+    /* КЛЮЧЕВОЕ ДОБАВЛЕНИЕ: подстраивается под контент */
+    width: fit-content;
+    min-width: max-content;
+}
+.calc-btn:hover {
+    background: rgba(255, 105, 180, 0.25);
+    border-color: #ff69b4;
+    color: #333;
+    transform: scale(1.03);
+}
+
+/* === Модальное окно "Получить расчет" === */
+#calcModal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+#calcModal .modal-content {
+    max-width: 600px;
+    margin: 10vh auto;
+    padding: 30px 25px;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: visible;
+}
+
+#calcModal .form-title {
+    margin-bottom: 15px;
+}
+
+#calcModal .form-subtitle {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* === Стили для полей ввода в модалке === */
+#calcModal .form-group {
+    margin-bottom: 15px;
+}
+
+/* Красивые поля ввода */
+#calcModal input,
+#calcModal textarea {
+    width: calc(100% - 16px);  /* ⬅️ Отступы 8px слева и справа */
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+#calcModal input:focus,
+#calcModal textarea:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+#calcModal textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+/* Placeholder — полупрозрачный белый */
+#calcModal input::placeholder,
+#calcModal textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+/* Кнопка отправки */
+#calcModal .form-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: #ffd700;
+    border: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+#calcModal .form-btn:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* === Крестик закрытия модалки "Получить расчет" === */
+.close-btn-overlay {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;  /* ⬅️ ВАЖНО: выше самого .modal-content (у него z-index по умолчанию 1) */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.close-btn-overlay:hover {
+    background: #ffd700;
+    color: #333;
+}
+
+.close-btn-overlay:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    #calcModal .modal-content {
+        width: 80%;                /* вместо автоматического растягивания */
+        margin: 5vh auto;         /* уменьшенный отступ сверху для удобства */
+        max-width: none;           /* сброс max-width для точного контроля ширины */
+        padding: 25px 20px;       /* немного меньше padding'а */
     }
 }
