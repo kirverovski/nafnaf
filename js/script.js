@@ -1,20 +1,4 @@
 /* ============================
-   ГЛАВНАЯ МОДАЛКА
-============================ */
-
-const modal = document.getElementById("modal");
-const open1 = document.getElementById("openModal");
-const close = document.getElementById("closeModal");
-
-if (open1) open1.onclick = () => modal.style.display = "flex";
-if (close) close.onclick = () => modal.style.display = "none";
-
-window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-});
-
-
-/* ============================
    ОКНО "СПАСИБО"
 ============================ */
 

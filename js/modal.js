@@ -212,3 +212,105 @@ document.addEventListener('click', function(e) {
         closeDiscountModal();
     }
 });
+
+// === СКРИПТ ДЛЯ МОДАЛКИ (НАТИВНЫЕ ДАТА И ВРЕМЯ) ===
+
+document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById('openModal');
+    const mainModal = document.getElementById('modal');
+    const closeBtn = document.getElementById('closeModal');
+    const successModal = document.getElementById('successModal');
+    const closeSuccessBtn = document.getElementById('closeSuccess');
+    
+    // Проверка на наличие элементов
+    if (!openBtn || !mainModal || !closeBtn) return;
+    
+    // === НАТИВНЫЕ ПОЛЯ ВВОДА ДАТЫ И ВРЕМЕНИ ===
+    const dateInput = document.querySelector('#contactForm input[name="date"]');
+    const timeInput = document.querySelector('#contactForm input[name="time"]');
+
+    // На мобильных и ПК — используем нативные input type="date" и type="time"
+    if (dateInput) {
+        dateInput.type = "date"; // убедимся, что type="date"
+        dateInput.valueAsDate = new Date(); // предвыбор текущей даты (опционально)
+        
+        // ДОБАВЛЕНО: клик на поле открывает календарь (имитация клика по иконке)
+        dateInput.addEventListener('click', () => {
+            dateInput.focus();
+        });
+    }
+
+    if (timeInput) {
+        timeInput.type = "time"; // убедимся, что type="time"
+        // ДОБАВЛЕНО: клик на поле открывает выбор времени
+        timeInput.addEventListener('click', () => {
+            timeInput.focus();
+        });
+    }
+    
+    // Открыть окно по кнопке
+    openBtn.addEventListener('click', () => {
+        mainModal.style.display = 'flex';
+    });
+    
+    // Закрыть по крестику
+    closeBtn.addEventListener('click', () => {
+        mainModal.style.display = 'none';
+    });
+    
+    // Закрыть при клике на фон
+    mainModal.addEventListener('click', (e) => {
+        if (e.target === mainModal) {
+            mainModal.style.display = 'none';
+        }
+    });
+    
+    // Закрыть по ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainModal.style.display === 'flex') {
+            mainModal.style.display = 'none';
+        }
+    });
+    
+    // Обработка отправки формы
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { "Accept": "application/json" }
+                });
+                
+                if (response.ok) {
+                    mainModal.style.display = 'none';
+                    if (successModal) {
+                        successModal.style.display = 'flex';
+                    }
+                } else {
+                    throw new Error('Ошибка сервера: ' + response.status);
+                }
+            } catch (error) {
+                console.error('Ошибка отправки формы:', error);
+            }
+        });
+    }
+    
+    // Закрытие модалки "Спасибо" по кнопке
+    if (closeSuccessBtn) {
+        closeSuccessBtn.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+    }
+    
+    successModal.addEventListener('click', (e) => {
+        if (e.target === successModal) {
+            successModal.style.display = 'none';
+        }
+    });
+});
