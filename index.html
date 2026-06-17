@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/minigroup.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -57,12 +58,12 @@
 
         <!-- Твой текущий текст (он остаётся) -->
         <p class="contact-helper-text">
-            Чтобы мы быстрее смогли вам помочь — начните диалог с:
+            Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
         </p>
 
         <!-- Новый текстовый блок -->
         <textarea id="contactText" class="contact-helper-area" readonly>
-Здравствуйте! Ознакомившись с информацией на вашем сайте, хочу уточнить некоторые детали по услугам. Меня интересует:
+Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
         </textarea>
 
         <!-- Кнопка копирования -->
@@ -115,6 +116,14 @@
 </div>
 
 <body>
+<div class="discount-toggle-wrapper">
+    <a href="#" class="discount-btn" id="discountFullBtn" onclick="openDiscountModal(); return false;">
+<span class="btn-text">Скидка 5%</span>
+    </a>
+    <div class="discount-arrow-btn" id="discountArrowBtn" onclick="toggleDiscountButton()">
+<span class="arrow-icon">&times;</span>
+    </div>
+</div>
 
 <!-- Гамбургер-кнопка (в стиле Apple Glass с изображением) -->
 <div class="hamburger-wrapper">
@@ -242,99 +251,139 @@
     </section>
     
     <!-- Секция с мини-блоками -->
-<section class="mini-blocks-section reveal">
-    <div class="mini-blocks-container">
-        <div class="mini-blocks-header">
-            <h2>В программу любого аниматора входит</h2>
-            <p class="mini-blocks-subtitle">Превратите ваш праздник в незабываемое зрелище с помощью увлекательных шоу-программ! Яркие представления добавят новые эмоции и сделают мероприятие по-настоящему особенным, подарив гостям массу впечатлений. Мы знаем, как создать масштабный и запоминающийся праздник.</p>
-        </div>
+    <section class="mini-blocks-section reveal">
+        <div class="mini-blocks-container">
+            <div class="mini-blocks-header">
+                <h2>В программу любого аниматора входит</h2>
+                <p class="mini-blocks-subtitle">Превратите ваш праздник в незабываемое зрелище с помощью увлекательных шоу-программ! Яркие представления добавят новые эмоции и сделают мероприятие по-настоящему особенным, подарив гостям массу впечатлений. Мы знаем, как создать масштабный и запоминающийся праздник.</p>
+            </div>
         
-        <div class="mini-blocks-grid">
-            <!-- Блок 1 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok1.webp" alt="Фиксированная стоимость" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Фиксированная стоимость</p>
+           <div class="mini-blocks-grid">
+                <!-- Блок 1 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok1.webp" alt="Фиксированная стоимость" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Фиксированная стоимость</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 2 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok2.webp" alt="Музыкальное сопровождение" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Музыкальное сопровождение</p>
+                <!-- Блок 2 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok2.webp" alt="Музыкальное сопровождение" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Музыкальное сопровождение</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 3 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok3.webp" alt="Мыльный интерактив" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Мыльный интерактив</p>
-                    <p class="small-note">только при заказе от 1,5 часов</p>
+                <!-- Блок 3 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok3.webp" alt="Мыльный интерактив" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Мыльный интерактив</p>
+                        <p class="small-note">только при заказе от 1,5 часов</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 4 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok4.webp" alt="Авторский сценарий" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Авторский сценарий</p>
+                <!-- Блок 4 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok4.webp" alt="Авторский сценарий" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Авторский сценарий</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 5 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok5.webp" alt="Веселые мини-фокусы" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Веселые мини-фокусы</p>
-                    <p class="small-note">только при заказе от 2 часов</p>
+                <!-- Блок 5 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok5.webp" alt="Веселые мини-фокусы" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Веселые мини-фокусы</p>
+                        <p class="small-note">только при заказе от 2 часов</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 6 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok6.webp" alt="Вынос торта" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Вынос торта</p>
+                <!-- Блок 6 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok6.webp" alt="Вынос торта" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Вынос торта</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 7 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok7.webp" alt="Тематический реквизит" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Тематический реквизит</p>
+                <!-- Блок 7 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok7.webp" alt="Тематический реквизит" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Тематический реквизит</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 8 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok8.webp" alt="Легкий аквагрим" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Легкий аквагрим</p>
-                    <p class="small-note">только при заказе от 1,5 часов</p>
+                <!-- Блок 8 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok8.webp" alt="Легкий аквагрим" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Легкий аквагрим</p>
+                        <p class="small-note">только при заказе от 1,5 часов</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 9 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok9.webp" alt="Фигурки из шариков" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Фигурки из шариков</p>
+                <!-- Блок 9 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok9.webp" alt="Фигурки из шариков" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Фигурки из шариков</p>
+                    </div>
                 </div>
-            </div>
             
-            <!-- Блок 10 -->
-            <div class="mini-block">
-                <img src="images/miniblocks/blok10.webp" alt="Транспортные расходы по Центральному району Сочи" class="mini-block-img">
-                <div class="mini-block-text">
-                    <p>Транспортные расходы по Центральному району Сочи</p>
+                <!-- Блок 10 -->
+                <div class="mini-block">
+                    <img src="images/miniblocks/blok10.webp" alt="Транспортные расходы по Центральному району Сочи" class="mini-block-img">
+                    <div class="mini-block-text">
+                        <p>Транспортные расходы по Центральному району Сочи</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- === Блок с ценой и кнопкой === -->
+    <section class="pricing-section reveal">
+        <div class="pricing-container">
+            <p class="pricing-text">от <strong>4500 ₽</strong></p>
+            <button class="apple-glass-btn calc-btn" id="openCalcModal">Получить расчет</button>
+        </div>
+    </section>
+
+    <!-- === МОДАЛКА: Получить расчет === -->
+    <div class="modal" id="calcModal">
+        <div class="modal-content form-small zoom-in" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); position: relative;">
+            <span class="close-btn-overlay" id="closeCalcModal">&times;</span>
+
+            <h2 class="form-title" style="color: white; text-align: center;">Получить расчет праздника</h2>
+            <p class="form-subtitle" style="color: #e0e0e0; text-align: center;">Наши чуткие менеджеры узнают у Вас все Ваши предпочтения и помогут создать вашу собственную сказку</p>
+
+            <form id="calcForm" action="https://formspree.io/f/mlgvggon" method="POST">
+    
+                <!-- Имя -->
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Имя" autocomplete="name"
+                           inputmode="latin" pattern="[А-Яа-яA-Za-z\s\-]*" title="Только буквы и дефис">
+                </div>
+
+                <!-- Телефон -->
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00" 
+                           autocomplete="tel" pattern="[\+]?[0-9\s\-\(\)]*" title="Введите номер телефона">
+                </div>
+
+                <!-- Комментарий -->
+                <div class="form-group">
+                    <textarea id="comment" name="comment" placeholder="Комментарий (пожелания, сроки, площадка...)"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary glow form-btn">Отправить</button>
+            </form>
         </div>
     </div>
-</section>
 
     <section class="about-company-section">
         <div class="about-company-glass reveal">
@@ -522,7 +571,7 @@
 <!-- МОДАЛКА: Заявка -->
 <div class="modal" id="modal">
     <div class="modal-content form-big zoom-in">
-        <span class="close close-service" id="closeModal">×</span>
+        <span class="close-btn-overlay" id="closeModal">&times;</span>
 
         <h2 class="form-title">Оставить заявку</h2>
         <p class="form-subtitle">
@@ -704,6 +753,8 @@ function toggleSeoText() {
     }
 }
 </script>
+
+<script src="js/modal.js"></script>
 
 <!-- Кнопка "Вверх" -->
 <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>

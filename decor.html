@@ -5,6 +5,7 @@
     <title>Шары и фотозоны | Праздники в Сочи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -48,24 +49,43 @@
 <!-- Модальное окно связи -->
 <div class="contact-modal-overlay">
     <div class="contact-modal">
+
+        <!-- Заголовок -->
         <h3>Свяжитесь с нами удобным вам способом</h3>
 
+        <!-- Твой текущий текст (он остаётся) -->
+        <p class="contact-helper-text">
+            Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
+        </p>
+
+        <!-- Новый текстовый блок -->
+        <textarea id="contactText" class="contact-helper-area" readonly>
+Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
+        </textarea>
+
+        <!-- Кнопка копирования -->
+        <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
+
+        <!-- Подтверждение копирования -->
+        <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
+
+        <!-- Иконки контактов -->
         <div class="contact-icons">
 
             <!-- Telegram -->
-            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
                class="contact-icon tg" target="_blank">
                 <img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img">
             </a>
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Пишу%20вам%20через%20сайт." 
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
                class="contact-icon wa" target="_blank">
                 <img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img">
             </a>
 
             <!-- Instagram -->
-            <a href="https://www.instagram.com/naf_nafiki.sochi?igsh=ZzZyNGlvZHIyeDZq&utm_source=ig_contact_invite" 
+            <a href="https://www.instagram.com/naf_nafiki.sochi" 
                class="contact-icon insta" target="_blank">
                 <img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img">
             </a>
@@ -93,6 +113,15 @@
 </div>
 
 <body>
+
+<div class="discount-toggle-wrapper">
+    <a href="#" class="discount-btn" id="discountFullBtn" onclick="openDiscountModal(); return false;">
+<span class="btn-text">Скидка 5%</span>
+    </a>
+    <div class="discount-arrow-btn" id="discountArrowBtn" onclick="toggleDiscountButton()">
+<span class="arrow-icon">&times;</span>
+    </div>
+</div>
 
 <!-- Гамбургер-кнопка (в стиле Apple Glass с изображением) -->
 <div class="hamburger-wrapper">
@@ -518,7 +547,7 @@ function toggleSeoText() {
     }
 }
 </script>
-
+<script src="js/modal.js"></script>
 <!-- Кнопка "Вверх" -->
 <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
 

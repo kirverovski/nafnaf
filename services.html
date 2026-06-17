@@ -5,6 +5,7 @@
     <title>Дополнительные услуги | Праздники в Сочи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -54,12 +55,12 @@
 
         <!-- Твой текущий текст (он остаётся) -->
         <p class="contact-helper-text">
-            Чтобы мы быстрее смогли вам помочь — начните диалог с:
+            Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
         </p>
 
         <!-- Новый текстовый блок -->
         <textarea id="contactText" class="contact-helper-area" readonly>
-Здравствуйте! Ознакомившись с информацией на вашем сайте, хочу уточнить некоторые детали по услугам. Меня интересует:
+Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
         </textarea>
 
         <!-- Кнопка копирования -->
@@ -112,6 +113,15 @@
 </div>
 
 <body>
+
+<div class="discount-toggle-wrapper">
+    <a href="#" class="discount-btn" id="discountFullBtn" onclick="openDiscountModal(); return false;">
+<span class="btn-text">Скидка 5%</span>
+    </a>
+    <div class="discount-arrow-btn" id="discountArrowBtn" onclick="toggleDiscountButton()">
+<span class="arrow-icon">&times;</span>
+    </div>
+</div>
 
 <!-- Гамбургер-кнопка (в стиле Apple Glass с изображением) -->
 <div class="hamburger-wrapper">
@@ -564,11 +574,7 @@
     </div>
 </section>
 
-<!-- МОДАЛКА: Описание услуги -->
-<div class="modal" id="serviceModal">
-    <div class="modal-content fullscreen zoom-in">
-        <span class="close close-service" id="closeService">×</span>
-
+{"text": "<!-- МОДАЛКА: Описание услуги -->\r\n<div class=\"modal\" id=\"serviceModal\">\r\n    <span class=\"close close-service\" id=\"closeService\">×</span>\r\n    <div class=\"modal-content fullscreen zoom-in\">\r\n"}
         <!-- Контейнер 16:9 -->
         <div class="modal-image-wrapper">
             <img id="serviceImage" class="service-img" alt="" loading="lazy">
@@ -794,7 +800,7 @@ function toggleSeoText() {
     }
 }
 </script>
-
+<script src="js/modal.js"></script>
 <!-- Кнопка "Вверх" -->
 <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
 
