@@ -2036,3 +2036,19 @@ body {
         right: 0;
     }
 }
+
+/* === ВИДЕО ВМЕСТО ЛОГОТИПА === */
+.logo-video {
+    height: 170px; /* такая же высота как у logo-img */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .logo-video {
+        height: 100px; /* уменьшенная высота на мобильных */
+        max-width: 100%;
+    }
+}
