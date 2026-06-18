@@ -1013,84 +1013,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* === APPLE GLASS BUTTONS ДЛЯ КАТЕГОРИЙ НА ГЛАВНОЙ === */
-.category-glass {
-    position: relative;
-    overflow: hidden;
-
-    display: inline-block;
-    padding: 18px 36px;
-    font-size: 20px;
-    font-weight: 700;
-    border-radius: 32px;
-    text-align: center;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow:
-        inset 0 0 18px rgba(255, 255, 255, 0.25),
-        0 8px 28px rgba(0, 0, 0, 0.35);
-
-    color: #333;
-    cursor: pointer;
-    transition: 0.35s ease;
-    white-space: nowrap;
-}
-
-/* Блик */
-.category-glass::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 140%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.55),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: glassShineCats 5s infinite;
-}
-
-@keyframes glassShineCats {
-    0% { left: -150%; }
-    70% { left: 150%; }
-    100% { left: 150%; }
-}
-
-/* Наведение */
-.category-glass:hover {
-    transform: translateY(-4px) scale(1.04);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow:
-        inset 0 0 22px rgba(255, 255, 255, 0.35),
-        0 12px 36px rgba(0, 0, 0, 0.45);
-}
-
-.after-hero-bg {
-    background: linear-gradient(
-        to bottom,
-        #f9efd6 0%,   /* светлее */
-        #f5e3bd 40%, /* мягкий тёплый оттенок */
-        #f9efd6 100% /* светлый золотистый */
-    );
-    padding: 80px 0;
-}
-
-.category-buttons {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
 /* === НОВЫЕ КАРТОЧКИ С ТЕКСТОМ И КНОПКОЙ НА ИЗОБРАЖЕНИИ === */
 .anim-card {
     position: relative;
@@ -2036,7 +1958,6 @@ body {
         right: 0;
     }
 }
-
 /* === ВИДЕО ВМЕСТО ЛОГОТИПА === */
 .logo-video {
     height: 170px; /* такая же высота как у logo-img */
@@ -2048,7 +1969,7 @@ body {
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
     .logo-video {
-        height: 100px; /* уменьшенная высота на мобильных */
+        height: 100%; /* уменьшенная высота на мобильных */
         max-width: 100%;
     }
 }
