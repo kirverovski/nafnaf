@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/menu.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -41,95 +43,43 @@
 
 </head>
 
-<!-- Плавающая кнопка -->
-<button class="contact-float-btn">
-    <img src="logotip/contact-button.png" alt="Связаться" class="float-icon">
-</button>
-
 <!-- Модальное окно связи -->
 <div class="contact-modal-overlay">
     <div class="contact-modal">
-
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
         <!-- Заголовок -->
         <h3>Свяжитесь с нами удобным вам способом</h3>
-
-        <!-- Твой текущий текст (он остаётся) -->
+        <!-- Текст для скидки -->
         <p class="contact-helper-text">
             Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
         </p>
-
-        <!-- Новый текстовый блок -->
+        <!-- Текстовое поле с текстом -->
         <textarea id="contactText" class="contact-helper-area" readonly>
 Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
         </textarea>
-
         <!-- Кнопка копирования -->
         <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
-
         <!-- Подтверждение копирования -->
         <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
-
         <!-- Иконки контактов -->
         <div class="contact-icons">
-
             <!-- Telegram -->
-            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon tg" target="_blank">
-                <img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img">
-            </a>
-
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img"></a>
             <!-- WhatsApp -->
-            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon wa" target="_blank">
-                <img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img">
-            </a>
-
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img"></a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/naf_nafiki.sochi" 
-               class="contact-icon insta" target="_blank">
-                <img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img">
-            </a>
-
+            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img"></a>
             <!-- MAX -->
-            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M" 
-               class="contact-icon max" target="_blank">
-                <img src="logotip/max-logo.png" alt="MAX" class="icon-img">
-            </a>
-
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.png" alt="MAX" class="icon-img"></a>
             <!-- SMS -->
-            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon sms">
-                <img src="logotip/sms-icon.png" alt="Call" class="icon-img">
-            </a>
-
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.png" alt="Call" class="icon-img"></a>
             <!-- Вызов по телефону -->
-            <a href="tel:+79098261926" 
-               class="contact-icon call" aria-label="Позвонить">
-                <img src="logotip/phone-icon.png" alt="Call" class="icon-img">
-            </a>
-
+            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.png" alt="Call" class="icon-img"></a>
         </div>
     </div>
 </div>
 
 <body>
-
-<div class="discount-toggle-wrapper">
-    <a href="#" class="discount-btn" id="discountFullBtn" onclick="openDiscountModal(); return false;">
-<span class="btn-text">Скидка 5%</span>
-    </a>
-    <div class="discount-arrow-btn" id="discountArrowBtn" onclick="toggleDiscountButton()">
-<span class="arrow-icon">&times;</span>
-    </div>
-</div>
-
-<!-- Гамбургер-кнопка (в стиле Apple Glass с изображением) -->
-<div class="hamburger-wrapper">
-    <button class="hamburger apple-glass-btn" aria-label="Меню">
-        <img src="logotip/hamburger-icon.webp" alt="Меню" class="hamburger-icon">
-        <img src="logotip/cross-icon.webp" alt="Закрыть" class="cross-icon">
-    </button>
-</div>   
 
 <header class="header">
     <div class="container header-inner">
@@ -261,13 +211,19 @@
 
             <!-- ВИДЕОГРАФ -->
             <div class="card service-card clickable-card reveal stagger"
-                 data-title="Видеограф"
-                 data-description="Красивый видеоролик с праздника, монтаж, цветокоррекция и музыка."
-                 data-price="от 3500"
-                 data-image="images/service-video.webp">
-                <img src="images/service-video.webp" class="card-img" alt="" loading="lazy">
+                 data-title="«Видеограф»"
+                 data-description="Профессиональная видеосъёмка вашего праздника."
+                 data-full="<h3>Описание</h3><p>Сохраните самые яркие моменты праздника в красивом и динамичном видео. Видеограф снимет самые важные эмоции, активности, поздравления и атмосферу мероприятия.</p><h3>Что входит?</h3><p>🎥 Профессиональная видеосъёмка праздника<br>✨ Монтаж ролика<br>🎨 Цветокоррекция кадров<br>🎵 Подбор музыкального сопровождения<br>📱 Подготовка видео для просмотра и публикации</p><h3>Идеально подходит для</h3><p>✔ Детских дней рождения<br>✔ Выпускных и утренников<br>✔ Семейных праздников<br>✔ Тематических вечеринок</p><h3>Стоимость</h3><p><b>от 3500 ₽</b></p>"
+                 data-price="от 3500₽"
+                 data-images="images/service-video.webp">
+
+                <img src="images/service-video.webp"
+                     class="card-img"
+                     alt="Видеограф на праздник"
+                     loading="lazy">
+
                 <h3 class="reveal">Видеограф</h3>
-                <p class="fade-in">Красивый видеоролик с праздника, монтаж и цветокоррекция.</p>
+                <p class="fade-in">Профессиональная видеосъёмка и монтаж праздника.</p>
 
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
@@ -764,26 +720,57 @@
     </div>
 </div>
 
+<!-- Мобильное нижнее меню -->
+<div class="mobile-bottom-nav">
+    <!-- Кнопка "О компании" -->
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="mbn-icon"><span class="mbn-label">О Нас</span></button>
+    <!-- Кнопка "Скидка" -->
+    <button class="mbn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="mbn-icon"><span class="mbn-label">Акции</span></button>
+    <!-- Кнопка "Меню" -->
+    <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
+    <!-- Кнопка "Контакты" -->
+    <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
+    <!-- Кнопка "Чат с ИИ" -->
+    <button type="button" class="mbn-btn chat-btn" id="naf-chat-btn-mobile" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="mbn-icon"><span class="mbn-label">ИИ-Чат</span></button>
+</div>
+<!-- Боковое ПК меню -->
+<div class="desktop-right-nav"><button class="drn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="drn-icon"></button><button class="drn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="drn-icon"></button><button class="drn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="drn-icon float-icon"></button><button type="button" class="drn-btn chat-btn" id="naf-chat-btn-pc" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="drn-icon"></button>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО: СКИДКА 5% (встроено для мгновенного открытия) -->
+<div class="discount-modal-overlay">
+    <div class="discount-modal">
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
+        <h3 class="discount-modal-title">Скидка 5% для новых клиентов!</h3>
+        <p class="discount-modal-text">
+            Скидка 5% на любой заказ для всех новых клиентов, пришедших с нашего сайта или с Яндекс.карт по промокоду <strong>"WELCOME5"</strong>.
+        </p>
+        <p class="discount-modal-text">
+            Просто напишите промокод в любой удобный Вам мессенджер или озвучьте его по телефону.
+        </p>
+    </div>
+</div>
 <script src="js/script.js"></script>
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-    const floatBtn = document.querySelector('.contact-float-btn');
     const modal = document.querySelector('.contact-modal-overlay');
+    
+    if (!modal) return;
 
-    if (!floatBtn || !modal) return; // защита от ошибок
-
-    floatBtn.onclick = () => {
-        modal.style.display = 'flex';
-    };
 
     modal.onclick = (e) => {
-        if (e.target === modal) modal.style.display = 'none';
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
     };
 
+    // Закрытие модалки при нажатии ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
 });
 </script>
 
@@ -812,7 +799,6 @@ function copyContactText() {
     });
 }
 </script>
-
 <script>
 function toggleSeoText() {
     const container = document.getElementById('seo-container');
@@ -826,10 +812,21 @@ function toggleSeoText() {
         text.style.display = 'block';
     }
 }
+
+function openContactModal() {
+    const modal = document.querySelector('.contact-modal-overlay');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
 </script>
+<!-- Подключаем скрипты -->
+<script src="js/chat-modal.js"></script>
 <script src="js/modal.js"></script>
+<script src="js/menu.js"></script>
+
 <!-- Кнопка "Вверх" -->
-<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
+<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"></button>
 
 </body>
 </html>

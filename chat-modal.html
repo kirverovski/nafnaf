@@ -1,0 +1,26 @@
+<!-- МОДАЛКА: ИИ-Чат -->
+<div id="naf-chat-modal-container">
+    <button id="naf-chat-btn-modal" class="mbn-btn chat-btn" onclick="toggleChatModal();">
+        <img src="logotip/chat-icon.webp" alt="Чат" class="mbn-icon">
+        <span class="mbn-label">ИИ-Чат</span>
+    </button>
+
+    <div id="naf-chat-modal">
+        <div id="chatHeader">
+            <span id="chatTitle">Ваш ИИ-Ассистент</span>
+            <span class="close-chat-btn">&times;</span>
+            <button id="newChatBtn">
+                🗑 Новый чат
+            </button>
+        </div>
+
+        <div id="naf-messages"></div>
+
+        <div id="naf-bottom">
+            <input id="naf-input" placeholder="Напишите сообщение...">
+            <button id="naf-send">
+                ➤
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все услуги | Праздники в Сочи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="https://nafnafiki.ru/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="site-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:title" content="Все услуги NAF NAFIKI">
+    <meta property="og:description" content="Полный список услуг для праздников в Сочи и Абхазии.">
+    <meta property="og:image" content="https://nafnafiki.ru/logo-small.png">
+</head>
+
+<body>
+
+<!-- МОДАЛКА: Описание услуги (копия из services.html) -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content fullscreen zoom-in">
+        <span class="close close-service" id="closeService">×</span>
+        <div class="modal-image-wrapper">
+            <img id="serviceImage" class="service-img" alt="" loading="lazy">
+        </div>
+        <div id="thumbs" class="thumbs"></div>
+        <h2 id="serviceTitle"></h2>
+        <div id="serviceDescription"></div>
+        <p class="price">Цена: <span id="servicePrice"></span></p>
+        <button class="btn-primary glow" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- Секция с карточками всех услуг -->
+<section class="categories">
+    <div class="container">
+        <h1>Все услуги NAF NAFIKI</h1>
+        
+        <div class="grid">
+
+            <!-- ПИРАТЫ -->
+            <div id="pirates"   
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Пираты»"
+                 data-description="Морские приключения и квесты."
+                 data-full="<h3>Описание</h3><p>Пиратская программа: поиск сокровищ, квесты, испытания, морские легенды и весёлые приключения.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-pirates.webp,images/anim-pirates2.webp">
+
+                <img src="images/anim-pirates.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Пираты</h3>
+                <p class="fade-in">Квесты и приключения.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- БЕЗУМНЫЙ ХИМИК -->
+            <div id="chemist"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="Аниматор «Безумный химик»"
+                 data-description="Научное шоу с экспериментами."
+                 data-full="<h3>Описание</h3><p>Зрелищная научная программа: безопасные эксперименты, дым, пена, химические реакции и интерактивы.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-chemist.webp">
+
+                <img src="images/anim-chemist.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Безумный химик</h3>
+                <p class="fade-in">Эксперименты и шоу.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- КЛОУНЫ -->
+            <div id="clowns"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Клоуны»"
+                 data-description="Весёлая и яркая программа."
+                 data-full="<h3>Описание</h3><p>Классическая клоунская программа: шутки, игры, мини‑фокус��, интерактивы и веселье для детей всех возрастов.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-clowns.webp,images/anim-clowns2.webp">
+
+                <img src="images/anim-clowns.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Клоуны</h3>
+                <p class="fade-in">Юмор, игры и веселье.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ЁЖИК И БЕЛОЧКА -->
+            <div id="hedgehog-squirrel"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Ёжик и Белочка»"
+                 data-description="Добрые лесные персонажи для малышей."
+                 data-full="<h3>Описание</h3><p>Добрые лесные персонажи с играми, танцами, загадками и интерактивами для малышей.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-hedgehog-squirrel.webp,images/anim-hedgehog-squirrel2.webp">
+
+                <img src="images/anim-hedgehog-squirrel.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Ёжик и Белочка</h3>
+                <p class="fade-in">Добрые лесные герои.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ЛЬВЯТА -->
+            <div id="lions"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Львята»"
+                 data-description="Весёлые львята с активными играми."
+                 data-full="<h3>Описание</h3><p>Весёлые львята с активными играми, танцами, мини‑квестами и яркими номерами.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-lions.webp,images/anim-lions2.webp">
+
+                <img src="images/anim-lions.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Львята</h3>
+                <p class="fade-in">Активные игры и веселье.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ГЕЙМЕРЫ -->
+            <div id="gamers"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Геймеры»"
+                 data-description="Современная игровая программа."
+                 data-full="<h3>Описание</h3><p>Современная игровая программа с челленджами, соревнованиями, VR‑элементами и тематическими заданиями.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-gamers.webp,images/anim-gamers2.webp">
+
+                <img src="images/anim-gamers.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Геймеры</h3>
+                <p class="fade-in">Современная игровая программа.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- СОНИК -->
+            <div id="sonic"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Соник»"
+                 data-description="Динамичная программа с Соником."
+                 data-full="<h3>Описание</h3><p>Динамичная программа с Соником: скорость, челленджи, соревнования и яркие игровые задания.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-sonic.webp,images/anim-sonic2.webp">
+
+                <img src="images/anim-sonic.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Соник</h3>
+                <p class="fade-in">Скорость, челленджи и драйв.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ГАРРИ ПОТТЕР И ГЕРМИОНА -->
+            <div id="harry-hermione"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Гарри Поттер и Гермиона»"
+                 data-description="Волшебная программа с магией."
+                 data-full="<h3>Описание</h3><p>Волшебная программа с заклинаниями, магическими испытаниями, квестами и атмосферой Хогвартса.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-harry-hermione.webp">
+
+                <img src="images/anim-harry-hermione.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Гарри Поттер и Гермиона</h3>
+                <p class="fade-in">Магия, заклинания и приключения.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- МИНЬОНЫ -->
+            <div id="minions"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Миньоны»"
+                 data-description="Весёлая программа с Миньонами."
+                 data-full="<h3>Описание</h3><p>Весёлая программа с Миньонами: танцы, игры, конкурсы и фирменный миньонский юмор.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-minions.webp,images/anim-minions2.webp">
+
+                <img src="images/anim-minions.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Миньоны</h3>
+                <p class="fade-in">Веселье, танцы и шалости.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ЛЕДИ БАГ И СУПЕР-КОТ -->
+            <div id="ladybug-catnoir"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Леди Баг и Супер‑Кот»"
+                 data-description="Динамичная супергеройская программа."
+                 data-full="<h3>Описание</h3><p>Динамичная супергеройская программа: спасение города, задания, ловкость и командные испытания.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-ladybug-catnoir.webp,images/anim-ladybug-catnoir2.webp,images/anim-ladybug-catnoir3.webp,images/anim-ladybug-catnoir4.webp">
+
+                <img src="images/anim-ladybug-catnoir.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Леди Баг и Супер‑Кот</h3>
+                <p class="fade-in">Супергеройские приключения.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ЩЕНЯЧИЙ ПАТРУЛЬ -->
+            <div id="pawpatrol"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Щенячий Патруль»"
+                 data-description="Любимые герои: Маршалл, Чейз и другие."
+                 data-full="<h3>Описание</h3><p>Любимые герои: Маршалл, Чейз и другие. Игры, задания, спасательные миссии и командные приключения.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-pawpatrol.webp">
+
+                <img src="images/anim-pawpatrol.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Щенячий Патруль</h3>
+                <p class="fade-in">Миссии, игры и приключения.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- БАРБИ И КЕН -->
+            <div id="barbie-ken"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Барби и Кен»"
+                 data-description="Стильная розовая вечеринка с Барби и Кеном."
+                 data-full="<h3>Описание</h3><p>Стильная розовая вечеринка с Барби и Кеном: танцы, игры, фотосессии и яркие активности.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-barbie-ken.webp">
+                <img src="images/anim-barbie-ken.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Барби и Кен</h3>
+                <p class="fade-in">Стиль, танцы и розовая атмосфера.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- СУПЕРГЕРОИ -->
+            <div id="superheroes"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Супергерои»"
+                 data-description="Человек‑Паук, Бэтмен, Дэдпул и другие герои."
+                 data-full="<h3>Описание</h3><p>Человек‑Паук, Бэтмен, Дэдпул и другие супергерои. Миссии, испытания, ловкость, спасательные задания и супергеройский драйв.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-superheroes.webp,images/anim-superheroes2.webp,images/anim-superheroes3.webp,images/anim-superheroes4.webp,images/anim-superheroes5.webp,images/anim-superheroes6.webp">
+
+                <img src="images/anim-superheroes.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Супергерои</h3>
+                <p class="fade-in">Экшен, миссии и героизм.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- МИККИ И МИННИ МАУС -->
+            <div id="mickey-minnie"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Микки и Минни Маус»"
+                 data-description="Классическая диснеевская программа."
+                 data-full="<h3>Описание</h3><p>Весёлая программа с Микки и Минни Маус: танцы, игры, интерактивы, фотосессии и атмосфера классического Диснея.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-mickey-minnie.webp,images/anim-mickey-minnie2.webp">
+
+                <img src="images/anim-mickey-minnie.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Микки и Минни Маус</h3>
+                <p class="fade-in">Дисней‑атмосфера и веселье.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- СОВРЕМЕННЫЕ ВЕДУЩИЕ -->
+            <div id="modern-hosts"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Современные ведущие»"
+                 data-description="Стильные ведущие для подростков и взрослых."
+                 data-full="<h3>Описание</h3><p>Современные ведущие с модными интерактивами, челленджами, танцевальными баттлами и атмосферой настоящего шоу.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного ведущего<br><b>от 8000 ₽</b> — за двух ведущих<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-modern-hosts.webp,images/anim-modern-hosts2.webp,images/anim-modern-hosts3.webp">
+
+                <img src="images/anim-modern-hosts.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Современные ведущие</h3>
+                <p class="fade-in">Модные интерактивы и драйв.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- РАДУЖНЫЕ ДРУЗЬЯ -->
+            <div id="rainbow-friends"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="«Радужные друзья»"
+                 data-description="Яркие персонажи из популярной игры."
+                 data-full="<h3>Описание</h3><p>Яркая программа с Радужными друзьями: задания, квесты, интерактивы и атмосфера популярной игровой вселенной.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-rainbow-friends.webp">
+
+                <img src="images/anim-rainbow-friends.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Радужные друзья</h3>
+                <p class="fade-in">Яркие персонажи и квесты.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- ХАГИ ВАГИ И КИСИ МИСИ -->
+            <div id="huggy-kissy"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="Аниматоры «Хаги Ваги и Киси Миси»"
+                 data-description="Яркие персонажи из популярной игры."
+                 data-full="<h3>Описание</h3><p>Хаги Ваги и Киси Миси — яркая игровая программа с заданиями, интерактивами, танцами и атмосферой популярной игровой вселенной.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-huggy-kissy.webp">
+
+                <img src="images/anim-huggy-kissy.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Хаги Ваги и Киси Миси</h3>
+                <p class="fade-in">Яркие игровые персонажи.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- КОРЖИК И КАРАМЕЛЬКА -->
+            <div id="korz-karamel"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="Аниматоры «Коржик и Карамелька»"
+                 data-description="Любимые герои для малышей."
+                 data-full="<h3>Описание</h3><p>Коржик и Карамелька — весёлая программа с играми, танцами, заданиями и атмосферой любимого детского мультфильма.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-korz-karamel.webp">
+
+                <img src="images/anim-korz-karamel.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Коржик и Карамелька</h3>
+                <p class="fade-in">Веселье и игры для малышей.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+
+            <!-- МИМИМИШКИ: ТУЧКА, КЕША, ЛИСИЧКА -->
+            <div id="mimimishki"
+                 class="card service-card clickable-card reveal stagger"
+                 data-title="Аниматоры «Ми‑ми‑мишки»"
+                 data-description="Тучка, Кеша и Лисичка."
+                 data-full="<h3>Описание</h3><p>Тучка, Кеша и Лисичка — добрая программа с играми, танцами, заданиями и атмосферой любимого мультсериала.</p><h3>Стоимость</h3><p><b>от 4500 ₽</b> — за одного аниматора<br><b>от 8000 ₽</b> — за двух аниматоров<br></p>"
+                 data-price="от 4500₽"
+                 data-images="images/anim-mimimishki.webp,images/anim-mimimishki2.webp">
+
+                <img src="images/anim-mimimishki.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Ми‑ми‑мишки</h3>
+                <p class="fade-in">Тучка, Кеша и Лисичка.</p>
+
+                <div class="service-card-buttons">
+                   <button class="btn-primary glow openOrder">Заказать</button>
+                   <button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+            
+            <!-- Добавьте все остальные услуги -->
+        </div>
+    </div>
+</section>
+
+<!-- МОДАЛКА: Заказ -->
+<div class="modal" id="orderModal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close close-service" id="closeOrder">×</span>
+        <h2 class="form-title">Заказать программу</h2>
+        <p class="form-subtitle">Мы уточним детали и подберём лучший вариант</p>
+        <form id="orderForm">
+            <label>Выбранная программа</label>
+            <input type="text" id="orderProgram" name="program" readonly>
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите имя" required>
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<!-- Подключение скриптов -->
+<script src="js/script.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/knowledge.js"></script>
+<script src="js/chat.js"></script>
+
+<script>
+// Автоматическое открытие модального окна при переходе по якорю
+document.addEventListener("DOMContentLoaded", function() {
+    // Приоритет: берем ID из localStorage (если перешли с другой страницы)
+    let targetId = localStorage.getItem("naf_open_program_on_load");
+    
+    // Если нет в localStorage, берем из URL-якоря
+    if (!targetId && window.location.hash) {
+        targetId = window.location.hash.substring(1);
+    }
+    
+    if (targetId) {
+        const targetCard = document.getElementById(targetId);
+        
+        if (targetCard) {
+            // Прокрутка к карточке
+            setTimeout(() => {
+                targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 100);
+            
+            // Открытие модалки
+            setTimeout(() => {
+                const btnMore = targetCard.querySelector(".openService");
+                if (btnMore) {
+                    btnMore.click();
+                } else {
+                    targetCard.click();
+                }
+                
+                // Очищаем localStorage после использования
+                localStorage.removeItem("naf_open_program_on_load");
+            }, 400);
+        }
+    }
+});
+</script>
+
+</body>
+</html>

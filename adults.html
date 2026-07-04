@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/menu.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -41,95 +43,43 @@
 
 </head>
 
-<!-- Плавающая кнопка -->
-<button class="contact-float-btn">
-    <img src="logotip/contact-button.png" alt="Связаться" class="float-icon">
-</button>
-
 <!-- Модальное окно связи -->
 <div class="contact-modal-overlay">
     <div class="contact-modal">
-
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
         <!-- Заголовок -->
         <h3>Свяжитесь с нами удобным вам способом</h3>
-
-        <!-- Твой текущий текст (он остаётся) -->
+        <!-- Текст для скидки -->
         <p class="contact-helper-text">
             Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
         </p>
-
-        <!-- Новый текстовый блок -->
+        <!-- Текстовое поле с текстом -->
         <textarea id="contactText" class="contact-helper-area" readonly>
 Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
         </textarea>
-
         <!-- Кнопка копирования -->
         <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
-
         <!-- Подтверждение копирования -->
         <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
-
         <!-- Иконки контактов -->
         <div class="contact-icons">
-
             <!-- Telegram -->
-            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon tg" target="_blank">
-                <img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img">
-            </a>
-
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img"></a>
             <!-- WhatsApp -->
-            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon wa" target="_blank">
-                <img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img">
-            </a>
-
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img"></a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/naf_nafiki.sochi" 
-               class="contact-icon insta" target="_blank">
-                <img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img">
-            </a>
-
+            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img"></a>
             <!-- MAX -->
-            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M" 
-               class="contact-icon max" target="_blank">
-                <img src="logotip/max-logo.png" alt="MAX" class="icon-img">
-            </a>
-
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.png" alt="MAX" class="icon-img"></a>
             <!-- SMS -->
-            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:" 
-               class="contact-icon sms">
-                <img src="logotip/sms-icon.png" alt="Call" class="icon-img">
-            </a>
-
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.png" alt="Call" class="icon-img"></a>
             <!-- Вызов по телефону -->
-            <a href="tel:+79098261926" 
-               class="contact-icon call" aria-label="Позвонить">
-                <img src="logotip/phone-icon.png" alt="Call" class="icon-img">
-            </a>
-
+            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.png" alt="Call" class="icon-img"></a>
         </div>
     </div>
 </div>
 
 <body>
-
-<div class="discount-toggle-wrapper">
-    <a href="#" class="discount-btn" id="discountFullBtn" onclick="openDiscountModal(); return false;">
-<span class="btn-text">Скидка 5%</span>
-    </a>
-    <div class="discount-arrow-btn" id="discountArrowBtn" onclick="toggleDiscountButton()">
-<span class="arrow-icon">&times;</span>
-    </div>
-</div>
-
-<!-- Гамбургер-кнопка (в стиле Apple Glass с изображением) -->
-<div class="hamburger-wrapper">
-    <button class="hamburger apple-glass-btn" aria-label="Меню">
-        <img src="logotip/hamburger-icon.webp" alt="Меню" class="hamburger-icon">
-        <img src="logotip/cross-icon.webp" alt="Закрыть" class="cross-icon">
-    </button>
-</div>     
 
 <header class="header">
     <div class="container header-inner">
@@ -167,143 +117,89 @@
  <section class="categories">
     <div class="container">
         <h2 class="reveal">Популярные программы</h2>
-
-        <!-- ВАЖНО: используем .grid — как в quests.html -->
         <div class="grid">
-
             <!-- КАРТОЧКА 1 — ПЕННАЯ ВЕЧЕРИНКА -->
-            <div class="card service-card clickable-card pop reveal stagger"
-                 data-title="Пенная вечеринка"
-                 data-description="Тонны пушистой пены, водные баттлы и гигантские игрушки!"
-                 data-full="
-                 <h3>О программе</h3>
-                 <p>Пенная вечеринка — это яркое, динамичное и освежающее шоу, идеально подходящее для взрослых мероприятий, корпоративов и летних вечеринок.</p>
-
-                 <h3>Что входит</h3>
-                 <ul>
-                    <li>Пенная пушка высокой мощности</li>
-                    <li>Тонны гипоаллергенной пены</li>
-                    <li>Водные баттлы</li>
-                    <li>Гигантские надувные игрушки</li>
-                    <li>Музыкальное сопровождение</li>
-                 </ul>
-
-                 <h3>Стоимость</h3>
-                 <p><b>9 000 ₽</b> — без ведущего</p>
-                 <p><b>11 000 ₽</b> — с ведущим</p>
-                 "
-                 data-price="9 000 ₽ / 11 000 ₽"
-                 data-images="images/show-foam.webp">
-
-                <img src="images/show-foam.webp" class="card-img" alt="" loading="lazy">
+            <div class="card service-card clickable-card pop reveal stagger" data-title="Пенная вечеринка" data-description="Тонны пушистой пены, водные баттлы и гигантские игрушки!" data-full="<h3>О программе</h3><p>Пенная вечеринка — это яркое, динамичное и освежающее шоу, идеально подходящее для взрослых мероприятий, корпоративов и летних вечеринок.</p><h3>Что входит</h3><ul><li>Пенная пушка высокой мощности</li><li>Тонны гипоаллергенной пены</li><li>Водные баттлы</li><li>Гигантские надувные игрушки</li><li>Музыкальное сопровождение</li></ul><h3>Стоимость</h3><p><b>9 000 ₽</b> — без ведущего</p><p><b>11 000 ₽</b> — с ведущим</p>" data-price="от 9 000 ₽" data-images="images/show-foam.webp">
+                <img src="images/show-foam.webp" class="card-img" alt="Пенная вечеринка — вода, пена, веселье" loading="lazy">
                 <h3 class="reveal">Пенная вечеринка</h3>
                 <p class="fade-in">Тонны пены, драйв и летняя атмосфера!</p>
-
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary glow openOrder">Заказать</button>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">0+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">до 30 чел.</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 9 000 ₽</span></div></div>
                 </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
             </div>
 
-            <div class="card service-card clickable-card pop reveal stagger"
-                 data-title="Интеллектуально‑психологическая игра «Мафия»"
-                 data-description="Легендарная детективная игра с интригой, ролями и атмосферой расследования!"
-                 data-full="<h3>О программе</h3><p>Город засыпает… просыпается Мафия! Это легендарная игра, которая развивает логику, интуицию, актерское мастерство и умение работать в команде. Идеальный формат для дня рождения, подростковой вечеринки или школьного тимбилдинга!</p><h3>Как проходит игра</h3><ul><li><b>Знакомство и погружение:</b> ведущий создаёт атмосферу детектива и помогает каждому войти в роль.</li><li><b>Объяснение правил:</b> геймлейстер объясняет правила понятно и увлекательно — подходит и новичкам, и опытным игрокам.</li><li><b>Раздача карт:</b> каждый получает свою тайную роль — мирный житель, мафия, шериф, доктор и другие.</li><li><b>Игровой процесс:</b> днём город обсуждает подозреваемых, ночью мафия выходит на охоту. Ведущий держит интригу до финала.</li><li><b>Никто не скучает после выбывания:</b> выбывшие игроки могут стать помощниками ведущего или наблюдателями.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li>
-                 <li><b>Ведущий:</b> харизматичный геймлейстер.</li><li><b>Возраст:</b> от 7 лет и старше.</li><li><b>Реквизит:</b> дизайнерские карты и маски для ночного этапа.</li></ul><h3>Стоимость</h3><p><b>5 000 ₽</b> — фиксированная цена за программу</p>"
-                 data-price="5 000 ₽">
+            <!-- НЕИГРЫ -->
+            <div class="card service-card clickable-card pop reveal stagger" data-title="«НЕИГРЫ»" data-description="Командные испытания, челленджи и море эмоций." data-full="<h3>Описание</h3><p>Яркая и динамичная программа с необычными заданиями, испытаниями и весёлыми соревнованиями. Участников ждут проверка ловкости, скорости реакции, смекалки и умения работать в команде.</p><h3>Как проходит программа?</h3><p><b>Встреча участников:</b> ведущий знакомит гостей с правилами и вводит в атмосферу игры.<br><b>Деление на команды:</b> до 10 человек в каждой команде.<br><b>Игровые раунды:</b> команды проходят различные испытания и зарабатывают баллы.<br><b>Финал:</b> для проигравшей команды подготовлены весёлые карточки с наказаниями.</p><h3>Примеры заданий</h3><p><b>🐍 Бросок кобры:</b> участникам необходимо положить карандаши на тыльную сторону ладони, подбросить и поймать их этой же рукой, постепенно увеличивая количество карандашей.<br><br><b>🌪 Буря в бокале:</b> задача участников — раскрутить шарик в бокале и перенести конструкцию в другую точку так, чтобы шарик не выпал.</p><h3>Важно</h3><p>Это лишь малая часть испытаний. В программе предусмотрено множество других конкурсов, заданий и неожиданных челленджей.</p><h3>Для кого подходит?</h3><p>✔ Дети от 10 до 18 лет<br>✔ Подростковые компании<br>✔ Взрослые компании<br>✔ Дни рождения, корпоративы и вечеринки</p><h3>Что входит?</h3><p>🎤 1 ведущий + помощник<br>🎯 Полный комплект реквизита<br>🏆 Игровые задания и челленджи<br>🎉 Организация всей программы</p><h3>Длительность</h3><p><b>от 2 часов</b></p><h3>Стоимость</h3><p><b>14 000 ₽</b></p>" data-price="от 14 000 ₽" data-images="images/neigry.webp">
+               <img src="images/neigry.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">НЕИГРЫ</h3>
+                <p class="fade-in">Командные испытания, челленджи и яркие эмоции.</p>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">от 2 часов</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">12+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">до 20 чел.</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 14 000 ₽</span></div></div>
+                </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
+            </div>
 
+            <!-- Интеллектуально-психологическая игра «Мафия» -->
+            <div class="card service-card clickable-card pop reveal stagger" data-title="Интеллектуально‑психологическая игра «Мафия»" data-description="Легендарная детективная игра с интригой, ролями и атмосферой расследования!" data-full="<h3>О программе</h3><p>Город засыпает… просыпается Мафия! Это легендарная игра, которая развивает логику, интуицию, актерское мастерство и умение работать в команде. Идеальный формат для дня рождения, подростковой вечеринки или школьного тимбилдинга!</p><h3>Как проходит игра</h3><ul><li><b>Знакомство и погружение:</b> ведущий создаёт атмосферу детектива и помогает каждому войти в роль.</li><li><b>Объяснение правил:</b> геймлейстер объясняет правила понятно и увлекательно — подходит и новичкам, и опытным игрокам.</li><li><b>Раздача карт:</b> каждый получает свою тайную роль — мирный житель, мафия, шериф, доктор и другие.</li><li><b>Игровой процесс:</b> днём город обсуждает подозреваемых, ночью мафия выходит на охоту. Ведущий держит интригу до финала.</li><li><b>Никто не скучает после выбывания:</b> выбывшие игроки могут стать помощниками ведущего или наблюдателями.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Ведущий:</b> харизматичный геймлейстер.</li><li><b>Возраст:</b> от 7 лет и старше.</li><li><b>Реквизит:</b> дизайнерские карты и маски для ночного этапа.</li></ul><h3>Стоимость</h3><p><b>5 000 ₽</b> — фиксированная цена за программу</p>" data-price="5 000 ₽" data-images="images/show-mafia.webp">
                 <img src="images/show-mafia.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Игра «Мафия»</h3>
                 <p class="fade-in">Интрига, роли, расследования и настоящая детективная атмосфера!</p>
-
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary glow openOrder">Заказать</button>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">7+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">до 15 чел.</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">5 000 ₽</span></div></div>
                 </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
             </div>
 
-            <div class="card service-card clickable-card pop reveal stagger"
-                 data-title="Ведущая (начинающая)"
-                 data-description="Энергичная ведущая для вечеринок, выпускных и молодёжных мероприятий. Опыт 3 года. Выезд с диджеем — от 8 000 ₽/час."
-                 data-full="<h3>О программе</h3><p>Опытная начинающая ведущая — твоя идеальная компаньонка на вечеринке, где важны живое общение, лёгкий юмор и умение создать атмосферу. Стартовая модель для молодёжных мероприятий, дней рождения и школьных вечеров.</p><h3>Что входит</h3><ul><li><b>3 года опыта</b> ведения мероприятий: от закрытых вечеринок до школьных выпускных.</li><li><b>Подготовка сценария</b> — вместе с клиентом: тематика, порядок событий, поздравления, игры.</li><li><b>Комфорт и энергия</b> — ведущая следит за временным графиком, поддерживает микс и не даёт залу «тускнуть».</li></ul><h3>Важная информация</h3><ul><li><b>Минимальная продолжительность:</b> 2 часа.</li><li><b>Возрастная аудитория:</b> 0+ </li><li><b>Доп. опции:</b> ведение «шоу-тура» (смена костюмов), интерактивные игры, совместные танцы.</li></ul><h3>Варианты и цены</h3><ul><li><b>Только ведущая:</b> от <b>5 000 ₽/час</b> — лёгкое, эмоциональное ведение без звука.</li><li><b>Ведущая + диджей:</b> от <b>8 000 ₽/час</b> — синхронная работа, идеальный ритм, поддержка на каждом этапе.</li></ul><h3>Почему выбирают начинающую ведущую</h3><p>Это отличный выбор, если хочешь <b>нестандартную</b> ведущую — с искренностью, без пафоса, с душой. Она будет рядом — не «диктор», а подруга, которая всё знает, но говорит не как из урока в урок.</p>"
-                 data-price="от 5 000 ₽/час (с диджеем — от 8 000 ₽)">
-
-                <img src="images/show-hostess.webp" class="card-img" alt="Ведущая (начинающая) для вечеринок" loading="lazy">
+            <!-- Ведущая (начинающая) -->
+            <div class="card service-card clickable-card pop reveal stagger" data-title="Ведущая (начинающая)" data-description="Энергичная ведущая для вечеринок, выпускных и молодёжных мероприятий. Опыт 3 года. Выезд с диджеем — от 8 000 ₽/час." data-full="<h3>О программе</h3><p>Опытная начинающая ведущая — твоя идеальная компаньонка на вечеринке, где важны живое общение, лёгкий юмор и умение создать атмосферу. Стартовая модель для молодёжных мероприятий, дней рождения и школьных вечеров.</p><h3>Что входит</h3><ul><li><b>3 года опыта</b> ведения мероприятий: от закрытых вечеринок до школьных выпускных.</li><li><b>Подготовка сценария</b> — вместе с клиентом: тематика, порядок событий, поздравления, игры.</li><li><b>Комфорт и энергия</b> — ведущая следит за временным графиком, поддерживает микс и не даёт залу «тускнуть».</li></ul><h3>Важная информация</h3><ul><li><b>Минимальная продолжительность:</b> 2 часа.</li><li><b>Возрастная аудитория:</b> 0+</li><li><b>Доп. опции:</b> ведение «шоу-тура» (смена костюмов), интерактивные игры, совместные танцы.</li></ul><h3>Варианты и цены</h3><ul><li><b>Только ведущая:</b> от <b>5 000 ₽/час</b> — лёгкое, эмоциональное ведение без звука.</li><li><b>Ведущая + диджей:</b> от <b>8 000 ₽/час</b> — синхронная работа, идеальный ритм, поддержка на каждом этапе.</li></ul><h3>Почему выбирают начинающую ведущую</h3><p>Это отличный выбор, если хочешь <b>нестандартную</b> ведущую — с искренностью, без пафоса, с душой. Она будет рядом — не «диктор», а подруга, которая всё знает, но говорит не как из урока в урок.</p>" data-price="от 5 000 ₽/час (с диджеем — от 8 000 ₽)" data-images="images/show-hostess.webp">
+                <img src="images/show-hostess.webp" class="card-img" alt="" loading="lazy">
                 <h3 class="reveal">Ведущая (начинающая)</h3>
                 <p class="fade-in">Живое общение и энергия для твоей вечеринки!</p>
-
-                <div class="service-card-buttons">
-                    <button class="btn-outline openService">Подробнее</button>
-                    <button class="btn-primary glow openOrder">Заказать</button>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">от 2 часов</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">0+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">до 30 чел.</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 5 000 ₽/час</span></div></div>
                 </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
             </div>
 
-            <div class="card service-card clickable-card pop reveal stagger"
-                 data-title="Караоке‑вечеринка"
-                 data-description="Диджей, профессиональное оборудование и экран с текстом песен!"
-                 data-full="
-                 <h3>О программе</h3>
-                 <p>Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.</p>
-
-                 <h3>Что входит</h3>
-                 <ul>
-                     <li>Профессиональный диджей</li>
-                     <li>Музыкальная аппаратура</li>
-                     <li>Микрофоны</li>
-                     <li>Экран для вывода текста песен</li>
-                     <li>Большая библиотека треков</li>
-                 </ul>
-
-                 <h3>Длительность</h3>
-                 <p>1 час</p>
-
-                 <h3>Стоимость</h3>
-                 <p><b>7 000 ₽ / час</b></p>
-                 "
-                 data-price="7 000 ₽"
-                 data-images="images/karaoke.webp">
-
-                 <img src="images/karaoke.webp" class="card-img" alt="" loading="lazy">
-                 <h3 class="reveal">Караоке‑вечеринка</h3>
-                 <p class="fade-in">Диджей, экран и любимые песни!</p>
-
-                 <div class="service-card-buttons">
-                     <button class="btn-outline openService">Подробнее</button>
-                     <button class="btn-primary glow openOrder">Заказать</button>
-                 </div>
+            <!-- Караоке-вечеринка -->
+            <div class="card service-card clickable-card pop reveal stagger" data-title="Караоке‑вечеринка" data-description="Диджей, профессиональное оборудование и экран с текстом песен!" data-full="<h3>О программе</h3><p>Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.</p><h3>Что входит</h3><ul><li>Профессиональный диджей</li><li>Музыкальная аппаратура</li><li>Микрофоны</li><li>Экран для вывода текста песен</li><li>Большая библиотека треков</li></ul><h3>Длительность</h3><p>1 час</p><h3>Стоимость</h3><p><b>7 000 ₽ / час</b></p>" data-price="7 000 ₽" data-images="images/karaoke.webp">
+                <img src="images/karaoke.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Караоке‑вечеринка</h3>
+                <p class="fade-in">Диджей, экран и любимые песни!</p>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">0+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">Неограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">7 000 ₽</span></div></div>
+                </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
             </div>
 
-            <div class="card service-card clickable-card pop reveal stagger"
-                 data-title="Диджей"
-                 data-description="Профессиональный DJ с аппаратурой и подборкой треков!"
-                 data-full="
-                 <h3>О программе</h3>
-                 <p>Диджей создаёт атмосферу праздника: современная музыка, детские хиты, танцевальные треки и интерактивы. Подходит для любых мероприятий.</p>
-
-                 <h3>Что входит</h3>
-                 <ul>
-                     <li>Профессиональная аппаратура</li>
-                     <li>Подборка треков под возраст</li>
-                     <li>Интерактивы и танцевальные паузы</li>
-                 </ul>
-
-                 <h3>Длительность</h3>
-                 <p>1 час</p>
-
-                 <h3>Стоимость</h3>
-                 <p><b>4 500 ₽ / час</b></p>
-                 "
-                 data-price="4 500 ₽"
-                 data-images="images/dj.webp">
-
-                 <img src="images/dj.webp" class="card-img" alt="" loading="lazy">
-                 <h3 class="reveal">Диджей</h3>
-                 <p class="fade-in">Музыка, драйв и атмосфера!</p>
-
-                 <div class="service-card-buttons">
-                     <button class="btn-outline openService">Подробнее</button>
-                     <button class="btn-primary glow openOrder">Заказать</button>
-                 </div>
+            <!-- Диджей -->
+            <div class="card service-card clickable-card pop reveal stagger" data-title="Диджей" data-description="Профессиональный DJ с аппаратурой и подборкой треков!" data-full="<h3>О программе</h3><p>Диджей создаёт атмосферу праздника: современная музыка, детские хиты, танцевальные треки и интерактивы. Подходит для любых мероприятий.</p><h3>Что входит</h3><ul><li>Профессиональная аппаратура</li><li>Подборка треков под возраст</li><li>Интерактивы и танцевальные паузы</li></ul><h3>Длительность</h3><p>1 час</p><h3>Стоимость</h3><p><b>4 500 ₽ / час</b></p>" data-price="4 500 ₽" data-images="images/dj.webp">
+                <img src="images/dj.webp" class="card-img" alt="" loading="lazy">
+                <h3 class="reveal">Диджей</h3>
+                <p class="fade-in">Музыка, драйв и атмосфера!</p>
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">0+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">Неограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">4 500 ₽</span></div></div>
+                </div>
+                <div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>
             </div>
 
         </div>
@@ -404,6 +300,42 @@
         <p class="price">Цена: <span id="servicePrice"></span></p>
 
         <button class="btn-primary glow" id="orderFromService">Заказать</button>
+    </div>
+</div>
+
+<!-- Модальное окно связи -->
+<div class="contact-modal-overlay">
+    <div class="contact-modal">
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
+        <!-- Заголовок -->
+        <h3>Свяжитесь с нами удобным вам способом</h3>
+        <!-- Текст для скидки -->
+        <p class="contact-helper-text">
+            Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
+        </p>
+        <!-- Текстовое поле с текстом -->
+        <textarea id="contactText" class="contact-helper-area" readonly>
+Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
+        </textarea>
+        <!-- Кнопка копирования -->
+        <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
+        <!-- Подтверждение копирования -->
+        <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
+        <!-- Иконки контактов -->
+        <div class="contact-icons">
+            <!-- Telegram -->
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img"></a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img"></a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img"></a>
+            <!-- MAX -->
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.png" alt="MAX" class="icon-img"></a>
+            <!-- SMS -->
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.png" alt="Call" class="icon-img"></a>
+            <!-- Вызов по телефону -->
+            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.png" alt="Call" class="icon-img"></a>
+        </div>
     </div>
 </div>
 
@@ -555,26 +487,57 @@
     </div>
 </div>
 
+<!-- Мобильное нижнее меню -->
+<div class="mobile-bottom-nav">
+    <!-- Кнопка "О компании" -->
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="mbn-icon"><span class="mbn-label">О Нас</span></button>
+    <!-- Кнопка "Скидка" -->
+    <button class="mbn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="mbn-icon"><span class="mbn-label">Акции</span></button>
+    <!-- Кнопка "Меню" -->
+    <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
+    <!-- Кнопка "Контакты" -->
+    <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
+    <!-- Кнопка "Чат с ИИ" -->
+    <button type="button" class="mbn-btn chat-btn" id="naf-chat-btn-mobile" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="mbn-icon"><span class="mbn-label">ИИ-Чат</span></button>
+</div>
+<!-- Боковое ПК меню -->
+<div class="desktop-right-nav"><button class="drn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="drn-icon"></button><button class="drn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="drn-icon"></button><button class="drn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="drn-icon float-icon"></button><button type="button" class="drn-btn chat-btn" id="naf-chat-btn-pc" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="drn-icon"></button>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО: СКИДКА 5% (встроено для мгновенного открытия) -->
+<div class="discount-modal-overlay">
+    <div class="discount-modal">
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
+        <h3 class="discount-modal-title">Скидка 5% для новых клиентов!</h3>
+        <p class="discount-modal-text">
+            Скидка 5% на любой заказ для всех новых клиентов, пришедших с нашего сайта или с Яндекс.карт по промокоду <strong>"WELCOME5"</strong>.
+        </p>
+        <p class="discount-modal-text">
+            Просто напишите промокод в любой удобный Вам мессенджер или озвучьте его по телефону.
+        </p>
+    </div>
+</div>
 <script src="js/script.js"></script>
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-    const floatBtn = document.querySelector('.contact-float-btn');
     const modal = document.querySelector('.contact-modal-overlay');
+    
+    if (!modal) return;
 
-    if (!floatBtn || !modal) return; // защита от ошибок
-
-    floatBtn.onclick = () => {
-        modal.style.display = 'flex';
-    };
 
     modal.onclick = (e) => {
-        if (e.target === modal) modal.style.display = 'none';
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
     };
 
+    // Закрытие модалки при нажатии ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
 });
 </script>
 
@@ -603,7 +566,6 @@ function copyContactText() {
     });
 }
 </script>
-
 <script>
 function toggleSeoText() {
     const container = document.getElementById('seo-container');
@@ -617,10 +579,21 @@ function toggleSeoText() {
         text.style.display = 'block';
     }
 }
+
+function openContactModal() {
+    const modal = document.querySelector('.contact-modal-overlay');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
 </script>
+<!-- Подключаем скрипты -->
+<script src="js/chat-modal.js"></script>
 <script src="js/modal.js"></script>
+<script src="js/menu.js"></script>
+
 <!-- Кнопка "Вверх" -->
-<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
+<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"></button>
 
 </body>
 </html>
