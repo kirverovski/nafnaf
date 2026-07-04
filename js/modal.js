@@ -19,7 +19,6 @@ function loadDiscountModal() {
             document.body.appendChild(tempDiv.firstElementChild);
 
             discountModalLoaded = true;
-            openDiscountModal(); // Автоматически открываем после загрузки
         })
         .catch(error => {
             console.error('Ошибка загрузки discount-modal.html:', error);
@@ -31,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcModal = document.getElementById('calcModal');
     const closeCalcBtn = document.getElementById('closeCalcModal');
     const calcForm = document.getElementById('calcForm');
+    // successModal объявлен в script.js, используем его без повторного объявления
     const successModal = document.getElementById('successModal');
+    
     // Фильтрация: только буквы и пробелы/дефисы
     const nameInput = document.getElementById("name");
     if (nameInput) {
@@ -105,91 +106,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Открыть модальное окно скидки
 function openDiscountModal() {
-    if (!discountModalLoaded) {
-        loadDiscountModal();
-    } else {
-        const modal = document.querySelector('.discount-modal-overlay');
-        if (modal) modal.style.display = 'flex';
-    }
-}
-
-// Закрыть модальное окно скидки
-function closeDiscountModal() {
     const modal = document.querySelector('.discount-modal-overlay');
-    if (modal) modal.style.display = 'none';
-}
-
-// Функция переключения видимости кнопки (свернуть/развернуть)
-function toggleDiscountButton() {
-    const wrapper = document.querySelector('.discount-toggle-wrapper');
-    const fullBtn = document.getElementById('discountFullBtn');
-    if (fullBtn && wrapper) {
-        if (wrapper.classList.contains('collapsed')) {
-            // Разворачиваем кнопку
-            fullBtn.classList.remove('collapsed');
-            wrapper.classList.remove('collapsed');
-        } else {
-            // Сворачиваем кнопку
-            fullBtn.classList.add('collapsed');
-            wrapper.classList.add('collapsed');
-        }
+    if (modal) {
+        modal.style.display = 'flex';
     }
 }
 
-// Обработчик клика на кнопку "Скидка 5%"
-document.addEventListener('click', function(e) {
-    const discountBtn = document.getElementById('discountFullBtn');
-    
-    // Если клик по кнопке "Скидка 5%" в р��звернутом состоянии
-    if (discountBtn && (e.target.id === 'discountFullBtn' || e.target.closest('#discountFullBtn'))) {
-        e.preventDefault();
-        
-        const wrapper = document.querySelector('.discount-toggle-wrapper');
-        if (wrapper && !wrapper.classList.contains('collapsed')) {
-            // Если кнопка развернута - открываем модальное окно
-            openDiscountModal();
-        } else if (wrapper && wrapper.classList.contains('collapsed')) {
-            // Если кнопка свернута - разворачиваем и открываем модальное окно
-            discountBtn.classList.remove('collapsed');
-            wrapper.classList.remove('collapsed');
-            openDiscountModal();
-        }
-    }
-});
-
-// Обработчик клика на стрелочку
-document.addEventListener('click', function(e) {
-    const arrowBtn = document.getElementById('discountArrowBtn');
-    
-    if (arrowBtn && (e.target.id === 'discountArrowBtn' || e.target.closest('#discountArrowBtn'))) {
-        e.preventDefault();
-        
-        const wrapper = document.querySelector('.discount-toggle-wrapper');
-        const fullBtn = document.getElementById('discountFullBtn');
-        
-        if (wrapper && fullBtn) {
-            // Сворачиваем кнопку (стрелочка исчезнет автоматически через CSS)
-            fullBtn.classList.add('collapsed');
-            wrapper.classList.add('collapsed');
-        }
-    }
-});
-
-// Обработчик клика на свернутую кнопку "5%" (открываем модальное окно)
-document.addEventListener('click', function(e) {
-    const collapsedBtn = document.querySelector('.discount-btn.collapsed');
-    
-    if (collapsedBtn && (e.target.classList.contains('discount-btn') && e.target.classList.contains('collapsed'))) {
-        e.preventDefault();
-        openDiscountModal();
-        
-        // Разворачиваем кнопку
-        const wrapper = document.querySelector('.discount-toggle-wrapper');
-        if (wrapper) {
-            wrapper.classList.remove('collapsed');
-        }
-    }
-});
+// Закрыть модальное окно скидки и модальное окно связи
+function closeDiscountModal() {
+    const discountModal = document.querySelector('.discount-modal-overlay');
+    const contactModal = document.querySelector('.contact-modal-overlay');
+    if (discountModal) discountModal.style.display = 'none';
+    if (contactModal) contactModal.style.display = 'none';
+}
 
 // Закрытие по клику вне модального окна
 document.addEventListener('click', function(e) {
@@ -219,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openBtn = document.getElementById('openModal');
     const mainModal = document.getElementById('modal');
     const closeBtn = document.getElementById('closeModal');
-    const successModal = document.getElementById('successModal');
+    // successModal уже объявлен выше, используем его без повторного объявления
     const closeSuccessBtn = document.getElementById('closeSuccess');
     
     // Проверка на наличие элементов
@@ -312,5 +241,141 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === successModal) {
             successModal.style.display = 'none';
         }
+    });
+});
+
+// === МОДАЛЬНОЕ ОКНО С ВИДЕО (ДЛЯ УСЛУГ) ===
+
+const videoModal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+
+// Если модалка видео ещё не создана — создадим её динамически
+if (!videoModal) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = `
+        <div class="video-modal-overlay" id="videoModal">
+            <div class="video-modal-content">
+                <button class="video-close-btn" onclick="closeVideoModal()">&times;</button>
+                <div class="video-container">
+                    <iframe id="videoFrame" 
+                            src="" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(tempDiv.firstElementChild);
+}
+
+// Открыть модальное окно с видео
+function openVideoModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    
+    if (!modal || !iframe) return;
+    
+    // Установить URL видео в iframe
+    iframe.src = videoUrl;
+    
+    // Показать модалку
+    modal.style.display = 'flex';
+    
+    // Остановить прокрутку страницы
+    document.body.style.overflow = 'hidden';
+}
+
+// Закрыть модальное окно с видео
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    
+    if (!modal || !iframe) return;
+    
+    // Остановить видео (очистить src)
+    iframe.src = '';
+    
+    // Скрыть модалку
+    modal.style.display = 'none';
+    
+    // Восстановить прокрутку страницы
+    document.body.style.overflow = '';
+}
+
+// Закрыть по клику на фон
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('videoModal');
+    if (modal && e.target === modal) {
+        closeVideoModal();
+    }
+});
+
+// Закрыть по нажатию ESC
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('videoModal');
+    if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+        closeVideoModal();
+    }
+});
+
+// Добавляем поддержку свайпа для кнопок "Смотреть видео"
+document.addEventListener("DOMContentLoaded",()=>{
+    document.querySelectorAll(".watch-video-btn")
+    .forEach(btn=>{
+        const circle=btn.querySelector(".play-circle");
+        const videoUrl=btn.dataset.video;
+        let startX=0;
+        let currentX=0;
+        let dragging=false;
+        const maxMove=btn.offsetWidth-circle.offsetWidth-0;
+        function resetCircle(){
+            circle.classList.remove("dragging","success");
+            circle.style.transform="translateX(0)";
+        }
+        function openVideo(){
+            circle.classList.add("success");
+            openVideoModal(videoUrl);
+            setTimeout(resetCircle, 500);
+        }
+        // обычный клик по кнопке
+        btn.addEventListener("click",function(e){
+            if(dragging) return;
+            openVideo();
+        });
+        function start(clientX){
+            dragging=true;
+            startX=clientX;
+            circle.classList.add("dragging");
+        }
+        function move(clientX){
+            if(!dragging) return;
+            currentX=clientX-startX;
+            currentX=Math.max(0,Math.min(currentX,maxMove));
+            circle.style.transform = `translateX(${currentX}px)`;
+            // достигли конца
+            if(currentX>maxMove*0.99){
+                dragging=false;
+                openVideo();
+            }
+        }
+        function end(){
+            if(!dragging) return;
+            dragging=false;
+            resetCircle();
+        }
+        // TOUCH
+        circle.addEventListener("touchstart",e=>start(e.touches[0].clientX));
+        document.addEventListener("touchmove",e=>move(e.touches[0].clientX));
+        document.addEventListener("touchend",end);
+        // MOUSE
+        circle.addEventListener("mousedown",e=>{
+            e.preventDefault();
+            start(e.clientX);
+        });
+        document.addEventListener("mousemove",e=>move(e.clientX));
+        document.addEventListener("mouseup",end);
     });
 });

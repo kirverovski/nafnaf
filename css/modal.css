@@ -1,90 +1,3 @@
-/* Базовые стили модальных окон */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 3000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-/* Контент модального окна */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation: zoomIn 0.3s;
-}
-
-@keyframes zoomIn {
-    from {transform:scale(0); opacity:0;}
-    to {transform:scale(1); opacity:1;}
-}
-
-/* Кнопка закрытия */
-.close, .close-service {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.close:hover, .close-service:hover, .close-service:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Полноразмерный контент */
-.fullscreen {
-    width: 90% !important;
-    max-width: 90% !important;
-    height: 80vh !important;
-    overflow-y: auto;
-}
-
-/* Кнопка "Скидка 5%" */
-.discount-btn {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 140px;
-    height: 50px;
-    background: rgba(0, 250, 21, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    color: #b3b006; /* Золотой цвет */
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.discount-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.25);
-    transform: translateY(-50%) scale(1.05);
-}
-
 /* Модальное окно скидки */
 .discount-modal-overlay {
     display: none;
@@ -99,6 +12,68 @@
     align-items: center;
 }
 
+/* Крестик закрытия для модалки скидки — наложен на правый верхний угол и выходит за его края */
+.discount-modal-overlay .close-btn-overlay {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    z-index: 10002;
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.discount-modal-overlay .close-btn-overlay:hover {
+    background: #ffd700;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 75, 106, 0.4);
+}
+
+.discount-modal-overlay .close-btn-overlay:active {
+    transform: scale(0.95);
+}
+
+/* Крестик закрытия для модалки связи — такой же как в модалке скидки */
+.contact-modal-overlay .close-btn-overlay {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    z-index: 10002;
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.contact-modal-overlay .close-btn-overlay:hover {
+    background: #ffd700;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 75, 106, 0.4);
+}
+
+.contact-modal-overlay .close-btn-overlay:active {
+    transform: scale(0.95);
+}
+
 .discount-modal {
     background: linear-gradient(135deg, rgba(8, 185, 17, 0.95), rgba(113, 247, 96, 0.9));
     padding: 30px;
@@ -109,22 +84,6 @@
     text-align: center;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(255, 220, 160, 0.5);
-}
-
-.close-discount-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #5a3801;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.3s;
-}
-
-.close-discount-btn:hover {
-    color: #d4af37;
 }
 
 .discount-modal-title {
@@ -158,127 +117,6 @@
     background: linear-gradient(135deg, #f0c848, #d4af37);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
     transform: translateY(-2px);
-}
-
-/* Контейнер для кнопки и стрелочки */
-.discount-toggle-wrapper {
-    position: fixed;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 0px;
-}
-
-/* Стрелочка как прямоугольный блок */
-.discount-arrow-btn {
-    width: 30px;
-    height: 50px;
-    background: rgba(0, 250, 21, 0.35); /* тот же фон, что у кнопки "Скидка 5%" */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px; /* добавьте скругление, как у кнопки */
-}
-
-.discount-arrow-btn:hover {
-    background: #f0f0f0;
-}
-
-.arrow-icon {
-    color: #0c0b07;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    margin-left: 10px;
-}
-
-/* Скрываем стрелочку при свернутом состоянии */
-.discount-toggle-wrapper.collapsed .discount-arrow-btn {
-    display: none;
-}
-
-/* Класс для скрытия кнопки */
-.discount-btn.collapsed {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    line-height: 40px;
-    font-size: 16px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
-    margin-right: -22px;
-}
-
-.discount-btn.collapsed .btn-text {
-    display: none;
-}
-
-.discount-btn.collapsed::after {
-    content: "5%";
-    color: #d4af37;
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-}
-
-/* На мобильных устройствах */
-@media (max-width: 768px) {
-    .discount-toggle-wrapper {
-        right: 0px;
-    }
-    
-    .discount-btn {
-        width: 100px;
-        height: 40px;
-        line-height: 40px; /* добавлено: line-height совпадает с height */
-    }
-    
-    .discount-btn.collapsed {
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        line-height: 40px;
-        font-size: 16px;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
-        margin-right: -22px;
-    }
-    
-    .discount-btn.collapsed .btn-text {
-        display: none;
-    }
-    
-    .discount-btn.collapsed::after {
-        content: "5%";
-        color: #d4af37;
-        font-size: 16px;
-        font-weight: bold;
-        display: block;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        line-height: 40px;
-    }
-    
-    .discount-arrow-btn {
-        display: flex;
-        width: 30px;
-        height: 40px;
-    }
 }
 
 /* Стили для модалки в стиле Получить расчет */
@@ -494,8 +332,194 @@
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm1 11.59V7h-2v6h.01L13 15l1.41-1.41z"/></svg>');
 }
 
-/* Адаптив для мобильных */
+/* Обертка для изображения карточки с кнопкой */
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Абсолютное позиционирование кнопки внизу изображения */
+.card-img-wrapper .watch-video-btn{
+    position:absolute;
+    bottom:12px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+}
+
+/* Полупрозрачная подложка под кнопкой для читаемости */
+.card-img-wrapper .watch-video-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.card-img-wrapper .watch-video-btn:hover::before {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Новая кнопка видео со свайпом */
+.watch-video-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    height: 44px;
+    padding: 0 16px 0 0;
+    min-width: 160px;
+
+    border: none;
+    border-radius: 30px;
+
+    /* Apple Glass — почти прозрачный белый фон с размытием */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Рамка и тени для стеклянного эффекта */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.20),
+        0 4px 12px rgba(0, 0, 0, 0.20);
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+.play-text {
+    flex-grow: 1;
+    text-align: center;
+    pointer-events: none;
+    padding-left: 0;
+}
+
+.play-circle{
+    position: relative;
+    left: 0;
+    top: 0;
+    min-width: 46px;
+    margin-right: 10px;
+    width:46px;
+    height:46px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    z-index:2;
+    cursor:grab;
+    transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.2);
+}
+
+.play-circle.dragging{
+    transition:none;
+    cursor:grabbing;
+}
+
+.play-circle svg{
+    width:100%;
+    height:100%;
+}
+
+.play-circle.success{
+    background:#9cff8c;
+}
+
+/* Модальное окно с видео */
+.video-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Затемнение фона */
+    z-index: 20000; /* Высокий z-index для перекрытия всего */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.video-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 20001;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-close-btn:hover {
+    background: rgba(255, 0, 0, 0.6);
+    transform: scale(1.1);
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
+    .video-modal-content {
+        width: 95%;
+    }
+    
+    .video-close-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+        line-height: 36px;
+    }
+
     #modal {
         align-items: center;
     }
@@ -514,6 +538,26 @@
         line-height: 32px;
     }
     
+    /* Адаптация крестика скидки для мобильных */
+    .discount-modal-overlay .close-btn-overlay {
+        top: -14px;
+        right: -14px;
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        line-height: 32px;
+    }
+    
+    /* Адаптация крестика связи для мобильных */
+    .contact-modal-overlay .close-btn-overlay {
+        top: -14px;
+        right: -14px;
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
     #modal .date-time-row {
         flex-direction: column;
     }
@@ -530,5 +574,152 @@
     
     #modal .form-row.separated > div {
         flex: 0 0 100%;
+    }
+    #modal input,
+    #modal textarea,
+    #modal select {
+        width: 100%;
+        max-width: 100%; /* явно ограничиваем ширину */
+        box-sizing: border-box;
+    }
+    
+    /* Для дочерних элементов форм */
+    #modal .form-group,
+    #modal .form-row,
+    #modal .date-time-row,
+    #modal .date-time-row .date-col,
+    #modal .date-time-row .time-col,
+    #modal .form-row.separated,
+    #modal .form-row.separated > div {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+} /* ← вот здесь должна закрываться media-зона */
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ МОДАЛКИ ЗАЯВКИ === */
+@media (max-width: 768px) {
+    /* Ограничение ширины самого модального окна */
+    .modal-content.form-big {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 30px 20px !important;
+        margin: 10vh auto !important;
+    }
+
+    /* Ограничение ширины полей ввода */
+    .modal-content.form-big input[type="text"],
+    .modal-content.form-big input[type="tel"],
+    .modal-content.form-big input[type="number"],
+    .modal-content.form-big input[type="date"],
+    .modal-content.form-big input[type="time"],
+    .modal-select,
+    .modal-textarea,
+    .modal-input {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Адаптация двух колонок (дата-время, фото-декор) */
+    .date-time-row,
+    .form-row.separated {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .date-time-row .date-col,
+    .date-time-row .time-col,
+    .form-row.separated > div {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Уменьшение отступов и шрифтов для экономии места */
+    .form-title {
+        font-size: 22px !important;
+    }
+
+    .form-subtitle {
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .modal-content.form-big input,
+    .modal-select,
+    .modal-textarea,
+    .modal-input {
+        padding: 12px 14px !important;
+        font-size: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .form-btn {
+        font-size: 16px !important;
+        padding: 12px !important;
+    }
+
+    /* Крестик закрытия */
+    .close-service {
+        top: 10px !important;
+        right: 15px !important;
+        font-size: 28px !important;
+    }
+}
+
+/* Крестик закрытия чата (десктоп) */
+.close-chat-btn{
+    position:relative;
+    width:40px;
+    height:40px;
+    background:rgba(212, 175, 55, 0.15);
+    border:2px solid #d4af37;
+    border-radius:8px;
+    font-size:32px;
+    line-height:36px;
+    text-align:center;
+    cursor:pointer;
+    padding:0 0 0 15px;
+    margin-left:auto;
+    box-shadow:none;
+    transition:all 0.3s ease;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+.close-chat-btn:hover{
+    background:rgba(212, 175, 55, 0.25);
+    color:#ffd700;
+    transform:none;
+    box-shadow:0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.close-chat-btn:active{
+    transform:none;
+}
+
+/* Адаптация чата для мобильных устройств */
+@media (max-width: 600px) {
+    /* Крестик закрытия чата в один ряд с заголовком и кнопкой */
+    .close-chat-btn{
+        position:static;
+        width:auto;
+        height:auto;
+        background:transparent;
+        border:none;
+        font-size:28px;
+        line-height:1;
+        text-align:left;
+        cursor:pointer;
+        padding:0 10px 0 0;
+        margin:0;
+        box-shadow:none;
+    }
+    
+    .close-chat-btn:hover{
+        background:transparent;
+        color:#d4af37;
+        transform:none;
+        box-shadow:none;
     }
 }

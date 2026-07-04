@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
 /* === БАЗОВЫЕ СТИЛИ === */
 body {
     margin: 0;
@@ -10,6 +19,8 @@ body {
     width: 90%;
     max-width: 1100px;
     margin: auto;
+    padding: 0 10px; /* добавьте эту строку */
+    box-sizing: border-box; /* добавьте эту строку */
 }
 
 .logo span {
@@ -152,35 +163,127 @@ body {
 }
 
 /* === КНОПКИ === */
+/* === Apple Glass кнопки в карточках === */
+
+/* Кнопка "Заказать" — большая, яркая */
 .btn-primary {
-    background: #ff4b6a;
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 16px;
     font-weight: 600;
-    transition: 0.2s;
+    border-radius: 50px;
+    min-width: 140px;
+    height: 48px;              /* ← ДОБАВЬТЕ: фиксированная высота */
+    min-height: 48px;  
+    background: rgb(255, 0, 212);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.25),
+        0 6px 20px rgba(255, 0, 212, 0.25);
+    color: #fff;
+    transition: 0.35s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+/* Блик в левом верхнем углу кнопки */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 252, 252, 0.8) 0%,
+        rgba(255, 255, 255, 0.3) 40%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    transform: rotate(-45deg);
+    pointer-events: none;
 }
 
 .btn-primary:hover {
-    background: #ff3555;
+    transform: translateY(-3px) scale(1.03);
+    background: rgba(0, 170, 248, 0.95);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.35),
+        0 10px 28px rgba(0, 170, 248, 0.35);
 }
 
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 140%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.55),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: glassShineCard 5s infinite;
+}
+
+@keyframes glassShineCard {
+    0% { left: -150%; }
+    70% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Кнопка "Подробнее" — меньшая, с стрелочкой */
 .btn-outline {
-    display: inline-block;
-    padding: 8px 14px;
-    border: 1px solid #ff4b6a;
-    color: #ff4b6a;
-    border-radius: 8px;
-    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 15px;
     font-weight: 600;
-    transition: 0.2s;
+    border-radius: 50px;
+    height: 40px;              /* ← ДОБАВЬТЕ: фиксированная высота */
+    min-height: 40px; 
+    margin-top: auto;
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 0, 212);
+    box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.2),
+        0 4px 16px rgba(0, 0, 0, 0.2);
+    color: #4e4d4d;
+    transition: 0.3s ease;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .btn-outline:hover {
-    background: #ff4b6a;
-    color: #fff;
+    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow:
+        inset 0 0 18px rgba(255, 255, 255, 0.28),
+        0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* Стрелочка для кнопки "Подробнее" */
+.btn-outline .arrow {
+    margin-left: 6px;
+    font-size: 14px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Анимация при наведении на кнопку */
+.btn-outline:hover .arrow {
+    transform: translateX(4px);  /* ДВИЖЕНИЕ ВПРАВО */
+    color: #f847b4;              /* БЕЛЫЙ ЦВЕТ ПРИ НАВЕДЕНИИ */
 }
 
 /* === СЕКЦИИ === */
@@ -191,20 +294,37 @@ body {
 /* === СЕТКА КАРТОЧЕК === */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+    box-sizing: border-box;
 }
-
 /* === КАРТОЧКИ === */
 .service-card {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0; 
     border: 1px solid #eee;
     border-radius: 12px;
     background: #fff;
     text-align: center;
     transition: 0.2s;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 1px solid #fc85e2;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    transition: 0.2s;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .card-img {
@@ -223,14 +343,23 @@ body {
 
 .service-card p {
     flex-grow: 1;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .service-card-buttons {
     margin-top: auto;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+}
+
+.service-card-buttons .btn-primary {
+    width: auto;
+}
+
+.service-card-buttons .btn-outline {
+    width: auto;
 }
 
 /* === КАРТОЧКА КЛИКАБЕЛЬНАЯ === */
@@ -557,10 +686,13 @@ body {
 }
 
 .service-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
-
 /* Контейнер миниатюр */
 .thumbs {
     display: flex;
@@ -702,7 +834,7 @@ body {
     position: absolute;
     top: 0;
     left: -150%;
-    width: 140%;
+    width: 200%;
     height: 100%;
     background: linear-gradient(
         120deg,
@@ -872,10 +1004,11 @@ body {
 
     /* Кнопки внутри карточки */
     .service-card-buttons {
+        margin-top: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* изменили на row для горизонтального расположения */
         gap: 10px;
-        width: 100%;
+        justify-content: center; /* центрируем кнопки */
     }
 
     .service-card-buttons button {
@@ -1197,38 +1330,6 @@ body {
     color: #1a140d !important; /* самый контрастный текст */
 }
 
-/* === Плавающая кнопка (теперь как кнопка "наверх") === */
-.contact-float-btn {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(45, 45, 45, 0.35);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-        inset 0 0 12px rgba(0, 0, 0, 0.4),
-        0 6px 20px rgba(0, 0, 0, 0.4);
-    color: #fff;
-    font-size: 28px;
-    line-height: 46px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s ease;
-    z-index: 9998;
-    display: block;
-}
-
-.contact-float-btn:hover {
-    background: rgba(30, 30, 30, 0.85);
-    box-shadow:
-        inset 0 0 18px rgba(0, 0, 0, 0.5),
-        0 10px 28px rgba(0, 0, 0, 0.5);
-    transform: translateY(-3px) scale(1.05);
-}
 
 /* === Модальное окно === */
 .contact-modal-overlay {
@@ -1286,14 +1387,6 @@ body {
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
-}
-
-.float-icon {
-    width: 100%;
-    height: 70%;
-    object-fit: contain;
-    pointer-events: none; /* чтобы клик проходил по кнопке */
-    margin-top: 7px;
 }
 
 /* === УНИКАЛЬНЫЕ ФОНЫ ДЛЯ КАЖДОЙ СТРАНИЦЫ === */
@@ -1723,8 +1816,8 @@ body {
 /* === ПОХОЖАЯ КНОПКА ВВЕРХ (APPLE GLASS, ТЁМНО-СЕРЫЙ) === */
 .scroll-to-top {
     position: fixed;
-    bottom: 22px;
-    left: 22px;
+    bottom: 55px;
+    left: 12px;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -1774,174 +1867,48 @@ body {
         transform: translateY(0);
     }
 }
-
-/* === APPLE GLASS ГАМБУРГЕР === */
-.apple-glass-btn {
-    position: relative;
-    overflow: hidden; /* ← ВАЖНО: скрывает всё выходящее за пределы кнопки */
-    width: 80px;
-    height: 80px;
-    border-radius: 18px;
-    background: rgba(41, 40, 40, 0.22);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(36, 35, 35, 0.35);
-    box-shadow:
-        inset 0 0 32px rgba(53, 52, 52, 0.25),
-        0 6px 20px rgba(0, 0, 0, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0;
-}
-
-.apple-glass-btn:hover {
-    transform: translateY(-3px) scale(1.04);
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow:
-        inset 0 0 18px rgba(255, 255, 255, 0.35),
-        0 10px 28px rgba(0, 0, 0, 0.45);
-}
-
-
-/* === ГАМБУРГЕР (МОБИЛЬНОЕ МЕНЮ) === */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80px;
-    height: 80px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.hamburger img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.hamburger-icon {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.cross-icon {
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-/* Активное состояние (крестик) */
-.hamburger.active .hamburger-icon {
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-.hamburger.active .cross-icon {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* === КОНТЕЙНЕР ДЛЯ ГАМБУРГЕРА И ТЕКСТА === */
-.hamburger-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 2000;
-}
-
+/* === МОБИЛЬНОЕ МЕНЮ (открывается через кнопку в нижнем меню) === */
 @media (max-width: 768px) {
-    .hamburger-wrapper {
-        top: 16px;
-        right: 16px;
-    }
-}
-
-/* === ТЕКСТ "МЕНЮ" ДЛЯ ГАМБУРГЕРА === */
-.hamburger-label {
-    display: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    white-space: nowrap;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    margin-top: 8px;
-}
-
-/* Показать текст только на мобильных */
-@media (max-width: 768px) {
-    .hamburger-label {
-        display: inline-block;
-    }
-}
-
-/* Скрыть текст при открытом меню */
-.hamburger-label.hidden {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-}
-
-/* Анимация появления */
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
-@media (max-width: 768px) {
-    /* Показать гамбургер */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Мобильное меню — фиксированное справа (боковое) */
     .header .nav {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 280px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
         height: 100vh;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         flex-direction: column;
-        padding: 80px 20px 20px;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: transform 0.3s ease;
+        box-shadow: none;
         z-index: 1999;
+        transform: translateY(100%); /* изначально спрятано внизу */
     }
 
     .header .nav a {
         width: 100%;
-        margin: 0 0 12px 0;
-        padding: 16px 20px;
-        font-size: 18px;
+        max-width: 400px;
+        margin: 12px 0;
+        padding: 18px 24px;
+        font-size: 20px;
         font-weight: 600;
         color: #333;
         text-decoration: none;
-        background: #f4f4f4;
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
         text-align: center;
         transition: 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .header .nav a:hover {
-        background: #e0e0e0;
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .header .nav a.active {
@@ -1949,13 +1916,9 @@ body {
         color: #fff;
     }
 
-    .header .nav a:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Показать меню при активном гамбургере */
+    /* Показать меню при активном классе (от кнопки в нижнем меню) */
     .header .nav.mobile-menu-open {
-        right: 0;
+        transform: translateY(0); /* появляется снизу вверх */
     }
 }
 /* === ВИДЕО ВМЕСТО ЛОГОТИПА === */
