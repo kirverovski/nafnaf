@@ -317,14 +317,28 @@ transform:translateY(0);
 }
 
 @media(max-width:600px){
+body.chat-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
 #naf-chat{
 right:0;
 bottom:0;
 width:100%;
-height:100%;
+height:100vh;
 border-radius:0;
 border:none;
+overflow: hidden;
 }
+#naf-messages {
+        -webkit-overflow-scrolling: touch;  /* ← ДОБАВИТЬ */
+        overscroll-behavior: contain;  /* ← ДОБАВИТЬ */
+    }
+    
+    #naf-input {
+        font-size: 16px;  /* ← ДОБАВИТЬ - предотвращает зум на iOS */
+    }
 }
 `;
 
@@ -601,4 +615,24 @@ content:hello
 
 saveHistory();
 
+}
+
+// Настройка поведения поля ввода для мобильных
+const chatInput = document.getElementById("naf-input");
+if (chatInput) {
+    chatInput.addEventListener('focus', function() {
+        const chat = document.getElementById("naf-chat");
+        if (chat && chat.style.display === "flex") {
+            document.body.classList.add("chat-open");
+            // Прокручиваем сообщения к последнему
+            const messagesContainer = document.getElementById("naf-messages");
+            if (messagesContainer) {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+    });
+    
+    chatInput.addEventListener('blur', function() {
+        document.body.classList.remove("chat-open");
+    });
 }

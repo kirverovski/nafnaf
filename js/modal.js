@@ -271,15 +271,37 @@ if (!videoModal) {
     document.body.appendChild(tempDiv.firstElementChild);
 }
 
-// Открыть модальное окно с видео
+// Открыть модальное окно с видео (поддержка YouTube и Rutube)
 function openVideoModal(videoUrl) {
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoFrame');
     
     if (!modal || !iframe) return;
     
+    // Преобразование Rutube URL для embed (если передан обычный URL)
+    let embedUrl = videoUrl;
+    
+    // Если это Rutube URL вида https://rutube.ru/shorts/VIDEO_ID/
+    if (videoUrl.includes('rutube.ru/shorts/')) {
+        const videoId = videoUrl.split('/shorts/')[1].split('/')[0];
+        embedUrl = `https://rutube.ru/video/embed/${videoId}/`;
+    }
+    // Если это Rutube URL вида https://rutube.ru/video/VIDEO_ID/
+    else if (videoUrl.includes('rutube.ru/video/')) {
+        const videoId = videoUrl.split('/video/')[1].split('/')[0];
+        embedUrl = `https://rutube.ru/video/embed/${videoId}/`;
+    }
+    // Если это Rutube URL вида https://rutube.ru/play/embed/VIDEO_ID/
+    else if (videoUrl.includes('rutube.ru/play/embed/')) {
+        embedUrl = videoUrl; // уже правильный формат
+    }
+    // Если это YouTube URL, оставляем как есть
+    else if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+        embedUrl = videoUrl;
+    }
+    
     // Установить URL видео в iframe
-    iframe.src = videoUrl;
+    iframe.src = embedUrl;
     
     // Показать модалку
     modal.style.display = 'flex';

@@ -320,5 +320,101 @@ contactIcons.forEach(link => {
                 clickTimeUnix: timestampUnix
             });
         }
+
+        // 📨 3. ОТПРАВКА УВЕДОМЛЕНИЙ В TELEGRAM ПРИ КЛИКЕ
+        const message = `📱 *Новый клик по контакту!*\n\n` +
+                       `*Тип:* ${contactType === "tg" ? "Telegram" : contactType === "wa" ? "WhatsApp" : contactType === "tel" ? "Телефон" : contactType === "insta" ? "Instagram" : contactType === "max" ? "Max" : contactType === "sms" ? "SMS" : "Неизвестно"}\n` +
+                       `*Кнопка:* ${contactLabel}\n` +
+                       `*Время:* ${new Date(timestamp).toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
+
+        fetch(`https://api.telegram.org/bot8874031205:AAHDnit6ADRfOkTuLjJuO6Qx-iRFQ66Bk04/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: "6532150168",
+                text: message,
+                parse_mode: "Markdown"
+            })
+        }).then(response => {
+            if (response.ok) {
+                console.log("✅ Уведомление о клике отправлено в Telegram");
+            }
+        }).catch(error => {
+            console.error("❌ Ошибка отправки клика:", error);
+        });
     });
 });
+
+// 📨 ФУНКЦИЯ ОТПРАВКИ УВЕДОМЛЕНИЙ О ЦЕЛЯХ
+function sendGoalNotification(goalName, goalData = {}) {
+    const message = `🎯 *Цель достигнута: ${goalName}!*\n\n` +
+                   `*Время:* ${new Date().toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
+
+    fetch(`https://api.telegram.org/bot8874031205:AAHDnit6ADRfOkTuLjJuO6Qx-iRFQ66Bk04/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: "6532150168",
+            text: message,
+            parse_mode: "Markdown"
+        })
+    }).then(response => {
+        if (response.ok) {
+            console.log("✅ Уведомление о цели отправлено в Telegram");
+        }
+    }).catch(error => {
+        console.error("❌ Ошибка отправки:", error);
+    });
+}
+
+// 📨 ОТПРАВКА УВЕДОМЛЕНИЙ ПРИ ОТПРАВКЕ ФОРМ
+const originalFormSubmit = form?.addEventListener;
+if (form) {
+    // Переопределяем обработчик формы для добавления уведомления
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const formDataObj = Object.fromEntries(formData.entries());
+
+        // Отправка уведомления о новой заявке
+        sendGoalNotification("FORM_SUBMIT", formDataObj);
+
+        const response = await fetch("https://formspree.io/f/mlgvggon", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            form.reset();
+            mainModal.style.display = "none";
+            successModal.style.display = "flex";
+        }
+    });
+}
+
+const originalOrderFormSubmit = orderForm?.addEventListener;
+if (orderForm) {
+    orderForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(orderForm);
+        const formDataObj = Object.fromEntries(formData.entries());
+
+        // Отправка уведомления о новом заказе
+        sendGoalNotification("ORDER_SUBMIT", formDataObj);
+
+        const response = await fetch("https://formspree.io/f/mlgvggon", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            orderForm.reset();
+            orderModal.style.display = "none";
+            successModal.style.display = "flex";
+        }
+    });
+}
