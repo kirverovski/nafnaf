@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-06-03 12:00:00">
+<yml_catalog date="2026-09-10T12:00:00+03:00">
     <shop>
         <name>NAF NAFIKI</name>
         <company>NAF NAFIKI</company>
@@ -7,6 +7,9 @@
         <email>info@nafnafiki.ru</email>
         <phone>+7 (965) 474-52-62</phone>
         
+        <currencies>
+            <currency id="RUR" rate="1"/>
+        </currencies>
         <categories>
             <category id="1">Праздничные услуги</category>
             <category id="2">Аниматоры</category>
@@ -212,7 +215,7 @@
                 <price>4000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
-                <picture>https://nafnafiki.ru/images/service-photo.webp</picture>
+                <picture>https://nafnafiki.ru/images/service-video.webp</picture>
                 <description>
                     Профессиональный фотограф для праздника — запечатлейте лучшие моменты! Качественные фото в высоком разрешении.
                 </description>
@@ -229,7 +232,7 @@
                 <price>15000</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>1</categoryId>
-                <picture>https://nafnafiki.ru/images/service-individual.webp</picture>
+                <picture>https://nafnafiki.ru/images/addons.webp</picture>
                 <description>
                     Полностью индивидуальная программа под ваш запрос — от идеи до реализации. Составляем программу с нуля.
                 </description>
@@ -526,23 +529,6 @@
                     Яркие игровые персонажи
                 </shortDescription>
                 <url>https://nafnafiki.ru/animators.html#huggy-kissy</url>
-            </offer>
-            
-            <!-- КОРЖИК И КАРАМЕЛЬКА -->
-            <offer id="218">
-                <name>Аниматоры «Коржик и Карамелька»</name>
-                <vendor>NAF NAFIKI</vendor>
-                <price>4500</price>
-                <currencyId>RUR</currencyId>
-                <categoryId>2</categoryId>
-                <picture>https://nafnafiki.ru/images/anim-korz-karamel.webp</picture>
-                <description>
-                    Коржик и Карамелька — весёлая программа с играми, танцами, заданиями и атмосферой любимого детского мультфильма.
-                </description>
-                <shortDescription>
-                    Любимые герои для малышей
-                </shortDescription>
-                <url>https://nafnafiki.ru/animators.html#korz-karamel</url>
             </offer>
             
             <!-- МИМИМИШКИ: ТУЧКА, КЕША, ЛИСИЧКА -->
