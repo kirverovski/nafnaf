@@ -76,29 +76,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Обработка отправки формы — БЕЗ АЛЕРТА И ЗАКРЫТИЯ МОДАЛКИ
-    if (calcForm) {
-        calcForm.addEventListener('submit', async (e) => {
+    if (calcForm && !calcForm.dataset.leadBound) {
+        calcForm.dataset.leadBound = "1"; // защита от повторной привязки обработчика
+        calcForm.addEventListener('submit', (e) => {
             e.preventDefault(); // Предотвращаем стандартную отправку
 
             const formData = new FormData(calcForm);
+            const dataObj = Object.fromEntries(formData.entries());
 
-            try {
-                const response = await fetch(calcForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { "Accept": "application/json" } // ← Обязательно для Formspree!
-                });
+            // 📨 Telegram — мгновенно, параллельно (не блокирует UI)
+            if (typeof sendLeadToTelegram === "function") {
+                sendLeadToTelegram("Расчёт стоимости (модалка скидки)", dataObj);
+            }
 
-                if (response.ok) {
-                    calcModal.style.display = 'none';
-                    if (successModal) {
-                        successModal.style.display = 'flex';
-                    }
-                } else {
-                    throw new Error('Ошибка сервера: ' + response.status);
-                }
-            } catch (error) {
-                console.error('Ошибка отправки формы:', error);
+            // 📨 Formspree — в фоне, как резервный канал (результат не ждём)
+            fetch(calcForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { "Accept": "application/json" }
+            }).then(r => console.log("Formspree:", r.ok ? "отправлено" : "ошибка " + r.status))
+              .catch(err => console.error("Formspree недоступен:", err));
+
+            // ✅ Показываем "Спасибо" сразу, не дожидаясь серверов
+            calcModal.style.display = 'none';
+            if (successModal) {
+                successModal.style.display = 'flex';
             }
         });
     }
@@ -203,29 +205,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Обработка отправки формы
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+    if (contactForm && !contactForm.dataset.leadBound) {
+        contactForm.dataset.leadBound = "1"; // защита от повторной привязки (script.js может привязать её раньше)
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const formData = new FormData(contactForm);
-            
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { "Accept": "application/json" }
-                });
-                
-                if (response.ok) {
-                    mainModal.style.display = 'none';
-                    if (successModal) {
-                        successModal.style.display = 'flex';
-                    }
-                } else {
-                    throw new Error('Ошибка сервера: ' + response.status);
-                }
-            } catch (error) {
-                console.error('Ошибка отправки формы:', error);
+            const dataObj = Object.fromEntries(formData.entries());
+
+            // 📨 Telegram — мгновенно, параллельно (не блокирует UI)
+            if (typeof sendLeadToTelegram === "function") {
+                sendLeadToTelegram("Обратная связь (модалка)", dataObj);
+            }
+
+            // 📨 Formspree — в фоне, как резервный канал (результат не ждём)
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { "Accept": "application/json" }
+            }).then(r => console.log("Formspree:", r.ok ? "отправлено" : "ошибка " + r.status))
+              .catch(err => console.error("Formspree недоступен:", err));
+
+            // ✅ Показываем "Спасибо" сразу, не дожидаясь серверов
+            mainModal.style.display = 'none';
+            if (successModal) {
+                successModal.style.display = 'flex';
             }
         });
     }
@@ -271,8 +275,9 @@ if (!videoModal) {
     document.body.appendChild(tempDiv.firstElementChild);
 }
 
-// Открыть модальное окно с видео (поддержка YouTube и Rutube)
-function openVideoModal(videoUrl) {
+// Открыть модальное окно с видео (поддержка YouTube, Rutube и Kinescope)
+// isVertical = true — открывает модалку в вертикальном формате (9:16) для видеоотзывов
+function openVideoModal(videoUrl, isVertical) {
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoFrame');
     
@@ -295,9 +300,24 @@ function openVideoModal(videoUrl) {
     else if (videoUrl.includes('rutube.ru/play/embed/')) {
         embedUrl = videoUrl; // уже правильный формат
     }
+    // Если это Kinescope URL вида https://kinescope.io/VIDEO_ID — преобразуем в embed
+    else if (videoUrl.includes('kinescope.io/') && !videoUrl.includes('/embed/')) {
+        const videoId = videoUrl.split('kinescope.io/')[1].split('/')[0].split('?')[0];
+        embedUrl = `https://kinescope.io/embed/${videoId}`;
+    }
+    // Kinescope embed-ссылка вида https://kinescope.io/embed/VIDEO_ID — уже правильный формат
+    else if (videoUrl.includes('kinescope.io/embed/')) {
+        embedUrl = videoUrl;
+    }
     // Если это YouTube URL, оставляем как есть
     else if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
         embedUrl = videoUrl;
+    }
+    
+    // Вертикальный режим модалки (для видеоотзывов 9:16)
+    const content = modal.querySelector('.video-modal-content');
+    if (content) {
+        content.classList.toggle('video-vertical', !!isVertical);
     }
     
     // Установить URL видео в iframe
@@ -319,6 +339,10 @@ function closeVideoModal() {
     
     // Остановить видео (очистить src)
     iframe.src = '';
+    
+    // Убрать вертикальный режим
+    const content = modal.querySelector('.video-modal-content');
+    if (content) content.classList.remove('video-vertical');
     
     // Скрыть модалку
     modal.style.display = 'none';

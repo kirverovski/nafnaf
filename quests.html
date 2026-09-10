@@ -2,8 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Квесты | Праздники в Сочи</title>
+    <title>Квесты для детей в Сочи — шпионские и приключенческие | NAF NAFIKI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Квесты для детей и подростков в Сочи: шпионские, магические, приключенческие программы с реквизитом и ведущим. Выезд по всему городу.">
+    <link rel="canonical" href="https://nafnafiki.ru/quests.html">
     <link rel="stylesheet" href="css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -17,12 +19,16 @@
 
     <meta property="og:title" content="Квесты для детей в Сочи — NAF NAFIKI">
     <meta property="og:description" content="Приключенческие, шпионские, магические и игровые квесты для детей и подростков. Проводим программы в Сочи, Адлере, Красной Поляне, Лоо, Хосте и Абхазии.">
-    <meta property="og:image" content="https://nafnafiki.ru/logo-small.png">
+    <meta property="og:image" content="https://nafnafiki.ru/site-icon.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:url" content="https://nafnafiki.ru/quests.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NAF NAFIKI">
+    <meta name="twitter:card" content="summary">
+    <meta name="geo.region" content="RU-KDA">
+    <meta name="geo.placename" content="Сочи">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -80,24 +86,44 @@
 
 <header class="header">
     <div class="container header-inner">
-        <div class="logo">
-            <!-- Видео вместо логотипа -->
-            <video class="logo-video" autoplay muted loop playsinline poster="images/header-banner.webp">
-                <source src="images/header-banner.webm" type="video/webm">
-                <source src="images/header-banner.mp4" type="video/mp4">
-                <img src="images/logo-small.png" alt="Логотип"> <!-- запасной вариант для старых браузеров -->
-            </video>
-        </div>
+        <a class="logo" href="index.html" aria-label="NAF NAFIKI — на главную">
+                        <!-- Статичный логотип-баннер (заменил видео) -->
+            <img class="logo-video" src="images/logo-banner.webp" alt="Логотип NAF NAFIKI">
+        </a>
 
-        <nav class="nav">
-            <a href="index.html">Главная</a>
-            <a href="animators.html">Аниматоры</a>
-            <a href="shows.html">Шоу‑программы</a>
-            <a href="masters.html">Мастер‑классы</a>
-            <a href="quests.html" class="active">Квесты</a>
-            <a href="decor.html">Шары и фотозоны</a>
-            <a href="services.html">Доп. услуги</a>
-            <a href="index.html#age-programs">Программы по возрастам</a>
+        <nav class="nav desktop-nav">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle"><img class="nav-uslugi-icon" src="logotip/uslugi.webp" alt="">Наши услуги ▾</a>
+                                <div class="nav-dropdown-menu">
+                    <div class="mega-col">
+                        <div class="mega-title">Персонажи</div>
+                        <a href="animators.html">Все аниматоры</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Программы</div>
+                        <a href="shows.html">Шоу-программы</a>
+                        <a href="masters.html">Мастер-классы</a>
+                        <a href="quests.html" class="active">Квесты</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Оформление и услуги</div>
+                        <a href="decor.html">Шары и фотозоны</a>
+                        <a href="services.html">Доп. услуги</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Возрастные программы</div>
+                        <a href="kids1-6.html">Для детей 1–6 лет</a>
+                        <a href="kids6-10.html">Для детей 6–10 лет</a>
+                        <a href="kids10-15.html">Для детей 10–15 лет</a>
+                        <a href="adults.html">Для взрослых</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#about-company">О нас</a>
+            <a href="reviews.html">Отзывы</a>
+            <a href="#" class="nav-contacts-link">Контакты</a>
+            <a href="discounts.html" class="nav-discount-link">Скидки и бонусы</a>
+            <a href="partners.html">Партнёрам</a>
         </nav>
 
         <button class="btn-primary" id="openModal">Заказать праздник</button>
@@ -155,12 +181,17 @@
                  data-price="11 000 ₽/16 000₽"
                  data-images="images/fort-boyard1.webp,images/fort-boyard2.webp,images/fort-boyard3.webp,images/fort-boyard4.webp">
 
-                <img src="images/fort-boyard1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/fort-boyard1.webp" class="card-img" alt="Приключенческий квест «Форт Боярд»" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Форт Боярд»</h3>
                 <p class="fade-in">Испытания, загадки, золото и атмосфера легендарного Форта!</p>
-
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">6+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">не ограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">11 000 ₽</span></div></div>
+                </div>
                 <div class="service-card-buttons">
-                <button class="btn-outline openService">Подробнее</button>
+                    <button class="btn-outline openService">Подробнее</button>
                     <button class="btn-primary glow openOrder">Заказать</button>
                 </div>
             </div>
@@ -198,10 +229,15 @@
                  data-price="10 000 ₽"
                  data-images="images/squid-game1.webp,images/squid-game2.webp,images/squid-game3.webp,images/squid-game4.webp">
 
-                <img src="images/squid-game1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/squid-game1.webp" class="card-img" alt="Приключенческий квест «Игра в кальмара»" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Игра в кальмара»</h3>
                 <p class="fade-in">Азартные испытания, яркие эмоции и полный антураж Игры!</p>
-
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">6+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">не ограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 10 000 ₽</span></div></div>
+                </div>
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
                     <button class="btn-primary glow openOrder">Заказать</button>
@@ -242,10 +278,15 @@
                  data-price="10 000 ₽"
                  data-images="images/spy-quest1.webp">
 
-                <img src="images/spy-quest1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/spy-quest1.webp" class="card-img" alt="Шпионский квест: Миссия выполнима" loading="lazy">
                 <h3 class="reveal">Шпионский квест: Миссия выполнима</h3>
                 <p class="fade-in">Расшифровки, ловушки, взлом сейфа и спасение мира!</p>
-
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">6+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">не ограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">10 000 ₽</span></div></div>
+                </div>
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
                     <button class="btn-primary glow openOrder">Заказать</button>
@@ -286,10 +327,15 @@
                  data-price="10 000 ₽"
                  data-images="images/harry-potter1.webp">
 
-                <img src="images/harry-potter1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/harry-potter1.webp" class="card-img" alt="Магический квест «Гарри Поттер: Тайна Крестражей»" loading="lazy">
                 <h3 class="reveal">Магический квест «Гарри Поттер: Тайна Крестражей»</h3>            
                 <p class="fade-in">Мантии, палочки, карта Мародеров и охота на крестражи!</p>
-
+                <div class="service-card-info-pill">
+                    <div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" alt="Время" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">1 час</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" alt="Возраст" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">6+</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" alt="Количество" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">не ограничено</span></div></div>
+                    <div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" alt="Стоимость" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">10 000 ₽</span></div></div>
+                </div>
                 <div class="service-card-buttons">
                     <button class="btn-outline openService">Подробнее</button>
                     <button class="btn-primary glow openOrder">Заказать</button>
@@ -380,7 +426,7 @@
 
         <!-- Контейнер 16:9 -->
         <div class="modal-image-wrapper">
-            <img id="serviceImage" class="service-img" alt="" loading="lazy">
+            <img id="serviceImage" class="service-img" alt="Приключенческий квест «Форт Боярд»" loading="lazy">
         </div>
 
         <!-- Миниатюры -->
@@ -414,6 +460,7 @@
             <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
 
             <button class="btn-primary glow form-btn">Отправить заявку</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
         </form>
     </div>
 </div>
@@ -525,6 +572,7 @@
             <textarea name="extra" class="modal-textarea" placeholder="Пожелания, особенности площадки..."></textarea>
 
             <button class="btn-primary glow form-btn">Отправить заявку</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
         </form>
 
     </div>
@@ -542,34 +590,14 @@
 
 <!-- Мобильное нижнее меню -->
 <div class="mobile-bottom-nav">
-    <!-- Кнопка "О компании" -->
-    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="mbn-icon"><span class="mbn-label">О Нас</span></button>
-    <!-- Кнопка "Скидка" -->
-    <button class="mbn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="mbn-icon"><span class="mbn-label">Акции</span></button>
-    <!-- Кнопка "Меню" -->
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О нас" class="mbn-icon"><span class="mbn-label">О нас</span></button>
+    <button class="mbn-btn partners-btn" onclick="window.location.href='partners.html';"><img src="logotip/company-icon.webp" alt="Партнерам" class="mbn-icon"><span class="mbn-label">Партнёрам</span></button>
     <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
-    <!-- Кнопка "Контакты" -->
     <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
-    <!-- Кнопка "Чат с ИИ" -->
-    <button type="button" class="mbn-btn chat-btn" id="naf-chat-btn-mobile" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="mbn-icon"><span class="mbn-label">ИИ-Чат</span></button>
+    <button class="mbn-btn chat-btn" onclick="window.location.href='reviews.html';"><img src="logotip/reviews-icon.webp" alt="Отзывы" class="mbn-icon"><span class="mbn-label">Отзывы</span></button>
 </div>
 <!-- Боковое ПК меню -->
-<div class="desktop-right-nav"><button class="drn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="drn-icon"></button><button class="drn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="drn-icon"></button><button class="drn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="drn-icon float-icon"></button><button type="button" class="drn-btn chat-btn" id="naf-chat-btn-pc" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="drn-icon"></button>
-</div>
 
-<!-- МОДАЛЬНОЕ ОКНО: СКИДКА 5% (встроено для мгновенного открытия) -->
-<div class="discount-modal-overlay">
-    <div class="discount-modal">
-        <span class="close-btn-overlay close-discount-btn">&times;</span>
-        <h3 class="discount-modal-title">Скидка 5% для новых клиентов!</h3>
-        <p class="discount-modal-text">
-            Скидка 5% на любой заказ для всех новых клиентов, пришедших с нашего сайта или с Яндекс.карт по промокоду <strong>"WELCOME5"</strong>.
-        </p>
-        <p class="discount-modal-text">
-            Просто напишите промокод в любой удобный Вам мессенджер или озвучьте его по телефону.
-        </p>
-    </div>
-</div>
 <script src="js/script.js"></script>
 
 <script>
@@ -641,7 +669,6 @@ function openContactModal() {
 }
 </script>
 <!-- Подключаем скрипты -->
-<script src="js/chat-modal.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/menu.js"></script>
 
@@ -650,3 +677,4 @@ function openContactModal() {
 
 </body>
 </html>
+

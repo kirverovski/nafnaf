@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отзывы о праздниках NAF NAFIKI в Сочи — видео и тексты | NAF NAFIKI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Отзывы клиентов о праздниках NAF NAFIKI в Сочи: видеоотзывы и отзывы с Авито и Яндекс Карт об аниматорах, шоу-программах и квестах.">
+    <link rel="canonical" href="https://nafnafiki.ru/reviews.html">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" href="https://nafnafiki.ru/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Icon for search engines and devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="site-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta property="og:title" content="Отзывы — NAF NAFIKI, праздники в Сочи">
+    <meta property="og:description" content="Отзывы наших клиентов с Авито и Яндекс Карт, а также видеоотзывы о праздниках, аниматорах, шоу-программах и квестах в Сочи и Абхазии.">
+    <meta property="og:image" content="https://nafnafiki.ru/site-icon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://nafnafiki.ru/reviews.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NAF NAFIKI">
+    <meta name="twitter:card" content="summary">
+    <meta name="geo.region" content="RU-KDA">
+    <meta name="geo.placename" content="Сочи">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109547647', 'ym');
+
+    ym(109547647, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109547647" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<style>
+/* ===== СТРАНИЦА ОТЗЫВОВ ===== */
+.reviews-title{text-align:center;font-size:34px;font-weight:800;color:#222;margin-bottom:6px}
+.reviews-lead{max-width:840px;margin:0 auto 26px;text-align:center;color:#555;font-size:16px;line-height:1.6}
+
+.reviews-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
+.rev-tab{padding:12px 22px;border:1px solid #e0e0e0;background:#fff;color:#333;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;transition:all .25s ease;white-space:nowrap}
+.rev-tab:hover{background:#ff4b6a;color:#fff;border-color:#ff4b6a;transform:translateY(-2px)}
+.rev-tab.active{background:#ff4b6a;color:#fff;border-color:#ff4b6a;box-shadow:0 4px 12px rgba(255,75,106,.35)}
+
+/* Видеоотзывы (горизонтальный формат 16:9) */
+.rev-video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.rev-video-card{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.rev-video-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.rev-video-thumb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,75,106,.55),rgba(212,175,55,.55));color:#fff}
+/* Обложка видео: показывается поверх градиента после загрузки */
+.rev-video-thumb img.rev-video-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s ease}
+.rev-video-thumb img.rev-video-cover.loaded{opacity:1}
+/* Прозрачный круг с треугольником поверх обложки (видно обложку сквозь круг) */
+.rev-video-thumb .play-big{position:relative;z-index:2;width:76px;height:76px;border-radius:50%;background:transparent;border:3px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .25s ease,background .25s ease}
+.rev-video-card:hover .play-big{transform:scale(1.1);background:rgba(255,255,255,.15)}
+.rev-video-thumb .play-big svg{width:34px;height:34px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
+.rev-video-thumb .play-big svg path{fill:#fff}
+
+/* Скриншоты отзывов */
+.rev-shot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.rev-shot{position:relative;border-radius:14px;overflow:hidden;background:#f2f2f2;border:2px dashed #c9c9c9;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#777;font-size:14px;line-height:1.5}
+.rev-shot-holder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:600}
+/* Скриншоты с реальными картинками (размер слотов — как в разделе отзывов с Авито) */
+.rev-shot.rev-shot-img{aspect-ratio:1/1;background:#fff;border:1px solid rgba(255,255,255,.15);padding:0;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.rev-shot.rev-shot-img:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.rev-shot.rev-shot-img img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Отзывы с Авито: карточки-скриншоты с белым фоном, изображение целиком (без обрезки) */
+.rev-avito-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.rev-avito-slot{position:relative;aspect-ratio:1/1;background:#fff;border-radius:14px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.rev-avito-slot:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.rev-avito-slot img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Блок "смотреть больше" */
+.rev-more{display:block;text-align:center;margin:26px auto 0}
+.rev-external-link{display:inline-block;padding:14px 28px;background:#f4dfa7;color:#000;font-weight:600;border-radius:10px;text-decoration:none;transition:.3s}
+.rev-external-link:hover{background:#fff;color:#000}
+.rev-write-btn{position:relative;display:inline-block;padding:28px 30px;background:linear-gradient(135deg,#ffd700,#e0a800);color:#5a3801;font-weight:800;font-size:30px;letter-spacing:.5px;border:none;border-radius:48px;cursor:pointer;box-shadow:0 6px 24px rgba(212,175,55,.45);transition:.3s}
+.rev-write-btn::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 0 rgba(255,255,255,.8);animation:revBtnRing 1.8s ease-out infinite}
+.rev-write-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(255,215,0,.65)}
+@keyframes revBtnRing{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}70%{box-shadow:0 0 0 20px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+@media (max-width:640px){.rev-write-btn{padding:20px 20px;font-size:22px;border-radius:36px}}
+</style>
+
+</head>
+<!-- Модальное окно связи -->
+<div class="contact-modal-overlay">
+    <div class="contact-modal">
+        <span class="close-btn-overlay close-discount-btn">&times;</span>
+        <!-- Заголовок -->
+        <h3>Свяжитесь с нами удобным вам способом</h3>
+        <!-- Текст для скидки -->
+        <p class="contact-helper-text">
+            Скопируйте или озвучте текст ниже — и получите скидку 5% как новый клиент!
+        </p>
+        <!-- Текстовое поле с текстом -->
+        <textarea id="contactText" class="contact-helper-area" readonly>
+Здравствуйте! Нашёл вас на сайте/в Яндекс.Картах. Хочу получить скидку 5% и уточнить детали по услугам. Меня интересует:
+        </textarea>
+        <!-- Кнопка копирования -->
+        <button class="copy-btn" onclick="copyContactText()">Скопировать текст</button>
+        <!-- Подтверждение копирования -->
+        <div id="copyConfirm" class="copy-confirm">Скопировано!</div>
+        <!-- Иконки контактов -->
+        <div class="contact-icons">
+            <!-- Telegram -->
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img"></a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img"></a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img"></a>
+            <!-- MAX -->
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.png" alt="MAX" class="icon-img"></a>
+            <!-- SMS -->
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.png" alt="Call" class="icon-img"></a>
+            <!-- Вызов по телефону -->
+            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.png" alt="Call" class="icon-img"></a>
+        </div>
+    </div>
+</div>
+
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="NAF NAFIKI — на главную">
+                        <!-- Статичный логотип-баннер (заменил видео) -->
+            <img class="logo-video" src="images/logo-banner.webp" alt="Логотип NAF NAFIKI">
+        </a>
+
+        <nav class="nav desktop-nav">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle"><img class="nav-uslugi-icon" src="logotip/uslugi.webp" alt="">Наши услуги ▾</a>
+                                <div class="nav-dropdown-menu">
+                    <div class="mega-col">
+                        <div class="mega-title">Персонажи</div>
+                        <a href="animators.html">Все аниматоры</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Программы</div>
+                        <a href="shows.html">Шоу-программы</a>
+                        <a href="masters.html">Мастер-классы</a>
+                        <a href="quests.html">Квесты</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Оформление и услуги</div>
+                        <a href="decor.html">Шары и фотозоны</a>
+                        <a href="services.html">Доп. услуги</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Возрастные программы</div>
+                        <a href="kids1-6.html">Для детей 1–6 лет</a>
+                        <a href="kids6-10.html">Для детей 6–10 лет</a>
+                        <a href="kids10-15.html">Для детей 10–15 лет</a>
+                        <a href="adults.html">Для взрослых</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#about-company">О нас</a>
+            <a href="reviews.html" class="active">Отзывы</a>
+            <a href="#" class="nav-contacts-link">Контакты</a>
+            <a href="discounts.html" class="nav-discount-link">Скидки и бонусы</a>
+            <a href="partners.html">Партнёрам</a>
+        </nav>
+
+        <button class="btn-primary" id="openModal">Заказать праздник</button>
+    </div>
+</header>
+
+<section class="hero small-hero reveal">
+    <div class="container">
+        <h1 class="reveal">Отзывы наших клиентов</h1>
+        <p class="fade-in">Авито, Яндекс Карты и видеоотзывы о наших праздниках</p>
+    </div>
+</section>
+
+<section class="after-hero-bg">
+
+    <div class="container">
+
+        <h2 class="reviews-title">Отзывы</h2>
+        <p class="reviews-lead">
+            Заказывали у нас праздник? Поделитесь своим отзывом — нам это очень важно!
+        </p>
+
+        <div style="text-align:center;margin-bottom:20px;">
+            <button type="button" class="rev-write-btn" id="openReviewModal">Оставить отзыв</button>
+        </div>
+
+        <!-- Вкладки-фильтры -->
+        <div class="reviews-tabs">
+            <button type="button" class="rev-tab active" data-tab="all">Все</button>
+            <button type="button" class="rev-tab" data-tab="video">Видеоотзывы</button>
+            <button type="button" class="rev-tab" data-tab="avito">Отзывы с Авито</button>
+            <button type="button" class="rev-tab" data-tab="yandex">Отзывы с Яндекс Карт</button>
+        </div>
+<!-- ========== ПАНЕЛЬ: ВИДЕООТЗЫВЫ (идёт первой) ========== -->
+        <div class="reviews-section-black" data-panel="video">
+            <div class="reviews-glass reveal">
+                <h2>Видеоотзывы</h2>
+                <div class="rev-video-grid">
+                    <!-- ВИДЕООТЗЫВ 1: замени ссылку в data-video (YouTube, Rutube или Kinescope, например data-video="https://kinescope.io/VIDEO_ID").
+                         Обложка подгрузится автоматически. Чтобы задать свою картинку-обложку, добавь атрибут data-thumb="путь_к_картинке" -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/8cctHDU9FSd61JjXeYLyHH">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 1" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                    <!-- ВИДЕООТЗЫВ 2 -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/2jzRHHeJbNaD8TsKn5x3Yq">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 2" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                    <!-- ВИДЕООТЗЫВ 3 -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/nLgQ7FCD5QUeT7eNCjJHB8">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 3" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                    <!-- ВИДЕООТЗЫВ 4 -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/pTGkKqFt9aCRNjGie7DDt9">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 4" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                    <!-- ВИДЕООТЗЫВ 5 -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/nFh7rHZe66CBuvHYAYS2Tu">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 5" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                    <!-- ВИДЕООТЗЫВ 6 -->
+                    <div class="rev-video-card" data-video="https://kinescope.io/gSMsAt4j55CqJcebbpwDzM">
+                        <div class="rev-video-thumb">
+                            <img class="rev-video-cover" alt="Обложка видеоотзыва 6" loading="lazy">
+                            <span class="play-big"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- ========== ПАНЕЛЬ: ОТЗЫВЫ С АВИТО ========== -->
+        <div class="reviews-section-black" data-panel="avito">
+            <div class="reviews-glass reveal">
+                <h2>Отзывы с Авито</h2>
+                <div class="rev-avito-grid">
+                    <!-- Скриншоты отзывов с Авито: otziv/avito-review1.webp ... otziv/avito-review6.webp (можно заменить на свои) -->
+                    <div class="rev-avito-slot"><img src="otziv/avito-review1.webp" alt="Отзыв с Авито — скриншот 1" loading="lazy"></div>
+                    <div class="rev-avito-slot"><img src="otziv/avito-review2.webp" alt="Отзыв с Авито — скриншот 2" loading="lazy"></div>
+                    <div class="rev-avito-slot"><img src="otziv/avito-review3.webp" alt="Отзыв с Авито — скриншот 3" loading="lazy"></div>
+                    <div class="rev-avito-slot"><img src="otziv/avito-review4.webp" alt="Отзыв с Авито — скриншот 4" loading="lazy"></div>
+                    <div class="rev-avito-slot"><img src="otziv/avito-review5.webp" alt="Отзыв с Авито — скриншот 5" loading="lazy"></div>
+                    <div class="rev-avito-slot"><img src="otziv/avito-review6.webp" alt="Отзыв с Авито — скриншот 6" loading="lazy"></div>
+                </div>
+                <!-- Ссылка на профиль на Авито: замени href -->
+                <div class="rev-more">
+                    <a href="otziv/reviews.pdf" class="rev-external-link" target="_blank" rel="noopener">Читать больше отзывов на Авито</a>
+                </div>
+            </div>
+        </div>
+<!-- ========== ПАНЕЛЬ: ОТЗЫВЫ С ЯНДЕКС КАРТ ========== -->
+        <div class="reviews-section-black" data-panel="yandex">
+            <div class="reviews-glass reveal">
+                <h2>Отзывы с Яндекс Карт</h2>
+                <div class="rev-shot-grid">
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review1.webp" alt="Отзыв с Яндекс Карт — скриншот 1" loading="lazy"></div>
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review2.webp" alt="Отзыв с Яндекс Карт — скриншот 2" loading="lazy"></div>
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review3.webp" alt="Отзыв с Яндекс Карт — скриншот 3" loading="lazy"></div>
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review4.webp" alt="Отзыв с Яндекс Карт — скриншот 4" loading="lazy"></div>
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review5.webp" alt="Отзыв с Яндекс Карт — скриншот 5" loading="lazy"></div>
+                    <div class="rev-shot rev-shot-img"><img src="otziv/yandex-review6.webp" alt="Отзыв с Яндекс Карт — скриншот 6" loading="lazy"></div>
+                </div>
+                <!-- Ссылка на профиль на Яндекс Картах -->
+                <div class="rev-more">
+                    <a href="https://yandex.ru/maps/org/naf_nafiki/196081546627?si=dm2ejxh5te3weereuhc1hqhyk4" class="rev-external-link" target="_blank" rel="noopener">Читать больше отзывов на Яндекс Картах</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+</section>
+
+<!-- Мобильное нижнее меню -->
+<div class="mobile-bottom-nav">
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О нас" class="mbn-icon"><span class="mbn-label">О нас</span></button>
+    <button class="mbn-btn partners-btn" onclick="window.location.href='partners.html';"><img src="logotip/company-icon.webp" alt="Партнерам" class="mbn-icon"><span class="mbn-label">Партнёрам</span></button>
+    <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
+    <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
+    <button class="mbn-btn chat-btn" onclick="window.location.href='reviews.html';"><img src="logotip/reviews-icon.webp" alt="Отзывы" class="mbn-icon"><span class="mbn-label">Отзывы</span></button>
+</div>
+<!-- Боковое ПК меню -->
+
+<!-- МОДАЛКА: Заявка -->
+<div class="modal" id="modal">
+    <div class="modal-content form-big zoom-in">
+        <span class="close-btn-overlay" id="closeModal">&times;</span>
+
+        <h2 class="form-title">Оставить заявку</h2>
+        <p class="form-subtitle">
+            Чем подробнее вы заполните форму, тем быстрее и точнее мы подберём для вас идеальную программу мероприятия.
+        </p>
+
+        <form id="contactForm">
+
+            <!-- ВЫБОР УСЛУГИ -->
+            <label>Что вы хотите заказать? *</label>
+            <select name="program" class="modal-select" required>
+                <option value="">Выберите вариант</option>
+                <option value="Не могу определиться — нужна помощь">Не могу определиться — нужна помощь</option>
+                <option value="Аниматор">Аниматор</option>
+                <option value="Шоу‑программа">Шоу‑программа</option>
+                <option value="Мастер‑класс">Мастер‑класс</option>
+                <option value="Оформление площадки">Оформление площадки</option>
+                <option value="Фотозона">Фотозона</option>
+                <option value="Квест">Квест</option>
+                <option value="Караоке">Караоке</option>
+                <option value="Другое">Другое</option>
+            </select>
+
+            <!-- ПОЛЕ ДЛЯ "ДРУГОЕ" (ВСЕГДА ДОСТУПНО) -->
+            <label>Если выбрали «Другое», укажите что именно</label>
+            <input type="text" name="program_other" placeholder="Например: шоу мыльных пузырей, ростовая кукла..." class="modal-input">
+
+            <label>Тип мероприятия *</label>
+            <input type="text" name="event_type" placeholder="День рождения, юбилей..." required>
+
+            <!-- ДАТА + ВРЕМЯ (РАЗДЕЛЕНЫ) -->
+            <div class="date-time-row">
+                <div class="date-col">
+                    <label>Дата</label>
+                    <input type="date" name="date" class="date-input">
+                </div>
+
+                <div class="time-col">
+                    <label>Время</label>
+                    <input type="time" name="time" class="time-input">
+                </div>
+            </div>
+
+            <label>Точный адрес *</label>
+            <input type="text" name="address" placeholder="Город, улица, дом..." required>
+
+            <label>Номер телефона *</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+
+            <label>Наличие парковки</label>
+            <select name="parking" class="modal-select">
+                <option value="">Не выбрано</option>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+                <option value="Не знаю">Не знаю</option>
+            </select>
+
+            <label>Тип площадки</label>
+            <select name="place_type" class="modal-select">
+                <option value="">Не выбрано</option>
+                <option value="Квартира">Квартира</option>
+                <option value="Дом">Дом</option>
+                <option value="Кафе/ресторан">Кафе / ресторан</option>
+                <option value="Банкетный зал">Банкетный зал</option>
+                <option value="Детская комната">Детская комната</option>
+                <option value="На улице">На улице</option>
+                <option value="Другое">Другое</option>
+            </select>
+
+            <label>Именинник: имя и возраст</label>
+            <input type="text" name="birthday_child" placeholder="Например: София, 6 лет">
+
+            <label>Количество гостей и возраст</label>
+            <input type="text" name="guests" placeholder="Например: 12 детей 6–8 лет">
+
+            <!-- ФОТО + ДЕКОР -->
+            <div class="form-row separated">
+                <div>
+                    <label>Фотосъёмка</label>
+                    <select name="photo" class="modal-select">
+                        <option value="">Не выбрано</option>
+                        <option value="Нужна">Нужна</option>
+                        <option value="Не нужна">Не нужна</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Доставка шаров</label>
+                    <select name="decor" class="modal-select">
+                        <option value="">Не выбрано</option>
+                        <option value="Нужна">Нужна</option>
+                        <option value="Не нужна">Не нужна</option>
+                    </select>
+                </div>
+            </div>
+
+            <label>Бюджет</label>
+            <input type="text" name="budget" placeholder="Например: до 10 000 ₽">
+
+            <label>Дополнительная информация</label>
+            <textarea name="extra" class="modal-textarea" placeholder="Пожелания, особенности площадки..."></textarea>
+
+            <button class="btn-primary glow form-btn">Отправить заявку</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
+        </form>
+
+    </div>
+</div>
+
+<!-- МОДАЛКА: Спасибо -->
+<div class="modal" id="successModal">
+    <div class="modal-content form-big zoom-in">
+        <h2 class="form-title">Спасибо за вашу заявку!</h2>
+        <p class="form-subtitle">Мы обязательно Вам позвоним в самое ближайшее время. Мы обрабатываем заявки каждый день с 09:00 до 21:00</p>
+
+        <button class="btn-primary glow form-btn" id="closeSuccess">Закрыть</button>
+    </div>
+</div>
+
+<!-- МОДАЛКА: Оставить отзыв (Formspree) -->
+<div class="modal" id="reviewModal">
+    <div class="modal-content form-big zoom-in" style="max-width:560px;">
+        <span class="close-btn-overlay" id="closeReviewModal">&times;</span>
+
+        <h2 class="form-title">Оставить отзыв</h2>
+        <p class="form-subtitle">Поделитесь впечатлениями о празднике — нам это очень важно!</p>
+
+        <form id="reviewForm" action="https://formspree.io/f/mlgvggon" method="POST">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+
+            <label>Телефон или Telegram</label>
+            <input type="text" name="contact" placeholder="Телефон или @username" required>
+
+            <label>Оценка</label>
+            <select name="rating" class="modal-select" required>
+                <option value="5">5 — отлично</option>
+                <option value="4">4 — хорошо</option>
+                <option value="3">3 — нормально</option>
+                <option value="2">2 — плохо</option>
+                <option value="1">1 — ужасно</option>
+            </select>
+
+            <label>Текст отзыва</label>
+            <textarea name="message" class="modal-textarea" placeholder="Расскажите, как прошёл праздник..." required></textarea>
+
+            <button type="submit" class="btn-primary glow form-btn">Отправить отзыв</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
+            <p id="reviewFormStatus" style="display:none;text-align:center;font-size:15px;font-weight:600;margin-top:10px;"></p>
+        </form>
+    </div>
+</div>
+
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.querySelector('.contact-modal-overlay');
+    
+    if (!modal) return;
+
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Закрытие модалки при нажатии ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<script>
+function copyContactText() {
+    const text = document.getElementById("contactText").value;
+    const btn = document.querySelector(".copy-btn");
+
+    // Копирование без выделения
+    navigator.clipboard.writeText(text).then(() => {
+
+        // Визуальное подтверждение
+        btn.textContent = "Скопировано!";
+        btn.style.background = "#28a745";  // зелёный
+        btn.style.transform = "scale(1.03)";
+
+        // Вибрация на телефонах
+        if (navigator.vibrate) navigator.vibrate(50);
+
+        // Возврат кнопки в исходное состояние
+        setTimeout(() => {
+            btn.textContent = "Скопировать текст";
+            btn.style.background = "#ff6f61"; // твой основной цвет
+            btn.style.transform = "scale(1)";
+        }, 1200);
+    });
+}
+</script>
+<script>
+function toggleSeoText() {
+    const container = document.getElementById('seo-container');
+    const text = document.getElementById('seo-text');
+
+    if (container.classList.contains('open')) {
+        text.style.display = 'none';
+        container.classList.remove('open');
+    } else {
+        container.classList.add('open');
+        text.style.display = 'block';
+    }
+}
+
+function openContactModal() {
+    const modal = document.querySelector('.contact-modal-overlay');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+</script>
+<!-- Подключаем скрипты -->
+<script src="js/modal.js"></script>
+<script src="js/menu.js"></script>
+
+<!-- Скрипт переключения вкладок отзывов -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll('.rev-tab');
+    const panels = document.querySelectorAll('.reviews-section-black[data-panel]');
+
+    function activate(tabName) {
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+        panels.forEach(p => {
+            const show = (tabName === 'all') || (p.dataset.panel === tabName);
+            p.style.display = show ? '' : 'none';
+        });
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+    activate('all'); // по умолчанию показываем всё: видео + авито + яндекс
+
+    // Клик по карточке видеоотзыва открывает видео в модалке (функция openVideoModal из js/modal.js)
+    document.querySelectorAll('.rev-video-card[data-video]').forEach(card => {
+        card.addEventListener('click', () => {
+            const url = (card.dataset.video || '').trim();
+            if (url && typeof openVideoModal === 'function') {
+                openVideoModal(url); // без второго аргумента = горизонтальный формат модалки (16:9)
+            }
+        });
+    });
+
+    // === АВТОЗАГРУЗКА ОБЛОЖЕК ВИДЕООТЗЫВОВ ===
+    // Приоритет: 1) data-thumb (своя картинка), 2) обложка по ссылке из data-video.
+    // Поддерживаются Kinescope (kinescope.io/ID/poster.png), YouTube (img.youtube.com) и Rutube (через API).
+    // Если обложку получить не удалось — остаётся градиентная заглушка.
+    function getKinescopeId(url) {
+        const m = url.match(/kinescope\.io\/(?:embed\/)?([A-Za-z0-9]+)/);
+        return m ? m[1] : '';
+    }
+    function getThumbFromUrl(url) {
+        // Kinescope: прямая ссылка на обложку
+        const kinId = getKinescopeId(url);
+        if (kinId) return Promise.resolve(`https://kinescope.io/${kinId}/poster.png`);
+        // YouTube: watch?v=, youtu.be/, shorts/, embed/
+        let m = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+        if (m) return Promise.resolve(`https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`);
+        // Rutube: обложку берём из открытого API
+        m = url.match(/rutube\.ru\/(?:video|shorts|play\/embed)\/([A-Za-z0-9]+)/);
+        if (m) {
+            return fetch(`https://rutube.ru/api/video/${m[1]}/?format=json`)
+                .then(r => r.json())
+                .then(d => (d && d.thumbnail && (d.thumbnail.url || d.thumbnail_url)) || '')
+                .catch(() => '');
+        }
+        return Promise.resolve('');
+    }
+    document.querySelectorAll('.rev-video-card').forEach(card => {
+        const img = card.querySelector('.rev-video-cover');
+        if (!img) return;
+        const showCover = (src) => {
+            if (!src) return;
+            img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+            img.addEventListener('error', () => img.classList.remove('loaded'), { once: true });
+            img.src = src;
+        };
+        const custom = (card.dataset.thumb || '').trim();
+        if (custom) { showCover(custom); return; }
+        const videoUrl = (card.dataset.video || '').trim();
+        if (!videoUrl) return;
+        getThumbFromUrl(videoUrl).then(showCover);
+    });
+});
+</script>
+
+<!-- Модалка "Оставить отзыв": отправка на Formspree + дубль в Telegram -->
+<script>
+(function () {
+    const openBtn = document.getElementById("openReviewModal");
+    const modal = document.getElementById("reviewModal");
+    if (!openBtn || !modal) return;
+
+    const closeBtn = document.getElementById("closeReviewModal");
+    const form = document.getElementById("reviewForm");
+    const status = document.getElementById("reviewFormStatus");
+
+    const openModal = () => { modal.style.display = "flex"; document.body.style.overflow = "hidden"; };
+    const closeModal = () => { modal.style.display = "none"; document.body.style.overflow = ""; };
+
+    openBtn.addEventListener("click", openModal);
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "flex") closeModal();
+    });
+
+    if (form && !form.dataset.leadBound) {
+        form.dataset.leadBound = "1";
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const dataObj = Object.fromEntries(formData.entries());
+
+            // Дубль в Telegram (как у остальных форм сайта)
+            if (typeof sendLeadToTelegram === "function") {
+                sendLeadToTelegram("Отзыв с сайта", dataObj);
+            }
+
+            // Основная отправка: Formspree
+            fetch("https://formspree.io/f/mlgvggon", {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            })
+            .then(r => {
+                if (!r.ok) throw new Error("Formspree error " + r.status);
+                form.reset();
+                if (status) {
+                    status.style.color = "#28a745";
+                    status.textContent = "Спасибо! Ваш отзыв отправлен.";
+                    status.style.display = "block";
+                }
+                setTimeout(closeModal, 1800);
+            })
+            .catch(err => {
+                console.error("Formspree недоступен:", err);
+                if (status) {
+                    status.style.color = "#c0392b";
+                    status.textContent = "Не удалось отправить. Попробуйте ещё раз.";
+                    status.style.display = "block";
+                }
+            });
+        });
+    }
+})();
+</script>
+
+<!-- Кнопка "Вверх" -->
+<button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"></button>
+
+</body>
+</html>
+

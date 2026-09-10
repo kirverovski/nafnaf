@@ -21,23 +21,29 @@ if (closeSuccessBtn) {
 const form = document.getElementById("contactForm");
 const mainModal = document.getElementById("modal");
 
-if (form) {
-    form.addEventListener("submit", async (e) => {
+if (form && !form.dataset.leadBound) {
+    form.dataset.leadBound = "1"; // защита от повторной привязки обработчика
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const formData = new FormData(form);
+        const dataObj = Object.fromEntries(formData.entries());
 
-        const response = await fetch("https://formspree.io/f/mlgvggon", {
+        // 📨 Telegram — мгновенно, параллельно (не блокирует UI)
+        sendLeadToTelegram("Форма на главной странице", dataObj);
+
+        // 📨 Formspree — в фоне, как резервный канал (результат не ждём)
+        fetch("https://formspree.io/f/mlgvggon", {
             method: "POST",
             body: formData,
             headers: { "Accept": "application/json" }
-        });
+        }).then(r => console.log("Formspree:", r.ok ? "отправлено" : "ошибка " + r.status))
+          .catch(err => console.error("Formspree недоступен:", err));
 
-        if (response.ok) {
-            form.reset();
-            mainModal.style.display = "none";
-            successModal.style.display = "flex";
-        }
+        // ✅ Показываем "Спасибо" сразу, не дожидаясь серверов
+        form.reset();
+        mainModal.style.display = "none";
+        successModal.style.display = "flex";
     });
 }
 
@@ -199,23 +205,29 @@ if (closeOrder) {
 
 const orderForm = document.getElementById("orderForm");
 
-if (orderForm) {
-    orderForm.addEventListener("submit", async (e) => {
+if (orderForm && !orderForm.dataset.leadBound) {
+    orderForm.dataset.leadBound = "1"; // защита от повторной привязки обработчика
+    orderForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const formData = new FormData(orderForm);
+        const dataObj = Object.fromEntries(formData.entries());
 
-        const response = await fetch("https://formspree.io/f/mlgvggon", {
+        // 📨 Telegram — мгновенно, параллельно (не блокирует UI)
+        sendLeadToTelegram("Заказ программы", dataObj);
+
+        // 📨 Formspree — в фоне, как резервный канал (результат не ждём)
+        fetch("https://formspree.io/f/mlgvggon", {
             method: "POST",
             body: formData,
             headers: { "Accept": "application/json" }
-        });
+        }).then(r => console.log("Formspree:", r.ok ? "отправлено" : "ошибка " + r.status))
+          .catch(err => console.error("Formspree недоступен:", err));
 
-        if (response.ok) {
-            orderForm.reset();
-            orderModal.style.display = "none";
-            successModal.style.display = "flex";
-        }
+        // ✅ Показываем "Спасибо" сразу, не дожидаясь серверов
+        orderForm.reset();
+        orderModal.style.display = "none";
+        successModal.style.display = "flex";
     });
 }
 
@@ -273,6 +285,155 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
+// === СКРЫТИЕ ШАПКИ ПРИ СКРОЛЛЕ ВНИЗ / КОМПАКТНАЯ ШАПКА ПРИ СКРОЛЛЕ ВВЕРХ ===
+const siteHeader = document.querySelector('.header');
+const desktopMQ = window.matchMedia('(min-width: 769px)');
+let lastScrollY = window.scrollY || 0;
+const headerHideThreshold = 60;
+
+// Высота фиксированной шапки -> отступ для body, чтобы контент не прятался под ней
+function syncHeaderOffset() {
+    if (!siteHeader) return;
+    // В компактном режиме высота другая — не трогаем отступ, чтобы контент не прыгал
+    if (desktopMQ.matches && !siteHeader.classList.contains('header-compact')) {
+        document.documentElement.style.setProperty('--header-h', siteHeader.offsetHeight + 'px');
+    }
+}
+
+// Внедряем текстовый логотип (виден только в компактном режиме при скролле)
+if (siteHeader) {
+    const logoBox = siteHeader.querySelector('.logo');
+    if (logoBox && !logoBox.querySelector('.logo-text')) {
+        const logoText = document.createElement('span');
+        logoText.className = 'logo-text';
+        logoText.innerHTML = 'NAFNAFIKI <span>SOCHI</span>';
+        logoBox.appendChild(logoText);
+    }
+
+    // Мобильная версия логотипа: на экранах <=768px показываем logo-bannermob.webp
+    const logoImg = siteHeader.querySelector('.logo .logo-video');
+    if (logoImg) {
+        const desktopLogoSrc = logoImg.getAttribute('src'); // images/logo-banner.webp
+        const mobileLogoSrc = 'images/logo-bannermob.webp';
+        const syncLogoSrc = () => {
+            const wanted = desktopMQ.matches ? desktopLogoSrc : mobileLogoSrc;
+            if (logoImg.getAttribute('src') !== wanted) {
+                logoImg.setAttribute('src', wanted);
+            }
+        };
+        syncLogoSrc();
+        if (desktopMQ.addEventListener) {
+            desktopMQ.addEventListener('change', syncLogoSrc);
+        } else {
+            desktopMQ.addListener(syncLogoSrc); // старые браузеры
+        }
+    }
+
+    window.addEventListener('scroll', function onScroll() {
+        // Только на десктопе
+        if (!desktopMQ.matches) {
+            siteHeader.classList.remove('header-hidden');
+            siteHeader.classList.remove('header-compact');
+            return;
+        }
+
+        const currentY = window.scrollY || window.pageYOffset || 0;
+
+        if (currentY > headerHideThreshold && currentY > lastScrollY + 5) {
+            // Прокрутка вниз — прячем шапку
+            siteHeader.classList.add('header-hidden');
+        } else if (currentY <= headerHideThreshold || currentY < lastScrollY - 5) {
+            // Вернулись к верху или прокрутка вверх — показываем шапку
+            siteHeader.classList.remove('header-hidden');
+        }
+
+        // Компактный режим: текстовый логотип вместо видео + узкая полоса + полупрозрачный фон
+        if (currentY > headerHideThreshold) {
+            siteHeader.classList.add('header-compact');
+        } else {
+            siteHeader.classList.remove('header-compact');
+        }
+
+        lastScrollY = currentY;
+    }, { passive: true });
+
+    // Пересчёт высоты шапки
+    window.addEventListener('load', syncHeaderOffset);
+    window.addEventListener('resize', syncHeaderOffset);
+    syncHeaderOffset();
+}
+
+// === Мега-меню «Наши услуги» (поведение как «Все услуги» на bananashow.ru, открывается по клику) ===
+const navDropdowns = document.querySelectorAll('.nav-dropdown');
+if (siteHeader && navDropdowns.length) {
+    const closeAllDropdowns = () => {
+        navDropdowns.forEach(dd => dd.classList.remove('nav-open'));
+    };
+
+    navDropdowns.forEach(dd => {
+        const menu = dd.querySelector('.nav-dropdown-menu');
+        const toggle = dd.querySelector('.nav-dropdown-toggle');
+        if (!menu) return;
+
+        const openDropdown = () => {
+            // Панель фиксирована на всю ширину экрана и всегда начинается ровно под шапкой
+            // (учитывает и обычный, и компактный режим шапки)
+            if (desktopMQ.matches) {
+                menu.style.top = siteHeader.offsetHeight + 'px';
+                document.body.classList.remove('mega-closed');
+                closeAllDropdowns();
+                dd.classList.add('nav-open');
+            }
+        };
+
+        // Открытие по клику на кнопку «Наши услуги»
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (desktopMQ.matches) {
+                    if (dd.classList.contains('nav-open')) {
+                        closeAllDropdowns();
+                    } else {
+                        openDropdown();
+                    }
+                } else {
+                    // Мобильная версия: «Наши услуги» — свёрнутый аккордеон
+                    const wasOpen = dd.classList.contains('mobile-open');
+                    navDropdowns.forEach(other => other.classList.remove('mobile-open'));
+                    if (!wasOpen) dd.classList.add('mobile-open');
+                }
+            });
+        }
+
+        // На всякий случай: если меню открыто, держим панель под актуальной шапкой
+        dd.addEventListener('mouseenter', () => {
+            if (desktopMQ.matches && dd.classList.contains('nav-open')) {
+                menu.style.top = siteHeader.offsetHeight + 'px';
+            }
+        });
+    });
+
+    // Закрытие по клику вне меню
+    document.addEventListener('click', (e) => {
+        if (!desktopMQ.matches) return;
+        if (!e.target.closest('.nav-dropdown')) closeAllDropdowns();
+    });
+
+    // Закрытие по ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && desktopMQ.matches) closeAllDropdowns();
+    });
+
+    // При прокрутке страницы мега-меню закрывается
+    window.addEventListener('scroll', () => {
+        if (desktopMQ.matches) {
+            closeAllDropdowns();
+            document.body.classList.add('mega-closed');
+        }
+    }, { passive: true });
+}
+
 // ✅ ОТСЛЕЖИВАНИЕ КЛИКОВ ПО КНОПКАМ КОНТАКТОВ (УЛУЧШЕННОЕ)
 const contactIcons = document.querySelectorAll("a.contact-icon");
 contactIcons.forEach(link => {
@@ -322,22 +483,23 @@ contactIcons.forEach(link => {
         }
 
         // 📨 3. ОТПРАВКА УВЕДОМЛЕНИЙ В TELEGRAM ПРИ КЛИКЕ
-        const message = `📱 *Новый клик по контакту!*\n\n` +
-                       `*Тип:* ${contactType === "tg" ? "Telegram" : contactType === "wa" ? "WhatsApp" : contactType === "tel" ? "Телефон" : contactType === "insta" ? "Instagram" : contactType === "max" ? "Max" : contactType === "sms" ? "SMS" : "Неизвестно"}\n` +
-                       `*Кнопка:* ${contactLabel}\n` +
-                       `*Время:* ${new Date(timestamp).toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
+        const message = `📱 Новый клик по контакту!\n\n` +
+                       `Тип: ${contactType === "tg" ? "Telegram" : contactType === "wa" ? "WhatsApp" : contactType === "tel" ? "Телефон" : contactType === "insta" ? "Instagram" : contactType === "max" ? "Max" : contactType === "sms" ? "SMS" : "Неизвестно"}\n` +
+                       `Кнопка: ${contactLabel}\n` +
+                       `Время: ${new Date(timestamp).toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
 
         fetch(`https://api.telegram.org/bot8874031205:AAHDnit6ADRfOkTuLjJuO6Qx-iRFQ66Bk04/sendMessage`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 chat_id: "6532150168",
-                text: message,
-                parse_mode: "Markdown"
+                text: message
             })
         }).then(response => {
             if (response.ok) {
                 console.log("✅ Уведомление о клике отправлено в Telegram");
+            } else {
+                response.text().then(body => console.error("❌ Ошибка клика:", response.status, body));
             }
         }).catch(error => {
             console.error("❌ Ошибка отправки клика:", error);
@@ -347,74 +509,191 @@ contactIcons.forEach(link => {
 
 // 📨 ФУНКЦИЯ ОТПРАВКИ УВЕДОМЛЕНИЙ О ЦЕЛЯХ
 function sendGoalNotification(goalName, goalData = {}) {
-    const message = `🎯 *Цель достигнута: ${goalName}!*\n\n` +
-                   `*Время:* ${new Date().toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
+    const message = `🎯 Цель достигнута: ${goalName}!\n\n` +
+                   `Время: ${new Date().toLocaleString("ru-RU", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
 
     fetch(`https://api.telegram.org/bot8874031205:AAHDnit6ADRfOkTuLjJuO6Qx-iRFQ66Bk04/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             chat_id: "6532150168",
-            text: message,
-            parse_mode: "Markdown"
+            text: message
         })
     }).then(response => {
         if (response.ok) {
             console.log("✅ Уведомление о цели отправлено в Telegram");
+        } else {
+            response.text().then(body => console.error("❌ Ошибка отправки:", response.status, body));
         }
     }).catch(error => {
         console.error("❌ Ошибка отправки:", error);
     });
 }
 
-// 📨 ОТПРАВКА УВЕДОМЛЕНИЙ ПРИ ОТПРАВКЕ ФОРМ
-const originalFormSubmit = form?.addEventListener;
-if (form) {
-    // Переопределяем обработчик формы для добавления уведомления
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+// 📨 ОТПРАВКА ЗАЯВКИ В TELEGRAM (полные данные заявки)
+// Тот же бот, что и для уведомлений. Отправляется параллельно с Formspree.
+const TG_BOT_TOKEN = "8874031205:AAHDnit6ADRfOkTuLjJuO6Qx-iRFQ66Bk04";
+const TG_CHAT_ID = "6532150168";
 
-        const formData = new FormData(form);
-        const formDataObj = Object.fromEntries(formData.entries());
+const TG_FIELD_LABELS = {
+    name: "Имя",
+    phone: "Телефон",
+    program: "Программа",
+    program_other: "Свой вариант программы",
+    event_type: "Тип события",
+    date: "Дата",
+    time: "Время",
+    address: "Адрес",
+    parking: "Парковка",
+    place_type: "Место проведения",
+    birthday_child: "Именинник",
+    guests: "Гости",
+    photo: "Фотограф",
+    decor: "Декор",
+    budget: "Бюджет",
+    extra: "Пожелания",
+    message: "Сообщение",
+    comment: "Комментарий"
+};
 
-        // Отправка уведомления о новой заявке
-        sendGoalNotification("FORM_SUBMIT", formDataObj);
+function sendLeadToTelegram(source, data = {}) {
+    const fields = Object.entries(data)
+        .filter(([, v]) => v !== null && v !== undefined && String(v).trim() !== "" && v !== "_")
+        .map(([k, v]) => `• ${TG_FIELD_LABELS[k] || k}: ${v}`)
+        .join("\n");
 
-        const response = await fetch("https://formspree.io/f/mlgvggon", {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
-        });
+    // ВАЖНО: без parse_mode Markdown — символы _ * ( ) в данных пользователя
+    // ломали разметку, и Telegram возвращал ошибку 400 (уведомление не приходило).
+    const message = `🎉 Новая заявка с сайта!\n` +
+                    `📍 Источник: ${source}\n\n` +
+                    (fields ? fields + "\n\n" : "") +
+                    `🕓 Время: ${new Date().toLocaleString("ru-RU", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" })}`;
 
+    fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: TG_CHAT_ID,
+            text: message
+        })
+    }).then(response => {
         if (response.ok) {
-            form.reset();
-            mainModal.style.display = "none";
-            successModal.style.display = "flex";
+            console.log("✅ Заявка отправлена в Telegram");
+        } else {
+            // Показываем тело ошибки Telegram, чтобы причина была видна в консоли
+            response.text().then(body => {
+                console.error("❌ Telegram вернул ошибку:", response.status, body);
+            }).catch(() => {
+                console.error("❌ Telegram вернул ошибку:", response.status);
+            });
         }
+    }).catch(error => {
+        console.error("❌ Ошибка отправки заявки в Telegram:", error);
     });
 }
 
-const originalOrderFormSubmit = orderForm?.addEventListener;
-if (orderForm) {
-    orderForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+/* ===========================
+   МОДАЛКА ЗАКАЗА ПАКЕТА
+=========================== */
 
-        const formData = new FormData(orderForm);
-        const formDataObj = Object.fromEntries(formData.entries());
+document.addEventListener("DOMContentLoaded", () => {
+    const packageModal = document.getElementById("packageModal");
+    const closePackageModal = document.getElementById("closePackageModal");
+    const packageSelect = document.getElementById("packageSelect");
+    const showProgramField = document.getElementById("showProgramField");
+    const showProgramSelect = document.getElementById("showProgramSelect");
+    const packageForm = document.getElementById("packageForm");
+    const packageBtns = document.querySelectorAll(".package-btn");
 
-        // Отправка уведомления о новом заказе
-        sendGoalNotification("ORDER_SUBMIT", formDataObj);
-
-        const response = await fetch("https://formspree.io/f/mlgvggon", {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
+    // Открыть модалку при клике на кнопку "Заказать" в пакетах
+    packageBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const card = btn.closest(".package-card");
+            const packageName = card.querySelector(".package-title").textContent.trim();
+            
+            // Установить выбранный пакет в селект
+            if (packageSelect) {
+                for (let i = 0; i < packageSelect.options.length; i++) {
+                    if (packageSelect.options[i].value === packageName) {
+                        packageSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                // Показать/скрыть поле шоу-программы
+                updateShowProgramField();
+            }
+            
+            packageModal.style.display = "flex";
         });
+    });
 
-        if (response.ok) {
-            orderForm.reset();
-            orderModal.style.display = "none";
-            successModal.style.display = "flex";
+    // Показать/скрыть поле шоу-программы в зависимости от выбранного пакета
+    function updateShowProgramField() {
+        const selected = packageSelect.value;
+        if (selected === "Супер" || selected === "Мега Пати") {
+            showProgramField.style.display = "block";
+        } else {
+            showProgramField.style.display = "none";
+            showProgramSelect.value = "";
+        }
+    }
+
+    if (packageSelect) {
+        packageSelect.addEventListener("change", updateShowProgramField);
+    }
+
+    // Закрыть модалку по крестику
+    if (closePackageModal) {
+        closePackageModal.addEventListener("click", () => {
+            packageModal.style.display = "none";
+        });
+    }
+
+    // Закрыть при клике на фон
+    if (packageModal) {
+        packageModal.addEventListener("click", (e) => {
+            if (e.target === packageModal) {
+                packageModal.style.display = "none";
+            }
+        });
+    }
+
+    // Закрыть по ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && packageModal && packageModal.style.display === "flex") {
+            packageModal.style.display = "none";
         }
     });
-}
+
+    // Обработка отправки формы пакета
+    if (packageForm && !packageForm.dataset.leadBound) {
+        packageForm.dataset.leadBound = "1";
+        packageForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(packageForm);
+            const dataObj = Object.fromEntries(formData.entries());
+
+            // 📨 Отправка в Telegram
+            if (typeof sendLeadToTelegram === "function") {
+                sendLeadToTelegram("Заказ пакетного предложения", dataObj);
+            }
+
+            // 📨 Formspree — резервный канал
+            fetch("https://formspree.io/f/mlgvggon", {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            }).then(r => console.log("Formspree:", r.ok ? "отправлено" : "ошибка " + r.status))
+              .catch(err => console.error("Formspree недоступен:", err));
+
+            // ✅ Показываем "Спасибо"
+            packageForm.reset();
+            showProgramField.style.display = "none";
+            packageModal.style.display = "none";
+            const successModal = document.getElementById("successModal");
+            if (successModal) successModal.style.display = "flex";
+        });
+    }
+});

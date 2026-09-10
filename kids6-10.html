@@ -2,8 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Праздники для детей от 6 до 10 лет | Праздники в Сочи</title>
+    <title>Праздники для детей 6–10 лет в Сочи — аниматоры и квесты | NAF NAFIKI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Праздники для детей 6–10 лет в Сочи: аниматоры, квесты, шоу-программы и конкурсы. Активные и весёлые программы для школьников.">
+    <link rel="canonical" href="https://nafnafiki.ru/kids6-10.html">
     <link rel="stylesheet" href="css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -17,12 +19,16 @@
 
     <meta property="og:title" content="Праздники для детей 6–10 лет в Сочи — NAF NAFIKI">
     <meta property="og:description" content="Активные игры, мини‑квесты, шоу‑элементы и современные персонажи. Программы для детей 6–10 лет в Сочи, Адлере, Красной Поляне, Лоо и Хосте.">
-    <meta property="og:image" content="https://nafnafiki.ru/logo-small.png">
+    <meta property="og:image" content="https://nafnafiki.ru/site-icon.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:url" content="https://nafnafiki.ru/kids6-10.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NAF NAFIKI">
+    <meta name="twitter:card" content="summary">
+    <meta name="geo.region" content="RU-KDA">
+    <meta name="geo.placename" content="Сочи">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -80,24 +86,44 @@
 
 <header class="header">
     <div class="container header-inner">
-        <div class="logo">
-            <!-- Видео вместо логотипа -->
-            <video class="logo-video" autoplay muted loop playsinline poster="images/header-banner.webp">
-                <source src="images/header-banner.webm" type="video/webm">
-                <source src="images/header-banner.mp4" type="video/mp4">
-                <img src="images/logo-small.png" alt="Логотип"> <!-- запасной вариант для старых браузеров -->
-            </video>
-        </div>
+        <a class="logo" href="index.html" aria-label="NAF NAFIKI — на главную">
+                        <!-- Статичный логотип-баннер (заменил видео) -->
+            <img class="logo-video" src="images/logo-banner.webp" alt="Логотип NAF NAFIKI">
+        </a>
 
-        <nav class="nav">
-            <a href="index.html">Главная</a>
-            <a href="animators.html">Аниматоры</a>
-            <a href="shows.html">Шоу‑программы</a>
-            <a href="masters.html">Мастер‑классы</a>
-            <a href="quests.html">Квесты</a>
-            <a href="decor.html">Шары и фотозоны</a>
-            <a href="services.html">Доп. услуги</a>
-            <a href="index.html#age-programs">Программы по возрастам</a>
+        <nav class="nav desktop-nav">
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle"><img class="nav-uslugi-icon" src="logotip/uslugi.webp" alt="">Наши услуги ▾</a>
+                                <div class="nav-dropdown-menu">
+                    <div class="mega-col">
+                        <div class="mega-title">Персонажи</div>
+                        <a href="animators.html">Все аниматоры</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Программы</div>
+                        <a href="shows.html">Шоу-программы</a>
+                        <a href="masters.html">Мастер-классы</a>
+                        <a href="quests.html">Квесты</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Оформление и услуги</div>
+                        <a href="decor.html">Шары и фотозоны</a>
+                        <a href="services.html">Доп. услуги</a>
+                    </div>
+                    <div class="mega-col">
+                        <div class="mega-title">Возрастные программы</div>
+                        <a href="kids1-6.html">Для детей 1–6 лет</a>
+                        <a href="kids6-10.html" class="active">Для детей 6–10 лет</a>
+                        <a href="kids10-15.html">Для детей 10–15 лет</a>
+                        <a href="adults.html">Для взрослых</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#about-company">О нас</a>
+            <a href="reviews.html">Отзывы</a>
+            <a href="#" class="nav-contacts-link">Контакты</a>
+            <a href="discounts.html" class="nav-discount-link">Скидки и бонусы</a>
+            <a href="partners.html">Партнёрам</a>
         </nav>
 
         <button class="btn-primary" id="openModal">Заказать праздник</button>
@@ -137,7 +163,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-pirates.webp,images/anim-pirates2.webp">
 
-                <img src="images/anim-pirates.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-pirates.webp" class="card-img" alt="«Пираты»" loading="lazy">
                 <h3 class="reveal">Пираты</h3>
                 <p class="fade-in">Квесты и приключения.</p>
 
@@ -156,7 +182,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-chemist.webp">
 
-                <img src="images/anim-chemist.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-chemist.webp" class="card-img" alt="Аниматор «Безумный химик»" loading="lazy">
                 <h3 class="reveal">Безумный химик</h3>
                 <p class="fade-in">Эксперименты и шоу.</p>
 
@@ -175,7 +201,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-clowns.webp,images/anim-clowns2.webp">
 
-                <img src="images/anim-clowns.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-clowns.webp" class="card-img" alt="«Клоуны»" loading="lazy">
                 <h3 class="reveal">Клоуны</h3>
                 <p class="fade-in">Юмор, игры и веселье.</p>
 
@@ -194,7 +220,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-gamers.webp,images/anim-gamers2.webp">
 
-                <img src="images/anim-gamers.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-gamers.webp" class="card-img" alt="«Геймеры»" loading="lazy">
                 <h3 class="reveal">Геймеры</h3>
                 <p class="fade-in">Современная игровая программа.</p>
 
@@ -213,7 +239,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-sonic.webp,images/anim-sonic2.webp">
 
-                <img src="images/anim-sonic.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-sonic.webp" class="card-img" alt="«Соник»" loading="lazy">
                 <h3 class="reveal">Соник</h3>
                 <p class="fade-in">Скорость, челленджи и драйв.</p>
 
@@ -232,7 +258,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-harry-hermione.webp">
 
-                <img src="images/anim-harry-hermione.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-harry-hermione.webp" class="card-img" alt="«Гарри Поттер и Гермиона»" loading="lazy">
                 <h3 class="reveal">Гарри Поттер и Гермиона</h3>
                 <p class="fade-in">Магия, заклинания и приключения.</p>
 
@@ -251,7 +277,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-minions.webp,images/anim-minions2.webp">
 
-                <img src="images/anim-minions.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-minions.webp" class="card-img" alt="«Миньоны»" loading="lazy">
                 <h3 class="reveal">Миньоны</h3>
                 <p class="fade-in">Веселье, танцы и шалости.</p>
 
@@ -270,7 +296,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-ladybug-catnoir.webp,images/anim-ladybug-catnoir2.webp,images/anim-ladybug-catnoir3.webp,images/anim-ladybug-catnoir4.webp">
 
-                <img src="images/anim-ladybug-catnoir.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-ladybug-catnoir.webp" class="card-img" alt="«Леди Баг и Супер‑Кот»" loading="lazy">
                 <h3 class="reveal">Леди Баг и Супер‑Кот</h3>
                 <p class="fade-in">Супергеройские приключения.</p>
 
@@ -289,7 +315,7 @@
                  data-price="от 4500₽"
                  data-image="images/anim-barbie-ken.webp">
 
-                <img src="images/anim-barbie-ken.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-barbie-ken.webp" class="card-img" alt="«Барби и Кен»" loading="lazy">
                 <h3 class="reveal">Барби и Кен</h3>
                 <p class="fade-in">Стиль, танцы и розовая атмосфера.</p>
 
@@ -308,7 +334,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-superheroes.webp,images/anim-superheroes2.webp,images/anim-superheroes3.webp,images/anim-superheroes4.webp,images/anim-superheroes5.webp,images/anim-superheroes6.webp">
 
-                <img src="images/anim-superheroes.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-superheroes.webp" class="card-img" alt="«Супергерои»" loading="lazy">
                 <h3 class="reveal">Супергерои</h3>
                 <p class="fade-in">Экшен, миссии и героизм.</p>
 
@@ -327,7 +353,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-modern-hosts.webp,images/anim-modern-hosts2.webp,images/anim-modern-hosts3.webp">
 
-                <img src="images/anim-modern-hosts.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-modern-hosts.webp" class="card-img" alt="«Современные ведущие»" loading="lazy">
                 <h3 class="reveal">Современные ведущие</h3>
                 <p class="fade-in">Модные интерактивы и драйв.</p>
 
@@ -346,7 +372,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-rainbow-friends.webp">
 
-                <img src="images/anim-rainbow-friends.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-rainbow-friends.webp" class="card-img" alt="«Радужные друзья»" loading="lazy">
                 <h3 class="reveal">Радужные друзья</h3>
                 <p class="fade-in">Яркие персонажи и квесты.</p>
 
@@ -365,7 +391,7 @@
                  data-price="от 4500₽"
                  data-images="images/anim-huggy-kissy.webp">
 
-                <img src="images/anim-huggy-kissy.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/anim-huggy-kissy.webp" class="card-img" alt="Аниматоры «Хаги Ваги и Киси Миси»" loading="lazy">
                 <h3 class="reveal">Хаги Ваги и Киси Миси</h3>
                 <p class="fade-in">Яркие игровые персонажи.</p>
 
@@ -376,7 +402,7 @@
             </div>
 
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Волшебное «Шоу мыльных пузырей»" data-description="Фантастические мыльные трюки, огненные пузыри и гигантские шлейфы!" data-full="<h3>О программе</h3><p>«Шоу мыльных пузырей» — это завораживающий интерактивный перформанс, где обычные пузыри превращаются в фантастические трюки, светящиеся сферы и даже огненные инсталляции. Программа вызывает восторг у детей и удивляет взрослых!</p><h3>В программе мыльного волшебства</h3><ul><li><b>Инструктаж по безопасности:</b> ведущий в игровой форме объясняет правила поведения, чтобы шоу было комфортным и безопасным.</li> <li><b>Море мыльных пузырей:</b> тысячи искрящихся пузырей заполняют площадку — дети ловят их руками.</li><li><b>Интерактив «Космонавты»:</b> ведущий создаёт мыльные «шлемы» и фигуры прямо на ладошках детей.</li><li><b>Шоу больших пузырей:</b> пузыри разделяются, соединяются, меняют форму и наполняются белым дымом.</li><li><b>Огненные пузыри и огненный стол:</b> безопасные, но зрелищные трюки с настоящим пламенем.</li><li><b>Гигантские пузыри‑шлейфы:</b> огромные мыльные туннели и пузыри размером в несколько метров.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 30 минут.</li><li><b>Ведущий:</b> 1 профессиональный артист.</li><li><b>Любой персонаж:</b> супергерой, принцесса, клоун, пират или классический ведущий.</li><li><b>Чистота и безопасность:</b> качественный раствор не оставляет следов; привозим специальный непромокаемый ковёр.</li></ul><h3>Стоимость</h3><p><b>6 000 ₽</b> — фиксированная цена за программу</p>" data-price="6 000 ₽" data-images="images/show-bubbles.webp,images/show-bubbles2.webp">
-                <img src="images/show-bubbles.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-bubbles.webp" class="card-img" alt="Волшебное «Шоу мыльных пузырей»" loading="lazy">
                 <h3 class="reveal">Шоу мыльных пузырей</h3>
                 <p class="fade-in">Фантастические пузыри, огненные трюки и гигантские шлейфы!</p>
                 <div class="service-card-info-pill">
@@ -389,7 +415,7 @@
             </div>
             
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Пенная вечеринка" data-description="Тонны пушистой пены, водные баттлы и гигантские игрушки!" data-full="<h3>О программе</h3><p>Пенная вечеринка — это яркое, динамичное и освежающее шоу, идеально подходящее для взрослых мероприятий, корпоративов и летних вечеринок.</p><h3>Что входит</h3><ul><li>Пенная пушка высокой мощности</li><li>Тонны гипоаллергенной пены</li><li>Водные баттлы</li><li>Гигантские надувные игрушки</li><li>Музыкальное сопровождение</li></ul><h3>Стоимость</h3><p><b>9 000 ₽</b> — без ведущего</p><p><b>11 000 ₽</b> — с ведущим</p>" data-price="от 9 000 ₽" data-images="images/show-foam.webp">
-                <img src="images/show-foam.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-foam.webp" class="card-img" alt="Пенная вечеринка" loading="lazy">
                 <h3 class="reveal">Пенная вечеринка</h3>
                 <p class="fade-in">Тонны пены, драйв и летняя атмосфера!</p>
                 <div class="service-card-info-pill">
@@ -402,7 +428,7 @@
             </div>            
   
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Игра «Мафия»" data-description="Легендарная детективная игра с интригой, ролями и атмосферой расследования!" data-full="<h3>О программе</h3><p>Город засыпает… просыпается Мафия! Это легендарная игра, которая развивает логику, интуицию, актерское мастерство и умение работать в команде. Идеальный формат для дня рождения, подростковой вечеринки или школьного тимбилдинга!</p><h3>Как проходит игра</h3><ul><li><b>Знакомство и погружение:</b> ведущий создаёт атмосферу детектива и помогает каждому войти в роль.</li><li><b>Объяснение правил:</b> геймлейстер объясняет правила понятно и увлекательно — подходит и новичкам, и опытным игрокам.</li><li><b>Раздача карт:</b> каждый получает свою тайную роль — мирный житель, мафия, шериф, доктор и другие.</li><li><b>Игровой процесс:</b> днём город обсуждает подозреваемых, ночью мафия выходит на охоту. Ведущий держит интригу до финала.</li><li><b>Никто не скучает после выбывания:</b> выбывшие игроки могут стать помощниками ведущего или наблюдателями.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Ведущий:</b> харизматичный геймлейстер.</li><li><b>Возраст:</b> от 7 лет и старше.</li><li><b>Реквизит:</b> дизайнерские карты и маски для ночного этапа.</li></ul><h3>Стоимость</h3><p><b>5 000 ₽</b> — фиксированная цена за программу</p>" data-price="5 000 ₽" data-images="images/show-mafia.webp,images/show-mafia2.webp,images/show-mafia3.webp,images/show-mafia4.webp">
-                <img src="images/show-mafia.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-mafia.webp" class="card-img" alt="Игра «Мафия»" loading="lazy">
                 <h3 class="reveal">Игра «Мафия»</h3>
                 <p class="fade-in">Интрига, роли, расследования и настоящая детективная атмосфера!</p>
                 <div class="service-card-info-pill">
@@ -415,12 +441,12 @@
             </div>
 
             <!-- BEAST SHOW -->
-            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="BEAST SHOW" data-description="Двухчасовое вирусное интерактив‑шоу с экранными трендами и экстремальными реалити‑испытаниями." data-full="<h3>Описание</h3><p><b>BEAST SHOW</b> — взрывная двухчасовая программа, которая объединяет самые хайповые интернет‑тренды на большом экране и реальные экстремальные испытания. Формат создан для вечеринок, корпоративов и любых событий, где нужна максимальная вовлечённость гостей.</p><h3>Как проходит программа?</h3><p><b>Блок 1: Beast Show Digital (1 час)</b><br>✔ Нейро‑Своп — угадываем блогеров, мемы и треки, которые ИИ скрестил с дикими животными.<br>✔ Эмодзи‑Караоке — командный баттл на скорость по зашифрованным смайликам.<br>✔ Шумный челлендж — управляем персонажем криками и звуками.<br>✔ Топ‑спид Квиз — битва смартфонов на знание трендов.<br>✔ TikTok‑Дэнс Баттл — повторяем вирусные танцы за цифровыми аватарами.</p><p><b>Блок 2: Beast Show Экстрим (1 час)</b><br>✔ Тараканьи бега — живой интерактив с мадагаскарскими тараканами.<br>✔ Пинг‑понг Челлендж — серия секундных трюков в стиле популярных видео.<br>✔ Угадай напиток — слепой тест хайповых и странных миксов.<br>✔ Ящик «Что внутри?» — классический формат «нащупай и угадай».<br>✔ Колесо Фортуны — финал с трэш‑заданиями и фантом.</p><h3>Для кого подходит?</h3><p>✔ Взрослые компании<br>✔ Корпоративы<br>✔ Дни рождения<br>✔ Вечеринки<br>✔ Тимбилдинги</p><h3>Что входит?</h3><p>🎤 Два ведущих<br>🎬 Экранный интерактив<br>🕹 Реалити‑испытания<br>📱 Участие гостей в играх<br>🎶 Музыкальное сопровождение<br>🔥 Полная вовлечённость аудитории</p><h3>Длительность</h3><p><b>2 часа</b></p><h3>Стоимость</h3><p><b>20 000 ₽ — полная версия (экран + экстремальный блок)</b><br><b>15 000 ₽ — экранная версия (только Digital‑блок), также с двумя ведущими</b></p>" data-price="от 15 000 ₽" data-images="images/beast-show.webp, images/beast-show2.webp"><div class="card-img-wrapper"><img src="images/beast-show.webp" class="card-img" alt="" loading="lazy"><button class="watch-video-btn" data-video="https://kinescope.io/fxkH6jooHZGYyKkujFqp5T"><div class="play-circle"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></div><span class="play-text">Смотреть видео</span></button></div><h3 class="reveal">BEAST SHOW — вирусное интерактив‑шоу</h3><p class="fade-in">Двухчасовая программа с трендами, челленджами и экстремальными испытаниями.</p><div class="service-card-info-pill"><div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">2 часа</span></div></div><div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">от 7 до 14 лет</span></div></div><div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">Неограничено</span></div></div><div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 15 000 ₽</span></div></div></div><div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div></div>
+            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="BEAST SHOW" data-description="Двухчасовое вирусное интерактив‑шоу с экранными трендами и экстремальными реалити‑испытаниями." data-full="<h3>Описание</h3><p><b>BEAST SHOW</b> — взрывная двухчасовая программа, которая объединяет самые хайповые интернет‑тренды на большом экране и реальные экстремальные испытания. Формат создан для вечеринок, корпоративов и любых событий, где нужна максимальная вовлечённость гостей.</p><h3>Как проходит программа?</h3><p><b>Блок 1: Beast Show Digital (1 час)</b><br>✔ Нейро‑Своп — угадываем блогеров, мемы и треки, которые ИИ скрестил с дикими животными.<br>✔ Эмодзи‑Караоке — командный баттл на скорость по зашифрованным смайликам.<br>✔ Шумный челлендж — управляем персонажем криками и звуками.<br>✔ Топ‑спид Квиз — битва смартфонов на знание трендов.<br>✔ TikTok‑Дэнс Баттл — повторяем вирусные танцы за цифровыми аватарами.</p><p><b>Блок 2: Beast Show Экстрим (1 час)</b><br>✔ Тараканьи бега — живой интерактив с мадагаскарскими тараканами.<br>✔ Пинг‑понг Челлендж — серия секундных трюков в стиле популярных видео.<br>✔ Угадай напиток — слепой тест хайповых и странных миксов.<br>✔ Ящик «Что внутри?» — классический формат «нащупай и угадай».<br>✔ Колесо Фортуны — финал с трэш‑заданиями и фантом.</p><h3>Для кого подходит?</h3><p>✔ Взрослые компании<br>✔ Корпоративы<br>✔ Дни рождения<br>✔ Вечеринки<br>✔ Тимбилдинги</p><h3>Что входит?</h3><p>🎤 Два ведущих<br>🎬 Экранный интерактив<br>🕹 Реалити‑испытания<br>📱 Участие гостей в играх<br>🎶 Музыкальное сопровождение<br>🔥 Полная вовлечённость аудитории</p><h3>Длительность</h3><p><b>2 часа</b></p><h3>Стоимость</h3><p><b>20 000 ₽ — полная версия (экран + экстремальный блок)</b><br><b>15 000 ₽ — экранная версия (только Digital‑блок), также с двумя ведущими</b></p>" data-price="от 15 000 ₽" data-images="images/beast-show.webp, images/beast-show2.webp"><div class="card-img-wrapper"><img src="images/beast-show.webp" class="card-img" alt="BEAST SHOW" loading="lazy"><button class="watch-video-btn" data-video="https://kinescope.io/fxkH6jooHZGYyKkujFqp5T"><div class="play-circle"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></div><span class="play-text">Смотреть видео</span></button></div><h3 class="reveal">BEAST SHOW — вирусное интерактив‑шоу</h3><p class="fade-in">Двухчасовая программа с трендами, челленджами и экстремальными испытаниями.</p><div class="service-card-info-pill"><div class="service-card-info-pill-item"><img src="logotip/time-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Длительность</span><span class="service-card-info-pill-value">2 часа</span></div></div><div class="service-card-info-pill-item"><img src="logotip/age-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Возраст</span><span class="service-card-info-pill-value">от 7 до 14 лет</span></div></div><div class="service-card-info-pill-item"><img src="logotip/count-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Участники</span><span class="service-card-info-pill-value">Неограничено</span></div></div><div class="service-card-info-pill-item"><img src="logotip/price-icon.webp" class="service-card-info-pill-icon" width="28" height="28"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">Цена</span><span class="service-card-info-pill-value">от 15 000 ₽</span></div></div></div><div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div></div>
 
             
             <!-- КРИО-ШОУ -->
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Фантастическое «Крио‑шоу»" data-description="Зрелищные эксперименты с жидким азотом −196°C, взрывы, туман и ледяная магия!" data-full="<h3>О программе</h3><p>«Крио‑шоу» — это фантастическая научная программа с жидким азотом температурой −196°C. Детей ждут зрелищные эксперименты, ледяные спецэффекты и безопасные взрывы, от которых захватывает дух даже у взрослых!</p><h3>Программа ледяных экспериментов</h3><ul><li><b>Инструктаж по безопасности:</b> ведущий объясняет правила поведения, чтобы шоу было абсолютно безопасным.</li><li><b>Хрустальная роза:</b> мгновенная заморозка живого цветка, который рассыпается как стекло.</li><li><b>Огненный шар:</b> эффектное столкновение огня и экстремального холода.</li><li><b>Банан‑молоток:</b> замороженный банан превращается в настоящий инструмент и забивает гвоздь.</li><li><b>Заморозка воздуха:</b> огромные шары сдуваются и оживают прямо в руках ведущего.</li><li><b>«Дыхание Дракона»:</b> дети пробуют крио‑угощение и выпускают ледяной пар — идеальный момент для фото.</li><li><b>Финальный азотный взрыв:</b> жидкий азот превращается в гигантское облако белого тумана, накрывающее площадку.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 40 минут.</li><li><b>Ведущий:</b> харизматичный Профессор‑ведущий.</li><li><b>Безопасность:</b> сертифицированный гипоаллергенный концентрат, строгие правила ТБ.</li><li><b>Локация:</b> подходит для помещений и открытых площадок.</li></ul><h3>Стоимость</h3><p><b>7 000 ₽</b> — стандартная программа<br><b>10 000 ₽</b> — программа с мороженым (до 10 человек)<br><b>+350 ₽</b> — за каждого участника сверх 10</p>" data-price="7 000 ₽ / 10 000 ₽ с мороженым" data-images="images/show-cryo.webp,images/show-cryo2.webp,images/show-cryo3.webp">           
-                <img src="images/show-cryo.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-cryo.webp" class="card-img" alt="Фантастическое «Крио‑шоу»" loading="lazy">
                 <h3 class="reveal">Крио‑шоу</h3>
                 <p class="fade-in">Эксперименты с жидким азотом, ледяная магия и азотный взрыв!</p>        
                 <div class="service-card-info-pill">
@@ -433,7 +459,7 @@
             </div>
 
             <!-- ФУТБОЛЬНАЯ ВЕЧЕРИНКА -->
-            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="«Футбольная вечеринка»" data-description="Футбольные испытания, матчи и атмосфера настоящего чемпионата." data-full="<h3>Описание</h3><p>Самый динамичный, командный и незабываемый День рождения! Всего за 1 час участники пройдут путь от начинающих игроков до настоящей суперкоманды, проявят свои таланты, забьют решающие голы и ярко поздравят именинника.</p><h3>Программа праздника</h3><p><b>⚽ Сбор сборной и предматчевый брифинг (0–10 мин)</b><br>Энергичное знакомство, деление на команды, создание названий и боевых кричалок, футбольная викторина и разминка.</p><p><b>⚽ Футбольная Академия: Школа мастерства (10–20 мин)</b><br>Обучение ведению мяча, контролю и финтам.<br>Весёлые эстафеты: «Ювелирное ведение», «Мощная грудь», «Пингвины на поле».</p><p><b>⚽ Главное событие: Лига чемпионов (20–35 мин)</b><br>Настоящий мини-матч с судейством, пасами, голами и атмосферой большого футбола.</p><p><b>⚽ Финал чемпионата (35–45 мин)</b><br>Конкурс «Король чеканки» и командное перетягивание каната.</p><p><b>⚽ Церемония награждения и триумф (45–60 мин)</b><br>Поздравление именинника, торжественный вынос торта и победная фотосессия.</p><h3>Почему выбирают программу?</h3><p>🏆 Максимум движения и вовлечения<br>🤝 Развитие командного духа<br>⏱ Смена активностей каждые 5–10 минут<br>⚡ Подходит для любого уровня подготовки</p><h3>Стоимость</h3><p><b>7000 ₽</b> — 1 футболист<br><b>10000 ₽</b> — 2 футболиста<br><b>13000 ₽</b> — 1 футболист + ростовая кукла Месси</p><h3>Длительность</h3><p><b>60 минут</b></p>" data-price="от 7000 ₽" data-images="images/football-party.webp"><div class="card-img-wrapper"><img src="images/football-party.webp" class="card-img" alt="" loading="lazy"><button class="watch-video-btn" data-video="https://kinescope.io/xdRntynziWjJJNFv2eTgjD"><div class="play-circle"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></div><span class="play-text">Смотреть видео</span></button></div>
+            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="«Футбольная вечеринка»" data-description="Футбольные испытания, матчи и атмосфера настоящего чемпионата." data-full="<h3>Описание</h3><p>Самый динамичный, командный и незабываемый День рождения! Всего за 1 час участники пройдут путь от начинающих игроков до настоящей суперкоманды, проявят свои таланты, забьют решающие голы и ярко поздравят именинника.</p><h3>Программа праздника</h3><p><b>⚽ Сбор сборной и предматчевый брифинг (0–10 мин)</b><br>Энергичное знакомство, деление на команды, создание названий и боевых кричалок, футбольная викторина и разминка.</p><p><b>⚽ Футбольная Академия: Школа мастерства (10–20 мин)</b><br>Обучение ведению мяча, контролю и финтам.<br>Весёлые эстафеты: «Ювелирное ведение», «Мощная грудь», «Пингвины на поле».</p><p><b>⚽ Главное событие: Лига чемпионов (20–35 мин)</b><br>Настоящий мини-матч с судейством, пасами, голами и атмосферой большого футбола.</p><p><b>⚽ Финал чемпионата (35–45 мин)</b><br>Конкурс «Король чеканки» и командное перетягивание каната.</p><p><b>⚽ Церемония награждения и триумф (45–60 мин)</b><br>Поздравление именинника, торжественный вынос торта и победная фотосессия.</p><h3>Почему выбирают программу?</h3><p>🏆 Максимум движения и вовлечения<br>🤝 Развитие командного духа<br>⏱ Смена активностей каждые 5–10 минут<br>⚡ Подходит для любого уровня подготовки</p><h3>Стоимость</h3><p><b>7000 ₽</b> — 1 футболист<br><b>10000 ₽</b> — 2 футболиста<br><b>13000 ₽</b> — 1 футболист + ростовая кукла Месси</p><h3>Длительность</h3><p><b>60 минут</b></p>" data-price="от 7000 ₽" data-images="images/football-party.webp"><div class="card-img-wrapper"><img src="images/football-party.webp" class="card-img" alt="«Футбольная вечеринка»" loading="lazy"><button class="watch-video-btn" data-video="https://kinescope.io/xdRntynziWjJJNFv2eTgjD"><div class="play-circle"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z" fill="#000"/></svg></div><span class="play-text">Смотреть видео</span></button></div>
                 <h3 class="reveal">Футбольная вечеринка</h3>
                 <p class="fade-in">Футбол, испытания и эмоции настоящих чемпионов.</p>
                 <div class="service-card-info-pill">
@@ -450,7 +476,7 @@
 
             <!-- БУМАЖНОЕ ШОУ -->
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Эпическое «Бумажное шоу»" data-description="Настоящий бумажный ураган с музыкой, драйвом и яркими эмоциями: до 20 кг бумаги — и вуаля!" data-full="<h3>О программе</h3><p>«Бумажное шоу» — это динамичное, эмоциональное и визуально потрясающее представление, где бумага становится главным героем! Музыка, хореография, лазеры и тонны бумаги создают неповторимую атмосферу уюта и драйва. Отлично подходит для детских праздников, корпоративов и фестивалей!</p><h3>Программа шоу</h3><ul><li><b>Вступление:</b> ведущий знакомит зрителей с концепцией и рассказывает о силе бумаги.</li><li><b>Сказочная буря:</b> огромные листы бумаги оживают под звуки музыки — они танцуют, пляшут, создают эффект «бумажного урагана».</li><li><b>Магия формы:</b> превращение плоских листов в объёмные фигуры — зверей, птиц, сказочных персонажей.</li><li><b>Атмосферные эффекты:</b> танцы в листьях, полёт «бумажных бабочек», лавина бумаги из потолка.</li><li><b>Интерактив:</b> дети участвуют в создании бумажных проектов прямо на сцене.</li><li><b>Финал:</b> грандиозный бумажный фейерверк с музыкальным сопровождением и залповым падением бумаги.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 30–40 минут.</li><li><b>Ведущий:</b> энергичный Мастер-шоу с опытом работы с детьми.</li><li><b>Безопасность:</b> гипоаллергенная бумага, отсутствие острых предметов, соблюдение СПИД-стандартов визуальной гигиены.</li><li><b>Локация:</b> помещение с высотой потолка от 3 м; возможна адаптация под площадки с навесом.</li></ul><h3>Стоимость</h3><p><b>15 000 ₽</b> — до 20 кг качественной бумаги<br><b>11 000 ₽</b> — до 20 кг вторичной (переработанной) бумаги</p>" data-price="от 11 000 ₽" data-images="images/show-paper.webp,images/show-paper2.webp,images/show-paper3.webp">
-                <img src="images/show-paper.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-paper.webp" class="card-img" alt="Эпическое «Бумажное шоу»" loading="lazy">
                 <h3 class="reveal">Бумажное шоу</h3>
                 <p class="fade-in">Бумажный ураган с музыкой, драйвом и до 20 кг листов!</p>
                 <div class="service-card-info-pill">
@@ -464,7 +490,7 @@
 
             <!-- СУПЕРГЕРОЙСКАЯ МИССИЯ С ХАЛКОМ -->
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Супергеройская миссия с Халком" data-description="Гигантский Халк, дымная пушка, боевой лазер и эпическая супергеройская миссия!" data-full="<h3>О программе</h3><p>Супергеройская миссия — это мощное, динамичное и зрелищное шоу с участием гигантского Халка. Дети проходят испытания, выполняют секретные задания и становятся настоящей командой супергероев!</p><h3>Программа супергеройской миссии</h3><ul><li><b>Эффектный выход ведущего:</b> спецагент секретной лаборатории собирает команду супергероев.</li><li><b>Секретная предыстория:</b> Земле грозит опасность, и только дети вместе с Халком могут спасти мир.</li><li><b>Супергеройская разминка:</b> танцевально‑интерактивный блок для прокачки ловкости и командного духа.</li><li><b>Появление гигантского Халка:</b> эпическая кульминация — огромная ростовая кукла вызывает настоящий WOW‑эффект.</li><li><b>Дымная пушка:</b> мощные залпы создают атмосферу супергеройского блокбастера.</li><li><b>Товарищеский бой с Халком:</b> безопасное шуточное сражение, где каждый может испытать свои силы.</li><li><b>Школа супергероев:</b> Халк обучает фирменным ударам, стойкам и боевым движениям.</li><li><b>Силовой конкурс:</b> испытание на выносливость и силу настоящих Мстителей.</li><li><b>Поиск бомб:</b> логическая миссия по обнаружению и обезвреживанию замаскированных устройств.</li><li><b>Боевой космический лазер:</b> демонстрация лазера, который лопает шары на расстоянии — абсолютный восторг детей.</li><li><b>Финальная фотосессия:</b> мощные кадры с Халком, спецагентом и супергеройскими позами.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Тайминг персонажей:</b> ведущий — весь час, Халк — 30–40 минут.</li><li><b>Команда:</b> ведущий‑аниматор и профессиональный актёр в ростовой кукле.</li><li><b>Безопасность:</b> лазер и дымная пушка полностью контролируются и безопасны.</li></ul><h3>Стоимость</h3><p><b>10 000 ₽</b> — фиксированная цена за программу</p>" data-price="10 000 ₽" data-images="images/show-hulk.webp">
-                <img src="images/show-hulk.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-hulk.webp" class="card-img" alt="Супергеройская миссия с Халком" loading="lazy">
                 <h3 class="reveal">Супергеройская миссия с Халком</h3>
                 <p class="fade-in">Гигантский Халк, дымная пушка и боевой лазер!</p>
                 <div class="service-card-info-pill">
@@ -478,7 +504,7 @@
 
             <!-- МЕГА‑ПРАЗДНИК «СЕРЕБРЯНОЕ ШОУ» -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Мега‑праздник «Серебряное шоу»" data-description="Гигантские сугробы блестящего серебра, танцы, баттлы и невероятный драйв!" data-full="<h3>О программе</h3><p>«Серебряное шоу» — это самый блестящий и эмоциональный финал праздника! Гигантские сугробы мягкой, безопасной и ослепительно сверкающей фольги превращают площадку в настоящий серебряный океан, где можно прыгать, кидаться, устраивать баттлы и делать невероятные фото.</p><h3>Программа блестящего безумия</h3><ul><li><b>Знакомство и разогрев:</b> ведущий собирает ребят в дружную команду и настраивает на волну веселья.</li><li><b>Танцевальный марафон:</b> интерактив под топовые хиты — разгоняем энергию на максимум.</li><li><b>Запуск серебряного вихря:</b> кульминация — на площадку обрушиваются тонны сверкающего серебра.</li><li><b>Прятки в серебре:</b> дети засыпают друг друга серебром и прячутся в огромных фольгированных волнах.</li><li><b>Серебряная вечеринка:</b> свободный отрыв — прыжки, салюты, подбрасывания серебра до потолка.</li><li><b>Жаркий серебряный баттл:</b> соревнование на самый крутой танец или самую высокую блестящую стену.</li><li><b>Торжественное поздравление:</b> эмоциональный блок в центре серебряного океана.</li><li><b>Вручение торта:</b> эффектная подача торта под аплодисменты.</li><li><b>Фантастическая фотосессия:</b> яркие и стильные кадры в серебряных сугробах.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 40 минут.</li><li><b>Команда:</b> ведущий и помощник.</li><li><b>Безопасность:</b> мягкая сертифицированная фольга, не режет руки, не пылит, не пачкает одежду.</li><li><b>Чистота:</b> после шоу команда полностью собирает всё серебро.</li></ul><h3>Стоимость</h3><p><b>11 000₽</b> — вторичное серебро (до 20 кг, до 20 человек)<br><b>16 000 ₽</b> — новое серебро (до 20 кг, до 20 человек)<br><b>+350 ₽</b> — за каждого участника сверх 20</p>" data-price="11 000 ₽ / 16 000 ₽" data-images="images/show-silver.webp,images/show-silver2.webp,images/show-silver3.webp,images/show-silver4.webp">
-               <img src="images/show-silver.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-silver.webp" class="card-img" alt="Мега‑праздник «Серебряное шоу»" loading="lazy">
                <h3 class="reveal">Серебряное шоу</h3>
                <p class="fade-in">Горы блестящего серебра, драйв и невероятные эмоции!</p>
                <div class="service-card-info-pill">
@@ -492,7 +518,7 @@
 
             <!-- КОСМИЧЕСКОЕ «НЕОНОВОЕ ШОУ» -->
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Космическое «Неоновое шоу»" data-description="Светящиеся волны, ультрафиолет, неоновый вихрь и космический драйв!" data-full="<h3>О программе</h3><p>«Неоновое шоу» — это космическая атмосфера, ультрафиолетовые лучи, светящаяся бумага и яркий неоновый драйв. Дети погружаются в параллельную реальность, где всё вокруг светится и оживает в темноте!</p><h3>Программа неонового безумия</h3><ul><li><b>Знакомство в ультрафиолете:</b> ведущий встречает гостей в светящемся пространстве.</li><li><b>Неоновый танцевальный марафон:</b> разучиваем трендовые движения под топовые хиты.</li><li><b>Запуск неонового вихря:</b> на площадку обрушиваются охапки светящейся бумаги.</li><li><b>Прятки в светящихся сугробах:</b> дети строят укрытия и засыпают друг друга неоновым дождём.</li><li><b>Неоновая вечеринка:</b> прыжки, салюты, подбрасывания ярких лент — полный отрыв.</li><li><b>Жаркий неоновый баттл:</b> соревнование на самый эффектный светящийся танец.</li><li><b>Торжественное поздравление:</b> эмоциональный блок в центре неонового океана.</li><li><b>Вручение торта в темноте:</b> свечи + ультрафиолет создают волшебную атмосферу.</li><li><b>Фантастическая фотосессия:</b> яркие, сочные и футуристические кадры в ультрафиолете.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 40 минут.</li><li><b>Команда:</b> ведущий и помощник, управляющий UV‑оборудованием.</li><li><b>Безопасность:</b> мягкая сертифицированная неоновая бумага, не пылит и не пачкает.</li><li><b>Чистота:</b> после шоу команда полностью собирает всю бумагу.</li><li><b>Требования к локации:</b> возможность затемнения помещения для максимального эффекта.</li></ul><h3>Стоимость</h3><p><b>17 000 ₽</b> — до 20к неоновой бумаги (до 20 человек)<br><b>16 000 ₽</b> — новое неоновое сырьё (до 20 человек)<br><b>+350 ₽</b> — за каждого участника сверх 20</p>" data-price="17 000 ₽" data-images="images/show-neon.webp">
-                <img src="images/show-neon.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-neon.webp" class="card-img" alt="Космическое «Неоновое шоу»" loading="lazy">
                 <h3 class="reveal">Неоновое шоу</h3>
                 <p class="fade-in">Светящиеся волны, ультрафиолет и космический драйв!</p>
                 <div class="service-card-info-pill">
@@ -506,7 +532,7 @@
 
             <!-- КОСМИЧЕСКОЕ «НЕОНОВОЕ ШОУ» + НЕОНОВЫЕ МЫЛЬНЫЕ ПУЗЫРИ -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Космическое «Неоновое шоу» + Неоновые Мыльные Пузыри" data-description="Ультрафиолет, светящаяся бумага и космические неоновые пузыри!" data-full="<h3>О программе</h3><p>Обновлённое «Неоновое шоу» — это космическая атмосфера, ультрафиолетовые лучи, светящаяся бумага и наша главная фишка — неоновые мыльные пузыри, которые светятся в темноте. Дети погружаются в фантастический мир, где всё вокруг сияет и оживает!</p><h3>Программа неонового безумия</h3><ul><li><b>Знакомство в ультрафиолете:</b> ведущий встречает гостей в светящемся пространстве.</li><li><b>Неоновый танцевальный марафон:</b> разучиваем трендовые движения под топовые хиты.</li><li><b>Космические неоновые пузыри:</b> светящиеся мыльные шлейфы, наполненные неоновым дымом — дети ловят их и загадывают желания.</li><li><b>Запуск неонового вихря:</b> на площадку обрушиваются охапки светящейся бумаги.</li><li><b>Прятки в светящихся сугробах:</b> дети строят укрытия и засыпают друг друга неоновым дождём.</li><li><b>Неоновая вечеринка:</b> прыжки, салюты, подбрасывания ярких лент — полный отрыв.</li><li><b>Жаркий неоновый баттл:</b> соревнование на самый эффектный светящийся танец.</li><li><b>Торжественное поздравление:</b> эмоциональный блок в центре неонового океана.</li><li><b>Вручение торта в темноте:</b> свечи + ультрафиолет создают волшебную атмосферу.</li><li><b>Фантастическая фотосессия:</b> яркие и футуристические кадры среди светящихся пузырей и бумаги.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1,5 часа (90 минут).</li><li><b>Команда:</b> ведущий и помощник, управляющий UV‑оборудованием и генераторами пузырей.</li><li><b>Безопасность:</b> сертифицированная неоновая бумага и безопасный раствор для светящихся пузырей.</li><li><b>Чистота:</b> после шоу команда полностью собирает всю бумагу.</li><li><b>Требования к локации:</b> возможность затемнения помещения для максимального эффекта.</li></ul><h3>Стоимость</h3><p><b>25 000 ₽</b> — фиксированная цена за программу</p>" data-price="25 000 ₽" data-images="images/show-neon-bubbles.webp">
-               <img src="images/show-neon-bubbles.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-neon-bubbles.webp" class="card-img" alt="Космическое «Неоновое шоу» + Неоновые Мыльные Пузыри" loading="lazy">
                <h3 class="reveal">Неоновое шоу + Неоновые Пузыри</h3>
                <p class="fade-in">Космические светящиеся пузыри и ультрафиолетовый драйв!</p>
                <div class="service-card-info-pill">
@@ -520,7 +546,7 @@
 
             <!-- Rich Girl: В гостях у Инстасамки -->
             <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Rich Girl: В гостях у Инстасамки" data-description="Хайповое шоу с ростовой Инстасамкой, бабломётом, трендами и роскошным юмором!" data-full="<h3>О программе</h3><p>«Rich Girl: В гостях у Инстасамки» — это стильная, громкая и ультрамодная вечеринка по мотивам жизни главной иконы соцсетей. Подростков ждут танцы, блогинг, денежные дожди и море роскошного юмора. Идеально для современных девчонок и парней!</p><h3>Программа роскошного шоу</h3><ul><li><b>Знакомство в стиле VIP:</b> ведущий‑продюсер встречает гостей в атмосфере закрытой блогерской тусовки.</li><li><b>Блогерская предыстория:</b> погружаемся в мир шоу‑бизнеса, музыки и секретов популярности.</li><li><b>Появление Инстасамки:</b> роскошная ростовая кукла выходит под главный хит — WOW‑эффект гарантирован.</li><li><b>Танцевальный баттл:</b> снимаем тренды и повторяем топовые движения из соцсетей.</li><li><b>Финансовый тир:</b> интерактив для будущих миллионеров — выбиваем «бюджеты» на лакшери‑покупки.</li><li><b>Брендовая распродажа:</b> весёлый шопинг с подарками, подготовленными родителями.</li><li><b>Роскошный выкуп торта:</b> превращаем вынос торта в азартный аукцион‑шоу.</li><li><b>Запуск бабломёта:</b> мощный денежный дождь из сотен купюр — самый эффектный момент программы.</li><li><b>Звёздная фотосессия:</b> стильные и пафосные кадры с Инстасамкой и пачками денег.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 40–50 минут.</li><li><b>Команда:</b> ведущий‑продюсер и актёр в ростовой кукле.</li><li><b>Возраст:</b> от 7–8 лет и старше.</li><li><b>Что подготовить:</b> подарки для блока «Распродажа».</li></ul><h3>Стоимость</h3><p><b>10 000 ₽</b> — фиксированная цена за программу</p>" data-price="10 000 ₽" data-images="images/show-richgirl.webp">
-                <img src="images/show-richgirl.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/show-richgirl.webp" class="card-img" alt="Rich Girl: В гостях у Инстасамки" loading="lazy">
                 <h3 class="reveal">Rich Girl: В гостях у Инстасамки</h3>
                 <p class="fade-in">Хайповое шоу с бабломётом, трендами и роскошным юмором!</p>
                 <div class="service-card-info-pill">
@@ -534,7 +560,7 @@
 
            <!-- Трансформеры: Миссия Бамблби -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Трансформеры: Миссия Бамблби" data-description="Гигантский Бамблби, дымная пушка, боевой лазер и космическая миссия!" data-full="<h3>О программе</h3><p>«Трансформеры: Миссия Бамблби» — это технологичное, динамичное и зрелищное шоу, где дети становятся защитниками Земли. Их ждёт личная встреча с легендарным автоботом Бамблби, спецэффекты, дымная пушка, лазер и настоящая космическая атмосфера!</p><h3>Программа космической миссии</h3><ul><li><b>Эффектный выход ведущего:</b> спецагент космической базы Кибертрона собирает команду защитников.</li><li><b>Межгалактическая предыстория:</b> десептиконы готовят нападение — только дети и автоботы могут спасти Землю.</li><li><b>Кибертроническая разминка:</b> танцевально‑интерактивный блок под космические треки.</li><li><b>Появление Бамблби:</b> огромная ростовая кукла выходит под эпическую музыку — WOW‑эффект гарантирован.</li><li><b>Дымная пушка:</b> мощные залпы превращают площадку в сцену голливудского фильма.</li><li><b>Школа автоботов:</b> Бамблби обучает боевым движениям, ударам и защитным стойкам.</li><li><b>Силовой конкурс:</b> испытание на выносливость и командную силу.</li><li><b>Поиск бомб:</b> логическая миссия по обнаружению и обезвреживанию межгалактических устройств.</li><li><b>Боевой космический лазер:</b> демонстрация лазера, который лопает шары на расстоянии — восторг детей.</li><li><b>Финальная фотосессия:</b> мощные кадры с Бамблби, спецагентом и лазером.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Тайминг персонажей:</b> ведущий — весь час, Бамблби — 30–40 минут.</li><li><b>Команда:</b> ведущий‑аниматор и актёр в масштабной ростовой кукле.</li><li><b>Костюм ведущего:</b> можно выбрать любого супергероя или стильный образ.</li><li><b>Безопасность:</b> лазер и дымная пушка полностью контролируются и безопасны.</li></ul><h3>Стоимость</h3><p><b>11 000 ₽</b> — фиксированная цена за программу</p>" data-price="11 000 ₽" data-images="images/show-bumblebee.webp,images/show-bumblebee2.webp">
-               <img src="images/show-bumblebee.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-bumblebee.webp" class="card-img" alt="Трансформеры: Миссия Бамблби" loading="lazy">
                <h3 class="reveal">Трансформеры: Миссия Бамблби</h3>
                <p class="fade-in">Гигантский Бамблби, дымная пушка и боевой лазер!</p>
                <div class="service-card-info-pill">
@@ -548,7 +574,7 @@
 
            <!-- Мега‑челлендж шоу «В гостях у Влада А4» -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Мега‑челлендж шоу «В гостях у Влада А4»" data-description="Ростовой Влад А4, челленджи, бабломёт, колесо фортуны и полный блогерский драйв!" data-full="<h3>О программе</h3><p>«В гостях у Влада А4» — это самое популярное и хайповое шоу по мотивам легендарного YouTube‑канала. Детей ждут культовые челленджи, денежные дожди, колесо фортуны, фирменные игры и личная встреча с ростовым Владом А4!</p><h3>Программа главного YouTube‑шоу</h3><ul><li><b>Знакомство в стиле топ‑блогеров:</b> ведущий‑продюсер собирает команду и настраивает на съёмочный процесс.</li><li><b>Блогерская предыстория:</b> погружаемся в мир кликов, трендов и секретов вирусного контента.</li><li><b>Появление Влада А4:</b> ростовая кукла выходит под фирменный трек — WOW‑эффект гарантирован.</li><li><b>Танцевальный баттл:</b> повторяем самые хайповые движения из интернета.</li><li><b>Челлендж «Угадай напиток»:</b> вслепую пробуем и угадываем секретные напитки.</li><li><b>Челлендж «Кусни, лизни или ничего»:</b> крутим колесо и выполняем забавные задания.</li><li><b>Финансовый тир:</b> выбиваем «бюджеты» на развитие канала.</li><li><b>Колесо фортуны:</b> каждый участник крутит барабан и получает блогерские задания.</li><li><b>Запуск бабломёта:</b> мощный денежный дождь из сотен фирменных купюр — самый эффектный момент шоу.</li><li><b>Звёздная фотосессия:</b> стильные кадры с Владом А4, купюрами и реквизитом челленджей.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Команда:</b> ведущий‑продюсер и актёр в ростовой кукле Влада А4.</li><li><b>Возраст:</b> от 5–6 лет и старше.</li><li><b>Безопасность:</b> все продукты и напитки свежие, гипоаллергенные и безопасные.</li></ul><h3>Стоимость</h3><p><b>11 000 ₽</b> — фиксированная цена за программу</p>" data-price="11 000 ₽" data-images="images/show-a4.webp">
-               <img src="images/show-a4.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-a4.webp" class="card-img" alt="Мега‑челлендж шоу «В гостях у Влада А4»" loading="lazy">
                <h3 class="reveal">В гостях у Влада А4</h3>
                <p class="fade-in">Челленджи, бабломёт, колесо фортуны и блогерский драйв!</p>
                <div class="service-card-info-pill">
@@ -562,7 +588,7 @@
 
            <!-- Интерактивная программа «Школа мини‑фокусов» -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Интерактивная программа «Школа мини‑фокусов»" data-description="Весёлые фокусы, магия света, огненные трюки и обучение именинника!" data-full="<h3>О программе</h3><p>«Школа мини‑фокусов» — это интерактивная магическая программа, где дети превращаются в настоящих иллюзионистов. Это не скучное выступление, а динамичное шоу, в котором каждый ребёнок участвует в трюках, а именинник становится главным волшебником вечера!</p><h3>Программа таинственных превращений</h3><ul><li><b>Знакомство и погружение:</b> ведущий настраивает ребят на магическую волну и проверяет внимательность.</li><li><b>Правила магов:</b> в игровой форме объясняются основы безопасности.</li><li><b>Иллюзия с монеткой:</b> классический трюк с исчезновением и появлением монет.</li><li><b>Магия света и лампочка:</b> лампочка загорается прямо в руках — без проводов.</li><li><b>Укрощение огня:</b> безопасный, но эффектный фокус с появлением и исчезновением пламени.</li><li><b>Превращения с Кока‑Колой:</b> интерактивный трюк с любимым напитком.</li><li><b>Запутанные верёвки:</b> верёвки связываются, развязываются и проходят сквозь предметы.</li><li><b>Обучение именинника:</b> ведущий тайно обучает именинника трюку, который он демонстрирует гостям.</li><li><b>Магическая фотосессия:</b> яркие кадры с реквизитом и жестами фокусников.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 30–40 минут.</li><li><b>Ведущий:</b> 1 аниматор‑иллюзионист (образ можно выбрать).</li><li><b>Безопасность:</b> все трюки адаптированы для детей и полностью безопасны.</li><li><b>Возраст:</b> от 5–6 лет и младшие школьники.</li></ul><h3>Стоимость</h3><p><b>5 500 ₽</b> — фиксированная цена за программу</p>" data-price="5 500 ₽" data-images="images/show-magic.webp,images/show-magic2.webp">
-               <img src="images/show-magic.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-magic.webp" class="card-img" alt="Интерактивная программа «Школа мини‑фокусов»" loading="lazy">
                <h3 class="reveal">Школа мини‑фокусов</h3>
                <p class="fade-in">Весёлые фокусы, магия света и обучение именинника!</p>
                <div class="service-card-info-pill">
@@ -576,7 +602,7 @@
       
            <!-- Караоке‑вечеринка -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Караоке‑вечеринка" data-description="Диджей, профессиональное оборудование и экран с текстом песен!" data-full="<h3>О программе</h3><p>Караоке‑вечеринка — это яркий музыкальный формат, где дети и взрослые могут петь любимые хиты под управлением профессионального диджея. Полный набор оборудования обеспечивает качественный звук и атмосферу настоящего шоу.</p><h3>Что входит</h3><ul> <li>Профессиональный диджей</li> <li>Музыкальная аппаратура</li> <li>Микрофоны</li> <li>Экран для вывода текста песен</li> <li>Большая библиотека треков</li> </ul> <h3>Длительность</h3> <p>1 час</p> <h3>Стоимость</h3> <p><b>7 000 ₽ / час</b></p>" data-price="7 000 ₽" data-images="images/karaoke.webp">
-               <img src="images/karaoke.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/karaoke.webp" class="card-img" alt="Караоке‑вечеринка" loading="lazy">
                <h3 class="reveal">Караоке‑вечеринка</h3>
                <p class="fade-in">Диджей, экран и любимые песни!</p>
                <div class="service-card-info-pill">
@@ -590,7 +616,7 @@
 
            <!-- Челлендж Вечеринка -->
            <div class="card service-card clickable-card pop reveal stagger" data-category="шоу" data-title="Мега‑хит праздников: «Челлендж Вечеринка»" data-description="Топ‑челленджи, водный баттл, колесо фортуны, смех и полный блогерский драйв!" data-full="<h3>О программе</h3><p>«Челлендж Вечеринка» — это ультрасовременное шоу по мотивам самых популярных YouTube и TikTok челленджей. Никаких скучных конкурсов — только драйв, смех, испытания на смелость, вкус, реакцию и удачу. Идеально для стильного дня рождения или хайповой тусовки!</p><h3>Программа главного баттла года</h3><ul><li><b>Знакомство на максималках:</b> два ведущих‑продюсера делят ребят на команды и заряжают атмосферу.</li><li><b>Водный баттл:</b> легендарный челлендж — ответил неправильно, окунулся лицом в воду на пару секунд.</li><li><b>Танцевальный марафон:</b> повторяем самые хайповые движения из соцсетей.</li><li><b>Челлендж «Кусни, лизни или ничего»:</b> крутим колесо и выполняем забавные задания.</li><li><b>Челлендж «Угадай напиток»:</b> вслепую пробуем и угадываем секретные миксы.</li><li><b>Колесо фортуны / «Угадай, что внутри»:</b> испытание на смелость — угадываем предметы на ощупь.</li><li><b>Звёздное поздравление:</b> эмоциональный блок с кастомным поздравлением именинника.</li><li><b>Вручение торта:</b> эффектная подача главного десерта.</li><li><b>Взрывная фотосессия:</b> стильные кадры с реквизитом челленджей.</li></ul><h3>Важная информация</h3><ul><li><b>Продолжительность:</b> 1 час.</li><li><b>Ведущие:</b> 2 профессиональных аниматора.</li><li><b>Безопасность:</b> все продукты и напитки свежие, гипоаллергенные и безопасные.</li><li><b>Памятка:</b> для водного баттла используется только чистая питьевая вода; можно взять полотенце.</li></ul><h3>Стоимость</h3><p><b>10 000 ₽</b> — фиксированная цена за программу</p>" data-price="10 000 ₽" data-images="images/show-challenge.webp">
-               <img src="images/show-challenge.webp" class="card-img" alt="" loading="lazy">
+               <img src="images/show-challenge.webp" class="card-img" alt="Мега‑хит праздников: «Челлендж Вечеринка»" loading="lazy">
                <h3 class="reveal">Челлендж Вечеринка</h3>
                <p class="fade-in">Топ‑челленджи, водный баттл и полный блогерский драйв!</p>
                <div class="service-card-info-pill">
@@ -611,7 +637,7 @@
                  data-price="9 000 ₽ до 10 чел / 600 ₽ за каждого следующего"
                  data-images="images/mc-slime.webp">
 
-                <img src="images/mc-slime.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-slime.webp" class="card-img" alt="Мастер‑класс «Слайм‑Лаборатория»" loading="lazy">
                 <h3 class="reveal">Слайм‑Лаборатория</h3>
                 <p class="fade-in">Создаём яркие ароматные слаймы и проводим весёлые эксперименты!</p>
 
@@ -629,7 +655,7 @@
                  data-price="12 000 ₽ до 10 чел / 1000 ₽ за каждого следующего"
                  data-images="images/mc-clothes.webp,images/mc-clothes2.webp,images/mc-clothes3.webp,images/mc-clothes4.webp">
 
-                <img src="images/mc-clothes.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-clothes.webp" class="card-img" alt="Мастер‑класс по росписи одежды акрилом" loading="lazy">
                 <h3 class="reveal">Роспись одежды акрилом</h3>
                 <p class="fade-in">Создайте уникальную футболку в стиле fashion‑дизайна!</p>
 
@@ -648,7 +674,7 @@
                  data-price="8 000 ₽ до 10 чел / 700 ₽ за каждого следующего"
                  data-images="images/mc-gypsum.webp,images/mc-gypsum2.webp,images/mc-gypsym3.webp,images/mc-gypsym4.webp">
 
-                <img src="images/mc-gypsum.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-gypsum.webp" class="card-img" alt="Интерактивный мастер‑класс «Красочный гипс»" loading="lazy">
                 <h3 class="reveal">Красочный гипс</h3>
                 <p class="fade-in">Создание ярких гипсовых фигурок с декором и блеском!</p>
 
@@ -667,7 +693,7 @@
                  data-price="9 000 ₽ до 10 чел / 800 ₽ за каждого следующего"
                  data-images="images/mc-clay.webp,images/mc-clay2.webp">
 
-                <img src="images/mc-clay.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-clay.webp" class="card-img" alt="Мастер‑класс «Создание брелоков»" loading="lazy">
                 <h3 class="reveal">Создание брелоков</h3>
                 <p class="fade-in">Создаём стильные дизайнерские брелоки своими руками!</p>
 
@@ -685,7 +711,7 @@
                  data-price="7 000 ₽ до 10 чел / 500 ₽ за каждого следующего"
                  data-images="images/mc-watercolor.webp,images/mc-watercolor2.webp">
 
-                <img src="images/mc-watercolor.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-watercolor.webp" class="card-img" alt="Мастер‑класс «Легкость акварели: основы скетчинга»" loading="lazy">
                 <h3 class="reveal">Легкость акварели</h3>
                 <p class="fade-in">Осваиваем воздушный акварельный скетчинг в творческой атмосфере!</p>
 
@@ -703,7 +729,7 @@
                  data-price="9 000 ₽ до 10 чел / 600 ₽ за каждого следующего"
                  data-images="images/mc-softclay.webp,images/mc-softclay2.webp">
 
-                <img src="images/mc-softclay.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-softclay.webp" class="card-img" alt="Интерактивный воркшоп «Юный скульптор: магия глины»" loading="lazy">
                 <h3 class="reveal">Юный скульптор: магия глины</h3>
                 <p class="fade-in">Создаём волшебные фигурки из лёгкой самозастывающей глины!</p>
 
@@ -721,7 +747,7 @@
                  data-price="9 000 ₽ до 10 чел / 500 ₽ за каждого следующего"
                  data-images="images/mc-balloons.webp,images/mc-balloons2.webp">
 
-                <img src="images/mc-balloons.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-balloons.webp" class="card-img" alt="Анимационный мастер‑класс «Шоу шаров‑колбасок»" loading="lazy">
                 <h3 class="reveal">Шоу шаров‑колбасок</h3>
                 <p class="fade-in">Весёлый твистинг с конкурсами и яркими воздушными фигурками!</p>
 
@@ -739,7 +765,7 @@
                  data-price="20 000 ₽ до 10 чел / 1500 ₽ за каждого следующего"
                  data-images="images/mc-graffiti.webp">
 
-                <img src="images/mc-graffiti.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/mc-graffiti.webp" class="card-img" alt="Мастер‑класс «Граффити‑шоу»" loading="lazy">
                 <h3 class="reveal">Граффити‑шоу</h3>
                 <p class="fade-in">Создаём яркие стрит‑арт картины и огромный командный баннер!</p>
 
@@ -787,7 +813,7 @@
                  data-price="11 000 ₽/16 000₽"
                  data-images="images/fort-boyard1.webp,images/fort-boyard2.webp,images/fort-boyard3.webp,images/fort-boyard4.webp">
 
-                <img src="images/fort-boyard1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/fort-boyard1.webp" class="card-img" alt="Приключенческий квест «Форт Боярд»" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Форт Боярд»</h3>
                 <p class="fade-in">Испытания, загадки, золото и атмосфера легендарного Форта!</p>
 
@@ -831,7 +857,7 @@
                  data-price="10 000 ₽"
                  data-images="images/squid-game1.webp,images/squid-game2.webp,images/squid-game3.webp,images/squid-game4.webp">
 
-                <img src="images/squid-game1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/squid-game1.webp" class="card-img" alt="Приключенческий квест «Игра в кальмара»" loading="lazy">
                 <h3 class="reveal">Приключенческий квест «Игра в кальмара»</h3>
                 <p class="fade-in">Азартные испытания, яркие эмоции и полный антураж Игры!</p>
 
@@ -876,7 +902,7 @@
                  data-price="10 000 ₽"
                  data-images="images/spy-quest1.webp">
 
-                <img src="images/spy-quest1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/spy-quest1.webp" class="card-img" alt="Шпионский квест: Миссия выполнима" loading="lazy">
                 <h3 class="reveal">Шпионский квест: Миссия выполнима</h3>
                 <p class="fade-in">Расшифровки, ловушки, взлом сейфа и спасение мира!</p>
 
@@ -921,7 +947,7 @@
                  data-price="10 000 ₽"
                  data-images="images/harry-potter1.webp">
 
-                <img src="images/harry-potter1.webp" class="card-img" alt="" loading="lazy">
+                <img src="images/harry-potter1.webp" class="card-img" alt="Магический квест «Гарри Поттер: Тайна Крестражей»" loading="lazy">
                 <h3 class="reveal">Магический квест «Гарри Поттер: Тайна Крестражей»</h3>            
                 <p class="fade-in">Мантии, палочки, карта Мародеров и охота на крестражи!</p>
 
@@ -1012,7 +1038,7 @@
 
         <!-- Контейнер 16:9 -->
         <div class="modal-image-wrapper">
-            <img id="serviceImage" class="service-img" alt="">
+            <img id="serviceImage" class="service-img" alt="«Пираты»">
         </div>
 
         <!-- Миниатюры -->
@@ -1049,6 +1075,7 @@
             <input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required>
 
             <button class="btn-primary glow form-btn">Отправить заявку</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
         </form>
     </div>
 </div>
@@ -1160,6 +1187,7 @@
             <textarea name="extra" class="modal-textarea" placeholder="Пожелания, особенности площадки..."></textarea>
 
             <button class="btn-primary glow form-btn">Отправить заявку</button>
+            <label class="consent-row"><input type="checkbox" name="consent" value="Согласен" required checked><span>Заполняя данную форму, Вы принимаете условия <a href="privacy.html" target="_blank">Соглашения на обработку персональных данных</a> и <a href="privacy.html" target="_blank">Политики обработки персональных данных</a>.</span></label>
         </form>
 
     </div>
@@ -1176,34 +1204,14 @@
 </div>
 <!-- Мобильное нижнее меню -->
 <div class="mobile-bottom-nav">
-    <!-- Кнопка "О компании" -->
-    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="mbn-icon"><span class="mbn-label">О Нас</span></button>
-    <!-- Кнопка "Скидка" -->
-    <button class="mbn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="mbn-icon"><span class="mbn-label">Акции</span></button>
-    <!-- Кнопка "Меню" -->
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О нас" class="mbn-icon"><span class="mbn-label">О нас</span></button>
+    <button class="mbn-btn partners-btn" onclick="window.location.href='partners.html';"><img src="logotip/company-icon.webp" alt="Партнерам" class="mbn-icon"><span class="mbn-label">Партнёрам</span></button>
     <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
-    <!-- Кнопка "Контакты" -->
     <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
-    <!-- Кнопка "Чат с ИИ" -->
-    <button type="button" class="mbn-btn chat-btn" id="naf-chat-btn-mobile" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="mbn-icon"><span class="mbn-label">ИИ-Чат</span></button>
+    <button class="mbn-btn chat-btn" onclick="window.location.href='reviews.html';"><img src="logotip/reviews-icon.webp" alt="Отзывы" class="mbn-icon"><span class="mbn-label">Отзывы</span></button>
 </div>
 <!-- Боковое ПК меню -->
-<div class="desktop-right-nav"><button class="drn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О компании" class="drn-icon"></button><button class="drn-btn discount-btn" onclick="openDiscountModal(); return false;"><img src="logotip/discount-icon.webp" alt="Скидка" class="drn-icon"></button><button class="drn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="drn-icon float-icon"></button><button type="button" class="drn-btn chat-btn" id="naf-chat-btn-pc" onclick="toggleChat();"><img src="logotip/chat-icon.webp" alt="Чат" class="drn-icon"></button>
-</div>
 
-<!-- МОДАЛЬНОЕ ОКНО: СКИДКА 5% (встроено для мгновенного открытия) -->
-<div class="discount-modal-overlay">
-    <div class="discount-modal">
-        <span class="close-btn-overlay close-discount-btn">&times;</span>
-        <h3 class="discount-modal-title">Скидка 5% для новых клиентов!</h3>
-        <p class="discount-modal-text">
-            Скидка 5% на любой заказ для всех новых клиентов, пришедших с нашего сайта или с Яндекс.карт по промокоду <strong>"WELCOME5"</strong>.
-        </p>
-        <p class="discount-modal-text">
-            Просто напишите промокод в любой удобный Вам мессенджер или озвучьте его по телефону.
-        </p>
-    </div>
-</div>
 <script src="js/script.js"></script>
 
 <script>
@@ -1311,7 +1319,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <!-- Подключаем скрипты -->
-<script src="js/chat-modal.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/menu.js"></script>
 
@@ -1320,3 +1327,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+

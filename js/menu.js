@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('.header .nav');
         if (nav) {
             nav.querySelectorAll('a').forEach(link => {
+                // Кнопка «Наши услуги» на мобильных только раскрывает подменю — меню не закрываем
+                if (link.classList.contains('nav-dropdown-toggle')) return;
                 link.addEventListener('click', () => {
                     menuBtn.classList.remove('active');
                     nav.classList.remove('mobile-menu-open');
@@ -40,28 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Инициализация кнопки чата
-    const chatBtnMobile = document.getElementById('naf-chat-btn-mobile');
-    
-    if (chatBtnMobile) {
-        chatBtnMobile.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const chat = document.getElementById('naf-chat');
-            if (chat) {
-                if (chat.style.display === 'flex') {
-                    chat.style.display = 'none';
-                } else {
-                    chat.style.display = 'flex';
-                    setTimeout(() => {
-                        chat.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                    }, 100);
-                }
-            }
-        });
-    }
-    
     // Инициализация кнопки контактов
     const contactsBtn = document.querySelector('.mbn-btn.contacts-btn');
     const contactModal = document.querySelector('.contact-modal-overlay');
@@ -74,34 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Инициализация кнопок ПК-меню
-const chatBtnPC = document.getElementById('naf-chat-btn-pc');
-
-if (chatBtnPC) {
-    chatBtnPC.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const chat = document.getElementById('naf-chat');
-        if (chat) {
-            if (chat.style.display === 'flex') {
-                chat.style.display = 'none';
-            } else {
-                chat.style.display = 'flex';
-                setTimeout(() => {
-                    chat.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                }, 100);
-            }
-        }
+    // Декстопное меню: Контакты и Скидки
+    document.querySelectorAll('.nav-contacts-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cm = document.querySelector('.contact-modal-overlay');
+            if (cm) cm.style.display = 'flex';
+        });
     });
-}
-
-const contactsBtnPC = document.querySelector('.drn-btn.contacts-btn');
-const contactModal = document.querySelector('.contact-modal-overlay');
-
-if (contactsBtnPC && contactModal) {
-    contactsBtnPC.addEventListener('click', (e) => {
-        e.stopPropagation();
-        contactModal.style.display = 'flex';
-    });
-}
