@@ -206,8 +206,8 @@ a.logo:hover{transform:scale(1.03)}
     .header{background:transparent}
     /* Надпись «NAFNAFIKI SOCHI» рядом с логотипом на мобильных не нужна */
     .header .logo-text{display:none!important}
-    /* Мобильная версия логотипа (картинку подменяет script.js по ширине экрана) */
-    .header .logo .logo-video{content:url("images/logo-bannermob.webp")}
+    /* Мобильная версия логотипа (путь от css/ → ../images/; картинки подменяет и script.js по ширине экрана) */
+    .header .logo .logo-video{content:url("../images/logo-bannermob.webp")}
 }
 
 
