@@ -25,12 +25,12 @@
 .reviews-tape{display:flex;will-change:transform;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:grab}
 .reviews-tape.is-dragging{cursor:grabbing}
 .reviews-tape-set{display:flex}
-.reviews-tape-card{flex:0 0 280px;margin:0 10px;aspect-ratio:1/1;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .3s ease;cursor:pointer}
+.reviews-tape-card{flex:0 0 280px;margin:0 10px;height:280px;aspect-ratio:1/1;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .3s ease;cursor:pointer}
 .reviews-tape-card:hover{transform:translateY(-3px)}
 .reviews-tape-card img{display:block;width:100%;height:100%;object-fit:contain}
 .reviews-tape-video{position:relative;background:linear-gradient(135deg,rgba(255,75,106,.5),rgba(212,175,55,.5))}
-.reviews-tape-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.reviews-tape-video .tape-play{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);transition:background .25s ease}
+.reviews-tape-video img{position:absolute;top:0;left:0;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.reviews-tape-video .tape-play{position:absolute;top:0;left:0;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);transition:background .25s ease}
 .reviews-tape-video:hover .tape-play{background:rgba(0,0,0,.14)}
 .reviews-tape-video .tape-play span{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.45);transition:transform .25s ease}
 .reviews-tape-video:hover .tape-play span{transform:scale(1.12)}
@@ -40,7 +40,7 @@
 .reviews-tape-btn:hover{transform:translateY(-50%) scale(1.1);background:#fff}
 .reviews-tape-btn--left{left:8px}
 .reviews-tape-btn--right{right:8px}
-@media (max-width:700px){.reviews-tape-card{flex:0 0 200px}.reviews-tape-btn{width:38px;height:38px;font-size:20px}}
+@media (max-width:700px){.reviews-tape-card{flex:0 0 200px;height:200px}.reviews-tape-btn{width:38px;height:38px;font-size:20px}}
 /* ===== Лайтбокс: увеличение скриншотов отзывов ===== */
 .rev-lightbox{position:fixed;inset:0;z-index:10001;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88)}
 .rev-lightbox.is-open{display:flex}
