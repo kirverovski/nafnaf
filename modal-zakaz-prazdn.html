@@ -7,7 +7,7 @@
             Чем подробнее вы заполните форму, тем быстрее и точнее мы подберём для вас идеальную программу мероприятия.
         </p>
 
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/mvgjprqe" method="POST">
             <!-- ВЫБОР УСЛУГИ -->
             <div class="form-group">
                 <label>Что вы хотите заказать? *</label>
@@ -137,3 +137,40 @@
         </form>
     </div>
 </div>
+<script>
+(function () {
+    const form = document.getElementById("contactForm");
+    if (!form || form.dataset.leadBound) return;
+    form.dataset.leadBound = "1";
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const dataObj = Object.fromEntries(formData.entries());
+
+        // Дубль в Telegram
+        if (typeof sendLeadToTelegram === "function") {
+            sendLeadToTelegram("Заявка с модалки «Заказать праздник»", dataObj);
+        }
+
+        // Formspree
+        fetch("https://formspree.io/f/mvgjprqe", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        })
+        .then(function (r) {
+            if (!r.ok) throw new Error("Formspree error " + r.status);
+            form.reset();
+            var modal = document.getElementById("modal");
+            var successModal = document.getElementById("successModal");
+            if (modal) modal.style.display = "none";
+            if (successModal) successModal.style.display = "flex";
+        })
+        .catch(function (err) {
+            console.error("Formspree недоступен:", err);
+        });
+    });
+})();
+</script>
