@@ -42,7 +42,7 @@
 .reviews-tape-btn--right{right:8px}
 @media (max-width:700px){.reviews-tape-card{flex:0 0 200px;height:200px}.reviews-tape-btn{width:38px;height:38px;font-size:20px}}
 /* ===== Микробаннеры-капсулы на карточках ленты отзывов: «видео» (жёлтый) / «Avito» (зелёный) / «Yandex» (красный) ===== */
-.tape-tag{position:absolute;top:2px;right:2px;z-index:4;pointer-events:none;padding:4px 14px;border-radius:999px;border-top-right-radius:14px;font-size:12px;font-weight:800;letter-spacing:.4px;line-height:1.4;color:#fff;background:rgba(0,0,0,.55);box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap}
+.tape-tag{position:absolute;top:2px;right:2px;z-index:4;pointer-events:none;padding:4px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.4px;line-height:1.4;color:#fff;background:rgba(0,0,0,.55);box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap}
 .tape-tag--video{background:#ffd400;color:#222}
 .tape-tag--avito{background:#43a047;color:#fff}
 .tape-tag--yandex{background:#fc3f1d;color:#fff}
