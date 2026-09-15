@@ -79,7 +79,7 @@
 
 /* Отзывы с Авито: карточки-скриншоты с белым фоном, изображение целиком (без обрезки) */
 .rev-avito-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.rev-avito-slot{position:relative;aspect-ratio:1/1;background:#fff;border-radius:14px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.rev-avito-slot{position:relative;aspect-ratio:1/1;background:#fff;border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
 .rev-avito-slot:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
 .rev-avito-slot img{display:block;width:100%;height:100%;object-fit:contain}
 
@@ -199,17 +199,17 @@
         <!-- Иконки контактов -->
         <div class="contact-icons">
             <!-- Telegram -->
-            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.png" alt="Telegram" class="icon-img"></a>
+            <a href="https://t.me/nafsochi?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon tg" target="_blank"><img src="logotip/telegram-logo.webp" alt="Telegram" class="icon-img"></a>
             <!-- WhatsApp -->
-            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.png" alt="WhatsApp" class="icon-img"></a>
+            <a href="https://wa.me/79654745262?text=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon wa" target="_blank"><img src="logotip/whatsapp-logo.webp" alt="WhatsApp" class="icon-img"></a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.png" alt="Instagram" class="icon-img"></a>
+            <a href="https://www.instagram.com/naf_nafiki.sochi"  class="contact-icon insta" target="_blank"><img src="logotip/instagram-logo.webp" alt="Instagram" class="icon-img"></a>
             <!-- MAX -->
-            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.png" alt="MAX" class="icon-img"></a>
+            <a href="https://max.ru/u/f9LHodD0cOL0OJUZMmoUbL_nn3hX7E8AfjA9xqHTZ54bXV3me0yTwdmjR6M"  class="contact-icon max" target="_blank"><img src="logotip/max-logo.webp" alt="MAX" class="icon-img"></a>
             <!-- SMS -->
-            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.png" alt="Call" class="icon-img"></a>
+            <a href="sms:+79654745262?body=Здравствуйте!%20Ознакомившись%20с%20информацией%20на%20вашем%20сайте,%20хочу%20уточнить%20некоторые%20детали%20по%20услугам.%20Меня%20интересует:"  class="contact-icon sms"><img src="logotip/sms-icon.webp" alt="Call" class="icon-img"></a>
             <!-- Вызов по телефону -->
-            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.png" alt="Call" class="icon-img"></a>
+            <a href="tel:+79098261926"  class="contact-icon call" aria-label="Позвонить"><img src="logotip/phone-icon.webp" alt="Call" class="icon-img"></a>
         </div>
     </div>
 </div>
@@ -381,10 +381,48 @@
 
 </section>
 
+<!-- Лайтбокс: увеличение скриншотов отзывов (как в ленте отзывов на главной) -->
+<div class="rev-lightbox" id="revLightbox" role="dialog" aria-modal="true" aria-label="Увеличенный отзыв">
+    <button type="button" class="rev-lightbox-close" id="revLightboxClose" aria-label="Закрыть">&times;</button>
+    <div class="rev-lightbox-frame"><img class="rev-lightbox-img" id="revLightboxImg" alt="Отзыв клиента"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("revLightbox");
+    const lightboxImg = document.getElementById("revLightboxImg");
+    const lightboxClose = document.getElementById("revLightboxClose");
+    if (!lightbox || !lightboxImg) return;
+
+    // Клик по скриншоту с Авито или Яндекс Карт — увеличиваем
+    document.querySelectorAll(".rev-avito-slot img, .rev-shot-img img").forEach(img => {
+        img.addEventListener("click", () => {
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt || "Отзыв клиента";
+            lightbox.classList.add("is-open");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    // Закрытие: крестик / клик по фону / ESC
+    const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+    };
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+    });
+});
+</script>
+
+
 <!-- Мобильное нижнее меню -->
 <div class="mobile-bottom-nav">
+    <button class="mbn-btn company-btn" onclick="window.location.href='index.html#about-company';"><img src="logotip/company-icon.webp" alt="О нас" class="mbn-icon"><span class="mbn-label">О нас</span></button>
     <button class="mbn-btn discounts-btn" onclick="window.location.href='discounts.html';"><img src="logotip/discount-icon.webp" alt="Скидки" class="mbn-icon"><span class="mbn-label">Скидки</span></button>
-    <button class="mbn-btn partners-btn" onclick="window.location.href='partners.html';"><img src="logotip/company-icon.webp" alt="Партнерам" class="mbn-icon"><span class="mbn-label">Партнёрам</span></button>
     <button class="mbn-btn menu-btn" aria-label="Меню"><img src="logotip/hamburger-icon.webp" alt="Меню" class="mbn-icon"><span class="mbn-label">Меню</span></button>
     <button class="mbn-btn contacts-btn"><img src="logotip/contact-button.webp" alt="Связаться" class="mbn-icon float-icon"><span class="mbn-label">Связь</span></button>
     <button class="mbn-btn chat-btn" onclick="window.location.href='reviews.html';"><img src="logotip/reviews-icon.webp" alt="Отзывы" class="mbn-icon"><span class="mbn-label">Отзывы</span></button>
