@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /discount-modal.html
-Disallow: /modal-zakaz-prazdn.html
-Disallow: /test-modal_fixed.html
 Sitemap: https://nafnafiki.ru/sitemap.xml
