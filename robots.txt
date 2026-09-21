@@ -1,3 +1,28 @@
 User-agent: *
 Allow: /
+Disallow: /_drafts/
+Disallow: /_tools/
+Disallow: /_check/
+Disallow: /logotip/
+Disallow: /тестовые
+Disallow: /%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ymclid&gclid&_openstat&from
+
+User-agent: Yandex
+Allow: /
+Disallow: /_drafts/
+Disallow: /_tools/
+Disallow: /_check/
+Disallow: /logotip/
+Disallow: /тестовые
+Disallow: /%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ymclid&_openstat&from
+
+User-agent: Googlebot
+Allow: /
+Disallow: /_drafts/
+Disallow: /тестовые
+Disallow: /%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5
+
 Sitemap: https://nafnafiki.ru/sitemap.xml
+Host: https://nafnafiki.ru
