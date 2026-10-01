@@ -38,14 +38,22 @@ $picFix = @{
     '315' = 'https://nafnafiki.ru/images/karaoke-2.webp'
 }
 
-# Обязательные параметры фида «Исполнители»
-$rating  = '5.0'   # Рейтинг
-$reviews = '50'    # Число отзывов
-$exp     = '10'    # Годы опыта
+# Обязательные параметры фида «Исполнители».
+# ВАЖНО: здесь только РЕАЛЬНЫЕ данные, проверяемые на Яндекс.Картах.
+# Заглушки вроде «Рейтинг 5.0 / 50 отзывов» — это накрутка, за неё Яндекс
+# фильтрует домен (наблюдалось: просмотры 150/день -> 1-2/день).
+# При изменении цифр на Яндекс.Картах — править здесь и перегенерировать фид.
+$rating  = '4.8'   # Рейтинг на Яндекс.Картах (проверяется публично)
+$reviews = '17'    # Число отзывов на Яндекс.Картах
+$exp     = '10'    # Годы опыта: работаем с 2016 года (совпадает с текстом на сайте)
 $region  = 'Сочи'  # Регион
 $conv    = '1'     # Конверсия (произвольное число, больше = лучше)
 
 $execName = 'NAF NAFIKI'
+
+# Обязательные параметры, которыми управляет скрипт — их нельзя дублировать
+# собственными param исходного фида.
+$managedParams = @('Рейтинг', 'Число отзывов', 'Годы опыта', 'Регион', 'Конверсия', 'Ссылка на телефон')
 
 $sb = New-Object System.Text.StringBuilder
 [void]$sb.AppendLine('<?xml version="1.0" encoding="UTF-8"?>')
@@ -84,7 +92,13 @@ foreach ($o in $offers) {
 
     $title = Clean $o.name
     $desc = Clean $o.description
-    if ($title) { $desc = $title + '. ' + $desc }
+    # Скрипт перезаписывает yandex_market.xml сам в себя, поэтому на втором и
+    # последующих прогонах <name> уже равен исполнителю. Дописывать его в
+    # описание второй раз нельзя — иначе перед текстом накапливается
+    # «NAF NAFIKI. NAF NAFIKI. …». Исходное название услуги в description
+    # уже есть, поэтому просто чистим возможные старые префиксы.
+    if ($title -and $title -ne $execName) { $desc = $title + '. ' + $desc }
+    $desc = ($desc -replace '^(?:NAF\s+NAFIKI\.\s*)+', '').Trim()
 
     $pic = $o.picture
     if ($picFix.ContainsKey([string]$o.id)) { $pic = $picFix[[string]$o.id] }
@@ -106,9 +120,13 @@ foreach ($o in $offers) {
     [void]$sb.AppendLine('                <param name="Регион">' + $region + '</param>')
     [void]$sb.AppendLine('                <param name="Конверсия">' + $conv + '</param>')
     [void]$sb.AppendLine('                <param name="Ссылка на телефон">tel:+79654745262</param>')
-    # Сохранённые собственные param исходного фида
+    # Собственные param исходного фида (например «Продолжительность», «Возраст»).
+    # Обязательные выше параметры пропускаем: скрипт перезаписывает xml сам в
+    # себя, и без фильтра они копились бы в оффере дважды — со старыми
+    # значениями (Рейтинг 5.0 / 50 отзывов) вперемешку с новыми.
     if ($o.param) {
         foreach ($pr in @($o.param)) {
+            if ($managedParams -contains [string]$pr.name) { continue }
             [void]$sb.AppendLine('                <param name="' + (Esc $pr.name) + '">' + (Esc (Clean $pr.'#text')) + '</param>')
         }
     }
@@ -120,8 +138,10 @@ foreach ($o in $offers) {
 [void]$sb.AppendLine('</yml_catalog>')
 
 $content = $sb.ToString()
-$utf8Bom = New-Object System.Text.UTF8Encoding $true
-[System.IO.File]::WriteAllText($src, $content, $utf8Bom)
+# UTF-8 БЕЗ BOM — требование проекта (AI-CONTEXT, технические правила п.1) и
+# требование Яндекса к фиду. С BOM файл ломается на перегенерации.
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText($src, $content, $utf8NoBom)
 Copy-Item $src (Join-Path $PSScriptRoot 'yandex_market.yml') -Force
 
 # Контроль: валидный XML и соблюдение требований
@@ -135,5 +155,23 @@ if ($urls) { throw 'Найдены дубли URL: ' + ($urls.Name -join ', ') }
 if ($pics) { throw 'Найдены дубли picture: ' + ($pics.Name -join ', ') }
 $bad = $coffers | Where-Object { -not $_.name -or -not $_.'set-ids' -or -not (@($_.param) | Where-Object { $_.name -eq 'Рейтинг' }) }
 if ($bad) { throw 'Не все offers содержат обязательные элементы: ' + (($bad | ForEach-Object { $_.id }) -join ', ') }
-'OK: XML валиден, уникальность URL/picture соблюдена, обязательные элементы на месте'
+
+# Дубли param внутри одного offer (было: рядом «Рейтинг 4.8» и «Рейтинг 5.0»)
+$dupDetail = @()
+foreach ($o in $coffers) {
+    $dups = @(@($o.param) | Group-Object { [string]$_.name } | Where-Object { $_.Count -gt 1 })
+    if ($dups.Count) { $dupDetail += ($o.id + ': ' + (($dups | ForEach-Object { $_.Name }) -join ', ')) }
+}
+if ($dupDetail.Count) { throw 'Дубли param в offers: ' + ($dupDetail -join '; ') }
+
+# Значения обязательных param — реальные, без заглушек
+$stale = @()
+foreach ($o in $coffers) {
+    $r = @($o.param) | Where-Object { [string]$_.name -eq 'Рейтинг' } | Select-Object -First 1
+    $n = @($o.param) | Where-Object { [string]$_.name -eq 'Число отзывов' } | Select-Object -First 1
+    if (($r -and [string]$r -eq '5.0') -or ($n -and [string]$n -eq '50')) { $stale += $o.id }
+}
+if ($stale.Count) { throw 'В фиде остались заглушки (Рейтинг 5.0 / 50 отзывов) - это накрутка. Offers: ' + ($stale -join ', ') }
+
+'OK: XML валиден, уникальность URL/picture соблюдена, обязательные элементы на месте, дублей param нет, заглушек нет'
 
