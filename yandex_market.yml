@@ -399,22 +399,6 @@
                 <param name="Конверсия">1</param>
                 <param name="Ссылка на телефон">tel:+79654745262</param>
             </offer>
-            <offer id="210">
-                <name>NAF NAFIKI</name>
-                <url>https://nafnafiki.ru/animators.html#ladybug-catnoir</url>
-                <price>4500</price>
-                <currencyId>RUR</currencyId>
-                <categoryId>2</categoryId>
-                <set-ids>animators</set-ids>
-                <picture>https://nafnafiki.ru/images/anim-ladybug-catnoir.webp</picture>
-                <description>«Леди Баг и Супер‑Кот». Динамичная супергеройская программа: спасение города, задания, ловкость и командные испытания.</description>
-                <param name="Рейтинг">4.8</param>
-                <param name="Число отзывов">17</param>
-                <param name="Годы опыта">10</param>
-                <param name="Регион">Сочи</param>
-                <param name="Конверсия">1</param>
-                <param name="Ссылка на телефон">tel:+79654745262</param>
-            </offer>
             <offer id="211">
                 <name>NAF NAFIKI</name>
                 <url>https://nafnafiki.ru/animators.html#pawpatrol</url>
