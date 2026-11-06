@@ -686,6 +686,88 @@
     }).then(renderList).catch(function (e) { toast(e.message, true); }).then(function () { busy(false); });
   }
 
+  /* ---------------- новая услуга ---------------- */
+
+  function openCreate() {
+    var st = state.files[state.current];
+    if (!st || !st.ready || !st.cards.length) { toast('Сначала дождитесь загрузки раздела', true); return; }
+    var last = st.cards[st.cards.length - 1];
+    $('#c-sec').textContent = 'Раздел: ' + sectionName(state.current) + '. Карточка добавится в конец раздела.' +
+      (last.className && /pop/.test(last.className) ? '' : '');
+    $('#create').classList.add('on');
+    $('#c-img').value = '';
+    $('#c-preview').hidden = true;
+    $('#btn-create-go').disabled = true;
+    updateCreateBtn();
+  }
+
+  function updateCreateBtn() {
+    var ok = $('#c-title').value.trim() && $('#c-h3').value.trim() && $('#c-price').value.trim();
+    $('#btn-create-go').disabled = !ok;
+  }
+
+  var _imgDims = { width: 0, height: 0 };
+  function onImgPath() {
+    var path = $('#c-img').value.trim();
+    if (!path) { $('#c-preview').hidden = true; _imgDims = { width: 0, height: 0 }; return; }
+    var probe = new Image();
+    probe.onload = function () {
+      _imgDims = { width: probe.naturalWidth, height: probe.naturalHeight };
+      var prev = $('#c-preview');
+      prev.src = path;
+      prev.hidden = false;
+      prev.alt = '';
+    };
+    probe.onerror = function () {
+      _imgDims = { width: 0, height: 0 };
+      $('#c-preview').hidden = true;
+      toast('Файл не найден: ' + path, true);
+    };
+    probe.src = path;
+  }
+
+  function createCard() {
+    if (!token()) { askToken('Для создания нужен токен GitHub.'); return; }
+    var st = state.files[state.current];
+    if (!st || !st.ready || !st.cards.length) { toast('Раздел не загружен', true); return; }
+    var last = st.cards[st.cards.length - 1];
+
+    var d = {
+      title: $('#c-title').value.trim(),
+      h3: $('#c-h3').value.trim(),
+      p: $('#c-p').value.trim(),
+      desc: $('#c-desc').value.trim(),
+      price: $('#c-price').value.trim(),
+      img: {
+        src: $('#c-img').value.trim(),
+        alt: $('#c-h3').value.trim(),
+        width: _imgDims.width || undefined,
+        height: _imgDims.height || undefined
+      },
+      images: $('#c-images').value.trim() ? $('#c-images').value.trim().split(',').map(function (s) { return s.trim(); }).filter(Boolean) : [],
+      pills: {
+        duration: $('#c-dur').value.trim(),
+        age: $('#c-age').value.trim(),
+        count: $('#c-cnt').value.trim(),
+        price: $('#c-price').value.trim()
+      },
+      full: $('#c-full').value.trim()
+    };
+
+    var block = CORE.buildCardHtml(d, { className: last.className });
+    var html = CORE.insertCardAfter(st.html, last, block);
+
+    busy(true, 'Создаю услугу…');
+    writeFile(st.file, 'admin: новая услуга «' + d.title + '» — ' + st.file, html, st.sha)
+      .then(function (out) {
+        pushLog([{ file: st.file, url: (out.commit && out.commit.html_url) || null }], null, false);
+        toast('Услуга создана в разделе «' + sectionName(st.file) + '»', false);
+        $('#create').classList.remove('on');
+        return loadSection(st.file, true);
+      }).then(renderList).catch(function (e) { toast(e.message, true); })
+      .then(function () { busy(false); });
+  }
+
   /* ---------------- массовая замена цены ---------------- */
 
   var bulkRows = [];
@@ -869,6 +951,13 @@
     });
     $('#btn-log').addEventListener('click', function () { $('#log').classList.toggle('on'); });
     $('#btn-bulk').addEventListener('click', openBulk);
+    $('#btn-add').addEventListener('click', openCreate);
+    $('#btn-create-back').addEventListener('click', function () { $('#create').classList.remove('on'); });
+    ['c-title','c-h3','c-price'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', updateCreateBtn);
+    });
+    $('#c-img').addEventListener('input', onImgPath);
+    $('#btn-create-go').addEventListener('click', createCard);
     $('#btn-bulk-close').addEventListener('click', function () { $('#bulk').classList.remove('on'); });
     $('#btn-bulk-find').addEventListener('click', scanBulk);
     $('#bulk-from').addEventListener('keydown', function (e) { if (e.key === 'Enter') scanBulk(); });

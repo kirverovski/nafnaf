@@ -251,7 +251,7 @@
       }
     }
     delete fields['__lastPillLabel'];
-    return { position: position, start: card.open.start, end: card.close.end, id: idAttr && idAttr.raw != null ? idAttr.raw : null, title: fields['attr:data-title'] ? fields['attr:data-title'].value : '', fields: fields };
+    return { position: position, start: card.open.start, end: card.close.end, className: attrValueOf(card.open, 'class'), id: idAttr && idAttr.raw != null ? idAttr.raw : null, title: fields['attr:data-title'] ? fields['attr:data-title'].value : '', fields: fields };
   }
 
   function readCards(html) { return findCards(html).map(function (c, idx) { return readCard(html, c, idx); }); }
@@ -416,16 +416,91 @@
     return res;
   }
 
+  /* ---------- генерация новой карточки из данных ---------- */
+
+  var _PILL_META = [
+    { key: 'duration', icon: 'logotip/time-icon.webp', alt: 'Время', label: 'Длительность' },
+    { key: 'age', icon: 'logotip/age-icon.webp', alt: 'Возраст', label: 'Возраст' },
+    { key: 'count', icon: 'logotip/count-icon.webp', alt: 'Количество', label: 'Участники' },
+    { key: 'price', icon: 'logotip/price-icon.webp', alt: 'Стоимость', label: 'Цена' }
+  ];
+
+  function buildCardHtml(d, opts) {
+    opts = opts || {};
+    var cls = opts.className || 'card service-card clickable-card reveal stagger';
+    var indent = opts.indent || '            ';
+    var img = d.img || {};
+    var alt = img.alt || d.h3 || d.title || '';
+    var imgHtml = '';
+    if (img.src) {
+      var imgAttrs = ' src="' + escapePlainAttr(img.src) + '" class="card-img" alt="' + escapePlainAttr(alt) + '" loading="lazy"';
+      if (img.width && img.height) imgAttrs += ' width="' + img.width + '" height="' + img.height + '"';
+      imgAttrs += ' decoding="async">';
+      imgHtml = indent + '    <img' + imgAttrs + '\n';
+    }
+
+    var dataTitle = escapePlainAttr(d.title || '');
+    var dataDesc = escapePlainAttr(d.desc || '');
+    var dataFull = escapeHtmlAttr(d.full || '');
+    var dataPrice = escapePlainAttr(d.price || '');
+    var dataImages = escapePlainAttr((d.images || []).join(','));
+
+    var h3 = d.h3 ? '<h3 class="reveal">' + escapeText(d.h3) + '</h3>' : '';
+    var p = d.p ? '<p class="fade-in">' + escapeText(d.p) + '</p>' : '';
+
+    var pills = d.pills || {};
+    var pillsHtml = '';
+    if (pills.duration || pills.age || pills.count || pills.price) {
+      pillsHtml = indent + '<div class="service-card-info-pill">\n';
+      _PILL_META.forEach(function (m) {
+        if (pills[m.key]) {
+          pillsHtml += indent + '    <div class="service-card-info-pill-item"><img src="' + m.icon + '" alt="' + m.alt + '" class="service-card-info-pill-icon" width="28" height="28" decoding="async"><div class="service-card-info-pill-text"><span class="service-card-info-pill-label">' + m.label + '</span><span class="service-card-info-pill-value">' + escapeText(pills[m.key]) + '</span></div></div>\n';
+        }
+      });
+      pillsHtml += indent + '</div>\n';
+    }
+
+    var buttons = '<div class="service-card-buttons"><button class="btn-primary glow openOrder">Заказать</button><button class="btn-outline openService">Подробнее <span class="arrow">&gt;</span></button></div>';
+
+    return indent + '<div class="' + cls + '" data-title="' + dataTitle + '" data-description="' + dataDesc + '" data-full="' + dataFull + '" data-price="' + dataPrice + '" data-images="' + dataImages + '">\n' +
+      imgHtml +
+      indent + '    ' + h3 + '\n' +
+      indent + '    ' + p + '\n' +
+      pillsHtml +
+      indent + '    ' + buttons + '\n' +
+      indent + '</div>';
+  }
+
+  function insertCardAfter(html, model, block) {
+    var lineStart = model.start;
+    while (lineStart > 0 && html.charAt(lineStart - 1) !== '\n') lineStart--;
+    var indent = html.slice(lineStart, model.start).replace(/\n/g, '');
+    if (!indent) indent = '            ';
+    return html.slice(0, model.end) + '\n' + indent + block + html.slice(model.end);
+  }
+
   return {
-    scanTokens: scanTokens, findCards: findCards, readCards: readCards,
-    applyChanges: applyChanges, applyEdits: applyEdits,
-    removeCard: removeCard, duplicateCard: duplicateCard,
+    scanTokens: scanTokens,
+    findCards: findCards,
+    readCards: readCards,
+    applyChanges: applyChanges,
+    applyEdits: applyEdits,
+    removeCard: removeCard,
+    duplicateCard: duplicateCard,
     updateSitemapLastmod: updateSitemapLastmod,
-    decodeEntities: decodeEntities, escapeText: escapeText,
-    escapePlainAttr: escapePlainAttr, escapeHtmlAttr: escapeHtmlAttr,
-    escapeRegExp: escapeRegExpStr, urlForFile: urlForFile,
-    replacePrice: replacePrice, priceOccurrences: priceOccurrences,
-    fieldLabel: fieldLabel, formatNumber: formatNumber,
-    attrOf: attrOf, attrValueOf: attrValueOf
+    decodeEntities: decodeEntities,
+    escapeText: escapeText,
+    escapePlainAttr: escapePlainAttr,
+    escapeHtmlAttr: escapeHtmlAttr,
+    escapeRegExp: escapeRegExpStr,
+    urlForFile: urlForFile,
+    replacePrice: replacePrice,
+    priceOccurrences: priceOccurrences,
+    fieldLabel: fieldLabel,
+    formatNumber: formatNumber,
+    attrOf: attrOf,
+    attrValueOf: attrValueOf,
+    buildCardHtml: buildCardHtml,
+    insertCardAfter: insertCardAfter
   };
 });

@@ -81,6 +81,8 @@ input,textarea{font:inherit;color:inherit}
 .thumbs{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
 .thumbs img{width:54px;height:54px;object-fit:cover;border-radius:6px;border:1px solid #dcdde1}
 .thumbs img.broken{opacity:.25}
+.pill-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+@media(max-width:500px){.pill-grid{grid-template-columns:1fr}}
 #edupes{margin-top:14px;background:#fff;border:1px solid #dcdde1;border-radius:8px;padding:10px 12px}
 #edupes h3{margin:0 0 8px;font-size:13px}
 .chk{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:14px}
@@ -91,6 +93,13 @@ input,textarea{font:inherit;color:inherit}
   padding-bottom:calc(10px + env(safe-area-inset-bottom))}
 #efoot .btn{flex:1}
 #efoot .btn.sm{flex:0 0 auto}
+
+/* новая услуга */
+#create{position:fixed;inset:0;background:#f2f3f5;z-index:45;display:none;flex-direction:column}
+#create.on{display:flex}
+#cbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px}
+#cbody .wrap{padding:0}
+#c-preview{max-width:100%;max-height:180px;border-radius:8px;border:1px solid #dcdde1;margin-top:8px}
 
 /* цены */
 #bulk{position:fixed;inset:0;background:#f2f3f5;z-index:45;display:none;flex-direction:column}
@@ -169,6 +178,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background
 <div id="app" class="screen">
   <div class="bar">
     <h2 id="bar-title">Услуги</h2>
+    <button class="btn sm plain" id="btn-add">+ Услуга</button>
     <button class="btn sm plain" id="btn-bulk">Цены</button>
     <button class="btn sm plain" id="btn-sync">Обновить</button>
     <button class="btn sm plain" id="btn-log">Журнал</button>
@@ -185,7 +195,48 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background
   <div id="log"></div>
 </div>
 
-<!-- 3. РЕДАКТОР -->
+<!-- 4. НОВАЯ УСЛУГА -->
+<div id="create">
+  <div class="bar">
+    <button class="btn sm plain" id="btn-create-back">Назад</button>
+    <h2>Новая услуга</h2>
+  </div>
+  <div id="cbody">
+    <div class="wrap">
+      <p class="note" id="c-sec"></p>
+      <div id="cfields">
+        <label class="f"><span>Название (для заказа)</span>
+          <input id="c-title" type="text" placeholder="Мастер-класс «Лепка из глины»"></label>
+        <label class="f"><span>Заголовок на карточке</span>
+          <input id="c-h3" type="text" placeholder="Лепка из глины"></label>
+        <label class="f"><span>Текст под заголовком</span>
+          <input id="c-p" type="text" placeholder="Короткая фраза 5–9 слов"></label>
+        <label class="f"><span>Краткое описание</span>
+          <input id="c-desc" type="text" placeholder="Что входит, для кого"></label>
+        <label class="f"><span>Цена</span>
+          <input id="c-price" type="text" inputmode="text" placeholder="от 3 500 ₽"></label>
+        <label class="f"><span>Фото карточки (путь)</span>
+          <input id="c-img" type="text" placeholder="images/new-card.webp" autocapitalize="off" spellcheck="false">
+          <p class="note">Сначала загрузите файл в <code>images/</code> на GitHub (Add file → Upload files). Размеры и превью подставятся сами.</p>
+          <img id="c-preview" alt="" hidden></label>
+        <label class="f"><span>Галерея (фото через запятую)</span>
+          <input id="c-images" type="text" placeholder="images/new-card.webp,images/new-card2.webp" autocapitalize="off" spellcheck="false"></label>
+        <div class="pill-grid">
+          <label class="f"><span>Длительность</span><input id="c-dur" type="text" placeholder="1 час"></label>
+          <label class="f"><span>Возраст</span><input id="c-age" type="text" placeholder="от 5 лет"></label>
+          <label class="f"><span>Участники</span><input id="c-cnt" type="text" placeholder="до 15"></label>
+        </div>
+        <label class="f"><span>Подробное описание (для модалки «Подробнее»)</span>
+          <textarea id="c-full" rows="8" placeholder="&lt;h3&gt;О программе&lt;/h3&gt;&lt;p&gt;…&lt;/p&gt;&lt;h3&gt;Стоимость&lt;/h3&gt;&lt;p&gt;&lt;b&gt;от 3 500 ₽&lt;/b&gt;&lt;/p&gt;"></textarea></label>
+      </div>
+    </div>
+  </div>
+  <div id="efoot">
+    <button class="btn" id="btn-create-go" disabled>Создать услугу</button>
+  </div>
+</div>
+
+<!-- 5. РЕДАКТОР -->
 <div id="editor">
   <div class="bar">
     <button class="btn sm plain" id="btn-back">Назад</button>
