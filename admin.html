@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Админка — NAF NAFIKI</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Админка NAF">
+<link rel="manifest" href="admin.webmanifest">
+<link rel="apple-touch-icon" href="site-icon.png">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:#f2f3f5;color:#1c1c1e;
+  font-size:15px;line-height:1.4}
+button{font:inherit;cursor:pointer}
+input,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+
+/* экраны */
+.screen{display:none}
+.screen.on{display:block}
+.wrap{max-width:560px;margin:0 auto;padding:12px}
+
+/* вход */
+#login{padding-top:14vh}
+.box{background:#fff;border:1px solid #dcdde1;border-radius:10px;padding:20px}
+.box h1{margin:0 0 2px;font-size:17px}
+.box p{margin:0 0 16px;font-size:13px;color:#6b7280}
+.f{display:block;margin:0 0 10px}
+.f>span{display:block;font-size:12px;color:#6b7280;margin-bottom:4px}
+.f input,.f textarea{width:100%;padding:11px 12px;border:1px solid #cfd1d6;border-radius:8px;background:#fff}
+.f textarea{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:2px solid #2563eb;outline-offset:-1px;border-color:#2563eb}
+.btn{display:block;width:100%;padding:12px;border:1px solid transparent;border-radius:8px;background:#2563eb;
+  color:#fff;font-weight:600}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.plain{background:#fff;border-color:#cfd1d6;color:#1c1c1e}
+.btn.danger{background:#fff;border-color:#d1d5db;color:#b91c1c}
+.btn.sm{width:auto;padding:8px 12px;font-size:13px;font-weight:500}
+.note{font-size:12px;color:#6b7280;margin:6px 0 0}
+.err{color:#b91c1c;font-size:13px;margin:8px 0 0;min-height:1em}
+.help{font-size:12px;color:#6b7280;margin-top:14px;padding-top:12px;border-top:1px solid #eceef1}
+.help a{color:#2563eb}
+
+/* панель */
+.bar{display:flex;align-items:center;gap:8px;background:#fff;border-bottom:1px solid #dcdde1;
+  padding:10px 12px;position:sticky;top:0;z-index:5}
+.bar h2{flex:1;margin:0;font-size:15px;font-weight:600;min-width:0;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.bar .btn.sm{flex:0 0 auto}
+#status{font-size:12px;color:#6b7280;padding:8px 12px 0}
+#tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;-webkit-overflow-scrolling:touch}
+.tab{flex:0 0 auto;padding:8px 12px;border:1px solid #cfd1d6;border-radius:16px;background:#fff;
+  font-size:13px;color:#374151}
+.tab em{font-style:normal;color:#9ca3af;margin-left:5px}
+.tab.on{background:#1f2937;border-color:#1f2937;color:#fff}
+.tab.on em{color:#cbd5e1}
+#find{margin:0 12px 10px;width:calc(100% - 24px);padding:10px 12px;border:1px solid #cfd1d6;border-radius:8px}
+#list{padding:0 12px 24px}
+.row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fff;border:1px solid #dcdde1;
+  border-radius:8px;padding:8px;margin-bottom:8px}
+.row img{width:48px;height:48px;border-radius:6px;object-fit:cover;background:#eceef1;flex:0 0 auto}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .t i{display:block;font-style:normal;font-size:13px;color:#b91c1c;font-weight:600}
+.row .t small{display:block;font-size:11px;color:#9ca3af;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint-empty{padding:24px 12px;text-align:center;color:#6b7280;font-size:13px}
+
+/* редактор */
+#editor{position:fixed;inset:0;background:#f2f3f5;z-index:40;display:none;flex-direction:column}
+#editor.on{display:flex}
+#ebody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 12px 20px}
+#ebody>.wrap{padding:0}
+#efields{display:flex;flex-direction:column;gap:12px}
+#efields .f{background:#fff;border:1px solid #dcdde1;border-radius:8px;padding:10px 12px;margin:0}
+#efields input.changed,#efields textarea.changed{border-color:#b91c1c;background:#fff8f8}
+.tag{display:inline-block;font-size:11px;color:#b91c1c;margin-top:4px}
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.preview{margin-top:6px;padding:10px;border:1px dashed #cfd1d6;border-radius:6px;background:#fff;font-size:13px}
+.thumbs{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.thumbs img{width:54px;height:54px;object-fit:cover;border-radius:6px;border:1px solid #dcdde1}
+.thumbs img.broken{opacity:.25}
+#edupes{margin-top:14px;background:#fff;border:1px solid #dcdde1;border-radius:8px;padding:10px 12px}
+#edupes h3{margin:0 0 8px;font-size:13px}
+.chk{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:14px}
+.chk input{width:18px;height:18px;flex:0 0 auto}
+.chk span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chk i{font-style:normal;font-size:12px;color:#6b7280}
+#efoot{display:flex;gap:8px;background:#fff;border-top:1px solid #dcdde1;padding:10px 12px;
+  padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+#efoot .btn{flex:1}
+#efoot .btn.sm{flex:0 0 auto}
+
+/* цены */
+#bulk{position:fixed;inset:0;background:#f2f3f5;z-index:45;display:none;flex-direction:column}
+#bulk.on{display:flex}
+#bbody{flex:1;overflow-y:auto;padding:12px}
+#bresult{margin-top:12px}
+#bresult .row{align-items:flex-start}
+.sum{font-size:13px;color:#374151;background:#fff;border:1px solid #dcdde1;border-radius:8px;padding:10px 12px}
+
+/* журнал */
+#log{background:#fff;border-top:1px solid #dcdde1;padding:12px;max-height:50vh;overflow-y:auto;
+  font-size:13px;display:none}
+#log.on{display:block}
+#log .item{padding:7px 0;border-bottom:1px solid #eceef1}
+#log .item time{color:#6b7280;font-size:12px;display:block}
+#log a{color:#2563eb}
+
+/* уведомление */
+#busy{position:fixed;inset:0;background:rgba(20,20,20,.35);z-index:60;display:none;
+  align-items:center;justify-content:center}
+#busy.on{display:flex}
+#busy div{background:#1f2937;color:#fff;padding:12px 18px;border-radius:8px;font-size:14px}
+#toast{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;background:#1f2937;color:#fff;
+  padding:12px 14px;border-radius:8px;font-size:14px;display:none;opacity:0;transition:opacity .2s}
+#toast.on{display:block;opacity:1}
+#toast.bad{background:#b91c1c}
+#feedwarn{display:none;margin:0 12px 12px;background:#fff7ed;border:1px solid #fdba74;border-radius:8px;
+  padding:10px 12px;font-size:13px}
+#feedwarn.on{display:block}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:#f2f3f5;padding:1px 4px;
+  border-radius:4px}
+</style>
+</head>
+<body>
+
+<div id="boot-error" class="wrap" hidden></div>
+
+<!-- 1. ВХОД -->
+<div id="login" class="screen">
+  <div class="wrap">
+    <div class="box">
+      <h1>Админка NAF NAFIKI</h1>
+      <p>Изменение услуг, цен и описаний</p>
+
+      <div id="pass-row">
+        <label class="f"><span>Пароль</span>
+          <input id="login-pass" type="password" inputmode="text" autocomplete="current-password"
+                 autocapitalize="off" spellcheck="false">
+        </label>
+        <button class="btn" id="btn-login">Войти</button>
+      </div>
+
+      <div id="token-box" hidden>
+        <label class="f"><span>Токен GitHub</span>
+          <input id="token-input" type="password" autocomplete="off" autocapitalize="off" spellcheck="false"
+                 placeholder="github_pat_... или ghp_...">
+        </label>
+        <button class="btn" id="btn-token">Проверить и войти</button>
+        <p class="note">Токен нужен один раз и сохраняется только в этом браузере.
+          Права: Repository permissions → Contents: Read and write.</p>
+      </div>
+
+      <p class="err" id="login-err"></p>
+
+      <div class="help">
+        Где взять токен: GitHub → Settings → Developer settings →
+        Personal access tokens → Fine-grained token → доступ к репозиторию
+        <code>nafnaf</code>, право <b>Contents: Read and write</b>.
+        Без токена панель только читает сайт.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. СПИСОК -->
+<div id="app" class="screen">
+  <div class="bar">
+    <h2 id="bar-title">Услуги</h2>
+    <button class="btn sm plain" id="btn-bulk">Цены</button>
+    <button class="btn sm plain" id="btn-sync">Обновить</button>
+    <button class="btn sm plain" id="btn-log">Журнал</button>
+    <button class="btn sm danger" id="btn-logout">Выйти</button>
+  </div>
+  <p id="status"></p>
+  <div id="tabs"></div>
+  <input id="find" type="search" placeholder="Поиск по названию или цене">
+  <div id="list"></div>
+  <div id="feedwarn">
+    <b>Цены изменены.</b> Чтобы Яндекс.Карты не показывали старые, перегенерируйте фид:
+    <code>gen-feed.ps1</code> и переотправьте его в Вебмастере.
+  </div>
+  <div id="log"></div>
+</div>
+
+<!-- 3. РЕДАКТОР -->
+<div id="editor">
+  <div class="bar">
+    <button class="btn sm plain" id="btn-back">Назад</button>
+    <h2 id="e-title">Карточка</h2>
+    <button class="btn sm plain" id="btn-dup">Копия</button>
+    <button class="btn sm danger" id="btn-del">Удалить</button>
+  </div>
+  <div id="ebody">
+    <div class="wrap">
+      <p id="e-sub" class="note" style="margin:0 0 10px"></p>
+      <div id="efields"></div>
+      <div id="edupes" hidden></div>
+    </div>
+  </div>
+  <div id="efoot">
+    <button class="btn" id="btn-save" disabled>Сохранить</button>
+  </div>
+</div>
+
+<!-- 4. МАССОВАЯ ЗАМЕНА ЦЕН -->
+<div id="bulk">
+  <div class="bar">
+    <button class="btn sm plain" id="btn-bulk-close">Назад</button>
+    <h2>Заменить цену везде</h2>
+  </div>
+  <div id="bbody">
+    <div class="wrap">
+      <label class="f"><span>Текущая цена (как в карточке)</span>
+        <input id="bulk-from" type="text" inputmode="text" placeholder="4500" autocomplete="off"></label>
+      <label class="f"><span>Новая цена</span>
+        <input id="bulk-to" type="text" inputmode="text" placeholder="5000" autocomplete="off"></label>
+      <button class="btn" id="btn-bulk-find">Найти в разделах</button>
+      <div id="bresult"></div>
+    </div>
+  </div>
+</div>
+
+<div id="busy"><div id="busy-text">Подождите…</div></div>
+<div id="toast"></div>
+
+<script src="js/admin-core.js"></script>
+<script src="js/admin-ui.js"></script>
+</body>
+</html>
