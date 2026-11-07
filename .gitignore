@@ -12,3 +12,9 @@ _drafts/
 # Системные файлы
 Thumbs.db
 .DS_Store
+
+# Папки в корне проекта, которые не нужно загружать в GitHub
+/backup_original/
+/outputs/
+/proposed_changes/
+/working_copy/

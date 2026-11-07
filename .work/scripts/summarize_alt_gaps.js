@@ -1,0 +1,1 @@
+const fs=require('fs');const rows=JSON.parse(fs.readFileSync('.work/image_tags.json','utf8'));const m=new Map();for(const x of rows.filter(x=>x.alt===null)){const k=x.src+' | '+((x.tag.match(/class="([^"]*)"/)||[])[1]||'');m.set(k,(m.get(k)||0)+1)}for(const [k,n] of m)console.log(n+'\t'+k);
