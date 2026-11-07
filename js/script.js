@@ -61,6 +61,68 @@ const serviceTitle = document.getElementById("serviceTitle");
 const serviceDescription = document.getElementById("serviceDescription");
 const servicePrice = document.getElementById("servicePrice");
 
+// Фото карточки: сначала галерея из data-images, иначе единственное фото карточки.
+// Иконки из блока характеристик (.service-card-info-pill-icon) фото не считаются.
+function getServiceCardImages(card) {
+    const fromData = (card.dataset.images || "")
+        .split(",")
+        .map(src => src.trim())
+        .filter(src => src.length > 0);
+
+    if (fromData.length) return fromData;
+
+    const photo = card.querySelector("img.card-img");
+    return photo && photo.getAttribute("src") ? [photo.getAttribute("src")] : [];
+}
+
+// Заполняет галерею модалки. Если фото нет — скрывает блок изображения,
+// чтобы на его месте не растягивалась иконка характеристики.
+function renderServiceGallery(card) {
+    if (!serviceImage) return;
+
+    const images = getServiceCardImages(card);
+    const wrapper = serviceImage.closest(".modal-image-wrapper");
+    const thumbs = document.getElementById("thumbs");
+
+    if (thumbs) thumbs.innerHTML = "";
+
+    if (!images.length) {
+        serviceImage.removeAttribute("src");
+        serviceImage.style.display = "none";
+        if (wrapper) wrapper.style.display = "none";
+        if (thumbs) thumbs.style.display = "none";
+        return;
+    }
+
+    serviceImage.style.display = "";
+    if (wrapper) wrapper.style.display = "";
+    if (thumbs) thumbs.style.display = "";
+
+    let currentIndex = 0;
+    serviceImage.src = images[currentIndex];
+
+    if (!thumbs) return;
+
+    images.forEach((img, index) => {
+        const thumb = document.createElement("img");
+        thumb.src = img;
+        thumb.alt = "";
+        thumb.classList.add("thumb");
+
+        if (index === 0) thumb.classList.add("active");
+
+        thumb.onclick = () => {
+            currentIndex = index;
+            serviceImage.src = images[currentIndex];
+
+            thumbs.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+            thumb.classList.add("active");
+        };
+
+        thumbs.appendChild(thumb);
+    });
+}
+
 serviceCards.forEach(card => {
     const btnMore = card.querySelector(".openService");
     const btnOrder = card.querySelector(".openOrder");
@@ -70,38 +132,7 @@ serviceCards.forEach(card => {
         btnMore.onclick = (e) => {
             e.stopPropagation();
 
-            // === ГАЛЕРЕЯ (БЕЗОПАСНАЯ ВЕРСИЯ) ===
-            const images = card.dataset.images
-                ? card.dataset.images
-                    .split(",")
-                    .map(i => i.trim())
-                    .filter(i => i.length > 0)
-                : [card.querySelector("img").src];
-
-            let currentIndex = 0;
-
-            serviceImage.src = images[currentIndex];
-
-            const thumbs = document.getElementById("thumbs");
-            thumbs.innerHTML = "";
-
-            images.forEach((img, index) => {
-                const thumb = document.createElement("img");
-                thumb.src = img;
-                thumb.classList.add("thumb");
-
-                if (index === 0) thumb.classList.add("active");
-
-                thumb.onclick = () => {
-                    currentIndex = index;
-                    serviceImage.src = images[currentIndex];
-
-                    document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
-                    thumb.classList.add("active");
-                };
-
-                thumbs.appendChild(thumb);
-            });
+            renderServiceGallery(card);
 
             // === ТЕКСТОВЫЕ ДАННЫЕ ===
             serviceTitle.textContent = card.dataset.title;
@@ -128,35 +159,7 @@ serviceCards.forEach(card => {
             e.target.classList.contains("watch-video-btn") ||
             e.target.closest('.watch-video-btn')) return;
 
-        // === ГАЛЕРЕЯ (БЕЗОПАСНАЯ ВЕРСИЯ) ===
-        const images = card.dataset.images
-            ? card.dataset.images.split(",").map(i => i.trim())
-            : [card.querySelector("img").src];
-
-        let currentIndex = 0;
-
-        serviceImage.src = images[currentIndex];
-
-        const thumbs = document.getElementById("thumbs");
-        thumbs.innerHTML = "";
-
-        images.forEach((img, index) => {
-            const thumb = document.createElement("img");
-            thumb.src = img;
-            thumb.classList.add("thumb");
-
-            if (index === 0) thumb.classList.add("active");
-
-            thumb.onclick = () => {
-                currentIndex = index;
-                serviceImage.src = images[currentIndex];
-
-                document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
-                thumb.classList.add("active");
-            };
-
-            thumbs.appendChild(thumb);
-        });
+        renderServiceGallery(card);
 
         // === ТЕКСТОВЫЕ ДАННЫЕ ===
         serviceTitle.textContent = card.dataset.title;
@@ -166,6 +169,7 @@ serviceCards.forEach(card => {
         serviceModal.style.display = "flex";
     };
 });
+
 
 if (closeService) {
     closeService.onclick = () => serviceModal.style.display = "none";

@@ -314,7 +314,7 @@
     'attr:data-price': 'Если та же цифра есть в подробном описании — панель обновит её сама.',
     'img:src': 'Файл сначала нужно загрузить в папку images/ через GitHub.',
     'attr:data-images': 'Пути через запятую, первый — главный.',
-    'attr:data-full': 'Допустимы теги: h3, p, b, ul, li, br.'
+    'attr:data-full': 'Допустимы теги: h3, p, b, ul, li, br. Ссылки-подсказки размечены через <a class="ny-hero-link"> и <span class="ny-video-link"> — не удаляйте их классы и data-атрибуты, иначе слово перестанет быть кликабельным.'
   };
 
   function fieldControl(id, f) {
