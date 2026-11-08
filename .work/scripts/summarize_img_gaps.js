@@ -1,1 +1,0 @@
-const fs=require('fs');const rows=JSON.parse(fs.readFileSync('.work/image_tags.json','utf8'));const m=new Map();for(const x of rows.filter(x=>x.loading===null)){const key=x.src+' | '+((x.tag.match(/\bclass="([^"]*)"/)||[])[1]||'');m.set(key,(m.get(key)||0)+1)}for(const [key,n] of [...m.entries()].sort((a,b)=>b[1]-a[1]))console.log(n+'\t'+key);
