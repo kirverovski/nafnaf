@@ -89,10 +89,10 @@ input,textarea{font:inherit;color:inherit}
 .chk input{width:18px;height:18px;flex:0 0 auto}
 .chk span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chk i{font-style:normal;font-size:12px;color:#6b7280}
-#efoot{display:flex;gap:8px;background:#fff;border-top:1px solid #dcdde1;padding:10px 12px;
+.efoot{display:flex;gap:8px;background:#fff;border-top:1px solid #dcdde1;padding:10px 12px;
   padding-bottom:calc(10px + env(safe-area-inset-bottom))}
-#efoot .btn{flex:1}
-#efoot .btn.sm{flex:0 0 auto}
+.efoot .btn{flex:1}
+.efoot .btn.sm{flex:0 0 auto}
 
 /* новая услуга */
 #create{position:fixed;inset:0;background:#f2f3f5;z-index:45;display:none;flex-direction:column}
@@ -231,7 +231,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background
       </div>
     </div>
   </div>
-  <div id="efoot">
+  <div class="efoot">
     <button class="btn" id="btn-create-go" disabled>Создать услугу</button>
   </div>
 </div>
@@ -251,7 +251,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background
       <div id="edupes" hidden></div>
     </div>
   </div>
-  <div id="efoot">
+  <div class="efoot">
     <button class="btn" id="btn-save" disabled>Сохранить</button>
   </div>
 </div>

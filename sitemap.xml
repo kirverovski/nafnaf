@@ -110,4 +110,20 @@
     <lastmod>2026-11-07</lastmod>
   </url>
 
+  <url>
+    <loc>https://nafnafiki.ru/newyear-adler.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+
+
+  <!-- Дед Мороз и Снегурочка в Дагомысе -->
+  <url>
+    <loc>https://nafnafiki.ru/ded-moroz-dagomyse.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+
 </urlset>
