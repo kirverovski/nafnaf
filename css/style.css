@@ -272,3 +272,63 @@ img{height:auto}
 .header .nav .nav-dropdown-menu a[href="newyear.html"]{grid-column:1/-1;order:-1;width:100%;max-width:none;justify-self:stretch}
 .mega-full{flex-basis:auto;border-top:none;padding-top:0}
 }
+.related-landing-section {
+    padding: 48px 20px;
+    background: linear-gradient(135deg, #17152a, #241a35);
+    color: #fff;
+}
+
+.related-landing-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.related-landing-inner h2 {
+    margin: 0 0 12px;
+}
+
+.related-landing-inner p {
+    max-width: 760px;
+    margin: 0 auto 24px;
+}
+
+.related-landing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.related-landing-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px;
+    border: 1px solid rgba(244, 223, 167, .45);
+    border-radius: 14px;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    background: rgba(255, 255, 255, .06);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.related-landing-card:hover,
+.related-landing-card:focus-visible {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, .12);
+}
+
+.related-landing-card-title {
+    color: #f4dfa7;
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
+@media (max-width: 700px) {
+    .related-landing-grid {
+        grid-template-columns: 1fr;
+    }
+}
